@@ -929,6 +929,9 @@ when duplicate values in the training data lead to inaccurate outlier detection.
 <li><p><span class="raw-html"><span class="badge text-bg-info">Enhancement</span></span>  The HTML representation of <a class="reference internal" href="../modules/generated/sklearn.preprocessing.FunctionTransformer.html#sklearn.preprocessing.FunctionTransformer" title="sklearn.preprocessing.FunctionTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.FunctionTransformer</span></code></a>
 will show the function name in the label.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29158">#29158</a> by <a class="reference external" href="https://github.com/Charlie-XIAO">Yao Xiao</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.preprocessing.PowerTransformer.html#sklearn.preprocessing.PowerTransformer" title="sklearn.preprocessing.PowerTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.PowerTransformer</span></code></a> now uses <code class="docutils literal notranslate"><span class="pre">scipy.special.inv_boxcox</span></code>
+to output <code class="docutils literal notranslate"><span class="pre">nan</span></code> if the input of BoxCox’s inverse is invalid.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/27875">#27875</a> by <a class="reference external" href="https://github.com/xuefeng-xu">Xuefeng Xu</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-semi-supervised">
