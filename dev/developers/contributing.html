@@ -1476,12 +1476,10 @@ and are viewable in a web browser, for instance by opening the local
 <code class="docutils literal notranslate"><span class="pre">_build/html/stable/index.html</span></code> file.
 To also generate the example gallery you can use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make<span class="w"> </span>html</span>
-</pre></div></div><p>This will run all the examples, which takes a while. If you only want to generate
-images for a few examples, you can pass their names (or parts of) to the build command.
-The line below will run all examples with names starting with <code class="docutils literal notranslate"><span class="pre">plot_calibration</span></code>:</p>
+</pre></div></div><p>This will run all the examples, which takes a while. You can also run only a few examples based on their file names.
+Here is a way to run all examples with filenames containing <code class="docutils literal notranslate"><span class="pre">plot_calibration</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nv">EXAMPLES_PATTERN</span><span class="o">=</span><span class="s2">&quot;plot_calibration&quot;</span><span class="w"> </span>make<span class="w"> </span>html</span>
-</pre></div></div><p>You can also pass regular expressions to gain more advanced control over examples
-you want run.</p>
+</pre></div></div><p>You can use regular expressions for more advanced use cases.</p>
 <p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">NO_MATHJAX=1</span></code> if you intend to view the documentation in
 an offline setting. To build the PDF manual, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make<span class="w"> </span>latexpdf</span>
