@@ -1468,19 +1468,21 @@ additional packages:</p>
 <span class="w">            </span>sphinx-remove-toctrees</span>
 </pre></div></div><p>To build the documentation, you need to be in the <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>doc</span>
-</pre></div></div><p>In the vast majority of cases, you only need to generate the full web site,
-without the example gallery:</p>
+</pre></div></div><p>In the vast majority of cases, you only need to generate the web site without
+the example gallery:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make</span>
 </pre></div></div><p>The documentation will be generated in the <code class="docutils literal notranslate"><span class="pre">_build/html/stable</span></code> directory
 and are viewable in a web browser, for instance by opening the local
 <code class="docutils literal notranslate"><span class="pre">_build/html/stable/index.html</span></code> file.
 To also generate the example gallery you can use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make<span class="w"> </span>html</span>
-</pre></div></div><p>This will run all the examples, which takes a while. If you only want to generate a few
-examples, which is particularly useful if you are modifying only a few examples, you can
-use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nv">EXAMPLES_PATTERN</span><span class="o">=</span>your_regex_goes_here<span class="w"> </span>make<span class="w"> </span>html</span>
-</pre></div></div><p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">NO_MATHJAX=1</span></code> if you intend to view the documentation in
+</pre></div></div><p>This will run all the examples, which takes a while. If you only want to generate
+images for a few examples, you can pass their names (or parts of) to the build command.
+The line below will run all examples with names starting with <code class="docutils literal notranslate"><span class="pre">plot_calibration</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nv">EXAMPLES_PATTERN</span><span class="o">=</span><span class="s2">&quot;plot_calibration&quot;</span><span class="w"> </span>make<span class="w"> </span>html</span>
+</pre></div></div><p>You can also pass regular expressions to gain more advanced control over examples
+you want run.</p>
+<p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">NO_MATHJAX=1</span></code> if you intend to view the documentation in
 an offline setting. To build the PDF manual, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make<span class="w"> </span>latexpdf</span>
 </pre></div></div><div class="warning admonition">
