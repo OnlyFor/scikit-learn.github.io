@@ -2301,19 +2301,23 @@ Becker, PhD Thesis.</p>
 </section>
 <section id="fowlkes-mallows-scores">
 <span id="id18"></span><h3><span class="section-number">2.3.11.4. </span>Fowlkes-Mallows scores<a class="headerlink" href="#fowlkes-mallows-scores" title="Link to this heading">#</a></h3>
-<p>The Fowlkes-Mallows index (<a class="reference internal" href="generated/sklearn.metrics.fowlkes_mallows_score.html#sklearn.metrics.fowlkes_mallows_score" title="sklearn.metrics.fowlkes_mallows_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.metrics.fowlkes_mallows_score</span></code></a>) can be
-used when the ground truth class assignments of the samples is known. The
-Fowlkes-Mallows score FMI is defined as the geometric mean of the
-pairwise precision and recall:</p>
+<p>The original Fowlkes-Mallows index (FMI) was intended to measure the similarity
+between two clustering results, which is inherently an unsupervised comparison.
+The supervised adaptation of the Fowlkes-Mallows index
+(as implemented in <a class="reference internal" href="generated/sklearn.metrics.fowlkes_mallows_score.html#sklearn.metrics.fowlkes_mallows_score" title="sklearn.metrics.fowlkes_mallows_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.metrics.fowlkes_mallows_score</span></code></a>) can be used
+when the ground truth class assignments of the samples are known.
+The FMI is defined as the geometric mean of the pairwise precision and recall:</p>
 <div class="math notranslate nohighlight">
 \[\text{FMI} = \frac{\text{TP}}{\sqrt{(\text{TP} + \text{FP}) (\text{TP} + \text{FN})}}\]</div>
-<p>Where <code class="docutils literal notranslate"><span class="pre">TP</span></code> is the number of <strong>True Positive</strong> (i.e. the number of pair
-of points that belong to the same clusters in both the true labels and the
-predicted labels), <code class="docutils literal notranslate"><span class="pre">FP</span></code> is the number of <strong>False Positive</strong> (i.e. the number
-of pair of points that belong to the same clusters in the true labels and not
-in the predicted labels) and <code class="docutils literal notranslate"><span class="pre">FN</span></code> is the number of <strong>False Negative</strong> (i.e. the
-number of pair of points that belongs in the same clusters in the predicted
-labels and not in the true labels).</p>
+<p>In the above formula:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TP</span></code> (<strong>True Positive</strong>): The number of pairs of points that are clustered together
+both in the true labels and in the predicted labels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FP</span></code> (<strong>False Positive</strong>): The number of pairs of points that are clustered together
+in the predicted labels but not in the true labels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN</span></code> (<strong>False Negative</strong>): The number of pairs of points that are clustered together
+in the true labels but not in the predicted labels.</p></li>
+</ul>
 <p>The score ranges from 0 to 1. A high value indicates a good similarity
 between two clusters.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
