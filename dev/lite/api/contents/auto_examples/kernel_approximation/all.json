@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-09-04T08:00:06.840855Z",
+      "created": "2024-09-04T10:06:59.717548Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-04T08:00:02.464862Z",
+      "last_modified": "2024-09-04T10:06:55.153560Z",
       "mimetype": null,
       "name": "plot_scalable_poly_kernels.ipynb",
       "path": "auto_examples/kernel_approximation/plot_scalable_poly_kernels.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2024-09-04T08:00:06.840855Z",
+  "created": "2024-09-04T10:06:59.717548Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-09-04T08:00:06.840855Z",
+  "last_modified": "2024-09-04T10:06:59.717548Z",
   "mimetype": null,
   "name": "kernel_approximation",
   "path": "auto_examples/kernel_approximation",
