@@ -1329,8 +1329,17 @@ document.write(`
 <h1>parametrize_with_checks<a class="headerlink" href="#parametrize-with-checks" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.utils.estimator_checks.parametrize_with_checks">
-<span class="sig-prename descclassname"><span class="pre">sklearn.utils.estimator_checks.</span></span><span class="sig-name descname"><span class="pre">parametrize_with_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimators</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d0a5fdfe5/sklearn/utils/estimator_checks.py#L526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.estimator_checks.parametrize_with_checks" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.utils.estimator_checks.</span></span><span class="sig-name descname"><span class="pre">parametrize_with_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimators</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legacy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/1c3dcb4f3/sklearn/utils/estimator_checks.py#L535"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.estimator_checks.parametrize_with_checks" title="Link to this definition">#</a></dt>
 <dd><p>Pytest specific decorator for parametrizing estimator checks.</p>
+<p>Checks are categorised into the following groups:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>API checks: a set of checks to ensure API compatibility with scikit-learn.
+Refer to <a class="reference external" href="https://scikit-learn.org/dev/developers/develop.html">https://scikit-learn.org/dev/developers/develop.html</a> a requirement of
+scikit-learn estimators.</p></li>
+<li><p>legacy: a set of checks which gradually will be grouped into other categories.</p></li>
+</ul>
+</div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> of each check is set to be a pprint version of the estimator
 and the name of the check with its keyword arguments.
 This allows to use <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-k</span></code> to specify which tests to run:</p>
@@ -1347,6 +1356,12 @@ classes was removed in 0.24. Pass an instance instead.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.24.</span></p>
+</div>
+</dd>
+<dt><strong>legacy</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether to include legacy checks. Over time we remove checks from this category
+and move them into their specific category.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
 </div>
 </dd>
 </dl>
