@@ -1213,6 +1213,14 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_mask.html">safe_mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_sqr.html">safe_sqr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.shuffle.html">shuffle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.Tags.html">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.InputTags.html">InputTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TargetTags.html">TargetTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.ClassifierTags.html">ClassifierTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.RegressorTags.html">RegressorTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TransformerTags.html">TransformerTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.default_tags.html">default_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.get_tags.html">get_tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_X_y.html">check_X_y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_array.html">check_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_consistent_length.html">check_consistent_length</a></li>
@@ -1330,7 +1338,7 @@ document.write(`
 <h1>RegressorMixin<a class="headerlink" href="#regressormixin" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.base.RegressorMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.base.</span></span><span class="sig-name descname"><span class="pre">RegressorMixin</span></span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0bfebf423/sklearn/base.py#L770"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.RegressorMixin" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.base.</span></span><span class="sig-name descname"><span class="pre">RegressorMixin</span></span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/e04142cbe/sklearn/base.py#L754"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.RegressorMixin" title="Link to this definition">#</a></dt>
 <dd><p>Mixin class for all regression estimators in scikit-learn.</p>
 <p>This mixin defines the following functionality:</p>
 <ul class="simple">
@@ -1362,7 +1370,7 @@ document.write(`
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.base.RegressorMixin.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0bfebf423/sklearn/base.py#L805"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.RegressorMixin.score" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/e04142cbe/sklearn/base.py#L789"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.RegressorMixin.score" title="Link to this definition">#</a></dt>
 <dd><p>Return the coefficient of determination of the prediction.</p>
 <p>The coefficient of determination <span class="math notranslate nohighlight">\(R^2\)</span> is defined as
 <span class="math notranslate nohighlight">\((1 - \frac{u}{v})\)</span>, where <span class="math notranslate nohighlight">\(u\)</span> is the residual

@@ -40,6 +40,14 @@ sklearn.utils
   safe_mask
   safe_sqr
   shuffle
+  Tags
+  InputTags
+  TargetTags
+  ClassifierTags
+  RegressorTags
+  TransformerTags
+  default_tags
+  get_tags
 
 
 .. _utils_ref-input-and-parameter-validation:

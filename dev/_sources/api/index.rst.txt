@@ -8501,6 +8501,134 @@ reference on concepts repeated across the API, see :ref:`glossary`.
 
 
 
+  * - :obj:`~sklearn.utils.Tags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.Tags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.InputTags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.InputTags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.TargetTags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.TargetTags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.ClassifierTags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.ClassifierTags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.RegressorTags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.RegressorTags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.TransformerTags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.TransformerTags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.default_tags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.default_tags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
+  * - :obj:`~sklearn.utils.get_tags`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils
+
+        .. autoshortsummary:: sklearn.utils.get_tags
+
+        .. div:: caption
+
+          :mod:`sklearn.utils`
+
+
+
+
+
 
 
   * - :obj:`~sklearn.utils.check_X_y`

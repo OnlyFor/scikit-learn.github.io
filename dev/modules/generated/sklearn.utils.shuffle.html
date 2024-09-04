@@ -75,7 +75,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="check_X_y" href="sklearn.utils.check_X_y.html" />
+    <link rel="next" title="Tags" href="sklearn.utils.Tags.html" />
     <link rel="prev" title="safe_sqr" href="sklearn.utils.safe_sqr.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -1212,6 +1212,14 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_mask.html">safe_mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_sqr.html">safe_sqr</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">shuffle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.Tags.html">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.InputTags.html">InputTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TargetTags.html">TargetTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.ClassifierTags.html">ClassifierTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.RegressorTags.html">RegressorTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TransformerTags.html">TransformerTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.default_tags.html">default_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.get_tags.html">get_tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_X_y.html">check_X_y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_array.html">check_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_consistent_length.html">check_consistent_length</a></li>
@@ -1329,7 +1337,7 @@ document.write(`
 <h1>shuffle<a class="headerlink" href="#shuffle" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.utils.shuffle">
-<span class="sig-prename descclassname"><span class="pre">sklearn.utils.</span></span><span class="sig-name descname"><span class="pre">shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0bfebf423/sklearn/utils/_indexing.py#L570"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.shuffle" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.utils.</span></span><span class="sig-name descname"><span class="pre">shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/e04142cbe/sklearn/utils/_indexing.py#L570"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.shuffle" title="Link to this definition">#</a></dt>
 <dd><p>Shuffle arrays or sparse matrices in a consistent way.</p>
 <p>This is a convenience alias to <code class="docutils literal notranslate"><span class="pre">resample(*arrays,</span> <span class="pre">replace=False)</span></code> to do
 random permutations of the collections.</p>
@@ -1445,11 +1453,11 @@ are not impacted.</p>
       </div>
     </a>
     <a class="right-next"
-       href="sklearn.utils.check_X_y.html"
+       href="sklearn.utils.Tags.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">check_X_y</p>
+        <p class="prev-next-title">Tags</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

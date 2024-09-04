@@ -1213,6 +1213,14 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_mask.html">safe_mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.safe_sqr.html">safe_sqr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.shuffle.html">shuffle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.Tags.html">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.InputTags.html">InputTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TargetTags.html">TargetTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.ClassifierTags.html">ClassifierTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.RegressorTags.html">RegressorTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.TransformerTags.html">TransformerTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.default_tags.html">default_tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.get_tags.html">get_tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_X_y.html">check_X_y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_array.html">check_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.check_consistent_length.html">check_consistent_length</a></li>
@@ -1330,7 +1338,7 @@ document.write(`
 <h1>mutual_info_score<a class="headerlink" href="#mutual-info-score" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.mutual_info_score">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mutual_info_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contingency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0bfebf423/sklearn/metrics/cluster/_supervised.py#L805"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mutual_info_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contingency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/e04142cbe/sklearn/metrics/cluster/_supervised.py#L805"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Link to this definition">#</a></dt>
 <dd><p>Mutual Information between two clusterings.</p>
 <p>The Mutual Information is a measure of the similarity between two labels
 of the same data. Where <span class="math notranslate nohighlight">\(|U_i|\)</span> is the number of the samples

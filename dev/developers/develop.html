@@ -1138,121 +1138,43 @@ for working with multiclass and multilabel problems.</p>
 <p class="admonition-title">Warning</p>
 <p>The estimator tags are experimental and the API is subject to change.</p>
 </div>
-<p>Scikit-learn introduced estimator tags in version 0.21. These are annotations
-of estimators that allow programmatic inspection of their capabilities, such as
-sparse matrix support, supported output types and supported methods. The
-estimator tags are a dictionary returned by the method <code class="docutils literal notranslate"><span class="pre">_get_tags()</span></code>. These
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scikit-learn introduced estimator tags in version 0.21 as a
+private API and mostly used in tests. However, these tags expanded
+over time and many third party developers also need to use
+them. Therefore in version 1.6 the API for the tags were revamped
+and exposed as public API.</p>
+</div>
+<p>The estimator tags are annotations of estimators that allow
+programmatic inspection of their capabilities, such as sparse matrix
+support, supported output types and supported methods. The estimator
+tags are an instance of <a class="reference internal" href="../modules/generated/sklearn.utils.Tags.html#sklearn.utils.Tags" title="sklearn.utils.Tags"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tags</span></code></a> returned by the
+method <code class="xref py py-meth docutils literal notranslate"><span class="pre">__sklearn_tags__</span></code>. These
 tags are used in the common checks run by the
-<a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator" title="sklearn.utils.estimator_checks.check_estimator"><code class="xref py py-func docutils literal notranslate"><span class="pre">check_estimator</span></code></a> function and the
-<a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.parametrize_with_checks.html#sklearn.utils.estimator_checks.parametrize_with_checks" title="sklearn.utils.estimator_checks.parametrize_with_checks"><code class="xref py py-func docutils literal notranslate"><span class="pre">parametrize_with_checks</span></code></a> decorator.
-Tags determine which checks to run and what input data is appropriate. Tags
-can depend on estimator parameters or even system architecture and can in
-general only be determined at runtime.</p>
-<p>The current set of estimator tags are:</p>
-<dl class="simple">
-<dt>allow_nan (default=False)</dt><dd><p>whether the estimator supports data with missing values encoded as np.nan</p>
-</dd>
-<dt>array_api_support (default=False)</dt><dd><p>whether the estimator supports Array API compatible inputs.</p>
-</dd>
-<dt>binary_only (default=False)</dt><dd><p>whether estimator supports binary classification but lacks multi-class
-classification support.</p>
-</dd>
-<dt>multilabel (default=False)</dt><dd><p>whether the estimator supports multilabel output</p>
-</dd>
-<dt>multioutput (default=False)</dt><dd><p>whether a regressor supports multi-target outputs or a classifier supports
-multi-class multi-output.</p>
-</dd>
-<dt>multioutput_only (default=False)</dt><dd><p>whether estimator supports only multi-output classification or regression.</p>
-</dd>
-<dt>no_validation (default=False)</dt><dd><p>whether the estimator skips input-validation. This is only meant for
-stateless and dummy transformers!</p>
-</dd>
-<dt>non_deterministic (default=False)</dt><dd><p>whether the estimator is not deterministic given a fixed <code class="docutils literal notranslate"><span class="pre">random_state</span></code></p>
-</dd>
-<dt>pairwise (default=False)</dt><dd><p>This boolean attribute indicates whether the data (<code class="docutils literal notranslate"><span class="pre">X</span></code>) <a class="reference internal" href="../glossary.html#term-fit"><span class="xref std std-term">fit</span></a> and
-similar methods consists of pairwise measures over samples rather than a
-feature representation for each sample.  It is usually <code class="docutils literal notranslate"><span class="pre">True</span></code> where an
-estimator has a <code class="docutils literal notranslate"><span class="pre">metric</span></code> or <code class="docutils literal notranslate"><span class="pre">affinity</span></code> or <code class="docutils literal notranslate"><span class="pre">kernel</span></code> parameter with value
-‘precomputed’. Its primary purpose is to support a <a class="reference internal" href="../glossary.html#term-meta-estimator"><span class="xref std std-term">meta-estimator</span></a>
-or a cross validation procedure that extracts a sub-sample of data intended
-for a pairwise estimator, where the data needs to be indexed on both axes.
-Specifically, this tag is used by
-<code class="docutils literal notranslate"><span class="pre">sklearn.utils.metaestimators._safe_split</span></code> to slice rows and
-columns.</p>
-</dd>
-<dt>preserves_dtype (default=``[np.float64]``)</dt><dd><p>applies only on transformers. It corresponds to the data types which will
-be preserved such that <code class="docutils literal notranslate"><span class="pre">X_trans.dtype</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">X.dtype</span></code> after
-calling <code class="docutils literal notranslate"><span class="pre">transformer.transform(X)</span></code>. If this list is empty, then the
-transformer is not expected to preserve the data type. The first value in
-the list is considered as the default data type, corresponding to the data
-type of the output when the input data type is not going to be preserved.</p>
-</dd>
-<dt>poor_score (default=False)</dt><dd><p>whether the estimator fails to provide a “reasonable” test-set score, which
-currently for regression is an R2 of 0.5 on <code class="docutils literal notranslate"><span class="pre">make_regression(n_samples=200,</span>
-<span class="pre">n_features=10,</span> <span class="pre">n_informative=1,</span> <span class="pre">bias=5.0,</span> <span class="pre">noise=20,</span> <span class="pre">random_state=42)</span></code>, and
-for classification an accuracy of 0.83 on
-<code class="docutils literal notranslate"><span class="pre">make_blobs(n_samples=300,</span> <span class="pre">random_state=0)</span></code>. These datasets and values
-are based on current estimators in sklearn and might be replaced by
-something more systematic.</p>
-</dd>
-<dt>requires_fit (default=True)</dt><dd><p>whether the estimator requires to be fitted before calling one of
-<code class="docutils literal notranslate"><span class="pre">transform</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>, or <code class="docutils literal notranslate"><span class="pre">decision_function</span></code>.</p>
-</dd>
-<dt>requires_positive_X (default=False)</dt><dd><p>whether the estimator requires positive X.</p>
-</dd>
-<dt>requires_y (default=False)</dt><dd><p>whether the estimator requires y to be passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code> or
-<code class="docutils literal notranslate"><span class="pre">fit_transform</span></code> methods. The tag is True for estimators inheriting from
-<code class="docutils literal notranslate"><span class="pre">~sklearn.base.RegressorMixin</span></code> and <code class="docutils literal notranslate"><span class="pre">~sklearn.base.ClassifierMixin</span></code>.</p>
-</dd>
-<dt>requires_positive_y (default=False)</dt><dd><p>whether the estimator requires a positive y (only applicable for regression).</p>
-</dd>
-<dt>_skip_test (default=False)</dt><dd><p>whether to skip common tests entirely. Don’t use this unless you have a
-<em>very good</em> reason.</p>
-</dd>
-<dt>_xfail_checks (default=False)</dt><dd><p>dictionary <code class="docutils literal notranslate"><span class="pre">{check_name:</span> <span class="pre">reason}</span></code> of common checks that will be marked
-as <code class="docutils literal notranslate"><span class="pre">XFAIL</span></code> for pytest, when using
-<a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.parametrize_with_checks.html#sklearn.utils.estimator_checks.parametrize_with_checks" title="sklearn.utils.estimator_checks.parametrize_with_checks"><code class="xref py py-func docutils literal notranslate"><span class="pre">parametrize_with_checks</span></code></a>. These
-checks will be simply ignored and not run by
-<a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator" title="sklearn.utils.estimator_checks.check_estimator"><code class="xref py py-func docutils literal notranslate"><span class="pre">check_estimator</span></code></a>, but a
-<code class="docutils literal notranslate"><span class="pre">SkipTestWarning</span></code> will be raised.
-Don’t use this unless there is a <em>very good</em> reason for your estimator
-not to pass the check.
-Also note that the usage of this tag is highly subject to change because
-we are trying to make it more flexible: be prepared for breaking changes
-in the future.</p>
-</dd>
-<dt>stateless (default=False)</dt><dd><p>whether the estimator needs access to data for fitting. Even though an
-estimator is stateless, it might still need a call to <code class="docutils literal notranslate"><span class="pre">fit</span></code> for
-initialization.</p>
-</dd>
-<dt>X_types (default=[‘2darray’])</dt><dd><p>Supported input types for X as list of strings. Tests are currently only
-run if ‘2darray’ is contained in the list, signifying that the estimator
-takes continuous 2d numpy arrays as input. The default value is
-[‘2darray’]. Other possible types are <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'sparse'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'categorical'</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">'1dlabels'</span></code> and <code class="docutils literal notranslate"><span class="pre">'2dlabels'</span></code>. The goal is
-that in the future the supported input type will determine the data used
-during testing, in particular for <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'sparse'</span></code> and
-<code class="docutils literal notranslate"><span class="pre">'categorical'</span></code> data. For now, the test for sparse data do not make use
-of the <code class="docutils literal notranslate"><span class="pre">'sparse'</span></code> tag.</p>
-</dd>
-</dl>
-<p>It is unlikely that the default values for each tag will suit the needs of your
-specific estimator. Additional tags can be created or default tags can be
-overridden by defining a <code class="docutils literal notranslate"><span class="pre">_more_tags()</span></code> method which returns a dict with the
-desired overridden tags or new tags. For example:</p>
+<a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator" title="sklearn.utils.estimator_checks.check_estimator"><code class="xref py py-func docutils literal notranslate"><span class="pre">check_estimator</span></code></a> function and
+the <a class="reference internal" href="../modules/generated/sklearn.utils.estimator_checks.parametrize_with_checks.html#sklearn.utils.estimator_checks.parametrize_with_checks" title="sklearn.utils.estimator_checks.parametrize_with_checks"><code class="xref py py-func docutils literal notranslate"><span class="pre">parametrize_with_checks</span></code></a>
+decorator. Tags determine which checks to run and what input data is
+appropriate. Tags can depend on estimator parameters or even system
+architecture and can in general only be determined at runtime and
+are therefore instance attributes rather than class attributes. See
+<a class="reference internal" href="../modules/generated/sklearn.utils.Tags.html#sklearn.utils.Tags" title="sklearn.utils.Tags"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tags</span></code></a> for more information about individual
+tags.</p>
+<p>It is unlikely that the default values for each tag will suit the
+needs of your specific estimator. You can change the default values by
+defining a <code class="docutils literal notranslate"><span class="pre">__sklearn_tags__()</span></code> method which returns the new values
+for your estimator’s tags. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyMultiOutputEstimator</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">_more_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;multioutput_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                <span class="s1">&#39;non_deterministic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="k">def</span> <span class="nf">__sklearn_tags__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__sklearn_tags__</span><span class="p">()</span>
+        <span class="n">tags</span><span class="o">.</span><span class="n">target_tags</span><span class="o">.</span><span class="n">single_output</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">tags</span><span class="o">.</span><span class="n">non_deterministic</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">tags</span>
 </pre></div>
 </div>
-<p>Any tag that is not in <code class="docutils literal notranslate"><span class="pre">_more_tags()</span></code> will just fall-back to the default values
-documented above.</p>
-<p>Even if it is not recommended, it is possible to override the method
-<code class="docutils literal notranslate"><span class="pre">_get_tags()</span></code>. Note however that <strong>all tags must be present in the dict</strong>. If
-any of the keys documented above is not present in the output of <code class="docutils literal notranslate"><span class="pre">_get_tags()</span></code>,
-an error will occur.</p>
+<p>You can create a new subclass of <a class="reference internal" href="../modules/generated/sklearn.utils.Tags.html#sklearn.utils.Tags" title="sklearn.utils.Tags"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tags</span></code></a> if you wish
+to add new tags to the existing set.</p>
 <p>In addition to the tags, estimators also need to declare any non-optional
 parameters to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in the <code class="docutils literal notranslate"><span class="pre">_required_parameters</span></code> class attribute,
 which is a list or tuple.  If <code class="docutils literal notranslate"><span class="pre">_required_parameters</span></code> is only
