@@ -959,7 +959,7 @@ for an example plotting the confidence ellipsoids for the
 <p class="rubric">Pros</p>
 <dl class="field-list simple">
 <dt class="field-odd">Automatic selection<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">when <code class="docutils literal notranslate"><span class="pre">weight_concentration_prior</span></code> is small enough and
+<dd class="field-odd"><p class="sd-card-text">When <code class="docutils literal notranslate"><span class="pre">weight_concentration_prior</span></code> is small enough and
 <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is larger than what is found necessary by the model, the
 Variational Bayesian mixture model has a natural tendency to set some mixture
 weights values close to zero. This makes it possible to let the model choose
@@ -969,7 +969,7 @@ active components is very application specific and is typically ill-defined
 in a data exploration setting.</p>
 </dd>
 <dt class="field-even">Less sensitivity to the number of parameters<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text">unlike finite models, which will
+<dd class="field-even"><p class="sd-card-text">Unlike finite models, which will
 almost always use all components as much as they can, and hence will produce
 wildly different solutions for different numbers of components, the
 variational inference with a Dirichlet process prior
@@ -977,7 +977,7 @@ variational inference with a Dirichlet process prior
 with changes to the parameters, leading to more stability and less tuning.</p>
 </dd>
 <dt class="field-odd">Regularization<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">due to the incorporation of prior information,
+<dd class="field-odd"><p class="sd-card-text">Due to the incorporation of prior information,
 variational solutions have less pathological special cases than
 expectation-maximization solutions.</p>
 </dd>
@@ -985,15 +985,15 @@ expectation-maximization solutions.</p>
 <p class="rubric">Cons</p>
 <dl class="field-list simple">
 <dt class="field-odd">Speed<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">the extra parametrization necessary for variational inference makes
+<dd class="field-odd"><p class="sd-card-text">The extra parametrization necessary for variational inference makes
 inference slower, although not by much.</p>
 </dd>
 <dt class="field-even">Hyperparameters<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text">this algorithm needs an extra hyperparameter
+<dd class="field-even"><p class="sd-card-text">This algorithm needs an extra hyperparameter
 that might need experimental tuning via cross-validation.</p>
 </dd>
 <dt class="field-odd">Bias<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">there are many implicit biases in the inference algorithms (and also in
+<dd class="field-odd"><p class="sd-card-text">There are many implicit biases in the inference algorithms (and also in
 the Dirichlet process if used), and whenever there is a mismatch between
 these biases and the data it might be possible to fit better models using a
 finite mixture.</p>
