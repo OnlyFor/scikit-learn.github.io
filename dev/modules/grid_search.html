@@ -778,30 +778,38 @@ values in [0.001, 0.0001].</p>
 evaluated and the best combination is retained.</p>
 <p class="rubric">Examples</p>
 <ul class="simple">
-<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_digits.html#sphx-glr-auto-examples-model-selection-plot-grid-search-digits-py"><span class="std std-ref">Custom refit strategy of a grid search with cross-validation</span></a> for an example of
-Grid Search computation on the digits dataset.</p></li>
+<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py"><span class="std std-ref">Nested versus non-nested cross-validation</span></a>
+for an example of Grid Search within a cross validation loop on the iris
+dataset. This is the best practice for evaluating the performance of a
+model with grid search.</p></li>
 <li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-plot-grid-search-text-feature-extraction-py"><span class="std std-ref">Sample pipeline for text feature extraction and evaluation</span></a> for an example
 of Grid Search coupling parameters from a text documents feature
 extractor (n-gram count vectorizer and TF-IDF transformer) with a
 classifier (here a linear SVM trained with SGD with either elastic
 net or L2 penalty) using a <a class="reference internal" href="generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> instance.</p></li>
-<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py"><span class="std std-ref">Nested versus non-nested cross-validation</span></a>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="advanced-examples">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Advanced examples<a class="headerlink" href="#advanced-examples" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">See <a class="reference internal" href="../auto_examples/model_selection/plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py"><span class="std std-ref">Nested versus non-nested cross-validation</span></a>
 for an example of Grid Search within a cross validation loop on the iris
 dataset. This is the best practice for evaluating the performance of a
 model with grid search.</p></li>
-<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_multi_metric_evaluation.html#sphx-glr-auto-examples-model-selection-plot-multi-metric-evaluation-py"><span class="std std-ref">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</span></a>
+<li><p class="sd-card-text">See <a class="reference internal" href="../auto_examples/model_selection/plot_multi_metric_evaluation.html#sphx-glr-auto-examples-model-selection-plot-multi-metric-evaluation-py"><span class="std std-ref">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</span></a>
 for an example of <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a> being used to evaluate multiple
 metrics simultaneously.</p></li>
-<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_refit_callable.html#sphx-glr-auto-examples-model-selection-plot-grid-search-refit-callable-py"><span class="std std-ref">Balance model complexity and cross-validated score</span></a>
+<li><p class="sd-card-text">See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_refit_callable.html#sphx-glr-auto-examples-model-selection-plot-grid-search-refit-callable-py"><span class="std std-ref">Balance model complexity and cross-validated score</span></a>
 for an example of using <code class="docutils literal notranslate"><span class="pre">refit=callable</span></code> interface in
 <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a>. The example shows how this interface adds certain
 amount of flexibility in identifying the “best” estimator. This interface
 can also be used in multiple metrics evaluation.</p></li>
-<li><p>See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_stats.html#sphx-glr-auto-examples-model-selection-plot-grid-search-stats-py"><span class="std std-ref">Statistical comparison of models using grid search</span></a>
+<li><p class="sd-card-text">See <a class="reference internal" href="../auto_examples/model_selection/plot_grid_search_stats.html#sphx-glr-auto-examples-model-selection-plot-grid-search-stats-py"><span class="std std-ref">Statistical comparison of models using grid search</span></a>
 for an example of how to do a statistical comparison on the outputs of
 <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a>.</p></li>
 </ul>
-</section>
+</div>
+</details></section>
 <section id="randomized-parameter-optimization">
 <span id="randomized-parameter-search"></span><h2><span class="section-number">3.2.2. </span>Randomized Parameter Optimization<a class="headerlink" href="#randomized-parameter-optimization" title="Link to this heading">#</a></h2>
 <p>While using a grid of parameter settings is currently the most widely used
@@ -894,7 +902,7 @@ here the number of samples.</p>
 </a>
 </figure>
 <p>We here briefly describe the main parameters, but each parameter and their
-interactions are described in more details in the sections below. The
+interactions are described more in detail in the dropdown section below. The
 <code class="docutils literal notranslate"><span class="pre">factor</span></code> (&gt; 1) parameter controls the rate at which the resources grow, and
 the rate at which the number of candidates decreases. In each iteration, the
 number of resources per candidate is multiplied by <code class="docutils literal notranslate"><span class="pre">factor</span></code> and the number
@@ -909,9 +917,7 @@ is available through tuning the <code class="docutils literal notranslate"><span
 <p>These estimators are still <strong>experimental</strong>: their predictions
 and their API might change without any deprecation cycle. To use them, you
 need to explicitly import <code class="docutils literal notranslate"><span class="pre">enable_halving_search_cv</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># explicitly require this experimental feature</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_halving_search_cv</span>  <span class="c1"># noqa</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># now you can import normally from model_selection</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_halving_search_cv</span>  <span class="c1"># noqa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">HalvingGridSearchCV</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">HalvingRandomSearchCV</span>
 </pre></div>
@@ -921,20 +927,22 @@ need to explicitly import <code class="docutils literal notranslate"><span class
 <li><p><a class="reference internal" href="../auto_examples/model_selection/plot_successive_halving_heatmap.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-heatmap-py"><span class="std std-ref">Comparison between grid search and successive halving</span></a></p></li>
 <li><p><a class="reference internal" href="../auto_examples/model_selection/plot_successive_halving_iterations.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-iterations-py"><span class="std std-ref">Successive Halving Iterations</span></a></p></li>
 </ul>
-<section id="choosing-min-resources-and-the-number-of-candidates">
-<h3><span class="section-number">3.2.3.1. </span>Choosing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> and the number of candidates<a class="headerlink" href="#choosing-min-resources-and-the-number-of-candidates" title="Link to this heading">#</a></h3>
-<p>Beside <code class="docutils literal notranslate"><span class="pre">factor</span></code>, the two main parameters that influence the behaviour of a
+<p>The sections below dive into technical aspects of successive halving.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="choosing-min_resources-and-the-number-of-candidates">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Choosing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> and the number of candidates<a class="headerlink" href="#choosing-min_resources-and-the-number-of-candidates" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Beside <code class="docutils literal notranslate"><span class="pre">factor</span></code>, the two main parameters that influence the behaviour of a
 successive halving search are the <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> parameter, and the
 number of candidates (or parameter combinations) that are evaluated.
 <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> is the amount of resources allocated at the first
 iteration for each candidate. The number of candidates is specified directly
 in <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a>, and is determined from the <code class="docutils literal notranslate"><span class="pre">param_grid</span></code>
 parameter of <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>.</p>
-<p>Consider a case where the resource is the number of samples, and where we
+<p class="sd-card-text">Consider a case where the resource is the number of samples, and where we
 have 1000 samples. In theory, with <code class="docutils literal notranslate"><span class="pre">min_resources=10</span></code> and <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>, we
 are able to run <strong>at most</strong> 7 iterations with the following number of
 samples: <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">40,</span> <span class="pre">80,</span> <span class="pre">160,</span> <span class="pre">320,</span> <span class="pre">640]</span></code>.</p>
-<p>But depending on the number of candidates, we might run less than 7
+<p class="sd-card-text">But depending on the number of candidates, we might run less than 7
 iterations: if we start with a <strong>small</strong> number of candidates, the last
 iteration might use less than 640 samples, which means not using all the
 available resources (samples). For example if we start with 5 candidates, we
@@ -946,20 +954,20 @@ disposal. On the other hand, if we start with a <strong>high</strong> number of
 candidates, we might end up with a lot of candidates at the last iteration,
 which may not always be ideal: it means that many candidates will run with
 the full resources, basically reducing the procedure to standard search.</p>
-<p>In the case of <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a>, the number of candidates is set
+<p class="sd-card-text">In the case of <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a>, the number of candidates is set
 by default such that the last iteration uses as much of the available
 resources as possible. For <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>, the number of
 candidates is determined by the <code class="docutils literal notranslate"><span class="pre">param_grid</span></code> parameter. Changing the value of
 <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> will impact the number of possible iterations, and as a
 result will also have an effect on the ideal number of candidates.</p>
-<p>Another consideration when choosing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> is whether or not it
+<p class="sd-card-text">Another consideration when choosing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> is whether or not it
 is easy to discriminate between good and bad candidates with a small amount
 of resources. For example, if you need a lot of samples to distinguish
 between good and bad parameters, a high <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> is recommended. On
 the other hand if the distinction is clear even with a small amount of
 samples, then a small <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> may be preferable since it would
 speed up the computation.</p>
-<p>Notice in the example above that the last iteration does not use the maximum
+<p class="sd-card-text">Notice in the example above that the last iteration does not use the maximum
 amount of resources available: 1000 samples are available, yet only 640 are
 used, at most. By default, both <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a> and
 <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a> try to use as many resources as possible in the
@@ -967,34 +975,34 @@ last iteration, with the constraint that this amount of resources must be a
 multiple of both <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> and <code class="docutils literal notranslate"><span class="pre">factor</span></code> (this constraint will be clear
 in the next section). <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a> achieves this by
 sampling the right amount of candidates, while <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>
-achieves this by properly setting <code class="docutils literal notranslate"><span class="pre">min_resources</span></code>. Please see
-<a class="reference internal" href="#exhausting-the-resources"><span class="std std-ref">Exhausting the available resources</span></a> for details.</p>
-</section>
-<section id="amount-of-resource-and-number-of-candidates-at-each-iteration">
-<span id="amount-of-resource-and-number-of-candidates"></span><h3><span class="section-number">3.2.3.2. </span>Amount of resource and number of candidates at each iteration<a class="headerlink" href="#amount-of-resource-and-number-of-candidates-at-each-iteration" title="Link to this heading">#</a></h3>
-<p>At any iteration <code class="docutils literal notranslate"><span class="pre">i</span></code>, each candidate is allocated a given amount of resources
+achieves this by properly setting <code class="docutils literal notranslate"><span class="pre">min_resources</span></code>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="amount-of-resource-and-number-of-candidates-at-each-iteration">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Amount of resource and number of candidates at each iteration<a class="headerlink" href="#amount-of-resource-and-number-of-candidates-at-each-iteration" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">At any iteration <code class="docutils literal notranslate"><span class="pre">i</span></code>, each candidate is allocated a given amount of resources
 which we denote <code class="docutils literal notranslate"><span class="pre">n_resources_i</span></code>. This quantity is controlled by the
 parameters <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> as follows (<code class="docutils literal notranslate"><span class="pre">factor</span></code> is strictly
 greater than 1):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_resources_i</span> <span class="o">=</span> <span class="n">factor</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">min_resources</span><span class="p">,</span>
 </pre></div>
 </div>
-<p>or equivalently:</p>
+<p class="sd-card-text">or equivalently:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_resources_</span><span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">}</span> <span class="o">=</span> <span class="n">n_resources_i</span> <span class="o">*</span> <span class="n">factor</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">min_resources</span> <span class="pre">==</span> <span class="pre">n_resources_0</span></code> is the amount of resources used at
+<p class="sd-card-text">where <code class="docutils literal notranslate"><span class="pre">min_resources</span> <span class="pre">==</span> <span class="pre">n_resources_0</span></code> is the amount of resources used at
 the first iteration. <code class="docutils literal notranslate"><span class="pre">factor</span></code> also defines the proportions of candidates
 that will be selected for the next iteration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_candidates_i</span> <span class="o">=</span> <span class="n">n_candidates</span> <span class="o">//</span> <span class="p">(</span><span class="n">factor</span> <span class="o">**</span> <span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or equivalently:</p>
+<p class="sd-card-text">or equivalently:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_candidates_0</span> <span class="o">=</span> <span class="n">n_candidates</span>
 <span class="n">n_candidates_</span><span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">}</span> <span class="o">=</span> <span class="n">n_candidates_i</span> <span class="o">//</span> <span class="n">factor</span>
 </pre></div>
 </div>
-<p>So in the first iteration, we use <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> resources
+<p class="sd-card-text">So in the first iteration, we use <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> resources
 <code class="docutils literal notranslate"><span class="pre">n_candidates</span></code> times. In the second iteration, we use <code class="docutils literal notranslate"><span class="pre">min_resources</span> <span class="pre">*</span>
 <span class="pre">factor</span></code> resources <code class="docutils literal notranslate"><span class="pre">n_candidates</span> <span class="pre">//</span> <span class="pre">factor</span></code> times. The third again
 multiplies the resources per candidate and divides the number of candidates.
@@ -1002,39 +1010,39 @@ This process stops when the maximum amount of resource per candidate is
 reached, or when we have identified the best candidate. The best candidate
 is identified at the iteration that is evaluating <code class="docutils literal notranslate"><span class="pre">factor</span></code> or less candidates
 (see just below for an explanation).</p>
-<p>Here is an example with <code class="docutils literal notranslate"><span class="pre">min_resources=3</span></code> and <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>, starting with
+<p class="sd-card-text">Here is an example with <code class="docutils literal notranslate"><span class="pre">min_resources=3</span></code> and <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>, starting with
 70 candidates:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">n_resources_i</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">n_candidates_i</span></code></p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">n_resources_i</span></code></p></th>
+<th class="head"><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">n_candidates_i</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>3 (=min_resources)</p></td>
-<td><p>70 (=n_candidates)</p></td>
+<tr class="row-even"><td><p class="sd-card-text">3 (=min_resources)</p></td>
+<td><p class="sd-card-text">70 (=n_candidates)</p></td>
 </tr>
-<tr class="row-odd"><td><p>3 * 2 = 6</p></td>
-<td><p>70 // 2 = 35</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">3 * 2 = 6</p></td>
+<td><p class="sd-card-text">70 // 2 = 35</p></td>
 </tr>
-<tr class="row-even"><td><p>6 * 2 = 12</p></td>
-<td><p>35 // 2 = 17</p></td>
+<tr class="row-even"><td><p class="sd-card-text">6 * 2 = 12</p></td>
+<td><p class="sd-card-text">35 // 2 = 17</p></td>
 </tr>
-<tr class="row-odd"><td><p>12 * 2 = 24</p></td>
-<td><p>17 // 2 = 8</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">12 * 2 = 24</p></td>
+<td><p class="sd-card-text">17 // 2 = 8</p></td>
 </tr>
-<tr class="row-even"><td><p>24 * 2 = 48</p></td>
-<td><p>8 // 2 = 4</p></td>
+<tr class="row-even"><td><p class="sd-card-text">24 * 2 = 48</p></td>
+<td><p class="sd-card-text">8 // 2 = 4</p></td>
 </tr>
-<tr class="row-odd"><td><p>48 * 2 = 96</p></td>
-<td><p>4 // 2 = 2</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">48 * 2 = 96</p></td>
+<td><p class="sd-card-text">4 // 2 = 2</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>We can note that:</p>
+<p class="sd-card-text">We can note that:</p>
 <ul class="simple">
-<li><p>the process stops at the first iteration which evaluates <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>
+<li><p class="sd-card-text">the process stops at the first iteration which evaluates <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>
 candidates: the best candidate is the best out of these 2 candidates. It
 is not necessary to run an additional iteration, since it would only
 evaluate one candidate (namely the best one, which we have already
@@ -1042,15 +1050,16 @@ identified). For this reason, in general, we want the last iteration to
 run at most <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates. If the last iteration evaluates more
 than <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates, then this last iteration reduces to a regular
 search (as in <a class="reference internal" href="generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV" title="sklearn.model_selection.RandomizedSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code></a> or <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a>).</p></li>
-<li><p>each <code class="docutils literal notranslate"><span class="pre">n_resources_i</span></code> is a multiple of both <code class="docutils literal notranslate"><span class="pre">factor</span></code> and
+<li><p class="sd-card-text">each <code class="docutils literal notranslate"><span class="pre">n_resources_i</span></code> is a multiple of both <code class="docutils literal notranslate"><span class="pre">factor</span></code> and
 <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> (which is confirmed by its definition above).</p></li>
 </ul>
-<p>The amount of resources that is used at each iteration can be found in the
+<p class="sd-card-text">The amount of resources that is used at each iteration can be found in the
 <code class="docutils literal notranslate"><span class="pre">n_resources_</span></code> attribute.</p>
-</section>
-<section id="choosing-a-resource">
-<h3><span class="section-number">3.2.3.3. </span>Choosing a resource<a class="headerlink" href="#choosing-a-resource" title="Link to this heading">#</a></h3>
-<p>By default, the resource is defined in terms of number of samples. That is,
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="choosing-a-resource">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Choosing a resource<a class="headerlink" href="#choosing-a-resource" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">By default, the resource is defined in terms of number of samples. That is,
 each iteration will use an increasing amount of samples to train on. You can
 however manually specify a parameter to use as the resource with the
 <code class="docutils literal notranslate"><span class="pre">resource</span></code> parameter. Here is an example where the resource is defined in
@@ -1060,7 +1069,6 @@ terms of the number of estimators of a random forest:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_halving_search_cv</span>  <span class="c1"># noqa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">HalvingGridSearchCV</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">base_estimator</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1072,12 +1080,13 @@ terms of the number of estimators of a random forest:</p>
 <span class="go">RandomForestClassifier(max_depth=5, n_estimators=24, random_state=0)</span>
 </pre></div>
 </div>
-<p>Note that it is not possible to budget on a parameter that is part of the
+<p class="sd-card-text">Note that it is not possible to budget on a parameter that is part of the
 parameter grid.</p>
-</section>
-<section id="exhausting-the-available-resources">
-<span id="exhausting-the-resources"></span><h3><span class="section-number">3.2.3.4. </span>Exhausting the available resources<a class="headerlink" href="#exhausting-the-available-resources" title="Link to this heading">#</a></h3>
-<p>As mentioned above, the number of resources that is used at each iteration
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="exhausting-the-available-resources">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Exhausting the available resources<a class="headerlink" href="#exhausting-the-available-resources" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As mentioned above, the number of resources that is used at each iteration
 depends on the <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> parameter.
 If you have a lot of resources available but start with a low number of
 resources, some of them might be wasted (i.e. not used):</p>
@@ -1096,10 +1105,10 @@ resources, some of them might be wasted (i.e. not used):</p>
 <span class="go">[20, 40, 80]</span>
 </pre></div>
 </div>
-<p>The search process will only use 80 resources at most, while our maximum
+<p class="sd-card-text">The search process will only use 80 resources at most, while our maximum
 amount of available resources is <code class="docutils literal notranslate"><span class="pre">n_samples=1000</span></code>. Here, we have
 <code class="docutils literal notranslate"><span class="pre">min_resources</span> <span class="pre">=</span> <span class="pre">r_0</span> <span class="pre">=</span> <span class="pre">20</span></code>.</p>
-<p>For <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>, by default, the <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> parameter
+<p class="sd-card-text">For <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>, by default, the <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> parameter
 is set to ‘exhaust’. This means that <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> is automatically set
 such that the last iteration can use as many resources as possible, within
 the <code class="docutils literal notranslate"><span class="pre">max_resources</span></code> limit:</p>
@@ -1109,36 +1118,39 @@ the <code class="docutils literal notranslate"><span class="pre">max_resources</
 <span class="go">[250, 500, 1000]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">min_resources</span></code> was here automatically set to 250, which results in the last
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">min_resources</span></code> was here automatically set to 250, which results in the last
 iteration using all the resources. The exact value that is used depends on
 the number of candidate parameter, on <code class="docutils literal notranslate"><span class="pre">max_resources</span></code> and on <code class="docutils literal notranslate"><span class="pre">factor</span></code>.</p>
-<p>For <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a>, exhausting the resources can be done in 2
+<p class="sd-card-text">For <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a>, exhausting the resources can be done in 2
 ways:</p>
 <ul class="simple">
-<li><p>by setting <code class="docutils literal notranslate"><span class="pre">min_resources='exhaust'</span></code>, just like for
+<li><p class="sd-card-text">by setting <code class="docutils literal notranslate"><span class="pre">min_resources='exhaust'</span></code>, just like for
 <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a>;</p></li>
-<li><p>by setting <code class="docutils literal notranslate"><span class="pre">n_candidates='exhaust'</span></code>.</p></li>
+<li><p class="sd-card-text">by setting <code class="docutils literal notranslate"><span class="pre">n_candidates='exhaust'</span></code>.</p></li>
 </ul>
-<p>Both options are mutually exclusive: using <code class="docutils literal notranslate"><span class="pre">min_resources='exhaust'</span></code> requires
+<p class="sd-card-text">Both options are mutually exclusive: using <code class="docutils literal notranslate"><span class="pre">min_resources='exhaust'</span></code> requires
 knowing the number of candidates, and symmetrically <code class="docutils literal notranslate"><span class="pre">n_candidates='exhaust'</span></code>
 requires knowing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code>.</p>
-<p>In general, exhausting the total number of resources leads to a better final
+<p class="sd-card-text">In general, exhausting the total number of resources leads to a better final
 candidate parameter, and is slightly more time-intensive.</p>
-</section>
-<section id="aggressive-elimination-of-candidates">
-<span id="aggressive-elimination"></span><h3><span class="section-number">3.2.3.5. </span>Aggressive elimination of candidates<a class="headerlink" href="#aggressive-elimination-of-candidates" title="Link to this heading">#</a></h3>
-<p>Ideally, we want the last iteration to evaluate <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates (see
-<a class="reference internal" href="#amount-of-resource-and-number-of-candidates"><span class="std std-ref">Amount of resource and number of candidates at each iteration</span></a>). We then just have to
-pick the best one. When the number of available resources is small with
-respect to the number of candidates, the last iteration may have to evaluate
-more than <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates:</p>
+</div>
+</details><section id="aggressive-elimination-of-candidates">
+<span id="aggressive-elimination"></span><h3><span class="section-number">3.2.3.1. </span>Aggressive elimination of candidates<a class="headerlink" href="#aggressive-elimination-of-candidates" title="Link to this heading">#</a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">aggressive_elimination</span></code> parameter, you can force the search
+process to end up with less than <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates at the last
+iteration.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="code-example-of-aggressive-elimination">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Code example of aggressive elimination<a class="headerlink" href="#code-example-of-aggressive-elimination" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Ideally, we want the last iteration to evaluate <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates. We
+then just have to pick the best one. When the number of available resources is
+small with respect to the number of candidates, the last iteration may have to
+evaluate more than <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_halving_search_cv</span>  <span class="c1"># noqa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">HalvingGridSearchCV</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">),</span>
 <span class="gp">... </span>              <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">base_estimator</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="s1">&#39;scale&#39;</span><span class="p">)</span>
@@ -1152,114 +1164,115 @@ more than <code class="docutils literal notranslate"><span class="pre">factor</s
 <span class="go">[6, 3]</span>
 </pre></div>
 </div>
-<p>Since we cannot use more than <code class="docutils literal notranslate"><span class="pre">max_resources=40</span></code> resources, the process
+<p class="sd-card-text">Since we cannot use more than <code class="docutils literal notranslate"><span class="pre">max_resources=40</span></code> resources, the process
 has to stop at the second iteration which evaluates more than <code class="docutils literal notranslate"><span class="pre">factor=2</span></code>
 candidates.</p>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">aggressive_elimination</span></code> parameter, you can force the search
-process to end up with less than <code class="docutils literal notranslate"><span class="pre">factor</span></code> candidates at the last
-iteration. To do this, the process will eliminate as many candidates as
-necessary using <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> resources:</p>
+<p class="sd-card-text">When using <code class="docutils literal notranslate"><span class="pre">aggressive_elimination</span></code>, the process will eliminate as many
+candidates as necessary using <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> resources:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sh</span> <span class="o">=</span> <span class="n">HalvingGridSearchCV</span><span class="p">(</span><span class="n">base_estimator</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="n">max_resources</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="n">aggressive_elimination</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sh</span><span class="o">.</span><span class="n">n_resources_</span>
-<span class="go">[20, 20,  40]</span>
+<span class="go">[20, 20, 40]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sh</span><span class="o">.</span><span class="n">n_candidates_</span>
 <span class="go">[6, 3, 2]</span>
 </pre></div>
 </div>
-<p>Notice that we end with 2 candidates at the last iteration since we have
+<p class="sd-card-text">Notice that we end with 2 candidates at the last iteration since we have
 eliminated enough candidates during the first iterations, using <code class="docutils literal notranslate"><span class="pre">n_resources</span> <span class="pre">=</span>
 <span class="pre">min_resources</span> <span class="pre">=</span> <span class="pre">20</span></code>.</p>
-</section>
+</div>
+</details></section>
 <section id="analyzing-results-with-the-cv-results-attribute">
-<span id="successive-halving-cv-results"></span><h3><span class="section-number">3.2.3.6. </span>Analyzing results with the <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute<a class="headerlink" href="#analyzing-results-with-the-cv-results-attribute" title="Link to this heading">#</a></h3>
+<span id="successive-halving-cv-results"></span><h3><span class="section-number">3.2.3.2. </span>Analyzing results with the <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute<a class="headerlink" href="#analyzing-results-with-the-cv-results-attribute" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute contains useful information for analyzing the
 results of a search. It can be converted to a pandas dataframe with <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span>
 <span class="pre">pd.DataFrame(est.cv_results_)</span></code>. The <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute of
 <a class="reference internal" href="generated/sklearn.model_selection.HalvingGridSearchCV.html#sklearn.model_selection.HalvingGridSearchCV" title="sklearn.model_selection.HalvingGridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingGridSearchCV</span></code></a> and <a class="reference internal" href="generated/sklearn.model_selection.HalvingRandomSearchCV.html#sklearn.model_selection.HalvingRandomSearchCV" title="sklearn.model_selection.HalvingRandomSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">HalvingRandomSearchCV</span></code></a> is similar
 to that of <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a> and <a class="reference internal" href="generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV" title="sklearn.model_selection.RandomizedSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code></a>, with
 additional information related to the successive halving process.</p>
-<p>Here is an example with some of the columns of a (truncated) dataframe:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="example-of-a-(truncated)-output-dataframe:">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example of a (truncated) output dataframe:<a class="headerlink" href="#example-of-a-(truncated)-output-dataframe:" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"></th>
-<th class="head"><p>iter</p></th>
-<th class="head"><p>n_resources</p></th>
-<th class="head"><p>mean_test_score</p></th>
-<th class="head"><p>params</p></th>
+<th class="head"><p class="sd-card-text">iter</p></th>
+<th class="head"><p class="sd-card-text">n_resources</p></th>
+<th class="head"><p class="sd-card-text">mean_test_score</p></th>
+<th class="head"><p class="sd-card-text">params</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>125</p></td>
-<td><p>0.983667</p></td>
-<td><p>{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 5}</p></td>
+<tr class="row-even"><td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">125</p></td>
+<td><p class="sd-card-text">0.983667</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 5}</p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>125</p></td>
-<td><p>0.983667</p></td>
-<td><p>{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 8, ‘min_samples_split’: 7}</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">125</p></td>
+<td><p class="sd-card-text">0.983667</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 8, ‘min_samples_split’: 7}</p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>0</p></td>
-<td><p>125</p></td>
-<td><p>0.983667</p></td>
-<td><p>{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 10}</p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">125</p></td>
+<td><p class="sd-card-text">0.983667</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 10}</p></td>
 </tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>0</p></td>
-<td><p>125</p></td>
-<td><p>0.983667</p></td>
-<td><p>{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 6, ‘min_samples_split’: 6}</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">125</p></td>
+<td><p class="sd-card-text">0.983667</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 6, ‘min_samples_split’: 6}</p></td>
 </tr>
-<tr class="row-even"><td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
+<tr class="row-even"><td><p class="sd-card-text">…</p></td>
+<td><p class="sd-card-text">…</p></td>
+<td><p class="sd-card-text">…</p></td>
+<td><p class="sd-card-text">…</p></td>
+<td><p class="sd-card-text">…</p></td>
 </tr>
-<tr class="row-odd"><td><p>15</p></td>
-<td><p>2</p></td>
-<td><p>500</p></td>
-<td><p>0.951958</p></td>
-<td><p>{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 10}</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">15</p></td>
+<td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">500</p></td>
+<td><p class="sd-card-text">0.951958</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 10}</p></td>
 </tr>
-<tr class="row-even"><td><p>16</p></td>
-<td><p>2</p></td>
-<td><p>500</p></td>
-<td><p>0.947958</p></td>
-<td><p>{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 10}</p></td>
+<tr class="row-even"><td><p class="sd-card-text">16</p></td>
+<td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">500</p></td>
+<td><p class="sd-card-text">0.947958</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 10}</p></td>
 </tr>
-<tr class="row-odd"><td><p>17</p></td>
-<td><p>2</p></td>
-<td><p>500</p></td>
-<td><p>0.951958</p></td>
-<td><p>{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 4}</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">17</p></td>
+<td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">500</p></td>
+<td><p class="sd-card-text">0.951958</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 4}</p></td>
 </tr>
-<tr class="row-even"><td><p>18</p></td>
-<td><p>3</p></td>
-<td><p>1000</p></td>
-<td><p>0.961009</p></td>
-<td><p>{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 10}</p></td>
+<tr class="row-even"><td><p class="sd-card-text">18</p></td>
+<td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">1000</p></td>
+<td><p class="sd-card-text">0.961009</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘log_loss’, ‘max_depth’: None, ‘max_features’: 9, ‘min_samples_split’: 10}</p></td>
 </tr>
-<tr class="row-odd"><td><p>19</p></td>
-<td><p>3</p></td>
-<td><p>1000</p></td>
-<td><p>0.955989</p></td>
-<td><p>{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 4}</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">19</p></td>
+<td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">1000</p></td>
+<td><p class="sd-card-text">0.955989</p></td>
+<td><p class="sd-card-text">{‘criterion’: ‘gini’, ‘max_depth’: None, ‘max_features’: 10, ‘min_samples_split’: 4}</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Each row corresponds to a given parameter combination (a candidate) and a given
+<p class="sd-card-text">Each row corresponds to a given parameter combination (a candidate) and a given
 iteration. The iteration is given by the <code class="docutils literal notranslate"><span class="pre">iter</span></code> column. The <code class="docutils literal notranslate"><span class="pre">n_resources</span></code>
 column tells you how many resources were used.</p>
-<p>In the example above, the best parameter combination is <code class="docutils literal notranslate"><span class="pre">{'criterion':</span>
+<p class="sd-card-text">In the example above, the best parameter combination is <code class="docutils literal notranslate"><span class="pre">{'criterion':</span>
 <span class="pre">'log_loss',</span> <span class="pre">'max_depth':</span> <span class="pre">None,</span> <span class="pre">'max_features':</span> <span class="pre">9,</span> <span class="pre">'min_samples_split':</span> <span class="pre">10}</span></code>
 since it has reached the last iteration (3) with the highest score:
 0.96.</p>
@@ -1267,18 +1280,19 @@ since it has reached the last iteration (3) with the highest score:
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>K. Jamieson, A. Talwalkar,
+<p class="sd-card-text">K. Jamieson, A. Talwalkar,
 <a class="reference external" href="http://proceedings.mlr.press/v51/jamieson16.html">Non-stochastic Best Arm Identification and Hyperparameter
 Optimization</a>, in
 proc. of Machine Learning Research, 2016.</p>
 </aside>
 <aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>L. Li, K. Jamieson, G. DeSalvo, A. Rostamizadeh, A. Talwalkar,
+<p class="sd-card-text">L. Li, K. Jamieson, G. DeSalvo, A. Rostamizadeh, A. Talwalkar,
 <a class="reference external" href="https://arxiv.org/abs/1603.06560">Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization</a>, in Machine Learning Research 18, 2018.</p>
 </aside>
 </aside>
-</section>
+</div>
+</details></section>
 </section>
 <section id="tips-for-parameter-search">
 <span id="grid-search-tips"></span><h2><span class="section-number">3.2.4. </span>Tips for parameter search<a class="headerlink" href="#tips-for-parameter-search" title="Link to this heading">#</a></h2>
@@ -1331,7 +1345,7 @@ parameters of composite or nested estimators such as
 <span class="gp">&gt;&gt;&gt; </span><span class="n">search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">calibrated_forest</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="go">GridSearchCV(cv=5,</span>
-<span class="go">             estimator=CalibratedClassifierCV(...),</span>
+<span class="go">             estimator=CalibratedClassifierCV(estimator=RandomForestClassifier(n_estimators=10)),</span>
 <span class="go">             param_grid={&#39;estimator__max_depth&#39;: [2, 4, 6, 8]})</span>
 </pre></div>
 </div>
@@ -1376,12 +1390,11 @@ entry for <a class="reference internal" href="../glossary.html#term-n_jobs"><spa
 </section>
 <section id="robustness-to-failure">
 <h3><span class="section-number">3.2.4.6. </span>Robustness to failure<a class="headerlink" href="#robustness-to-failure" title="Link to this heading">#</a></h3>
-<p>Some parameter settings may result in a failure to <code class="docutils literal notranslate"><span class="pre">fit</span></code> one or more folds
-of the data.  By default, this will cause the entire search to fail, even if
-some parameter settings could be fully evaluated. Setting <code class="docutils literal notranslate"><span class="pre">error_score=0</span></code>
-(or <code class="docutils literal notranslate"><span class="pre">=np.nan</span></code>) will make the procedure robust to such failure, issuing a
-warning and setting the score for that fold to 0 (or <code class="docutils literal notranslate"><span class="pre">nan</span></code>), but completing
-the search.</p>
+<p>Some parameter settings may result in a failure to <code class="docutils literal notranslate"><span class="pre">fit</span></code> one or more folds of
+the data. By default, the score for those settings will be <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. This can
+be controlled by setting <code class="docutils literal notranslate"><span class="pre">error_score=&quot;raise&quot;</span></code> to raise an exception if one fit
+fails, or for example <code class="docutils literal notranslate"><span class="pre">error_score=0</span></code> to set another value for the score of
+failing parameter combinations.</p>
 </section>
 </section>
 <section id="alternatives-to-brute-force-parameter-search">
@@ -1540,12 +1553,8 @@ model selection.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exhaustive-grid-search">3.2.1. Exhaustive Grid Search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomized-parameter-optimization">3.2.2. Randomized Parameter Optimization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-optimal-parameters-with-successive-halving">3.2.3. Searching for optimal parameters with successive halving</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-min-resources-and-the-number-of-candidates">3.2.3.1. Choosing <code class="docutils literal notranslate"><span class="pre">min_resources</span></code> and the number of candidates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amount-of-resource-and-number-of-candidates-at-each-iteration">3.2.3.2. Amount of resource and number of candidates at each iteration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-resource">3.2.3.3. Choosing a resource</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exhausting-the-available-resources">3.2.3.4. Exhausting the available resources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggressive-elimination-of-candidates">3.2.3.5. Aggressive elimination of candidates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-results-with-the-cv-results-attribute">3.2.3.6. Analyzing results with the <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggressive-elimination-of-candidates">3.2.3.1. Aggressive elimination of candidates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-results-with-the-cv-results-attribute">3.2.3.2. Analyzing results with the <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-parameter-search">3.2.4. Tips for parameter search</a><ul class="nav section-nav flex-column">
