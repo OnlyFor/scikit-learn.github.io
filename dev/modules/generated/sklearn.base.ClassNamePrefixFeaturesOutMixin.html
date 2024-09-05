@@ -1228,6 +1228,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.check_symmetric.html">check_symmetric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.column_or_1d.html">column_or_1d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.has_fit_parameter.html">has_fit_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.validate_data.html">validate_data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.metaestimators.available_if.html">available_if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.class_weight.compute_class_weight.html">compute_class_weight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.class_weight.compute_sample_weight.html">compute_sample_weight</a></li>
@@ -1335,7 +1336,7 @@ document.write(`
 <h1>ClassNamePrefixFeaturesOutMixin<a class="headerlink" href="#classnameprefixfeaturesoutmixin" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.base.ClassNamePrefixFeaturesOutMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.base.</span></span><span class="sig-name descname"><span class="pre">ClassNamePrefixFeaturesOutMixin</span></span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/5b6622bf5/sklearn/base.py#L1131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.ClassNamePrefixFeaturesOutMixin" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.base.</span></span><span class="sig-name descname"><span class="pre">ClassNamePrefixFeaturesOutMixin</span></span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d0bec5fc/sklearn/base.py#L870"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.ClassNamePrefixFeaturesOutMixin" title="Link to this definition">#</a></dt>
 <dd><p>Mixin class for transformers that generate their own names by prefixing.</p>
 <p>This mixin is useful when the transformer needs to generate its own feature
 names out, such as <a class="reference internal" href="sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PCA</span></code></a>. For example, if
@@ -1358,7 +1359,7 @@ that the transformer will return in <code class="docutils literal notranslate"><
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.base.ClassNamePrefixFeaturesOutMixin.get_feature_names_out">
-<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/5b6622bf5/sklearn/base.py#L1156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.ClassNamePrefixFeaturesOutMixin.get_feature_names_out" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d0bec5fc/sklearn/base.py#L895"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.base.ClassNamePrefixFeaturesOutMixin.get_feature_names_out" title="Link to this definition">#</a></dt>
 <dd><p>Get output feature names for transformation.</p>
 <p>The feature names out will prefixed by the lowercased class name. For
 example, if the transformer outputs 3 features, then the feature names

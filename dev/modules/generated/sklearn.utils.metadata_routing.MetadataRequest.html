@@ -1228,6 +1228,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.check_symmetric.html">check_symmetric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.column_or_1d.html">column_or_1d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.has_fit_parameter.html">has_fit_parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sklearn.utils.validation.validate_data.html">validate_data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.metaestimators.available_if.html">available_if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.class_weight.compute_class_weight.html">compute_class_weight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sklearn.utils.class_weight.compute_sample_weight.html">compute_sample_weight</a></li>
@@ -1335,7 +1336,7 @@ document.write(`
 <h1>MetadataRequest<a class="headerlink" href="#metadatarequest" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.utils.metadata_routing.MetadataRequest">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.utils.metadata_routing.</span></span><span class="sig-name descname"><span class="pre">MetadataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/5b6622bf5/sklearn/utils/_metadata_requests.py#L509"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.metadata_routing.MetadataRequest" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sklearn.utils.metadata_routing.</span></span><span class="sig-name descname"><span class="pre">MetadataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d0bec5fc/sklearn/utils/_metadata_requests.py#L509"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.metadata_routing.MetadataRequest" title="Link to this definition">#</a></dt>
 <dd><p>Contains the metadata request info of a consumer.</p>
 <p>Instances of <code class="docutils literal notranslate"><span class="pre">MethodMetadataRequest</span></code> are used in this class for each
 available method under <code class="docutils literal notranslate"><span class="pre">metadatarequest.{method}</span></code>.</p>
@@ -1354,7 +1355,7 @@ version of this class as the output of <code class="docutils literal notranslate
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.utils.metadata_routing.MetadataRequest.consumes">
-<span class="sig-name descname"><span class="pre">consumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/5b6622bf5/sklearn/utils/_metadata_requests.py#L540"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.metadata_routing.MetadataRequest.consumes" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">consumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d0bec5fc/sklearn/utils/_metadata_requests.py#L540"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.metadata_routing.MetadataRequest.consumes" title="Link to this definition">#</a></dt>
 <dd><p>Check whether the given parameters are consumed by the given method.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 1.4.</span></p>

@@ -8791,6 +8791,22 @@ reference on concepts repeated across the API, see :ref:`glossary`.
 
 
 
+  * - :obj:`~sklearn.utils.validation.validate_data`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.utils.validation
+
+        .. autoshortsummary:: sklearn.utils.validation.validate_data
+
+        .. div:: caption
+
+          :mod:`sklearn.utils.validation`
+
+
+
+
+
 
 
   * - :obj:`~sklearn.utils.metaestimators.available_if`

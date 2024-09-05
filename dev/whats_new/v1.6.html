@@ -679,6 +679,11 @@ future; or a feature will be removed in the future.</p></li>
 <section id="changes-impacting-many-modules">
 <h3>Changes impacting many modules<a class="headerlink" href="#changes-impacting-many-modules" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p><span class="raw-html"><span class="badge text-bg-warning">API Change</span></span>  <a class="reference internal" href="../modules/generated/sklearn.utils.validation.validate_data.html#sklearn.utils.validation.validate_data" title="sklearn.utils.validation.validate_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.validation.validate_data</span></code></a> is introduced and replaces previously
+private <code class="docutils literal notranslate"><span class="pre">base.BaseEstimator._validate_data</span></code> method. This is intended for third party
+estimator developers, who should use this function in most cases instead of
+<code class="xref py py-func docutils literal notranslate"><span class="pre">utils.validation.check_array</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">utils.validation.check_X_y</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29696">#29696</a> by <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge text-bg-info">Enhancement</span></span>  <code class="docutils literal notranslate"><span class="pre">__sklearn_tags__</span></code> was introduced for setting tags in estimators.
 More details in <a class="reference internal" href="../developers/develop.html#estimator-tags"><span class="std std-ref">Estimator Tags</span></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22606">#22606</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a> and <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29677">#29677</a> by <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>

@@ -80,6 +80,7 @@ Input and parameter validation
   validation.check_symmetric
   validation.column_or_1d
   validation.has_fit_parameter
+  validation.validate_data
 
 
 .. _utils_ref-meta-estimators:
