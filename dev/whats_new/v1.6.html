@@ -886,6 +886,9 @@ computing the mean value for uniform weights.
 <section id="sklearn-linear-model">
 <h4><a class="reference internal" href="../api/sklearn.linear_model.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a><a class="headerlink" href="#sklearn-linear-model" title="Link to this heading">#</a></h4>
 <ul class="simple">
+<li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LogisticRegressionCV</span></code></a> corrects sample weight handling
+for the calculation of test scores.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29419">#29419</a> by <a class="reference external" href="https://github.com/snath-xoc">Shruti Nath</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge text-bg-warning">API Change</span></span>  Deprecates <code class="docutils literal notranslate"><span class="pre">copy_X</span></code> in <a class="reference internal" href="../modules/generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.TheilSenRegressor</span></code></a> as the parameter
 has no effect. <code class="docutils literal notranslate"><span class="pre">copy_X</span></code> will be removed in 1.8.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29105">#29105</a> by <a class="reference external" href="https://github.com/adam2392">Adam Li</a>.</p></li>
