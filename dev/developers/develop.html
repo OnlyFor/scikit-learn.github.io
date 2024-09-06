@@ -1175,14 +1175,6 @@ for your estimator’s tags. For example:</p>
 </div>
 <p>You can create a new subclass of <a class="reference internal" href="../modules/generated/sklearn.utils.Tags.html#sklearn.utils.Tags" title="sklearn.utils.Tags"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tags</span></code></a> if you wish
 to add new tags to the existing set.</p>
-<p>In addition to the tags, estimators also need to declare any non-optional
-parameters to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in the <code class="docutils literal notranslate"><span class="pre">_required_parameters</span></code> class attribute,
-which is a list or tuple.  If <code class="docutils literal notranslate"><span class="pre">_required_parameters</span></code> is only
-<code class="docutils literal notranslate"><span class="pre">[&quot;estimator&quot;]</span></code> or <code class="docutils literal notranslate"><span class="pre">[&quot;base_estimator&quot;]</span></code>, then the estimator will be
-instantiated with an instance of <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> (or
-<code class="docutils literal notranslate"><span class="pre">RidgeRegression</span></code> if the estimator is a regressor) in the tests. The choice
-of these two models is somewhat idiosyncratic but both should provide robust
-closed-form solutions.</p>
 </section>
 </section>
 <section id="developer-api-for-set-output">
