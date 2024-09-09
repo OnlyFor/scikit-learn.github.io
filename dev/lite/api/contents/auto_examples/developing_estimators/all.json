@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-09-09T08:26:17.413257Z",
+      "created": "2024-09-09T08:53:05.967440Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-09T08:26:13.909233Z",
+      "last_modified": "2024-09-09T08:53:02.179428Z",
       "mimetype": null,
       "name": "sklearn_is_fitted.ipynb",
       "path": "auto_examples/developing_estimators/sklearn_is_fitted.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2024-09-09T08:26:17.413257Z",
+  "created": "2024-09-09T08:53:05.967440Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-09-09T08:26:17.413257Z",
+  "last_modified": "2024-09-09T08:53:05.967440Z",
   "mimetype": null,
   "name": "developing_estimators",
   "path": "auto_examples/developing_estimators",
