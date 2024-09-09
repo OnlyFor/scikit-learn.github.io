@@ -892,6 +892,10 @@ for the calculation of test scores.
 <li><p><span class="raw-html"><span class="badge text-bg-warning">API Change</span></span>  Deprecates <code class="docutils literal notranslate"><span class="pre">copy_X</span></code> in <a class="reference internal" href="../modules/generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.TheilSenRegressor</span></code></a> as the parameter
 has no effect. <code class="docutils literal notranslate"><span class="pre">copy_X</span></code> will be removed in 1.8.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29105">#29105</a> by <a class="reference external" href="https://github.com/adam2392">Adam Li</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV" title="sklearn.linear_model.LassoCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LassoCV</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV" title="sklearn.linear_model.ElasticNetCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.ElasticNetCV</span></code></a> now
+take sample weights into accounts to define the search grid for the internally tuned
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code> hyper-parameter. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29442">#29442</a> by <a class="reference external" href="https://github.com/snath-xoc">John Hopfensperger &lt;s-banach&gt; and
+:user:`Shruti Nath</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-manifold">
