@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-09-10T18:34:05.772286Z",
+      "created": "2024-09-10T19:10:25.303356Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-10T18:34:00.664096Z",
+      "last_modified": "2024-09-10T19:10:21.055286Z",
       "mimetype": null,
       "name": "plot_iterative_imputer_variants_comparison.ipynb",
       "path": "auto_examples/impute/plot_iterative_imputer_variants_comparison.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2024-09-10T18:34:05.772286Z",
+      "created": "2024-09-10T19:10:25.303356Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-10T18:34:00.664096Z",
+      "last_modified": "2024-09-10T19:10:21.055286Z",
       "mimetype": null,
       "name": "plot_missing_values.ipynb",
       "path": "auto_examples/impute/plot_missing_values.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2024-09-10T18:34:05.772286Z",
+  "created": "2024-09-10T19:10:25.303356Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-09-10T18:34:05.772286Z",
+  "last_modified": "2024-09-10T19:10:25.303356Z",
   "mimetype": null,
   "name": "impute",
   "path": "auto_examples/impute",
