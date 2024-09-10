@@ -718,7 +718,7 @@ span.prompt1:before {
 <li><p>Create a PR from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch targeting the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> branch.
 Copy the following release checklist to the description of this PR to track the
 progress.</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in release branch
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in main branch
 <span class="k">* [ ]</span> Backport news and what&#39;s new date in release branch
 <span class="k">* [ ]</span> Update the sklearn dev0 version in main branch
 <span class="k">* [ ]</span> Set the version number in the release branch
@@ -740,7 +740,7 @@ instead of one. In this PR targeting <code class="docutils literal notranslate">
 new file under the <code class="docutils literal notranslate"><span class="pre">doc/whats_new/</span></code> directory so PRs that target the next version
 can contribute their changelog entries to this file in parallel to the release
 process.</p></li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
+<li><p>In the release branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
 <code class="docutils literal notranslate"><span class="pre">sklearn/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">1.6.0rc1</span></code>.</p></li>
 <li><p>Trigger the wheel builder with the <code class="docutils literal notranslate"><span class="pre">[cd</span> <span class="pre">build]</span></code> commit marker. See also the
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/actions/workflows/wheels.yml">workflow runs of the wheel builder</a>.</p>
@@ -817,7 +817,7 @@ Major/Minor Final</label><div class="sd-tab-content docutils">
 <li><p>Create a PR from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch targeting the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> branch.
 Copy the following release checklist to the description of this PR to track the
 progress.</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in release branch
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in main branch
 <span class="k">* [ ]</span> Backport news and what&#39;s new date in release branch
 <span class="k">* [ ]</span> Set the version number in the release branch
 <span class="k">* [ ]</span> Check that the wheels for the release can be built successfully
@@ -854,7 +854,7 @@ the <code class="docutils literal notranslate"><span class="pre">git-rebase-todo
 necessary.</p></li>
 </ul>
 </li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
+<li><p>In the release branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
 <code class="docutils literal notranslate"><span class="pre">sklearn/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">1.6.0</span></code>.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit the corresponding file in the <code class="docutils literal notranslate"><span class="pre">doc/whats_new</span></code> directory
 to update the release date, link the release highlights example,
@@ -867,13 +867,13 @@ following command to retrieve the list of contributor names:</p>
 <span class="prompt1"><span class="w">  </span>tr<span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>sed<span class="w"> </span><span class="s2">&quot;s/;/, /g;s/, </span>$<span class="s2">//&quot;</span><span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>fold<span class="w"> </span>-s</span>
-</pre></div></div><p>Then cherry-pick it in the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> release branch.</p>
+</pre></div></div><p>Then cherry-pick it in the release branch.</p>
 </li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit <code class="docutils literal notranslate"><span class="pre">doc/templates/index.html</span></code> to change the “News” section
 in the landing page, along with the month of the release.
 Do not forget to remove old entries (two years or three releases ago) and update
 the “On-going development” entry.
-Then cherry-pick it in the <code class="docutils literal notranslate"><span class="pre">1.6.X</span></code> release branch.</p></li>
+Then cherry-pick it in the release branch.</p></li>
 <li><p>Trigger the wheel builder with the <code class="docutils literal notranslate"><span class="pre">[cd</span> <span class="pre">build]</span></code> commit marker. See also the
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/actions/workflows/wheels.yml">workflow runs of the wheel builder</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;[cd build] Trigger wheel builder workflow&quot;</span></span>
@@ -964,7 +964,7 @@ Bug-fix</label><div class="sd-tab-content docutils">
 <li><p>Create a PR from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch targeting the <code class="docutils literal notranslate"><span class="pre">1.5.X</span></code> branch.
 Copy the following release checklist to the description of this PR to track the
 progress.</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in release branch
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">* [ ]</span> Update news and what&#39;s new date in main branch
 <span class="k">* [ ]</span> Backport news and what&#39;s new date in release branch
 <span class="k">* [ ]</span> Set the version number in the release branch
 <span class="k">* [ ]</span> Check that the wheels for the release can be built successfully
@@ -1000,7 +1000,7 @@ the <code class="docutils literal notranslate"><span class="pre">git-rebase-todo
 necessary.</p></li>
 </ul>
 </li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">1.5.X</span></code> branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
+<li><p>In the release branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
 <code class="docutils literal notranslate"><span class="pre">sklearn/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">1.5.2</span></code>.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit the corresponding file in the <code class="docutils literal notranslate"><span class="pre">doc/whats_new</span></code> directory
 to update the release date
@@ -1013,11 +1013,11 @@ following command to retrieve the list of contributor names:</p>
 <span class="prompt1"><span class="w">  </span>tr<span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>sed<span class="w"> </span><span class="s2">&quot;s/;/, /g;s/, </span>$<span class="s2">//&quot;</span><span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>fold<span class="w"> </span>-s</span>
-</pre></div></div><p>Then cherry-pick it in the <code class="docutils literal notranslate"><span class="pre">1.5.X</span></code> release branch.</p>
+</pre></div></div><p>Then cherry-pick it in the release branch.</p>
 </li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit <code class="docutils literal notranslate"><span class="pre">doc/templates/index.html</span></code> to change the “News” section
 in the landing page, along with the month of the release.
-Then cherry-pick it in the <code class="docutils literal notranslate"><span class="pre">1.5.X</span></code> release branch.</p></li>
+Then cherry-pick it in the release branch.</p></li>
 <li><p>Trigger the wheel builder with the <code class="docutils literal notranslate"><span class="pre">[cd</span> <span class="pre">build]</span></code> commit marker. See also the
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/actions/workflows/wheels.yml">workflow runs of the wheel builder</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;[cd build] Trigger wheel builder workflow&quot;</span></span>
