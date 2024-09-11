@@ -264,12 +264,12 @@ Reference Steps
     - In the `main` branch, edit the corresponding file in the `doc/whats_new` directory
       to update the release date, link the release highlights example,
       and add the list of contributor names. Suppose that the tag of the last release in
-      the previous major/minor version is `1.5.1`, then you can use the
+      the previous major/minor version is `1.5.2`, then you can use the
       following command to retrieve the list of contributor names:
 
       .. prompt:: bash
 
-        git shortlog -s 1.5.1.. |
+        git shortlog -s 1.5.2.. |
           cut -f2- |
           sort --ignore-case |
           tr "\n" ";" |
@@ -399,7 +399,7 @@ Reference Steps
   .. tab-item:: Bug-fix
     :class-label: tab-4
 
-    Suppose that we are preparing the release `1.5.2`.
+    Suppose that we are preparing the release `1.5.3`.
 
     
 
@@ -451,7 +451,7 @@ Reference Steps
     
 
     - In the release branch, change the version number `__version__` in
-      `sklearn/__init__.py` to `1.5.2`.
+      `sklearn/__init__.py` to `1.5.3`.
 
     
     - In the `main` branch, edit the corresponding file in the `doc/whats_new` directory
@@ -519,8 +519,8 @@ Reference Steps
 
       .. prompt:: bash
 
-        git tag -a 1.5.2  # in the 1.5.X branch
-        git push git@github.com:scikit-learn/scikit-learn.git 1.5.2
+        git tag -a 1.5.3  # in the 1.5.X branch
+        git push git@github.com:scikit-learn/scikit-learn.git 1.5.3
 
     - Confirm that the bot has detected the tag on the conda-forge feedstock repository
       https://github.com/conda-forge/scikit-learn-feedstock. If not, submit a PR for the
@@ -568,7 +568,7 @@ Reference Steps
     
 
     
-    - Update `SECURITY.md` to reflect the latest supported version `1.5.2`.
+    - Update `SECURITY.md` to reflect the latest supported version `1.5.3`.
     
   
 

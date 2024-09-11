@@ -859,9 +859,9 @@ necessary.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit the corresponding file in the <code class="docutils literal notranslate"><span class="pre">doc/whats_new</span></code> directory
 to update the release date, link the release highlights example,
 and add the list of contributor names. Suppose that the tag of the last release in
-the previous major/minor version is <code class="docutils literal notranslate"><span class="pre">1.5.1</span></code>, then you can use the
+the previous major/minor version is <code class="docutils literal notranslate"><span class="pre">1.5.2</span></code>, then you can use the
 following command to retrieve the list of contributor names:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>shortlog<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span>.5.1..<span class="w"> </span><span class="p">|</span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>shortlog<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span>.5.2..<span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>cut<span class="w"> </span>-f2-<span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>sort<span class="w"> </span>--ignore-case<span class="w"> </span><span class="p">|</span></span>
 <span class="prompt1"><span class="w">  </span>tr<span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="p">|</span></span>
@@ -959,7 +959,7 @@ package in that folder. Before uploading to PyPI, you can test uploading to
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label tab-4" for="sd-tab-item-2">
 Bug-fix</label><div class="sd-tab-content docutils">
-<p>Suppose that we are preparing the release <code class="docutils literal notranslate"><span class="pre">1.5.2</span></code>.</p>
+<p>Suppose that we are preparing the release <code class="docutils literal notranslate"><span class="pre">1.5.3</span></code>.</p>
 <ul>
 <li><p>Create a PR from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch targeting the <code class="docutils literal notranslate"><span class="pre">1.5.X</span></code> branch.
 Copy the following release checklist to the description of this PR to track the
@@ -1001,7 +1001,7 @@ necessary.</p></li>
 </ul>
 </li>
 <li><p>In the release branch, change the version number <code class="docutils literal notranslate"><span class="pre">__version__</span></code> in
-<code class="docutils literal notranslate"><span class="pre">sklearn/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">1.5.2</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">sklearn/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">1.5.3</span></code>.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, edit the corresponding file in the <code class="docutils literal notranslate"><span class="pre">doc/whats_new</span></code> directory
 to update the release date
 and add the list of contributor names. Suppose that the tag of the last release in
@@ -1051,8 +1051,8 @@ a commit with the marker in the <code class="docutils literal notranslate"><span
 release. This should be done only when you are almost certain that the release is
 ready, since adding a new tag to the main repository can trigger certain automated
 processes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span>.5.2<span class="w">  </span><span class="c1"># in the 1.5.X branch</span></span>
-<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>git@github.com:scikit-learn/scikit-learn.git<span class="w"> </span><span class="m">1</span>.5.2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span>.5.3<span class="w">  </span><span class="c1"># in the 1.5.X branch</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>git@github.com:scikit-learn/scikit-learn.git<span class="w"> </span><span class="m">1</span>.5.3</span>
 </pre></div></div></li>
 <li><p>Confirm that the bot has detected the tag on the conda-forge feedstock repository
 <a class="github reference external" href="https://github.com/conda-forge/scikit-learn-feedstock">conda-forge/scikit-learn-feedstock</a>. If not, submit a PR for the
@@ -1083,7 +1083,7 @@ package in that folder. Before uploading to PyPI, you can test uploading to
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">twine<span class="w"> </span>upload<span class="w"> </span>dist/*</span>
 </pre></div></div></div>
 </details></li>
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">SECURITY.md</span></code> to reflect the latest supported version <code class="docutils literal notranslate"><span class="pre">1.5.2</span></code>.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">SECURITY.md</span></code> to reflect the latest supported version <code class="docutils literal notranslate"><span class="pre">1.5.3</span></code>.</p></li>
 </ul>
 </div>
 </div>
