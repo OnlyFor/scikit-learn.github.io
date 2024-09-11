@@ -184,7 +184,7 @@ loader or setting them to `None` to get all 20 of them.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 7.983 seconds)
+   **Total running time of the script:** (0 minutes 6.759 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_semi_supervised_newsgroups.py:
@@ -203,7 +203,7 @@ loader or setting them to `None` to get all 20 of them.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/semi_supervised/plot_semi_supervised_newsgroups.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/semi_supervised/plot_semi_supervised_newsgroups.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -214,6 +214,10 @@ loader or setting them to `None` to get all 20 of them.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_semi_supervised_newsgroups.py <plot_semi_supervised_newsgroups.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_semi_supervised_newsgroups.zip <plot_semi_supervised_newsgroups.zip>`
 
 
 .. include:: plot_semi_supervised_newsgroups.recommendations

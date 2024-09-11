@@ -112,7 +112,7 @@ a hourly basis:
  .. code-block:: none
 
 
-    977
+    np.int64(977)
 
 
 
@@ -1622,7 +1622,7 @@ impact the results much because they are already on comparable scales:
 
  .. code-block:: none
 
-    Mean model.alpha_ = 2.7298221281347033
+    Mean model.alpha_ = 2.7298221281347037
     Mean Absolute Error:     0.142 +/- 0.014
     Root Mean Squared Error: 0.184 +/- 0.020
 
@@ -2553,7 +2553,7 @@ instead of `RidgeCV`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 13.680 seconds)
+   **Total running time of the script:** (0 minutes 12.791 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_cyclical_feature_engineering.py:
@@ -2572,7 +2572,7 @@ instead of `RidgeCV`.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/applications/plot_cyclical_feature_engineering.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/applications/plot_cyclical_feature_engineering.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -2583,6 +2583,10 @@ instead of `RidgeCV`.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_cyclical_feature_engineering.py <plot_cyclical_feature_engineering.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_cyclical_feature_engineering.zip <plot_cyclical_feature_engineering.zip>`
 
 
 .. include:: plot_cyclical_feature_engineering.recommendations

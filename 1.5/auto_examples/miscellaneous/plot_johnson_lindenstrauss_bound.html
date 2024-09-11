@@ -13,16 +13,16 @@
 <meta content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" property="og:image"/>
 <meta content="scikit-learn" property="og:image:alt"/>
 <meta content="The Johnson-Lindenstrauss lemma states that any high dimensional dataset can be randomly projected into a lower dimensional Euclidean space while controlling the distortion in the pairwise distance..." name="description"/>
-<title>The Johnson-Lindenstrauss bound for embedding with random projections — scikit-learn 1.5.1 documentation</title>
+<title>The Johnson-Lindenstrauss bound for embedding with random projections — scikit-learn 1.5.2 documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
 <!-- Loaded before other Sphinx assets -->
-<link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
+<link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
@@ -31,34 +31,34 @@
 <link href="../../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet" type="text/css"/>
 <link href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" rel="stylesheet" type="text/css"/>
-<link href="../../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <link href="../../_static/styles/colors.css?v=cc94ab7d" rel="stylesheet" type="text/css"/>
-<link href="../../_static/styles/custom.css?v=42c874f8" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/custom.css?v=e4cb1417" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" rel="preload"/>
-<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" rel="preload"/>
-<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/documentation_options.js?v=44dfd65d"></script>
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/documentation_options.js?v=73275c37"></script>
 <script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../../_static/copybutton.js?v=97f0b27d"></script>
 <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
-<script src="../../_static/design-tabs.js?v=36754332"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
 <script data-domain="scikit-learn.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
 <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound';</script>
 <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.15.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-learn.org/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.2';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
         </script>
-<script src="../../_static/scripts/dropdown.js?v=12d599f8"></script>
+<script src="../../_static/scripts/dropdown.js?v=e2048168"></script>
 <script src="../../_static/scripts/version-switcher.js?v=a6dd8357"></script>
 <link href="../../_static/favicon.ico" rel="icon"/>
 <link href="../../about.html" rel="author" title="About these documents"/>
@@ -94,7 +94,7 @@
 </aside>
 <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-<button aria-label="Site navigation" class="sidebar-toggle primary-toggle">
+<button aria-label="Site navigation" class="pst-navbar-icon sidebar-toggle primary-toggle">
 <span class="fa-solid fa-bars"></span>
 </button>
 <div class="navbar-header-items__start">
@@ -107,84 +107,84 @@
 <div class="navbar-header-items">
 <div class="me-auto navbar-header-items__center">
 <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
 <ul class="bd-navbar-elements navbar-nav">
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
 <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
-<li class="nav-item dropdown pst-header-nav-item">
+<li class="nav-item dropdown">
 <button aria-controls="pst-nav-more-links" aria-expanded="false" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
                     More
                 </button>
 <ul class="dropdown-menu" id="pst-nav-more-links">
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../support.html">
     Support
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../about.html">
     About us
   </a>
@@ -198,7 +198,7 @@
 <div class="navbar-item navbar-persistent--container">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -207,16 +207,16 @@ document.write(`
 <div class="navbar-item">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><span><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i></span>
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
 <span class="sr-only">GitHub</span></a>
 </li>
 </ul></div>
@@ -226,7 +226,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-2"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-2"
@@ -248,13 +248,13 @@ document.write(`
 <div class="navbar-persistent--mobile">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
 </div>
-<button aria-label="On this page" class="sidebar-toggle secondary-toggle">
+<button aria-label="On this page" class="pst-navbar-icon sidebar-toggle secondary-toggle">
 <span class="fa-solid fa-outdent"></span>
 </button>
 </div>
@@ -265,79 +265,79 @@ document.write(`
 <div class="sidebar-header-items sidebar-primary__section">
 <div class="sidebar-header-items__center">
 <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
 <ul class="bd-navbar-elements navbar-nav">
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
 <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../support.html">
     Support
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../about.html">
     About us
   </a>
@@ -349,16 +349,16 @@ document.write(`
 <div class="navbar-item">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><span><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i></span>
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
 <span class="sr-only">GitHub</span></a>
 </li>
 </ul></div>
@@ -368,7 +368,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-3"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-3"
@@ -992,13 +992,13 @@ and projected spaces as x- and y-axis respectively.</p></li>
 <li><img alt="Histogram of pairwise distance rates for n_components=10000" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_johnson_lindenstrauss_bound_008.png" srcset="../../_images/sphx_glr_plot_johnson_lindenstrauss_bound_008.png"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Embedding 300 samples with dim 130107 using various random projections
-Projected 300 samples from 130107 to 300 in 0.270s
+Projected 300 samples from 130107 to 300 in 0.214s
 Random matrix with size: 1.293 MB
 Mean distances rate: 1.01 (0.17)
-Projected 300 samples from 130107 to 1000 in 0.906s
+Projected 300 samples from 130107 to 1000 in 0.711s
 Random matrix with size: 4.323 MB
 Mean distances rate: 1.00 (0.09)
-Projected 300 samples from 130107 to 10000 in 8.682s
+Projected 300 samples from 130107 to 10000 in 6.969s
 Random matrix with size: 43.268 MB
 Mean distances rate: 1.01 (0.03)
 </pre></div>
@@ -1020,7 +1020,7 @@ for dimensionality reduction in this case.</p>
 <p>On the twenty newsgroups on the other hand the dimensionality can be
 decreased from 56,436 down to 10,000 while reasonably preserving
 pairwise distances.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.463 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 10.500 seconds)</p>
 
 <p class="rubric">Related examples</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="We illustrate various embedding techniques on the digits dataset."><img alt="" src="../../_images/sphx_glr_plot_lle_digits_thumb.png"/>
@@ -1029,10 +1029,10 @@ pairwise distances.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Lasso and elastic net (L1 and L2 penalisation) implemented using a coordinate descent."><img alt="" src="../../_images/sphx_glr_plot_lasso_coordinate_descent_path_thumb.png"/>
 <p><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-coordinate-descent-path-py"><span class="std std-ref">Lasso and Elastic Net</span></a></p>
 <div class="sphx-glr-thumbnail-title">Lasso and Elastic Net</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this demo we will take a look at cluster.HDBSCAN from the perspective of generalizing the cl..."><img alt="" src="../../_images/sphx_glr_plot_hdbscan_thumb.png"/>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this demo we will take a look at cluster.HDBSCAN from the perspective of generalizing the cluster.DBSCAN algorithm. We'll compare both algorithms on specific datasets. Finally we'll evaluate HDBSCAN's sensitivity to certain hyperparameters."><img alt="" src="../../_images/sphx_glr_plot_hdbscan_thumb.png"/>
 <p><a class="reference internal" href="../cluster/plot_hdbscan.html#sphx-glr-auto-examples-cluster-plot-hdbscan-py"><span class="std std-ref">Demo of HDBSCAN clustering algorithm</span></a></p>
 <div class="sphx-glr-thumbnail-title">Demo of HDBSCAN clustering algorithm</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of dimensionality reduction on the S-curve dataset with various manifold learni..."><img alt="" src="../../_images/sphx_glr_plot_compare_methods_thumb.png"/>
+</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of dimensionality reduction on the S-curve dataset with various manifold learning methods."><img alt="" src="../../_images/sphx_glr_plot_compare_methods_thumb.png"/>
 <p><a class="reference internal" href="../manifold/plot_compare_methods.html#sphx-glr-auto-examples-manifold-plot-compare-methods-py"><span class="std std-ref">Comparison of Manifold Learning methods</span></a></p>
 <div class="sphx-glr-thumbnail-title">Comparison of Manifold Learning methods</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -1074,7 +1074,7 @@ pairwise distances.</p>
 </ul>
 </nav></div>
 
-<div class="sidebar-secondary-item"><div title="plot_johnson_lindenstrauss_bound.py"><a download="" href="../../_downloads/cba66f803bb263f8032bc4d46368e20b/plot_johnson_lindenstrauss_bound.py"><i class="fa-solid fa-download"></i> Download source code</a></div><div title="plot_johnson_lindenstrauss_bound.ipynb"><a download="" href="../../_downloads/285b194a4740110cb23e241031123972/plot_johnson_lindenstrauss_bound.ipynb"><i class="fa-solid fa-download"></i> Download Jupyter notebook</a></div></div><div class="sidebar-secondary-item"><div><a href="../../lite/lab/?path=auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch JupyterLite" height="20" src="../../_images/jupyterlite_badge_logo20.svg"/></a></div><div><a href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.5.X?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch binder" height="20" src="../../_images/binder_badge_logo20.svg"/></a></div></div></div></div>
+<div class="sidebar-secondary-item"><div title="plot_johnson_lindenstrauss_bound.py"><a download="" href="../../_downloads/cba66f803bb263f8032bc4d46368e20b/plot_johnson_lindenstrauss_bound.py"><i class="fa-solid fa-download"></i> Download source code</a></div><div title="plot_johnson_lindenstrauss_bound.ipynb"><a download="" href="../../_downloads/285b194a4740110cb23e241031123972/plot_johnson_lindenstrauss_bound.ipynb"><i class="fa-solid fa-download"></i> Download Jupyter notebook</a></div></div><div class="sidebar-secondary-item"><div><a href="../../lite/lab/index.html?path=auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch JupyterLite" height="20" src="../../_images/jupyterlite_badge_logo20.svg"/></a></div><div><a href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.5.X?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch binder" height="20" src="../../_images/binder_badge_logo20.svg"/></a></div></div></div></div>
 </div>
 <footer class="bd-footer-content">
 </footer>
@@ -1082,8 +1082,8 @@ pairwise distances.</p>
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
 <div class="footer-items__start">

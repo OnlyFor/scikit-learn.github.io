@@ -562,7 +562,7 @@ this feature.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.027 seconds)
+   **Total running time of the script:** (0 minutes 0.026 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_estimator_representation.py:
@@ -581,7 +581,7 @@ this feature.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/miscellaneous/plot_estimator_representation.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/miscellaneous/plot_estimator_representation.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -592,6 +592,10 @@ this feature.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_estimator_representation.py <plot_estimator_representation.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_estimator_representation.zip <plot_estimator_representation.zip>`
 
 
 .. include:: plot_estimator_representation.recommendations

@@ -171,7 +171,7 @@ only the first feature (i.e. first eigenvalues).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.178 seconds)
+   **Total running time of the script:** (0 minutes 0.169 seconds)
 
 
 .. _sphx_glr_download_auto_examples_datasets_plot_iris_dataset.py:
@@ -190,7 +190,7 @@ only the first feature (i.e. first eigenvalues).
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/datasets/plot_iris_dataset.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/datasets/plot_iris_dataset.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -201,6 +201,10 @@ only the first feature (i.e. first eigenvalues).
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_iris_dataset.py <plot_iris_dataset.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_iris_dataset.zip <plot_iris_dataset.zip>`
 
 
 .. include:: plot_iris_dataset.recommendations

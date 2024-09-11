@@ -98,7 +98,7 @@ helper functions for loading the data and visualizing results.
         df["ClaimAmount"] = df["ClaimAmount"].fillna(0)
 
         # unquote string fields
-        for column_name in df.columns[df.dtypes.values == object]:
+        for column_name in df.columns[[t is object for t in df.dtypes.values]]:
             df[column_name] = df[column_name].str.strip("'")
         return df.iloc[:n_samples]
 
@@ -314,13 +314,13 @@ containing the claim amount (``ClaimAmount``) for the same policy ids
     424          2      0.62    F        10       0       51         100      B12   
     463          1      0.31    A         5       0       45          50      B12   
 
-            VehGas  Density Region  ClaimAmount   PurePremium  Frequency  \
-    IDpol                                                                  
-    139    Regular    27000    R11       303.00    404.000000   1.333333   
-    190     Diesel       56    R25      1981.84  14156.000000   7.142857   
-    414    Regular     4792    R11      1456.55  10403.928571   7.142857   
-    424    Regular    27000    R11     10834.00  17474.193548   3.225806   
-    463    Regular       12    R73      3986.67  12860.225806   3.225806   
+              VehGas  Density Region  ClaimAmount   PurePremium  Frequency  \
+    IDpol                                                                    
+    139    'Regular'    27000    R11       303.00    404.000000   1.333333   
+    190     'Diesel'       56    R25      1981.84  14156.000000   7.142857   
+    414    'Regular'     4792    R11      1456.55  10403.928571   7.142857   
+    424    'Regular'    27000    R11     10834.00  17474.193548   3.225806   
+    463    'Regular'       12    R73      3986.67  12860.225806   3.225806   
 
            AvgClaimAmount  
     IDpol                  
@@ -1010,7 +1010,7 @@ of models, each with its own set of hyperparameters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 11.017 seconds)
+   **Total running time of the script:** (0 minutes 8.555 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_tweedie_regression_insurance_claims.py:
@@ -1029,7 +1029,7 @@ of models, each with its own set of hyperparameters.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/linear_model/plot_tweedie_regression_insurance_claims.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/linear_model/plot_tweedie_regression_insurance_claims.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -1040,6 +1040,10 @@ of models, each with its own set of hyperparameters.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_tweedie_regression_insurance_claims.py <plot_tweedie_regression_insurance_claims.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_tweedie_regression_insurance_claims.zip <plot_tweedie_regression_insurance_claims.zip>`
 
 
 .. include:: plot_tweedie_regression_insurance_claims.recommendations

@@ -13,16 +13,16 @@
 <meta content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" property="og:image"/>
 <meta content="scikit-learn" property="og:image:alt"/>
 <meta content="Example of Precision-Recall metric to evaluate classifier output quality. Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. In information retrieva..." name="description"/>
-<title>Precision-Recall — scikit-learn 1.5.1 documentation</title>
+<title>Precision-Recall — scikit-learn 1.5.2 documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
 <!-- Loaded before other Sphinx assets -->
-<link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
-<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet"/>
+<link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
@@ -31,34 +31,34 @@
 <link href="../../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet" type="text/css"/>
 <link href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" rel="stylesheet" type="text/css"/>
-<link href="../../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <link href="../../_static/styles/colors.css?v=cc94ab7d" rel="stylesheet" type="text/css"/>
-<link href="../../_static/styles/custom.css?v=42c874f8" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/custom.css?v=e4cb1417" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" rel="preload"/>
-<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" rel="preload"/>
-<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/documentation_options.js?v=44dfd65d"></script>
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/documentation_options.js?v=73275c37"></script>
 <script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../../_static/copybutton.js?v=97f0b27d"></script>
 <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
-<script src="../../_static/design-tabs.js?v=36754332"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
 <script data-domain="scikit-learn.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
 <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/model_selection/plot_precision_recall';</script>
 <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.15.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-learn.org/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.2';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
         </script>
-<script src="../../_static/scripts/dropdown.js?v=12d599f8"></script>
+<script src="../../_static/scripts/dropdown.js?v=e2048168"></script>
 <script src="../../_static/scripts/version-switcher.js?v=a6dd8357"></script>
 <link href="../../_static/favicon.ico" rel="icon"/>
 <link href="../../about.html" rel="author" title="About these documents"/>
@@ -94,7 +94,7 @@
 </aside>
 <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-<button aria-label="Site navigation" class="sidebar-toggle primary-toggle">
+<button aria-label="Site navigation" class="pst-navbar-icon sidebar-toggle primary-toggle">
 <span class="fa-solid fa-bars"></span>
 </button>
 <div class="navbar-header-items__start">
@@ -107,84 +107,84 @@
 <div class="navbar-header-items">
 <div class="me-auto navbar-header-items__center">
 <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
 <ul class="bd-navbar-elements navbar-nav">
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
 <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
-<li class="nav-item dropdown pst-header-nav-item">
+<li class="nav-item dropdown">
 <button aria-controls="pst-nav-more-links" aria-expanded="false" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
                     More
                 </button>
 <ul class="dropdown-menu" id="pst-nav-more-links">
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../support.html">
     Support
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
-<li class="nav-item">
+<li class="">
 <a class="nav-link dropdown-item nav-internal" href="../../about.html">
     About us
   </a>
@@ -198,7 +198,7 @@
 <div class="navbar-item navbar-persistent--container">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -207,16 +207,16 @@ document.write(`
 <div class="navbar-item">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><span><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i></span>
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
 <span class="sr-only">GitHub</span></a>
 </li>
 </ul></div>
@@ -226,7 +226,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-2"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-2"
@@ -248,13 +248,13 @@ document.write(`
 <div class="navbar-persistent--mobile">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
 </div>
-<button aria-label="On this page" class="sidebar-toggle secondary-toggle">
+<button aria-label="On this page" class="pst-navbar-icon sidebar-toggle secondary-toggle">
 <span class="fa-solid fa-outdent"></span>
 </button>
 </div>
@@ -265,79 +265,79 @@ document.write(`
 <div class="sidebar-header-items sidebar-primary__section">
 <div class="sidebar-header-items__center">
 <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
 <ul class="bd-navbar-elements navbar-nav">
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
 <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../support.html">
     Support
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item">
 <a class="nav-link nav-internal" href="../../about.html">
     About us
   </a>
@@ -349,16 +349,16 @@ document.write(`
 <div class="navbar-item">
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
-<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><span><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i></span>
+<a class="nav-link pst-navbar-icon" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/scikit-learn/scikit-learn" rel="noopener" target="_blank" title="GitHub"><i aria-hidden="true" class="fa-brands fa-square-github fa-lg"></i>
 <span class="sr-only">GitHub</span></a>
 </li>
 </ul></div>
@@ -368,7 +368,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-3"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-3"
@@ -823,45 +823,47 @@ document.write(`
 <p>Example of Precision-Recall metric to evaluate classifier output quality.</p>
 <p>Precision-Recall is a useful measure of success of prediction when the
 classes are very imbalanced. In information retrieval, precision is a
-measure of result relevancy, while recall is a measure of how many truly
-relevant results are returned.</p>
-<p>The precision-recall curve shows the tradeoff between precision and
-recall for different threshold. A high area under the curve represents
-both high recall and high precision, where high precision relates to a
-low false positive rate, and high recall relates to a low false negative
-rate. High scores for both show that the classifier is returning accurate
-results (high precision), as well as returning a majority of all positive
-results (high recall).</p>
-<p>A system with high recall but low precision returns many results, but most of
-its predicted labels are incorrect when compared to the training labels. A
-system with high precision but low recall is just the opposite, returning very
-few results, but most of its predicted labels are correct when compared to the
-training labels. An ideal system with high precision and high recall will
-return many results, with all results labeled correctly.</p>
+measure of the fraction of relevant items among actually returned items while recall
+is a measure of the fraction of items that were returned among all items that should
+have been returned. ‘Relevancy’ here refers to items that are
+postively labeled, i.e., true positives and false negatives.</p>
 <p>Precision (<span class="math notranslate nohighlight">\(P\)</span>) is defined as the number of true positives (<span class="math notranslate nohighlight">\(T_p\)</span>)
 over the number of true positives plus the number of false positives
 (<span class="math notranslate nohighlight">\(F_p\)</span>).</p>
-<p><span class="math notranslate nohighlight">\(P = \frac{T_p}{T_p+F_p}\)</span></p>
+<div class="math notranslate nohighlight">
+\[P = \frac{T_p}{T_p+F_p}\]</div>
 <p>Recall (<span class="math notranslate nohighlight">\(R\)</span>) is defined as the number of true positives (<span class="math notranslate nohighlight">\(T_p\)</span>)
 over the number of true positives plus the number of false negatives
 (<span class="math notranslate nohighlight">\(F_n\)</span>).</p>
-<p><span class="math notranslate nohighlight">\(R = \frac{T_p}{T_p + F_n}\)</span></p>
-<p>These quantities are also related to the <span class="math notranslate nohighlight">\(F_1\)</span> score, which is the
-harmonic mean of precision and recall. Thus, we can compute the <span class="math notranslate nohighlight">\(F_1\)</span>
-using the following formula:</p>
-<p><span class="math notranslate nohighlight">\(F_1 = \frac{2T_p}{2T_p + F_p + F_n}\)</span></p>
-<p>Note that the precision may not decrease with recall. The
-definition of precision (<span class="math notranslate nohighlight">\(\frac{T_p}{T_p + F_p}\)</span>) shows that lowering
+<div class="math notranslate nohighlight">
+\[R = \frac{T_p}{T_p + F_n}\]</div>
+<p>The precision-recall curve shows the tradeoff between precision and
+recall for different thresholds. A high area under the curve represents
+both high recall and high precision. High precision is achieved by having
+few false positives in the returned results, and high recall is achieved by
+having few false negatives in the relevant results.
+High scores for both show that the classifier is returning
+accurate results (high precision), as well as returning a majority of all relevant
+results (high recall).</p>
+<p>A system with high recall but low precision returns most of the relevant items, but
+the proportion of returned results that are incorrectly labeled is high. A
+system with high precision but low recall is just the opposite, returning very
+few of the relevant items, but most of its predicted labels are correct when compared
+to the actual labels. An ideal system with high precision and high recall will
+return most of the relevant items, with most results labeled correctly.</p>
+<p>The definition of precision (<span class="math notranslate nohighlight">\(\frac{T_p}{T_p + F_p}\)</span>) shows that lowering
 the threshold of a classifier may increase the denominator, by increasing the
 number of results returned. If the threshold was previously set too high, the
 new results may all be true positives, which will increase precision. If the
 previous threshold was about right or too low, further lowering the threshold
 will introduce false positives, decreasing precision.</p>
 <p>Recall is defined as <span class="math notranslate nohighlight">\(\frac{T_p}{T_p+F_n}\)</span>, where <span class="math notranslate nohighlight">\(T_p+F_n\)</span> does
-not depend on the classifier threshold. This means that lowering the classifier
+not depend on the classifier threshold. Changing the classifier threshold can only
+change the numerator, <span class="math notranslate nohighlight">\(T_p\)</span>. Lowering the classifier
 threshold may increase recall, by increasing the number of true positive
 results. It is also possible that lowering the threshold may leave recall
-unchanged, while the precision fluctuates.</p>
+unchanged, while the precision fluctuates. Thus, precision does not necessarily
+decrease with recall.</p>
 <p>The relationship between recall and precision can be observed in the
 stairstep area of the plot - at the edges of these steps a small change
 in the threshold considerably reduces precision, with only a minor gain in
@@ -882,7 +884,7 @@ the output of a classifier. In order to extend the precision-recall curve and
 average precision to multi-class or multi-label classification, it is necessary
 to binarize the output. One curve can be drawn per label, but one can also draw
 a precision-recall curve by considering each element of the label indicator
-matrix as a binary prediction (micro-averaging).</p>
+matrix as a binary prediction (<a class="reference internal" href="../../modules/model_evaluation.html#average"><span class="std std-ref">micro-averaging</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
@@ -1333,9 +1335,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 }
 </style><div class="sk-top-container" id="sk-container-id-59"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('linearsvc',
-                 LinearSVC(random_state=RandomState(MT19937) at 0x7F868C07AE40))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-238" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-238">  Pipeline<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html" rel="noreferrer" target="_blank">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+                 LinearSVC(random_state=RandomState(MT19937) at 0x7F0A82C87740))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-238" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-238">  Pipeline<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html" rel="noreferrer" target="_blank">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('linearsvc',
-                 LinearSVC(random_state=RandomState(MT19937) at 0x7F868C07AE40))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-239" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-239"> StandardScaler<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-240" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-240"> LinearSVC<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.svm.LinearSVC.html" rel="noreferrer" target="_blank">?<span>Documentation for LinearSVC</span></a></label><div class="sk-toggleable__content fitted"><pre>LinearSVC(random_state=RandomState(MT19937) at 0x7F868C07AE40)</pre></div> </div></div></div></div></div></div>
+                 LinearSVC(random_state=RandomState(MT19937) at 0x7F0A82C87740))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-239" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-239"> StandardScaler<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-240" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-240"> LinearSVC<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.svm.LinearSVC.html" rel="noreferrer" target="_blank">?<span>Documentation for LinearSVC</span></a></label><div class="sk-toggleable__content fitted"><pre>LinearSVC(random_state=RandomState(MT19937) at 0x7F0A82C87740)</pre></div> </div></div></div></div></div></div>
 </div>
 <br/>
 <br/></section>
@@ -1482,19 +1484,19 @@ prediction.</p>
 <a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="Extension of Precision-Recall curve to multi-class" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_precision_recall_004.png" srcset="../../_images/sphx_glr_plot_precision_recall_004.png"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.487 seconds)</p>
+<img alt="Extension of Precision-Recall curve to multi-class" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_precision_recall_004.png" srcset="../../_images/sphx_glr_plot_precision_recall_004.png"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.401 seconds)</p>
 
 <p class="rubric">Related examples</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the ..."><img alt="" src="../../_images/sphx_glr_plot_grid_search_digits_thumb.png"/>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the GridSearchCV object on a development set that comprises only half of the available labeled data."><img alt="" src="../../_images/sphx_glr_plot_grid_search_digits_thumb.png"/>
 <p><a class="reference internal" href="plot_grid_search_digits.html#sphx-glr-auto-examples-model-selection-plot-grid-search-digits-py"><span class="std std-ref">Custom refit strategy of a grid search with cross-validation</span></a></p>
 <div class="sphx-glr-thumbnail-title">Custom refit strategy of a grid search with cross-validation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we will construct display objects, ConfusionMatrixDisplay, RocCurveDisplay, an..."><img alt="" src="../../_images/sphx_glr_plot_display_object_visualization_thumb.png"/>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we will construct display objects, ConfusionMatrixDisplay, RocCurveDisplay, and PrecisionRecallDisplay directly from their respective metrics. This is an alternative to using their corresponding plot functions when a model's predictions are already computed or expensive to compute. Note that this is advanced usage, and in general we recommend using their respective plot functions."><img alt="" src="../../_images/sphx_glr_plot_display_object_visualization_thumb.png"/>
 <p><a class="reference internal" href="../miscellaneous/plot_display_object_visualization.html#sphx-glr-auto-examples-miscellaneous-plot-display-object-visualization-py"><span class="std std-ref">Visualizations with Display Objects</span></a></p>
 <div class="sphx-glr-thumbnail-title">Visualizations with Display Objects</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Using the GraphicalLasso estimator to learn a covariance and sparse precision from a small numb..."><img alt="" src="../../_images/sphx_glr_plot_sparse_cov_thumb.png"/>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Using the GraphicalLasso estimator to learn a covariance and sparse precision from a small number of samples."><img alt="" src="../../_images/sphx_glr_plot_sparse_cov_thumb.png"/>
 <p><a class="reference internal" href="../covariance/plot_sparse_cov.html#sphx-glr-auto-examples-covariance-plot-sparse-cov-py"><span class="std std-ref">Sparse inverse covariance estimation</span></a></p>
 <div class="sphx-glr-thumbnail-title">Sparse inverse covariance estimation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Once a classifier is trained, the output of the predict method outputs class label predictions ..."><img alt="" src="../../_images/sphx_glr_plot_cost_sensitive_learning_thumb.png"/>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Once a classifier is trained, the output of the predict method outputs class label predictions corresponding to a thresholding of either the decision_function or the predict_proba output. For a binary classifier, the default threshold is defined as a posterior probability estimate of 0.5 or a decision score of 0.0."><img alt="" src="../../_images/sphx_glr_plot_cost_sensitive_learning_thumb.png"/>
 <p><a class="reference internal" href="plot_cost_sensitive_learning.html#sphx-glr-auto-examples-model-selection-plot-cost-sensitive-learning-py"><span class="std std-ref">Post-tuning the decision threshold for cost-sensitive learning</span></a></p>
 <div class="sphx-glr-thumbnail-title">Post-tuning the decision threshold for cost-sensitive learning</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -1546,7 +1548,7 @@ prediction.</p>
 </ul>
 </nav></div>
 
-<div class="sidebar-secondary-item"><div title="plot_precision_recall.py"><a download="" href="../../_downloads/98161c8b335acb98de356229c1005819/plot_precision_recall.py"><i class="fa-solid fa-download"></i> Download source code</a></div><div title="plot_precision_recall.ipynb"><a download="" href="../../_downloads/764d061a261a2e06ad21ec9133361b2d/plot_precision_recall.ipynb"><i class="fa-solid fa-download"></i> Download Jupyter notebook</a></div></div><div class="sidebar-secondary-item"><div><a href="../../lite/lab/?path=auto_examples/model_selection/plot_precision_recall.ipynb"><img alt="Launch JupyterLite" height="20" src="../../_images/jupyterlite_badge_logo22.svg"/></a></div><div><a href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.5.X?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_precision_recall.ipynb"><img alt="Launch binder" height="20" src="../../_images/binder_badge_logo22.svg"/></a></div></div></div></div>
+<div class="sidebar-secondary-item"><div title="plot_precision_recall.py"><a download="" href="../../_downloads/98161c8b335acb98de356229c1005819/plot_precision_recall.py"><i class="fa-solid fa-download"></i> Download source code</a></div><div title="plot_precision_recall.ipynb"><a download="" href="../../_downloads/764d061a261a2e06ad21ec9133361b2d/plot_precision_recall.ipynb"><i class="fa-solid fa-download"></i> Download Jupyter notebook</a></div></div><div class="sidebar-secondary-item"><div><a href="../../lite/lab/index.html?path=auto_examples/model_selection/plot_precision_recall.ipynb"><img alt="Launch JupyterLite" height="20" src="../../_images/jupyterlite_badge_logo22.svg"/></a></div><div><a href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.5.X?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_precision_recall.ipynb"><img alt="Launch binder" height="20" src="../../_images/binder_badge_logo22.svg"/></a></div></div></div></div>
 </div>
 <footer class="bd-footer-content">
 </footer>
@@ -1554,8 +1556,8 @@ prediction.</p>
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
 <div class="footer-items__start">

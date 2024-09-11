@@ -277,7 +277,7 @@ component which has the most preditive power on the target.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.521 seconds)
+   **Total running time of the script:** (0 minutes 0.481 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cross_decomposition_plot_pcr_vs_pls.py:
@@ -296,7 +296,7 @@ component which has the most preditive power on the target.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/cross_decomposition/plot_pcr_vs_pls.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/cross_decomposition/plot_pcr_vs_pls.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -307,6 +307,10 @@ component which has the most preditive power on the target.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_pcr_vs_pls.py <plot_pcr_vs_pls.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_pcr_vs_pls.zip <plot_pcr_vs_pls.zip>`
 
 
 .. include:: plot_pcr_vs_pls.recommendations

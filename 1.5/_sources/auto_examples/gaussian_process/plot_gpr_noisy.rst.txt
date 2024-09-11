@@ -83,7 +83,7 @@ observe the signal that we would like to predict.
 
 .. code-block:: Python
 
-    X = np.linspace(0, 5, num=30).reshape(-1, 1)
+    X = np.linspace(0, 5, num=80).reshape(-1, 1)
     y = target_generator(X, add_noise=False)
 
 
@@ -194,7 +194,7 @@ length scale, which will explain all variations in the data by noise.
     from sklearn.gaussian_process.kernels import RBF, WhiteKernel
 
     kernel = 1.0 * RBF(length_scale=1e1, length_scale_bounds=(1e-2, 1e3)) + WhiteKernel(
-        noise_level=1, noise_level_bounds=(1e-5, 1e1)
+        noise_level=1, noise_level_bounds=(1e-10, 1e1)
     )
     gpr = GaussianProcessRegressor(kernel=kernel, alpha=0.0)
     gpr.fit(X_train, y_train)
@@ -222,7 +222,7 @@ length scale, which will explain all variations in the data by noise.
 
     plt.plot(X, y, label="Expected signal")
     plt.scatter(x=X_train[:, 0], y=y_train, color="black", alpha=0.4, label="Observations")
-    plt.errorbar(X, y_mean, y_std)
+    plt.errorbar(X, y_mean, y_std, label="Posterior mean ± std")
     plt.legend()
     plt.xlabel("X")
     plt.ylabel("y")
@@ -245,19 +245,22 @@ length scale, which will explain all variations in the data by noise.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-122
+.. GENERATED FROM PYTHON SOURCE LINES 113-125
 
-We see that the optimum kernel found still have a high noise level and
-an even larger length scale. Furthermore, we observe that the
-model does not provide faithful predictions.
+We see that the optimum kernel found still has a high noise level and an even
+larger length scale. The length scale reaches the maximum bound that we
+allowed for this parameter and we got a warning as a result.
 
-Now, we will initialize the
-:class:`~sklearn.gaussian_process.kernels.RBF` with a
-larger `length_scale` and the
-:class:`~sklearn.gaussian_process.kernels.WhiteKernel`
-with a smaller noise level lower bound.
+More importantly, we observe that the model does not provide useful
+predictions: the mean prediction seems to be constant: it does not follow the
+expected noise-free signal.
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-129
+Now, we will initialize the :class:`~sklearn.gaussian_process.kernels.RBF`
+with a larger `length_scale` initial value and the
+:class:`~sklearn.gaussian_process.kernels.WhiteKernel` with a smaller initial
+noise level lower while keeping the parameter bounds unchanged.
+
+.. GENERATED FROM PYTHON SOURCE LINES 125-132
 
 .. code-block:: Python
 
@@ -275,13 +278,13 @@ with a smaller noise level lower bound.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-144
+.. GENERATED FROM PYTHON SOURCE LINES 133-147
 
 .. code-block:: Python
 
     plt.plot(X, y, label="Expected signal")
     plt.scatter(x=X_train[:, 0], y=y_train, color="black", alpha=0.4, label="Observations")
-    plt.errorbar(X, y_mean, y_std)
+    plt.errorbar(X, y_mean, y_std, label="Posterior mean ± std")
     plt.legend()
     plt.xlabel("X")
     plt.ylabel("y")
@@ -305,7 +308,7 @@ with a smaller noise level lower bound.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-155
+.. GENERATED FROM PYTHON SOURCE LINES 148-158
 
 First, we see that the model's predictions are more precise than the
 previous model's: this new model is able to estimate the noise-free
@@ -318,23 +321,21 @@ We can inspect the Log-Marginal-Likelihood (LML) of
 :class:`~sklearn.gaussian_process.GaussianProcessRegressor`
 for different hyperparameters to get a sense of the local minima.
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-169
+.. GENERATED FROM PYTHON SOURCE LINES 158-170
 
 .. code-block:: Python
 
     from matplotlib.colors import LogNorm
 
-    length_scale = np.logspace(-2, 4, num=50)
-    noise_level = np.logspace(-2, 1, num=50)
+    length_scale = np.logspace(-2, 4, num=80)
+    noise_level = np.logspace(-2, 1, num=80)
     length_scale_grid, noise_level_grid = np.meshgrid(length_scale, noise_level)
 
     log_marginal_likelihood = [
         gpr.log_marginal_likelihood(theta=np.log([0.36, scale, noise]))
         for scale, noise in zip(length_scale_grid.ravel(), noise_level_grid.ravel())
     ]
-    log_marginal_likelihood = np.reshape(
-        log_marginal_likelihood, newshape=noise_level_grid.shape
-    )
+    log_marginal_likelihood = np.reshape(log_marginal_likelihood, noise_level_grid.shape)
 
 
 
@@ -343,12 +344,12 @@ for different hyperparameters to get a sense of the local minima.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-187
+.. GENERATED FROM PYTHON SOURCE LINES 171-188
 
 .. code-block:: Python
 
     vmin, vmax = (-log_marginal_likelihood).min(), 50
-    level = np.around(np.logspace(np.log10(vmin), np.log10(vmax), num=50), decimals=1)
+    level = np.around(np.logspace(np.log10(vmin), np.log10(vmax), num=20), decimals=1)
     plt.contour(
         length_scale_grid,
         noise_level_grid,
@@ -376,18 +377,79 @@ for different hyperparameters to get a sense of the local minima.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-193
+.. GENERATED FROM PYTHON SOURCE LINES 189-199
 
-We see that there are two local minima that correspond to the combination
-of hyperparameters previously found. Depending on the initial values for the
-hyperparameters, the gradient-based optimization might converge whether or
-not to the best model. It is thus important to repeat the optimization
-several times for different initializations.
+We see that there are two local minima that correspond to the combination of
+hyperparameters previously found. Depending on the initial values for the
+hyperparameters, the gradient-based optimization might or might not
+converge to the best model. It is thus important to repeat the optimization
+several times for different initializations. This can be done by setting the
+`n_restarts_optimizer` parameter of the
+:class:`~sklearn.gaussian_process.GaussianProcessRegressor` class.
+
+Let's try again to fit our model with the bad initial values but this time
+with 10 random restarts.
+
+.. GENERATED FROM PYTHON SOURCE LINES 200-210
+
+.. code-block:: Python
+
+
+    kernel = 1.0 * RBF(length_scale=1e1, length_scale_bounds=(1e-2, 1e3)) + WhiteKernel(
+        noise_level=1, noise_level_bounds=(1e-10, 1e1)
+    )
+    gpr = GaussianProcessRegressor(
+        kernel=kernel, alpha=0.0, n_restarts_optimizer=10, random_state=0
+    )
+    gpr.fit(X_train, y_train)
+    y_mean, y_std = gpr.predict(X, return_std=True)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 211-225
+
+.. code-block:: Python
+
+    plt.plot(X, y, label="Expected signal")
+    plt.scatter(x=X_train[:, 0], y=y_train, color="black", alpha=0.4, label="Observations")
+    plt.errorbar(X, y_mean, y_std, label="Posterior mean ± std")
+    plt.legend()
+    plt.xlabel("X")
+    plt.ylabel("y")
+    _ = plt.title(
+        (
+            f"Initial: {kernel}\nOptimum: {gpr.kernel_}\nLog-Marginal-Likelihood: "
+            f"{gpr.log_marginal_likelihood(gpr.kernel_.theta)}"
+        ),
+        fontsize=8,
+    )
+
+
+
+
+.. image-sg:: /auto_examples/gaussian_process/images/sphx_glr_plot_gpr_noisy_006.png
+   :alt: Initial: 1**2 * RBF(length_scale=10) + WhiteKernel(noise_level=1) Optimum: 1.05**2 * RBF(length_scale=0.569) + WhiteKernel(noise_level=0.134) Log-Marginal-Likelihood: -18.429732528970845
+   :srcset: /auto_examples/gaussian_process/images/sphx_glr_plot_gpr_noisy_006.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 226-228
+
+As we hoped, random restarts allow the optimization to find the best set
+of hyperparameters despite the bad initial values.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.609 seconds)
+   **Total running time of the script:** (0 minutes 5.817 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_noisy.py:
@@ -406,7 +468,7 @@ several times for different initializations.
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/gaussian_process/plot_gpr_noisy.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/gaussian_process/plot_gpr_noisy.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -417,6 +479,10 @@ several times for different initializations.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_gpr_noisy.py <plot_gpr_noisy.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_gpr_noisy.zip <plot_gpr_noisy.zip>`
 
 
 .. include:: plot_gpr_noisy.recommendations

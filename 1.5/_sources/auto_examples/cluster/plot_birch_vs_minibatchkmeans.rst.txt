@@ -52,11 +52,11 @@ step before the final (global) clustering step that further reduces these
 
  .. code-block:: none
 
-    BIRCH without global clustering as the final step took 0.51 seconds
+    BIRCH without global clustering as the final step took 0.45 seconds
     n_clusters : 158
-    BIRCH with global clustering as the final step took 0.51 seconds
+    BIRCH with global clustering as the final step took 0.45 seconds
     n_clusters : 100
-    Time taken to run MiniBatchKMeans 0.18 seconds
+    Time taken to run MiniBatchKMeans 0.16 seconds
 
 
 
@@ -158,7 +158,7 @@ step before the final (global) clustering step that further reduces these
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.434 seconds)
+   **Total running time of the script:** (0 minutes 3.190 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_birch_vs_minibatchkmeans.py:
@@ -177,7 +177,7 @@ step before the final (global) clustering step that further reduces these
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/cluster/plot_birch_vs_minibatchkmeans.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/cluster/plot_birch_vs_minibatchkmeans.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -188,6 +188,10 @@ step before the final (global) clustering step that further reduces these
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_birch_vs_minibatchkmeans.py <plot_birch_vs_minibatchkmeans.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_birch_vs_minibatchkmeans.zip <plot_birch_vs_minibatchkmeans.zip>`
 
 
 .. include:: plot_birch_vs_minibatchkmeans.recommendations

@@ -115,8 +115,7 @@ Plot results
         )
         if axis_list is not None:
             for axis, color, label in axis_list:
-                axis /= axis.std()
-                x_axis, y_axis = axis
+                x_axis, y_axis = axis / axis.std()
                 plt.quiver(
                     (0, 0),
                     (0, 0),
@@ -129,10 +128,11 @@ Plot results
                     label=label,
                 )
 
-        plt.hlines(0, -3, 3)
-        plt.vlines(0, -3, 3)
-        plt.xlim(-3, 3)
+        plt.hlines(0, -5, 5, color="black", linewidth=0.5)
+        plt.vlines(0, -3, 3, color="black", linewidth=0.5)
+        plt.xlim(-5, 5)
         plt.ylim(-3, 3)
+        plt.gca().set_aspect("equal")
         plt.xlabel("x")
         plt.ylabel("y")
 
@@ -145,13 +145,13 @@ Plot results
     axis_list = [(pca.components_.T, "orange", "PCA"), (ica.mixing_, "red", "ICA")]
     plt.subplot(2, 2, 2)
     plot_samples(X / np.std(X), axis_list=axis_list)
-    legend = plt.legend(loc="lower right")
+    legend = plt.legend(loc="upper left")
     legend.set_zorder(100)
 
     plt.title("Observations")
 
     plt.subplot(2, 2, 3)
-    plot_samples(S_pca_ / np.std(S_pca_, axis=0))
+    plot_samples(S_pca_ / np.std(S_pca_))
     plt.title("PCA recovered signals")
 
     plt.subplot(2, 2, 4)
@@ -176,7 +176,7 @@ Plot results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.361 seconds)
+   **Total running time of the script:** (0 minutes 0.412 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_ica_vs_pca.py:
@@ -195,7 +195,7 @@ Plot results
     .. container:: lite-badge
 
       .. image:: images/jupyterlite_badge_logo.svg
-        :target: ../../lite/lab/?path=auto_examples/decomposition/plot_ica_vs_pca.ipynb
+        :target: ../../lite/lab/index.html?path=auto_examples/decomposition/plot_ica_vs_pca.ipynb
         :alt: Launch JupyterLite
         :width: 150 px
 
@@ -206,6 +206,10 @@ Plot results
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_ica_vs_pca.py <plot_ica_vs_pca.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_ica_vs_pca.zip <plot_ica_vs_pca.zip>`
 
 
 .. include:: plot_ica_vs_pca.recommendations

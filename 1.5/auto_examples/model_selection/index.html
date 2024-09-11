@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="" />
 <meta name="description" content="Examples related to the sklearn.model_selection module. Balance model complexity and cross-validated score Class Likelihood Ratios to measure classification performance Comparing randomized search ..." />
 
-    <title>Model Selection &#8212; scikit-learn 1.5.1 documentation</title>
+    <title>Model Selection &#8212; scikit-learn 1.5.2 documentation</title>
   
   
   
@@ -26,12 +26,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -41,36 +41,36 @@
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/colors.css?v=cc94ab7d" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/custom.css?v=42c874f8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/custom.css?v=e4cb1417" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=44dfd65d"></script>
+    <script src="../../_static/documentation_options.js?v=73275c37"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=97f0b27d"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script data-domain="scikit-learn.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/model_selection/index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.15.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-learn.org/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.2';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
         </script>
-    <script src="../../_static/scripts/dropdown.js?v=12d599f8"></script>
+    <script src="../../_static/scripts/dropdown.js?v=e2048168"></script>
     <script src="../../_static/scripts/version-switcher.js?v=a6dd8357"></script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
@@ -135,7 +135,7 @@
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -144,6 +144,8 @@
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../../index.html">
@@ -170,113 +172,113 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
 
-            <li class="nav-item dropdown pst-header-nav-item">
+            <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../support.html">
     Support
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../about.html">
     About us
   </a>
@@ -298,7 +300,7 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -310,15 +312,15 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
       
-        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -329,7 +331,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/scikit-learn/scikit-learn" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/scikit-learn/scikit-learn" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -340,7 +342,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-2"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-2"
@@ -367,7 +369,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -398,108 +400,108 @@ document.write(`
           
           
             <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../install.html">
     Install
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../user_guide.html">
     User Guide
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../api/index.html">
     API
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item current active">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Examples
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://blog.scikit-learn.org/">
     Community
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../getting_started.html">
     Getting Started
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../whats_new.html">
     Release History
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../glossary.html">
     Glossary
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://scikit-learn.org/dev/developers/index.html">
     Development
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../faq.html">
     FAQ
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../support.html">
     Support
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../related_projects.html">
     Related Projects
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../roadmap.html">
     Roadmap
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../governance.html">
     Governance
   </a>
 </li>
 
 
-<li class="nav-item pst-header-nav-item">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../about.html">
     About us
   </a>
@@ -519,15 +521,15 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script></div>
         
-          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+          <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -538,7 +540,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/scikit-learn/scikit-learn" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/scikit-learn/scikit-learn" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -549,7 +551,7 @@ document.write(`
   <div class="version-switcher__container dropdown">
     <button id="pst-version-switcher-button-3"
       type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
       data-bs-toggle="dropdown"
       aria-haspopup="listbox"
       aria-controls="pst-version-switcher-list-3"
@@ -1029,76 +1031,76 @@ document.write(`
   <section id="model-selection">
 <span id="model-selection-examples"></span><span id="sphx-glr-auto-examples-model-selection"></span><h1>Model Selection<a class="headerlink" href="#model-selection" title="Link to this heading">#</a></h1>
 <p>Examples related to the <a class="reference internal" href="../../api/sklearn.model_selection.html#module-sklearn.model_selection" title="sklearn.model_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a> module.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example balances model complexity and cross-validated score by finding a decent accuracy w..."><img alt="" src="../../_images/sphx_glr_plot_grid_search_refit_callable_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example balances model complexity and cross-validated score by finding a decent accuracy within 1 standard deviation of the best accuracy score while minimising the number of PCA components [1]."><img alt="" src="../../_images/sphx_glr_plot_grid_search_refit_callable_thumb.png" />
 <p><a class="reference internal" href="plot_grid_search_refit_callable.html#sphx-glr-auto-examples-model-selection-plot-grid-search-refit-callable-py"><span class="std std-ref">Balance model complexity and cross-validated score</span></a></p>
   <div class="sphx-glr-thumbnail-title">Balance model complexity and cross-validated score</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the class_likelihood_ratios function, which computes the positive and..."><img alt="" src="../../_images/sphx_glr_plot_likelihood_ratios_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the class_likelihood_ratios function, which computes the positive and negative likelihood ratios (`LR+`, LR-) to assess the predictive power of a binary classifier. As we will see, these metrics are independent of the proportion between classes in the test set, which makes them very useful when the available data for a study has a different class proportion than the target application."><img alt="" src="../../_images/sphx_glr_plot_likelihood_ratios_thumb.png" />
 <p><a class="reference internal" href="plot_likelihood_ratios.html#sphx-glr-auto-examples-model-selection-plot-likelihood-ratios-py"><span class="std std-ref">Class Likelihood Ratios to measure classification performance</span></a></p>
   <div class="sphx-glr-thumbnail-title">Class Likelihood Ratios to measure classification performance</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Compare randomized search and grid search for optimizing hyperparameters of a linear SVM with S..."><img alt="" src="../../_images/sphx_glr_plot_randomized_search_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Compare randomized search and grid search for optimizing hyperparameters of a linear SVM with SGD training. All parameters that influence the learning are searched simultaneously (except for the number of estimators, which poses a time / quality tradeoff)."><img alt="" src="../../_images/sphx_glr_plot_randomized_search_thumb.png" />
 <p><a class="reference internal" href="plot_randomized_search.html#sphx-glr-auto-examples-model-selection-plot-randomized-search-py"><span class="std std-ref">Comparing randomized search and grid search for hyperparameter estimation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Comparing randomized search and grid search for hyperparameter estimation</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example compares the parameter search performed by HalvingGridSearchCV and GridSearchCV."><img alt="" src="../../_images/sphx_glr_plot_successive_halving_heatmap_thumb.png" />
 <p><a class="reference internal" href="plot_successive_halving_heatmap.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-heatmap-py"><span class="std std-ref">Comparison between grid search and successive halving</span></a></p>
   <div class="sphx-glr-thumbnail-title">Comparison between grid search and successive halving</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of confusion matrix usage to evaluate the quality of the output of a classifier on the ..."><img alt="" src="../../_images/sphx_glr_plot_confusion_matrix_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Example of confusion matrix usage to evaluate the quality of the output of a classifier on the iris data set. The diagonal elements represent the number of points for which the predicted label is equal to the true label, while off-diagonal elements are those that are mislabeled by the classifier. The higher the diagonal values of the confusion matrix the better, indicating many correct predictions."><img alt="" src="../../_images/sphx_glr_plot_confusion_matrix_thumb.png" />
 <p><a class="reference internal" href="plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py"><span class="std std-ref">Confusion matrix</span></a></p>
   <div class="sphx-glr-thumbnail-title">Confusion matrix</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the ..."><img alt="" src="../../_images/sphx_glr_plot_grid_search_digits_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the GridSearchCV object on a development set that comprises only half of the available labeled data."><img alt="" src="../../_images/sphx_glr_plot_grid_search_digits_thumb.png" />
 <p><a class="reference internal" href="plot_grid_search_digits.html#sphx-glr-auto-examples-model-selection-plot-grid-search-digits-py"><span class="std std-ref">Custom refit strategy of a grid search with cross-validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Custom refit strategy of a grid search with cross-validation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Multiple metric parameter search can be done by setting the scoring parameter to a list of metr..."><img alt="" src="../../_images/sphx_glr_plot_multi_metric_evaluation_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Multiple metric parameter search can be done by setting the scoring parameter to a list of metric scorer names or a dict mapping the scorer names to the scorer callables."><img alt="" src="../../_images/sphx_glr_plot_multi_metric_evaluation_thumb.png" />
 <p><a class="reference internal" href="plot_multi_metric_evaluation.html#sphx-glr-auto-examples-model-selection-plot-multi-metric-evaluation-py"><span class="std std-ref">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</span></a></p>
   <div class="sphx-glr-thumbnail-title">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we compare two binary classification multi-threshold metrics: the Receiver Ope..."><img alt="" src="../../_images/sphx_glr_plot_det_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we compare two binary classification multi-threshold metrics: the Receiver Operating Characteristic (ROC) and the Detection Error Tradeoff (DET). For such purpose, we evaluate two different classifiers for the same classification task."><img alt="" src="../../_images/sphx_glr_plot_det_thumb.png" />
 <p><a class="reference internal" href="plot_det.html#sphx-glr-auto-examples-model-selection-plot-det-py"><span class="std std-ref">Detection error tradeoff (DET) curve</span></a></p>
   <div class="sphx-glr-thumbnail-title">Detection error tradeoff (DET) curve</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example describes the use of the Receiver Operating Characteristic (ROC) metric to evaluat..."><img alt="" src="../../_images/sphx_glr_plot_roc_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example describes the use of the Receiver Operating Characteristic (ROC) metric to evaluate the quality of multiclass classifiers."><img alt="" src="../../_images/sphx_glr_plot_roc_thumb.png" />
 <p><a class="reference internal" href="plot_roc.html#sphx-glr-auto-examples-model-selection-plot-roc-py"><span class="std std-ref">Multiclass Receiver Operating Characteristic (ROC)</span></a></p>
   <div class="sphx-glr-thumbnail-title">Multiclass Receiver Operating Characteristic (ROC)</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares non-nested and nested cross-validation strategies on a classifier of the ..."><img alt="" src="../../_images/sphx_glr_plot_nested_cross_validation_iris_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares non-nested and nested cross-validation strategies on a classifier of the iris data set. Nested cross-validation (CV) is often used to train a model in which hyperparameters also need to be optimized. Nested CV estimates the generalization error of the underlying model and its (hyper)parameter search. Choosing the parameters that maximize non-nested CV biases the model to the dataset, yielding an overly-optimistic score."><img alt="" src="../../_images/sphx_glr_plot_nested_cross_validation_iris_thumb.png" />
 <p><a class="reference internal" href="plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py"><span class="std std-ref">Nested versus non-nested cross-validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Nested versus non-nested cross-validation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use cross_val_predict together with PredictionErrorDisplay to visuali..."><img alt="" src="../../_images/sphx_glr_plot_cv_predict_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use cross_val_predict together with PredictionErrorDisplay to visualize prediction errors."><img alt="" src="../../_images/sphx_glr_plot_cv_predict_thumb.png" />
 <p><a class="reference internal" href="plot_cv_predict.html#sphx-glr-auto-examples-model-selection-plot-cv-predict-py"><span class="std std-ref">Plotting Cross-Validated Predictions</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plotting Cross-Validated Predictions</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to use the class LearningCurveDisplay to easily plot learning curv..."><img alt="" src="../../_images/sphx_glr_plot_learning_curve_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to use the class LearningCurveDisplay to easily plot learning curves. In addition, we give an interpretation to the learning curves obtained for a naive Bayes and SVM classifiers."><img alt="" src="../../_images/sphx_glr_plot_learning_curve_thumb.png" />
 <p><a class="reference internal" href="plot_learning_curve.html#sphx-glr-auto-examples-model-selection-plot-learning-curve-py"><span class="std std-ref">Plotting Learning Curves and Checking Models’ Scalability</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plotting Learning Curves and Checking Models' Scalability</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different valu..."><img alt="" src="../../_images/sphx_glr_plot_validation_curve_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different values of the kernel parameter gamma. For very low values of gamma, you can see that both the training score and the validation score are low. This is called underfitting. Medium values of gamma will result in high values for both scores, i.e. the classifier is performing fairly well. If gamma is too high, the classifier will overfit, which means that the training score is good but the validation score is poor."><img alt="" src="../../_images/sphx_glr_plot_validation_curve_thumb.png" />
 <p><a class="reference internal" href="plot_validation_curve.html#sphx-glr-auto-examples-model-selection-plot-validation-curve-py"><span class="std std-ref">Plotting Validation Curves</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plotting Validation Curves</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Once a binary classifier is trained, the predict method outputs class label predictions corresp..."><img alt="" src="../../_images/sphx_glr_plot_tuned_decision_threshold_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Once a binary classifier is trained, the predict method outputs class label predictions corresponding to a thresholding of either the decision_function or the predict_proba output. The default threshold is defined as a posterior probability estimate of 0.5 or a decision score of 0.0. However, this default strategy may not be optimal for the task at hand."><img alt="" src="../../_images/sphx_glr_plot_tuned_decision_threshold_thumb.png" />
 <p><a class="reference internal" href="plot_tuned_decision_threshold.html#sphx-glr-auto-examples-model-selection-plot-tuned-decision-threshold-py"><span class="std std-ref">Post-hoc tuning the cut-off point of decision function</span></a></p>
   <div class="sphx-glr-thumbnail-title">Post-hoc tuning the cut-off point of decision function</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Once a classifier is trained, the output of the predict method outputs class label predictions ..."><img alt="" src="../../_images/sphx_glr_plot_cost_sensitive_learning_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Once a classifier is trained, the output of the predict method outputs class label predictions corresponding to a thresholding of either the decision_function or the predict_proba output. For a binary classifier, the default threshold is defined as a posterior probability estimate of 0.5 or a decision score of 0.0."><img alt="" src="../../_images/sphx_glr_plot_cost_sensitive_learning_thumb.png" />
 <p><a class="reference internal" href="plot_cost_sensitive_learning.html#sphx-glr-auto-examples-model-selection-plot-cost-sensitive-learning-py"><span class="std std-ref">Post-tuning the decision threshold for cost-sensitive learning</span></a></p>
   <div class="sphx-glr-thumbnail-title">Post-tuning the decision threshold for cost-sensitive learning</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Example of Precision-Recall metric to evaluate classifier output quality."><img alt="" src="../../_images/sphx_glr_plot_precision_recall_thumb.png" />
 <p><a class="reference internal" href="plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py"><span class="std std-ref">Precision-Recall</span></a></p>
   <div class="sphx-glr-thumbnail-title">Precision-Recall</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example presents how to estimate and visualize the variance of the Receiver Operating Char..."><img alt="" src="../../_images/sphx_glr_plot_roc_crossval_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example presents how to estimate and visualize the variance of the Receiver Operating Characteristic (ROC) metric using cross-validation."><img alt="" src="../../_images/sphx_glr_plot_roc_crossval_thumb.png" />
 <p><a class="reference internal" href="plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py"><span class="std std-ref">Receiver Operating Characteristic (ROC) with cross validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Receiver Operating Characteristic (ROC) with cross validation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The dataset used in this example is 20newsgroups_dataset which will be automatically downloaded..."><img alt="" src="../../_images/sphx_glr_plot_grid_search_text_feature_extraction_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The dataset used in this example is 20newsgroups_dataset which will be automatically downloaded, cached and reused for the document classification example."><img alt="" src="../../_images/sphx_glr_plot_grid_search_text_feature_extraction_thumb.png" />
 <p><a class="reference internal" href="plot_grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-plot-grid-search-text-feature-extraction-py"><span class="std std-ref">Sample pipeline for text feature extraction and evaluation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Sample pipeline for text feature extraction and evaluation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to statistically compare the performance of models trained and eva..."><img alt="" src="../../_images/sphx_glr_plot_grid_search_stats_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to statistically compare the performance of models trained and evaluated using GridSearchCV."><img alt="" src="../../_images/sphx_glr_plot_grid_search_stats_thumb.png" />
 <p><a class="reference internal" href="plot_grid_search_stats.html#sphx-glr-auto-examples-model-selection-plot-grid-search-stats-py"><span class="std std-ref">Statistical comparison of models using grid search</span></a></p>
   <div class="sphx-glr-thumbnail-title">Statistical comparison of models using grid search</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how a successive halving search (~sklearn.model_selection.HalvingGridS..."><img alt="" src="../../_images/sphx_glr_plot_successive_halving_iterations_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how a successive halving search (~sklearn.model_selection.HalvingGridSearchCV and HalvingRandomSearchCV) iteratively chooses the best parameter combination out of multiple candidates."><img alt="" src="../../_images/sphx_glr_plot_successive_halving_iterations_thumb.png" />
 <p><a class="reference internal" href="plot_successive_halving_iterations.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-iterations-py"><span class="std std-ref">Successive Halving Iterations</span></a></p>
   <div class="sphx-glr-thumbnail-title">Successive Halving Iterations</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the use of permutation_test_score to evaluate the significance of a c..."><img alt="" src="../../_images/sphx_glr_plot_permutation_tests_for_classification_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the use of permutation_test_score to evaluate the significance of a cross-validated score using permutations."><img alt="" src="../../_images/sphx_glr_plot_permutation_tests_for_classification_thumb.png" />
 <p><a class="reference internal" href="plot_permutation_tests_for_classification.html#sphx-glr-auto-examples-model-selection-plot-permutation-tests-for-classification-py"><span class="std std-ref">Test with permutations the significance of a classification score</span></a></p>
   <div class="sphx-glr-thumbnail-title">Test with permutations the significance of a classification score</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same ..."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same as the performance on training data. As the regularization increases the performance on train decreases while the performance on test is optimal within a range of values of the regularization parameter. The example with an Elastic-Net regression model and the performance is measured using the explained variance a.k.a. R^2."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
 <p><a class="reference internal" href="plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Train error vs Test error</span></a></p>
   <div class="sphx-glr-thumbnail-title">Train error vs Test error</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the problems of underfitting and overfitting and how we can use linea..."><img alt="" src="../../_images/sphx_glr_plot_underfitting_overfitting_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the problems of underfitting and overfitting and how we can use linear regression with polynomial features to approximate nonlinear functions. The plot shows the function that we want to approximate, which is a part of the cosine function. In addition, the samples from the real function and the approximations of different models are displayed. The models have polynomial features of different degrees. We can see that a linear function (polynomial with degree 1) is not sufficient to fit the training samples. This is called underfitting. A polynomial of degree 4 approximates the true function almost perfectly. However, for higher degrees the model will overfit the training data, i.e. it learns the noise of the training data. We evaluate quantitatively overfitting / underfitting by using cross-validation. We calculate the mean squared error (MSE) on the validation set, the higher, the less likely the model generalizes correctly from the training data."><img alt="" src="../../_images/sphx_glr_plot_underfitting_overfitting_thumb.png" />
 <p><a class="reference internal" href="plot_underfitting_overfitting.html#sphx-glr-auto-examples-model-selection-plot-underfitting-overfitting-py"><span class="std std-ref">Underfitting vs. Overfitting</span></a></p>
   <div class="sphx-glr-thumbnail-title">Underfitting vs. Overfitting</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Choosing the right cross-validation object is a crucial part of fitting a model properly. There..."><img alt="" src="../../_images/sphx_glr_plot_cv_indices_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Choosing the right cross-validation object is a crucial part of fitting a model properly. There are many ways to split data into training and test sets in order to avoid model overfitting, to standardize the number of groups in test sets, etc."><img alt="" src="../../_images/sphx_glr_plot_cv_indices_thumb.png" />
 <p><a class="reference internal" href="plot_cv_indices.html#sphx-glr-auto-examples-model-selection-plot-cv-indices-py"><span class="std std-ref">Visualizing cross-validation behavior in scikit-learn</span></a></p>
   <div class="sphx-glr-thumbnail-title">Visualizing cross-validation behavior in scikit-learn</div>
 </div></div><div class="toctree-wrapper compound">
@@ -1155,8 +1157,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
