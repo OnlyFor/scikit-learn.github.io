@@ -90,7 +90,7 @@
     - docs
 
   * - sphinx-gallery
-    - 0.16.0
+    - 0.17.1
     - docs
 
   * - numpydoc
