@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-09-12T13:45:11.148363Z",
+      "created": "2024-09-12T13:51:04.427513Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-12T13:45:04.616368Z",
+      "last_modified": "2024-09-12T13:50:59.867391Z",
       "mimetype": null,
       "name": "plot_compare_cross_decomposition.ipynb",
       "path": "auto_examples/cross_decomposition/plot_compare_cross_decomposition.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2024-09-12T13:45:11.148363Z",
+      "created": "2024-09-12T13:51:04.427513Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-09-12T13:45:04.616368Z",
+      "last_modified": "2024-09-12T13:50:59.867391Z",
       "mimetype": null,
       "name": "plot_pcr_vs_pls.ipynb",
       "path": "auto_examples/cross_decomposition/plot_pcr_vs_pls.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2024-09-12T13:45:11.148363Z",
+  "created": "2024-09-12T13:51:04.427513Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-09-12T13:45:11.148363Z",
+  "last_modified": "2024-09-12T13:51:04.427513Z",
   "mimetype": null,
   "name": "cross_decomposition",
   "path": "auto_examples/cross_decomposition",

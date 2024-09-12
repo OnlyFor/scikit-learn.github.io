@@ -112,7 +112,7 @@ algorithm:
 
  .. code-block:: none
 
-    ROC AUC score is 0.9282638675845617
+    ROC AUC score is 0.9279981584252047
 
 
 
@@ -1235,7 +1235,7 @@ cross-validation with sample weights and :class:`~model_selection.GroupKFold`:
 
  .. code-block:: none
 
-    cv error on test sets: [-0.24272135 -0.32463517 -0.5623957  -0.36657008 -0.1974803 ]
+    cv error on test sets: [-0.3428838  -0.34937087 -0.35326497 -0.38475999 -0.13246656]
 
 
 
@@ -1286,7 +1286,7 @@ eigenvalue decomposition of the data set covariance matrix.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.930 seconds)
+   **Total running time of the script:** (0 minutes 1.903 seconds)
 
 
 .. _sphx_glr_download_auto_examples_release_highlights_plot_release_highlights_1_4_0.py:
