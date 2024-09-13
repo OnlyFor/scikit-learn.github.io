@@ -1301,6 +1301,22 @@ reference on concepts repeated across the API, see :ref:`glossary`.
 
 
 
+  * - :obj:`~sklearn.datasets.fetch_file`
+
+    - .. div:: sk-apisearch-desc
+
+        .. currentmodule:: sklearn.datasets
+
+        .. autoshortsummary:: sklearn.datasets.fetch_file
+
+        .. div:: caption
+
+          :mod:`sklearn.datasets`
+
+
+
+
+
   * - :obj:`~sklearn.datasets.fetch_kddcup99`
 
     - .. div:: sk-apisearch-desc
