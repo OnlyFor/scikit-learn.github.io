@@ -26,9 +26,9 @@ The present example compares three l1-based regression models on a synthetic
 signal obtained from sparse and correlated features that are further corrupted
 with additive gaussian noise:
 
- - a :ref:`lasso`;
- - an :ref:`automatic_relevance_determination`;
- - an :ref:`elastic_net`.
+- a :ref:`lasso`;
+- an :ref:`automatic_relevance_determination`;
+- an :ref:`elastic_net`.
 
 It is known that the Lasso estimates turn to be close to the model selection
 estimates when the data dimensions grow, given that the irrelevant variables are
@@ -288,7 +288,7 @@ comparison of :class:`~sklearn.linear_model.ARDRegression` and
 
  .. code-block:: none
 
-    ARD fit done in 0.017s
+    ARD fit done in 0.019s
     ARD r^2 on test data : 0.543
 
 
@@ -430,14 +430,14 @@ amount of time due to fitting a prior.
 References
 ----------
 
-  .. [1] :doi:`"Lasso-type recovery of sparse representations for
+.. [1] :doi:`"Lasso-type recovery of sparse representations for
    high-dimensional data" N. Meinshausen, B. Yu - The Annals of Statistics
    2009, Vol. 37, No. 1, 246-270 <10.1214/07-AOS582>`
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.411 seconds)
+   **Total running time of the script:** (0 minutes 0.404 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_and_elasticnet.py:

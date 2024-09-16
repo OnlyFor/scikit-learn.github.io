@@ -25,10 +25,7 @@ Wikipedia principal eigenvector
 A classical way to assert the relative importance of vertices in a
 graph is to compute the principal eigenvector of the adjacency matrix
 so as to assign to each vertex the values of the components of the first
-eigenvector as a centrality score:
-
-    https://en.wikipedia.org/wiki/Eigenvector_centrality
-
+eigenvector as a centrality score: https://en.wikipedia.org/wiki/Eigenvector_centrality.
 On the graph of webpages and links those values are called the PageRank
 scores by Google.
 
@@ -37,17 +34,14 @@ wikipedia articles to rank articles by relative importance according to
 this eigenvector centrality.
 
 The traditional way to compute the principal eigenvector is to use the
-power iteration method:
-
-    https://en.wikipedia.org/wiki/Power_iteration
-
+`power iteration method <https://en.wikipedia.org/wiki/Power_iteration>`_.
 Here the computation is achieved thanks to Martinsson's Randomized SVD
 algorithm implemented in scikit-learn.
 
 The graph data is fetched from the DBpedia dumps. DBpedia is an extraction
 of the latent structured data of the Wikipedia content.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-48
+.. GENERATED FROM PYTHON SOURCE LINES 26-42
 
 .. code-block:: Python
 
@@ -68,12 +62,12 @@ of the latent structured data of the Wikipedia content.
     from sklearn.decomposition import randomized_svd
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-51
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
 
 Download data, if not already on disk
 -------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-71
+.. GENERATED FROM PYTHON SOURCE LINES 45-65
 
 .. code-block:: Python
 
@@ -98,12 +92,12 @@ Download data, if not already on disk
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 66-68
 
 Loading the redirect files
 --------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-121
+.. GENERATED FROM PYTHON SOURCE LINES 68-115
 
 .. code-block:: Python
 
@@ -155,12 +149,12 @@ Loading the redirect files
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-124
+.. GENERATED FROM PYTHON SOURCE LINES 116-118
 
 Computing the Adjacency matrix
 ------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-172
+.. GENERATED FROM PYTHON SOURCE LINES 118-166
 
 .. code-block:: Python
 
@@ -213,12 +207,12 @@ Computing the Adjacency matrix
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-175
+.. GENERATED FROM PYTHON SOURCE LINES 167-169
 
 Computing Principal Singular Vector using Randomized SVD
 --------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-187
+.. GENERATED FROM PYTHON SOURCE LINES 169-181
 
 .. code-block:: Python
 
@@ -235,12 +229,12 @@ Computing Principal Singular Vector using Randomized SVD
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-190
+.. GENERATED FROM PYTHON SOURCE LINES 182-184
 
 Computing Centrality scores
 ---------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-235
+.. GENERATED FROM PYTHON SOURCE LINES 184-229
 
 .. code-block:: Python
 

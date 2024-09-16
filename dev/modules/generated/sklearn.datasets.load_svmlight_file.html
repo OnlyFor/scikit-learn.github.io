@@ -1337,7 +1337,7 @@ document.write(`
 <h1>load_svmlight_file<a class="headerlink" href="#load-svmlight-file" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.datasets.load_svmlight_file">
-<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_svmlight_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_features=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'numpy.float64'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multilabel=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_based='auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_id=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length=-1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/dda3e0d5c/sklearn/datasets/_svmlight_format_io.py#L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_svmlight_file" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_svmlight_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_features=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'numpy.float64'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multilabel=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_based='auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_id=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length=-1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f6d6929f3/sklearn/datasets/_svmlight_format_io.py#L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_svmlight_file" title="Link to this definition">#</a></dt>
 <dd><p>Load datasets in the svmlight / libsvm format into sparse CSR matrix.</p>
 <p>This format is a text-based format, with one sample per line. It does
 not store zero valued features hence is suitable for sparse dataset.</p>
@@ -1358,10 +1358,8 @@ when using pairwise loss functions (as is the case in some
 learning to rank problems) so that only pairs with the same
 query_id value are considered.</p>
 <p>This implementation is written in Cython and is reasonably fast.
-However, a faster API-compatible loader is also available at:</p>
-<blockquote>
-<div><p><a class="github reference external" href="https://github.com/mblondel/svmlight-loader">mblondel/svmlight-loader</a></p>
-</div></blockquote>
+However, a faster API-compatible loader is also available at:
+<a class="github reference external" href="https://github.com/mblondel/svmlight-loader">mblondel/svmlight-loader</a></p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>

@@ -1339,7 +1339,7 @@ document.write(`
 <h1>cross_val_predict<a class="headerlink" href="#cross-val-predict" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.model_selection.cross_val_predict">
-<span class="sig-prename descclassname"><span class="pre">sklearn.model_selection.</span></span><span class="sig-name descname"><span class="pre">cross_val_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/dda3e0d5c/sklearn/model_selection/_validation.py#L1026"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.model_selection.cross_val_predict" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.model_selection.</span></span><span class="sig-name descname"><span class="pre">cross_val_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f6d6929f3/sklearn/model_selection/_validation.py#L1018"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.model_selection.cross_val_predict" title="Link to this definition">#</a></dt>
 <dd><p>Generate cross-validated estimates for each input data point.</p>
 <p>The data is split according to the cv parameter. Each sample belongs
 to exactly one test set, and its prediction is computed with an
@@ -1413,28 +1413,22 @@ splitter.</p>
 execution. Reducing this number can be useful to avoid an
 explosion of memory consumption when more jobs get dispatched
 than CPUs can process. This parameter can be:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>None, in which case all the jobs are immediately
-created and spawned. Use this for lightweight and
-fast-running jobs, to avoid delays due to on-demand
+<ul class="simple">
+<li><p>None, in which case all the jobs are immediately created and spawned. Use
+this for lightweight and fast-running jobs, to avoid delays due to on-demand
 spawning of the jobs</p></li>
-<li><p>An int, giving the exact number of total jobs that are
-spawned</p></li>
-<li><p>A str, giving an expression as a function of n_jobs,
-as in ‘2*n_jobs’</p></li>
+<li><p>An int, giving the exact number of total jobs that are spawned</p></li>
+<li><p>A str, giving an expression as a function of n_jobs, as in ‘2*n_jobs’</p></li>
 </ul>
-</div></blockquote>
 </dd>
 <dt><strong>method</strong><span class="classifier">{‘predict’, ‘predict_proba’, ‘predict_log_proba’,               ‘decision_function’}, default=’predict’</span></dt><dd><p>The method to be invoked by <code class="docutils literal notranslate"><span class="pre">estimator</span></code>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl>
+<dd class="field-even"><dl class="simple">
 <dt><strong>predictions</strong><span class="classifier">ndarray</span></dt><dd><p>This is the result of calling <code class="docutils literal notranslate"><span class="pre">method</span></code>. Shape:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>When <code class="docutils literal notranslate"><span class="pre">method</span></code> is ‘predict’ and in special case where <code class="docutils literal notranslate"><span class="pre">method</span></code> is
 ‘decision_function’ and the target is binary: (n_samples,)</p></li>
 <li><p>When <code class="docutils literal notranslate"><span class="pre">method</span></code> is one of {‘predict_proba’, ‘predict_log_proba’,
@@ -1443,7 +1437,6 @@ as in ‘2*n_jobs’</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">estimator</span></code> is <a class="reference internal" href="../../glossary.html#term-multioutput"><span class="xref std std-term">multioutput</span></a>, an extra dimension
 ‘n_outputs’ is added to the end of each shape above.</p></li>
 </ul>
-</div></blockquote>
 </dd>
 </dl>
 </dd>

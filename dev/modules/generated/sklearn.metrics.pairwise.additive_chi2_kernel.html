@@ -1337,13 +1337,13 @@ document.write(`
 <h1>additive_chi2_kernel<a class="headerlink" href="#additive-chi2-kernel" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.pairwise.additive_chi2_kernel">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.pairwise.</span></span><span class="sig-name descname"><span class="pre">additive_chi2_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/dda3e0d5c/sklearn/metrics/pairwise.py#L1735"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.pairwise.additive_chi2_kernel" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.pairwise.</span></span><span class="sig-name descname"><span class="pre">additive_chi2_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f6d6929f3/sklearn/metrics/pairwise.py#L1750"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.pairwise.additive_chi2_kernel" title="Link to this definition">#</a></dt>
 <dd><p>Compute the additive chi-squared kernel between observations in X and Y.</p>
 <p>The chi-squared kernel is computed between each pair of rows in X and Y.  X
 and Y have to be non-negative. This kernel is most commonly applied to
 histograms.</p>
 <p>The chi-squared kernel is given by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="n">Sum</span> <span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>k(x, y) = -Sum [(x - y)^2 / (x + y)]
 </pre></div>
 </div>
 <p>It can be interpreted as a weighted difference per entry.</p>

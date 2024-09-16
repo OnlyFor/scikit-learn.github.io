@@ -1067,13 +1067,11 @@ missing values imputed using different techniques.</p>
 </div>
 <section id="download-the-data-and-make-missing-values-sets">
 <h2>Download the data and make missing values sets<a class="headerlink" href="#download-the-data-and-make-missing-values-sets" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>First we download the two datasets. Diabetes dataset is shipped with
+<p>First we download the two datasets. Diabetes dataset is shipped with
 scikit-learn. It has 442 entries, each with 10 features. California Housing
 dataset is much larger with 20640 entries and 8 features. It needs to be
 downloaded. We will only use the first 400 entries for the sake of speeding
 up the calculations but feel free to use the whole dataset.</p>
-</div></blockquote>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_california_housing.html#sklearn.datasets.fetch_california_housing" title="sklearn.datasets.fetch_california_housing" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_california_housing</span></a><span class="p">,</span> <a href="../../modules/generated/sklearn.datasets.load_diabetes.html#sklearn.datasets.load_diabetes" title="sklearn.datasets.load_diabetes" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_diabetes</span></a>
@@ -1316,7 +1314,7 @@ to potentially improve performance.</p>
 <img src="../../_images/sphx_glr_plot_missing_values_001.png" srcset="../../_images/sphx_glr_plot_missing_values_001.png" alt="Imputation Techniques with Diabetes Data, Imputation Techniques with California Data" class = "sphx-glr-single-img"/><p>You can also try different techniques. For instance, the median is a more
 robust estimator for data with high magnitude variables which could dominate
 results (otherwise known as a ‘long tail’).</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.949 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.727 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-impute-plot-missing-values-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/impute/plot_missing_values.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo15.svg" style="width: 150px;" />

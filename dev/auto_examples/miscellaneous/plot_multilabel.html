@@ -1043,14 +1043,12 @@ to download the full example code. or to run this example in your browser via Ju
 <span id="sphx-glr-auto-examples-miscellaneous-plot-multilabel-py"></span><h1>Multilabel classification<a class="headerlink" href="#multilabel-classification" title="Link to this heading">#</a></h1>
 <p>This example simulates a multi-label document classification problem. The
 dataset is generated randomly based on the following process:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>pick the number of labels: n ~ Poisson(n_labels)</p></li>
 <li><p>n times, choose a class c: c ~ Multinomial(theta)</p></li>
 <li><p>pick the document length: k ~ Poisson(length)</p></li>
 <li><p>k times, choose a word: w ~ Multinomial(theta_c)</p></li>
 </ul>
-</div></blockquote>
 <p>In the above process, rejection sampling is used to make sure that n is more
 than 2, and that the document length is never zero. Likewise, we reject classes
 which have already been chosen.  The documents that are assigned to both
@@ -1165,7 +1163,7 @@ have a label.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.187 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.217 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-miscellaneous-plot-multilabel-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_multilabel.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo20.svg" style="width: 150px;" />

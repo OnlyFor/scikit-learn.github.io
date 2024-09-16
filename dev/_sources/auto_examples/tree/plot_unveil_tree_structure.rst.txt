@@ -504,7 +504,7 @@ First, we fit a :class:`~sklearn.tree.DecisionTreeClassifier` using the
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-80
+.. GENERATED FROM PYTHON SOURCE LINES 45-77
 
 Tree structure
 --------------
@@ -523,26 +523,23 @@ arrays are therefore arbitrary.
 
 Among these arrays, we have:
 
-  - ``children_left[i]``: id of the left child of node ``i`` or -1 if leaf
-    node
-  - ``children_right[i]``: id of the right child of node ``i`` or -1 if leaf
-    node
-  - ``feature[i]``: feature used for splitting node ``i``
-  - ``threshold[i]``: threshold value at node ``i``
-  - ``n_node_samples[i]``: the number of training samples reaching node
-    ``i``
-  - ``impurity[i]``: the impurity at node ``i``
-  - ``weighted_n_node_samples[i]``: the weighted number of training samples
-    reaching node ``i``
-  - ``value[i, j, k]``: the summary of the training samples that reached node i for
-    output j and class k (for regression tree, class is set to 1). See below
-    for more information about ``value``.
+- ``children_left[i]``: id of the left child of node ``i`` or -1 if leaf node
+- ``children_right[i]``: id of the right child of node ``i`` or -1 if leaf node
+- ``feature[i]``: feature used for splitting node ``i``
+- ``threshold[i]``: threshold value at node ``i``
+- ``n_node_samples[i]``: the number of training samples reaching node ``i``
+- ``impurity[i]``: the impurity at node ``i``
+- ``weighted_n_node_samples[i]``: the weighted number of training samples
+  reaching node ``i``
+- ``value[i, j, k]``: the summary of the training samples that reached node i for
+  output j and class k (for regression tree, class is set to 1). See below
+  for more information about ``value``.
 
 Using the arrays, we can traverse the tree structure to compute various
 properties. Below, we will compute the depth of each node and whether or not
 it is a leaf.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-133
+.. GENERATED FROM PYTHON SOURCE LINES 77-130
 
 .. code-block:: Python
 
@@ -618,7 +615,7 @@ it is a leaf.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-164
+.. GENERATED FROM PYTHON SOURCE LINES 131-161
 
 What is the values array used here?
 -----------------------------------
@@ -651,13 +648,13 @@ Note: In this example, `n_outputs=1`, but the tree classifier can also handle
 multi-output problems. The `value` array at each node would just be a 2D
 array instead.
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-169
+.. GENERATED FROM PYTHON SOURCE LINES 163-166
 
 We can compare the above output to the plot of the decision tree.
 Here, we show the proportions of samples of each class that reach each
 node corresponding to the actual elements of `tree_.value` array.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-173
+.. GENERATED FROM PYTHON SOURCE LINES 166-170
 
 .. code-block:: Python
 
@@ -677,7 +674,7 @@ node corresponding to the actual elements of `tree_.value` array.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 174-191
+.. GENERATED FROM PYTHON SOURCE LINES 171-188
 
 Decision path
 -------------
@@ -697,7 +694,7 @@ reached by each sample of interest. Using the leaf ids and the
 predict a sample or a group of samples. First, let's do it for one sample.
 Note that ``node_index`` is a sparse matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-225
+.. GENERATED FROM PYTHON SOURCE LINES 188-222
 
 .. code-block:: Python
 
@@ -751,12 +748,12 @@ Note that ``node_index`` is a sparse matrix.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-228
+.. GENERATED FROM PYTHON SOURCE LINES 223-225
 
 For a group of samples, we can determine the common nodes the samples go
 through.
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-241
+.. GENERATED FROM PYTHON SOURCE LINES 225-238
 
 .. code-block:: Python
 
@@ -791,7 +788,7 @@ through.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.080 seconds)
+   **Total running time of the script:** (0 minutes 0.091 seconds)
 
 
 .. _sphx_glr_download_auto_examples_tree_plot_unveil_tree_structure.py:

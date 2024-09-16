@@ -1049,14 +1049,11 @@ equation:</p>
 <div class="math notranslate nohighlight">
 \[C \sum_{i=1, n} \mathcal{L} (f(x_i), y_i) + \Omega (w)\]</div>
 <p>where</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(C\)</span> is used to set the amount of regularization</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a <code class="docutils literal notranslate"><span class="pre">loss</span></code> function of our samples
-and our model parameters.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a <code class="docutils literal notranslate"><span class="pre">loss</span></code> function of our samples and our model parameters.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is a <code class="docutils literal notranslate"><span class="pre">penalty</span></code> function of our model parameters</p></li>
 </ul>
-</div></blockquote>
 <p>If we consider the loss function to be the individual error per sample, then the
 data-fit term, or the sum of the error for each sample, increases as we add more
 samples. The penalization term, however, does not increase.</p>
@@ -1230,7 +1227,7 @@ does not seem to be degraded up to chance level.</p>
 <p>Try increasing the value to <code class="docutils literal notranslate"><span class="pre">n_splits=1_000</span></code> for better results in the L2
 case, which is not shown here due to the limitations on the documentation
 builder.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 18.080 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 19.527 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-svm-plot-svm-scale-c-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/svm/plot_svm_scale_c.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo30.svg" style="width: 150px;" />

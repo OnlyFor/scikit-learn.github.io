@@ -1141,22 +1141,18 @@ independently of the joblib backend.</p>
 <p>There are three ways to specify multiple scoring metrics for the <code class="docutils literal notranslate"><span class="pre">scoring</span></code>
 parameter:</p>
 <ul>
-<li><dl>
-<dt>As an iterable of string metrics::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;precision&#39;</span><span class="p">]</span>
+<li><p>As an iterable of string metrics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;precision&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 </li>
-<li><dl>
-<dt>As a <code class="docutils literal notranslate"><span class="pre">dict</span></code> mapping the scorer name to the scoring function::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<li><p>As a <code class="docutils literal notranslate"><span class="pre">dict</span></code> mapping the scorer name to the scoring function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scoring</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">),</span>
 <span class="gp">... </span>           <span class="s1">&#39;prec&#39;</span><span class="p">:</span> <span class="s1">&#39;precision&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 <p>Note that the dict values can either be scorer functions or one of the
 predefined metric strings.</p>
 </li>
@@ -2129,8 +2125,7 @@ function:</p>
 <span class="go">-0.33...</span>
 </pre></div>
 </div>
-<aside class="topic">
-<p class="topic-title">References:</p>
+<p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="wikipediamcc2021" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">WikipediaMCC2021</a><span class="fn-bracket">]</span></span>
@@ -2140,7 +2135,6 @@ Available at: <a class="reference external" href="https://en.wikipedia.org/wiki/
 Accessed April 21, 2021.</p>
 </div>
 </div>
-</aside>
 </section>
 <section id="multi-label-confusion-matrix">
 <span id="multilabel-confusion-matrix"></span><h3><span class="section-number">3.4.2.14. </span>Multi-label confusion matrix<a class="headerlink" href="#multi-label-confusion-matrix" title="Link to this heading">#</a></h3>

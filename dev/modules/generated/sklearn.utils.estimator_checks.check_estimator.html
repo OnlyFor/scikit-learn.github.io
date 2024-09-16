@@ -1337,7 +1337,7 @@ document.write(`
 <h1>check_estimator<a class="headerlink" href="#check-estimator" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.utils.estimator_checks.check_estimator">
-<span class="sig-prename descclassname"><span class="pre">sklearn.utils.estimator_checks.</span></span><span class="sig-name descname"><span class="pre">check_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legacy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/dda3e0d5c/sklearn/utils/estimator_checks.py#L526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.estimator_checks.check_estimator" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.utils.estimator_checks.</span></span><span class="sig-name descname"><span class="pre">check_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legacy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f6d6929f3/sklearn/utils/estimator_checks.py#L526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.estimator_checks.check_estimator" title="Link to this definition">#</a></dt>
 <dd><p>Check if estimator adheres to scikit-learn conventions.</p>
 <p>This function will run an extensive test-suite for input validation,
 shapes, etc, making sure that the estimator complies with <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>
@@ -1353,14 +1353,12 @@ independently and report the checks that are failing.</p>
 <a class="reference internal" href="sklearn.utils.estimator_checks.parametrize_with_checks.html#sklearn.utils.estimator_checks.parametrize_with_checks" title="sklearn.utils.estimator_checks.parametrize_with_checks"><code class="xref py py-func docutils literal notranslate"><span class="pre">parametrize_with_checks</span></code></a>, making it
 easier to test multiple estimators.</p>
 <p>Checks are categorised into the following groups:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>API checks: a set of checks to ensure API compatibility with scikit-learn.
 Refer to <a class="reference external" href="https://scikit-learn.org/dev/developers/develop.html">https://scikit-learn.org/dev/developers/develop.html</a> a requirement of
 scikit-learn estimators.</p></li>
 <li><p>legacy: a set of checks which gradually will be grouped into other categories.</p></li>
 </ul>
-</div></blockquote>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>

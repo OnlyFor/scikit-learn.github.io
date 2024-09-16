@@ -24,12 +24,11 @@ Faces recognition example using eigenfaces and SVMs
 
 The dataset used in this example is a preprocessed excerpt of the
 "Labeled Faces in the Wild", aka LFW_:
-
-  http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)
+http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)
 
 .. _LFW: http://vis-www.cs.umass.edu/lfw/
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-18
+.. GENERATED FROM PYTHON SOURCE LINES 13-17
 
 .. code-block:: Python
 
@@ -44,7 +43,7 @@ The dataset used in this example is a preprocessed excerpt of the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-30
 
 .. code-block:: Python
 
@@ -67,11 +66,11 @@ The dataset used in this example is a preprocessed excerpt of the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 Download the data, if not already on disk and load it as numpy arrays
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-55
+.. GENERATED FROM PYTHON SOURCE LINES 32-54
 
 .. code-block:: Python
 
@@ -113,11 +112,11 @@ Download the data, if not already on disk and load it as numpy arrays
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 Split into a training set and a test and keep 25% of the data for testing.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-66
+.. GENERATED FROM PYTHON SOURCE LINES 56-65
 
 .. code-block:: Python
 
@@ -137,12 +136,12 @@ Split into a training set and a test and keep 25% of the data for testing.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-69
+.. GENERATED FROM PYTHON SOURCE LINES 66-68
 
 Compute a PCA (eigenfaces) on the face dataset (treated as unlabeled
 dataset): unsupervised feature extraction / dimensionality reduction
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-88
+.. GENERATED FROM PYTHON SOURCE LINES 68-87
 
 .. code-block:: Python
 
@@ -174,18 +173,18 @@ dataset): unsupervised feature extraction / dimensionality reduction
  .. code-block:: none
 
     Extracting the top 150 eigenfaces from 966 faces
-    done in 0.102s
+    done in 0.087s
     Projecting the input data on the eigenfaces orthonormal basis
-    done in 0.008s
+    done in 0.006s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-90
+.. GENERATED FROM PYTHON SOURCE LINES 88-89
 
 Train a SVM classification model
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-106
+.. GENERATED FROM PYTHON SOURCE LINES 89-105
 
 .. code-block:: Python
 
@@ -214,7 +213,7 @@ Train a SVM classification model
  .. code-block:: none
 
     Fitting the classifier to the training set
-    done in 5.456s
+    done in 5.380s
     Best estimator found by grid search:
     SVC(C=np.float64(76823.03433306457), class_weight='balanced',
         gamma=np.float64(0.0034189458230957995))
@@ -222,11 +221,11 @@ Train a SVM classification model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-108
+.. GENERATED FROM PYTHON SOURCE LINES 106-107
 
 Quantitative evaluation of the model quality on the test set
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-122
+.. GENERATED FROM PYTHON SOURCE LINES 107-121
 
 .. code-block:: Python
 
@@ -258,7 +257,7 @@ Quantitative evaluation of the model quality on the test set
  .. code-block:: none
 
     Predicting people's names on the test set
-    done in 0.047s
+    done in 0.042s
                        precision    recall  f1-score   support
 
          Ariel Sharon       0.75      0.69      0.72        13
@@ -277,11 +276,11 @@ Quantitative evaluation of the model quality on the test set
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-124
+.. GENERATED FROM PYTHON SOURCE LINES 122-123
 
 Qualitative evaluation of the predictions using matplotlib
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-138
+.. GENERATED FROM PYTHON SOURCE LINES 123-137
 
 .. code-block:: Python
 
@@ -306,11 +305,11 @@ Qualitative evaluation of the predictions using matplotlib
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-140
+.. GENERATED FROM PYTHON SOURCE LINES 138-139
 
 plot the result of the prediction on a portion of the test set
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-153
+.. GENERATED FROM PYTHON SOURCE LINES 139-152
 
 .. code-block:: Python
 
@@ -339,11 +338,11 @@ plot the result of the prediction on a portion of the test set
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-155
+.. GENERATED FROM PYTHON SOURCE LINES 153-154
 
 plot the gallery of the most significative eigenfaces
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-161
+.. GENERATED FROM PYTHON SOURCE LINES 154-160
 
 .. code-block:: Python
 
@@ -365,7 +364,7 @@ plot the gallery of the most significative eigenfaces
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-166
+.. GENERATED FROM PYTHON SOURCE LINES 161-165
 
 Face recognition problem would be much more effectively solved by training
 convolutional neural networks but this family of models is outside of the scope of
@@ -375,7 +374,7 @@ tensorflow to implement such models.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.323 seconds)
+   **Total running time of the script:** (0 minutes 6.198 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_face_recognition.py:

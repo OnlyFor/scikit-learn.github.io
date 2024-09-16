@@ -724,7 +724,7 @@ document.write(`
                   
   <section id="manifold-learning">
 <span id="manifold"></span><h1><span class="section-number">2.2. </span>Manifold learning<a class="headerlink" href="#manifold-learning" title="Link to this heading">#</a></h1>
-<div class="quote line-block">
+<div class="line-block">
 <div class="line">Look for the bare necessities</div>
 <div class="line">The simple bare necessities</div>
 <div class="line">Forget about your worries and your strife</div>
@@ -941,14 +941,13 @@ It requires <code class="docutils literal notranslate"><span class="pre">n_neigh
 <span class="sd-summary-text">Complexity<a class="headerlink" href="#complexity-4" title="Link to this dropdown">#</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 </div>
 </details><p>The HLLE algorithm comprises three stages:</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p><strong>Nearest Neighbors Search</strong>.  Same as standard LLE</p></li>
 <li><p><strong>Weight Matrix Construction</strong>. Approximately
 <span class="math notranslate nohighlight">\(O[D N k^3] + O[N d^6]\)</span>.  The first term reflects a similar
 cost to that of standard LLE.  The second term comes from a QR
 decomposition of the local hessian estimator.</p></li>
-<li><p><strong>Partial Eigenvalue Decomposition</strong>. Same as standard LLE</p></li>
+<li><p><strong>Partial Eigenvalue Decomposition</strong>. Same as standard LLE.</p></li>
 </ol>
 <p>The overall complexity of standard HLLE is
 <span class="math notranslate nohighlight">\(O[D \log(k) N \log(N)] + O[D N k^3] + O[N d^6] + O[d N^2]\)</span>.</p>
@@ -958,7 +957,6 @@ decomposition of the local hessian estimator.</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> : number of nearest neighbors</p></li>
 <li><p><span class="math notranslate nohighlight">\(d\)</span> : output dimension</p></li>
 </ul>
-</div></blockquote>
 <p class="rubric">References</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.pnas.org/content/100/10/5591">“Hessian Eigenmaps: Locally linear embedding techniques for

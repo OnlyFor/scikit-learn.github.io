@@ -1511,16 +1511,12 @@ of the other type is arbitrary. For example, the arrays <code class="docutils li
 <code class="docutils literal notranslate"><span class="pre">threshold</span></code> only apply to split nodes. The values for leaf nodes in these
 arrays are therefore arbitrary.</p>
 <p>Among these arrays, we have:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">children_left[i]</span></code>: id of the left child of node <code class="docutils literal notranslate"><span class="pre">i</span></code> or -1 if leaf
-node</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">children_right[i]</span></code>: id of the right child of node <code class="docutils literal notranslate"><span class="pre">i</span></code> or -1 if leaf
-node</p></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">children_left[i]</span></code>: id of the left child of node <code class="docutils literal notranslate"><span class="pre">i</span></code> or -1 if leaf node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">children_right[i]</span></code>: id of the right child of node <code class="docutils literal notranslate"><span class="pre">i</span></code> or -1 if leaf node</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">feature[i]</span></code>: feature used for splitting node <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">threshold[i]</span></code>: threshold value at node <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n_node_samples[i]</span></code>: the number of training samples reaching node
-<code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_node_samples[i]</span></code>: the number of training samples reaching node <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">impurity[i]</span></code>: the impurity at node <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">weighted_n_node_samples[i]</span></code>: the weighted number of training samples
 reaching node <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
@@ -1528,7 +1524,6 @@ reaching node <code class="docutils literal notranslate"><span class="pre">i</sp
 output j and class k (for regression tree, class is set to 1). See below
 for more information about <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
 </ul>
-</div></blockquote>
 <p>Using the arrays, we can traverse the tree structure to compute various
 properties. Below, we will compute the depth of each node and whether or not
 it is a leaf.</p>
@@ -1704,7 +1699,7 @@ through.</p>
 This is 40.0% of all nodes.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.080 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.091 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-tree-plot-unveil-tree-structure-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/tree/plot_unveil_tree_structure.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo32.svg" style="width: 150px;" />

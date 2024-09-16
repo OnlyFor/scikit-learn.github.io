@@ -1045,13 +1045,11 @@ to download the full example code. or to run this example in your browser via Ju
 <p>The present example compares three l1-based regression models on a synthetic
 signal obtained from sparse and correlated features that are further corrupted
 with additive gaussian noise:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>a <a class="reference internal" href="../../modules/linear_model.html#lasso"><span class="std std-ref">Lasso</span></a>;</p></li>
 <li><p>an <a class="reference internal" href="../../modules/linear_model.html#automatic-relevance-determination"><span class="std std-ref">Automatic Relevance Determination - ARD</span></a>;</p></li>
 <li><p>an <a class="reference internal" href="../../modules/linear_model.html#elastic-net"><span class="std std-ref">Elastic-Net</span></a>.</p></li>
 </ul>
-</div></blockquote>
 <p>It is known that the Lasso estimates turn to be close to the model selection
 estimates when the data dimensions grow, given that the irrelevant variables are
 not too correlated with the relevant ones. In the presence of correlated
@@ -1185,7 +1183,7 @@ comparison of <a class="reference internal" href="../../modules/generated/sklear
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ARD r^2 on test data : </span><span class="si">{</span><span class="n">r2_score_ard</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>ARD fit done in 0.017s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>ARD fit done in 0.019s
 ARD r^2 on test data : 0.543
 </pre></div>
 </div>
@@ -1282,8 +1280,7 @@ amount of time due to fitting a prior.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><aside class="footnote-list brackets">
+<aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://doi.org/10.1214/07-AOS582">“Lasso-type recovery of sparse representations for
@@ -1291,8 +1288,7 @@ high-dimensional data” N. Meinshausen, B. Yu - The Annals of Statistics
 2009, Vol. 37, No. 1, 246-270</a></p>
 </aside>
 </aside>
-</div></blockquote>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.411 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.404 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-lasso-and-elasticnet-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_lasso_and_elasticnet.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />

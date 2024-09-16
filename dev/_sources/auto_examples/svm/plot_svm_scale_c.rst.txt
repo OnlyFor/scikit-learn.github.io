@@ -34,10 +34,9 @@ equation:
 
 where
 
-    - :math:`C` is used to set the amount of regularization
-    - :math:`\mathcal{L}` is a `loss` function of our samples
-      and our model parameters.
-    - :math:`\Omega` is a `penalty` function of our model parameters
+- :math:`C` is used to set the amount of regularization
+- :math:`\mathcal{L}` is a `loss` function of our samples and our model parameters.
+- :math:`\Omega` is a `penalty` function of our model parameters
 
 If we consider the loss function to be the individual error per sample, then the
 data-fit term, or the sum of the error for each sample, increases as we add more
@@ -52,7 +51,7 @@ Since the loss function dependens on the amount of samples, the latter
 influences the selected value of `C`. The question that arises is "How do we
 optimally adjust C to account for the different amount of training samples?"
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-40
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 .. code-block:: Python
 
@@ -67,7 +66,7 @@ optimally adjust C to account for the different amount of training samples?"
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-50
+.. GENERATED FROM PYTHON SOURCE LINES 40-49
 
 Data generation
 ---------------
@@ -79,7 +78,7 @@ features, out of which only a few are informative. We therefore expect the
 regularization to shrink the coefficients towards zero (L2 penalty) or exactly
 zero (L1 penalty).
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-58
+.. GENERATED FROM PYTHON SOURCE LINES 49-57
 
 .. code-block:: Python
 
@@ -98,7 +97,7 @@ zero (L1 penalty).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-69
+.. GENERATED FROM PYTHON SOURCE LINES 58-68
 
 L1-penalty case
 ---------------
@@ -111,7 +110,7 @@ as well as their signs by tuning `C`.
 
 We define a linear SVC with the L1 penalty.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-74
+.. GENERATED FROM PYTHON SOURCE LINES 68-73
 
 .. code-block:: Python
 
@@ -127,12 +126,12 @@ We define a linear SVC with the L1 penalty.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 74-76
 
 We compute the mean test score for different values of `C` via
 cross-validation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-107
+.. GENERATED FROM PYTHON SOURCE LINES 76-106
 
 .. code-block:: Python
 
@@ -173,7 +172,7 @@ cross-validation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-135
+.. GENERATED FROM PYTHON SOURCE LINES 107-134
 
 .. code-block:: Python
 
@@ -216,7 +215,7 @@ cross-validation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-154
+.. GENERATED FROM PYTHON SOURCE LINES 135-153
 
 In the region of small `C` (strong regularization) all the coefficients
 learned by the models are zero, leading to severe underfitting. Indeed, the
@@ -237,7 +236,7 @@ We can do a similar experiment with the L2 penalty. In this case, the
 theory says that in order to achieve prediction consistency, the penalty
 parameter should be kept constant as the number of samples grow.
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-174
+.. GENERATED FROM PYTHON SOURCE LINES 153-173
 
 .. code-block:: Python
 
@@ -268,7 +267,7 @@ parameter should be kept constant as the number of samples grow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-201
+.. GENERATED FROM PYTHON SOURCE LINES 174-200
 
 .. code-block:: Python
 
@@ -310,7 +309,7 @@ parameter should be kept constant as the number of samples grow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-210
+.. GENERATED FROM PYTHON SOURCE LINES 201-209
 
 For the L2 penalty case, the reparametrization seems to have a smaller impact
 on the stability of the optimal value for the regularization. The transition
@@ -324,7 +323,7 @@ builder.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 18.080 seconds)
+   **Total running time of the script:** (0 minutes 19.527 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_svm_scale_c.py:
