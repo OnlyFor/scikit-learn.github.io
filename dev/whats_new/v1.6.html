@@ -890,10 +890,10 @@ computing the mean value for uniform weights.
 <li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LogisticRegressionCV</span></code></a> corrects sample weight handling
 for the calculation of test scores.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29419">#29419</a> by <a class="reference external" href="https://github.com/snath-xoc">Shruti Nath</a>.</p></li>
-<li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RidgeCV</span></code></a> now properly use predictions the same scale as the
-target seen during <code class="docutils literal notranslate"><span class="pre">fit</span></code>. Those predictions are stored in <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> when when
+<li><p><span class="raw-html"><span class="badge text-bg-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RidgeCV</span></code></a> now properly uses predictions on the same scale as
+the target seen during <code class="docutils literal notranslate"><span class="pre">fit</span></code>. These predictions are stored in <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> when
 <code class="docutils literal notranslate"><span class="pre">scoring</span> <span class="pre">!=</span> <span class="pre">None</span></code>. Previously, the predictions were rescaled by the square root of the
-sample weights and offset by the mean of the target leading to an incorrect estimate
+sample weights and offset by the mean of the target, leading to an incorrect estimate
 of the score.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29842">#29842</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>,
 <a class="reference external" href="https://github.com/jeromedockes">Jérôme Dockes</a> and
