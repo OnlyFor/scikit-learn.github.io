@@ -74,7 +74,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lasso path using LARS" href="plot_lasso_lars.html" />
+    <link rel="next" title="Lasso, Lasso-LARS, and Elastic Net paths" href="plot_lasso_lasso_lars_elasticnet_path.html" />
     <link rel="prev" title="Lasso model selection: AIC-BIC / cross-validation" href="plot_lasso_model_selection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -780,11 +780,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_multi_task_lasso_support.html">Joint feature selection with multi-task Lasso</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_logistic_l1_l2_sparsity.html">L1 Penalty and Sparsity in Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_and_elasticnet.html">L1-based models for Sparse Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_lasso_coordinate_descent_path.html">Lasso and Elastic Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_lars_ic.html">Lasso model selection via information criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lasso on dense and sparse data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_lasso_lars.html">Lasso path using LARS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_logistic.html">Logistic function</a></li>
@@ -1085,8 +1084,8 @@ runtime with a dense data format.</p>
 <span class="c1">#</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Sparse Lasso done in 0.098s
-Dense Lasso done in 0.030s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Sparse Lasso done in 0.110s
+Dense Lasso done in 0.039s
 Distance between coefficients : 1.01e-13
 </pre></div>
 </div>
@@ -1125,12 +1124,12 @@ expect the implementation that uses the sparse data format to be faster.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Matrix density : 0.626%
-Sparse Lasso done in 0.183s
-Dense Lasso done in  0.640s
+Sparse Lasso done in 0.188s
+Dense Lasso done in  0.859s
 Distance between coefficients : 8.65e-12
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.016 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.266 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-lasso-dense-vs-sparse-data-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_lasso_dense_vs_sparse_data.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1157,12 +1156,12 @@ Distance between coefficients : 8.65e-12
 </div><div class="sphx-glr-thumbcontainer" tooltip="The multi-task lasso allows to fit multiple regression problems jointly enforcing the selected features to be the same across tasks. This example simulates sequential measurements, each task is a time instant, and the relevant features vary in amplitude over time while being the same. The multi-task lasso imposes that features that are selected at one time point are select for all time point. This makes feature selection by the Lasso more stable."><img alt="" src="../../_images/sphx_glr_plot_multi_task_lasso_support_thumb.png" />
 <p><a class="reference internal" href="plot_multi_task_lasso_support.html#sphx-glr-auto-examples-linear-model-plot-multi-task-lasso-support-py"><span class="std std-ref">Joint feature selection with multi-task Lasso</span></a></p>
   <div class="sphx-glr-thumbnail-title">Joint feature selection with multi-task Lasso</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the &quot;paths&quot; of coefficients along the Lasso, Lasso-LARS, and Elastic Net regularization paths. In other words, it shows the relationship between the regularization parameter (alpha) and the coefficients."><img alt="" src="../../_images/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_thumb.png" />
+<p><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-lasso-lars-elasticnet-path-py"><span class="std std-ref">Lasso, Lasso-LARS, and Elastic Net paths</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Lasso, Lasso-LARS, and Elastic Net paths</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example focuses on model selection for Lasso models that are linear models with an L1 penalty for regression problems."><img alt="" src="../../_images/sphx_glr_plot_lasso_model_selection_thumb.png" />
 <p><a class="reference internal" href="plot_lasso_model_selection.html#sphx-glr-auto-examples-linear-model-plot-lasso-model-selection-py"><span class="std std-ref">Lasso model selection: AIC-BIC / cross-validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Lasso model selection: AIC-BIC / cross-validation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Computes Lasso Path along the regularization parameter using the LARS algorithm on the diabetes dataset. Each color represents a different feature of the coefficient vector, and this is displayed as a function of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_lasso_lars_thumb.png" />
-<p><a class="reference internal" href="plot_lasso_lars.html#sphx-glr-auto-examples-linear-model-plot-lasso-lars-py"><span class="std std-ref">Lasso path using LARS</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Lasso path using LARS</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>
@@ -1187,11 +1186,11 @@ Distance between coefficients : 8.65e-12
       </div>
     </a>
     <a class="right-next"
-       href="plot_lasso_lars.html"
+       href="plot_lasso_lasso_lars_elasticnet_path.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lasso path using LARS</p>
+        <p class="prev-next-title">Lasso, Lasso-LARS, and Elastic Net paths</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

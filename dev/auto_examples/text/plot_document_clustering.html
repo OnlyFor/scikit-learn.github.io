@@ -780,11 +780,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_multi_task_lasso_support.html">Joint feature selection with multi-task Lasso</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_l1_l2_sparsity.html">L1 Penalty and Sparsity in Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_and_elasticnet.html">L1-based models for Sparse Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html">Lasso and Elastic Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars_ic.html">Lasso model selection via information criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars.html">Lasso path using LARS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
@@ -1211,7 +1210,7 @@ IDF normalization as provided by
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n_samples: </span><span class="si">{</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, n_features: </span><span class="si">{</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 0.372 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 0.408 s
 n_samples: 3387, n_features: 7929
 </pre></div>
 </div>
@@ -1278,7 +1277,7 @@ best inertia (objective function of k-means) is chosen.</p>
 <span class="n">fit_and_evaluate</span><span class="p">(</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">X_tfidf</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KMeans</span><span class="se">\n</span><span class="s2">on tf-idf vectors&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.18 ± 0.05 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.19 ± 0.04 s
 Homogeneity: 0.349 ± 0.010
 Completeness: 0.398 ± 0.009
 V-measure: 0.372 ± 0.009
@@ -1318,7 +1317,7 @@ the information retrieval and text mining literature.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Explained variance of the SVD step: </span><span class="si">{</span><span class="n">explained_variance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LSA done in 0.359 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LSA done in 0.365 s
 Explained variance of the SVD step: 18.4%
 </pre></div>
 </div>
@@ -1421,7 +1420,7 @@ the hashed vector space.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vectorization done in </span><span class="si">{</span><a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 1.652 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 1.801 s
 </pre></div>
 </div>
 <p>One can observe that the LSA step takes a relatively long time to fit,
@@ -1514,7 +1513,7 @@ is less stable than <a class="reference internal" href="../../modules/generated/
 dataset. It is more interesting to use when the number of samples is much
 bigger, but it can come at the expense of a small degradation in clustering
 quality compared to the traditional k-means algorithm.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.107 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.569 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />

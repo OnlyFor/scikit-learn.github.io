@@ -1135,7 +1135,7 @@ allows Elastic-Net to inherit some of Ridge’s stability under rotation.</p>
 \[\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
 \frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2}\]</div>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/linear_model/plot_lasso_coordinate_descent_path.html"><img alt="../_images/sphx_glr_plot_lasso_coordinate_descent_path_001.png" src="../_images/sphx_glr_plot_lasso_coordinate_descent_path_001.png" style="width: 320.0px; height: 240.0px;" />
+<a class="reference external image-reference" href="../auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path.html"><img alt="../_images/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_002.png" src="../_images/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_002.png" style="width: 320.0px; height: 240.0px;" />
 </a>
 </figure>
 <p>The class <a class="reference internal" href="generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV" title="sklearn.linear_model.ElasticNetCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElasticNetCV</span></code></a> can be used to set the parameters
@@ -1143,7 +1143,7 @@ allows Elastic-Net to inherit some of Ridge’s stability under rotation.</p>
 <p class="rubric">Examples</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../auto_examples/linear_model/plot_lasso_and_elasticnet.html#sphx-glr-auto-examples-linear-model-plot-lasso-and-elasticnet-py"><span class="std std-ref">L1-based models for Sparse Signals</span></a></p></li>
-<li><p><a class="reference internal" href="../auto_examples/linear_model/plot_lasso_coordinate_descent_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-coordinate-descent-path-py"><span class="std std-ref">Lasso and Elastic Net</span></a></p></li>
+<li><p><a class="reference internal" href="../auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-lasso-lars-elasticnet-path-py"><span class="std std-ref">Lasso, Lasso-LARS, and Elastic Net paths</span></a></p></li>
 <li><p><a class="reference internal" href="../auto_examples/linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html#sphx-glr-auto-examples-linear-model-plot-elastic-net-precomputed-gram-matrix-with-weighted-samples-py"><span class="std std-ref">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</span></a></p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="references-3">
@@ -1221,7 +1221,7 @@ algorithm, and unlike the implementation based on coordinate descent,
 this yields the exact solution, which is piecewise linear as a
 function of the norm of its coefficients.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/linear_model/plot_lasso_lars.html"><img alt="../_images/sphx_glr_plot_lasso_lars_001.png" src="../_images/sphx_glr_plot_lasso_lars_001.png" style="width: 320.0px; height: 240.0px;" />
+<a class="reference external image-reference" href="../auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path.html"><img alt="../_images/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_001.png" src="../_images/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_001.png" style="width: 320.0px; height: 240.0px;" />
 </a>
 </figure>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -1234,7 +1234,7 @@ function of the norm of its coefficients.</p>
 </div>
 <p class="rubric">Examples</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../auto_examples/linear_model/plot_lasso_lars.html#sphx-glr-auto-examples-linear-model-plot-lasso-lars-py"><span class="std std-ref">Lasso path using LARS</span></a></p></li>
+<li><p><a class="reference internal" href="../auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-lasso-lars-elasticnet-path-py"><span class="std std-ref">Lasso, Lasso-LARS, and Elastic Net paths</span></a></p></li>
 </ul>
 <p>The Lars algorithm provides the full path of the coefficients along
 the regularization parameter almost for free, thus a common operation

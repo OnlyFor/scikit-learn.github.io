@@ -781,11 +781,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_multi_task_lasso_support.html">Joint feature selection with multi-task Lasso</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_l1_l2_sparsity.html">L1 Penalty and Sparsity in Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_and_elasticnet.html">L1-based models for Sparse Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html">Lasso and Elastic Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars_ic.html">Lasso model selection via information criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars.html">Lasso path using LARS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
@@ -1216,13 +1215,13 @@ and projected spaces as x- and y-axis respectively.</p></li>
 <li><img src="../../_images/sphx_glr_plot_johnson_lindenstrauss_bound_008.png" srcset="../../_images/sphx_glr_plot_johnson_lindenstrauss_bound_008.png" alt="Histogram of pairwise distance rates for n_components=10000" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Embedding 300 samples with dim 130107 using various random projections
-Projected 300 samples from 130107 to 300 in 0.246s
+Projected 300 samples from 130107 to 300 in 0.209s
 Random matrix with size: 1.293 MB
 Mean distances rate: 1.01 (0.17)
-Projected 300 samples from 130107 to 1000 in 0.814s
+Projected 300 samples from 130107 to 1000 in 0.708s
 Random matrix with size: 4.323 MB
 Mean distances rate: 1.00 (0.09)
-Projected 300 samples from 130107 to 10000 in 8.121s
+Projected 300 samples from 130107 to 10000 in 7.068s
 Random matrix with size: 43.268 MB
 Mean distances rate: 1.01 (0.03)
 </pre></div>
@@ -1244,7 +1243,7 @@ for dimensionality reduction in this case.</p>
 <p>On the twenty newsgroups on the other hand the dimensionality can be
 decreased from 56,436 down to 10,000 while reasonably preserving
 pairwise distances.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.542 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 10.424 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-miscellaneous-plot-johnson-lindenstrauss-bound-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo20.svg" style="width: 150px;" />
@@ -1268,15 +1267,15 @@ pairwise distances.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="We illustrate various embedding techniques on the digits dataset."><img alt="" src="../../_images/sphx_glr_plot_lle_digits_thumb.png" />
 <p><a class="reference internal" href="../manifold/plot_lle_digits.html#sphx-glr-auto-examples-manifold-plot-lle-digits-py"><span class="std std-ref">Manifold learning on handwritten digits: Locally Linear Embedding, Isomap…</span></a></p>
   <div class="sphx-glr-thumbnail-title">Manifold learning on handwritten digits: Locally Linear Embedding, Isomap...</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Lasso and elastic net (L1 and L2 penalisation) implemented using a coordinate descent."><img alt="" src="../../_images/sphx_glr_plot_lasso_coordinate_descent_path_thumb.png" />
-<p><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-coordinate-descent-path-py"><span class="std std-ref">Lasso and Elastic Net</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Lasso and Elastic Net</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In this demo we will take a look at cluster.HDBSCAN from the perspective of generalizing the cluster.DBSCAN algorithm. We&#x27;ll compare both algorithms on specific datasets. Finally we&#x27;ll evaluate HDBSCAN&#x27;s sensitivity to certain hyperparameters."><img alt="" src="../../_images/sphx_glr_plot_hdbscan_thumb.png" />
 <p><a class="reference internal" href="../cluster/plot_hdbscan.html#sphx-glr-auto-examples-cluster-plot-hdbscan-py"><span class="std std-ref">Demo of HDBSCAN clustering algorithm</span></a></p>
   <div class="sphx-glr-thumbnail-title">Demo of HDBSCAN clustering algorithm</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of dimensionality reduction on the S-curve dataset with various manifold learning methods."><img alt="" src="../../_images/sphx_glr_plot_compare_methods_thumb.png" />
 <p><a class="reference internal" href="../manifold/plot_compare_methods.html#sphx-glr-auto-examples-manifold-plot-compare-methods-py"><span class="std std-ref">Comparison of Manifold Learning methods</span></a></p>
   <div class="sphx-glr-thumbnail-title">Comparison of Manifold Learning methods</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example applies to olivetti_faces_dataset different unsupervised matrix decomposition (dimension reduction) methods from the module sklearn.decomposition (see the documentation chapter decompositions)."><img alt="" src="../../_images/sphx_glr_plot_faces_decomposition_thumb.png" />
+<p><a class="reference internal" href="../decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py"><span class="std std-ref">Faces dataset decompositions</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Faces dataset decompositions</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

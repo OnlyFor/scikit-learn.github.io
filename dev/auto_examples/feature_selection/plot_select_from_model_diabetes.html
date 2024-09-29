@@ -780,11 +780,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_multi_task_lasso_support.html">Joint feature selection with multi-task Lasso</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_l1_l2_sparsity.html">L1 Penalty and Sparsity in Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_and_elasticnet.html">L1-based models for Sparse Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html">Lasso and Elastic Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars_ic.html">Lasso model selection via information criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars.html">Lasso path using LARS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
@@ -1154,7 +1153,7 @@ above the coefficient of third most important feature.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: [&#39;s1&#39; &#39;s5&#39;]
-Done in 0.002s
+Done in 0.003s
 </pre></div>
 </div>
 </section>
@@ -1197,9 +1196,9 @@ both approaches here.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 0.179s
+Done in 0.242s
 Features selected by backward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 0.512s
+Done in 0.687s
 </pre></div>
 </div>
 <p>Interestingly, forward and backward selection have selected the same set of
@@ -1389,13 +1388,13 @@ to perform the feature selection.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tol: -0.01
 Features selected: [&#39;worst perimeter&#39;]
 ROC AUC score: 0.975
-Done in 10.544s
+Done in 13.684s
 
 tol: -0.001
 Features selected: [&#39;radius error&#39; &#39;fractal dimension error&#39; &#39;worst texture&#39;
  &#39;worst perimeter&#39; &#39;worst concave points&#39;]
 ROC AUC score: 0.997
-Done in 10.588s
+Done in 12.650s
 
 tol: -0.0001
 Features selected: [&#39;mean compactness&#39; &#39;mean concavity&#39; &#39;mean concave points&#39; &#39;radius error&#39;
@@ -1403,13 +1402,13 @@ Features selected: [&#39;mean compactness&#39; &#39;mean concavity&#39; &#39;mea
  &#39;fractal dimension error&#39; &#39;worst texture&#39; &#39;worst perimeter&#39; &#39;worst area&#39;
  &#39;worst concave points&#39; &#39;worst symmetry&#39;]
 ROC AUC score: 0.998
-Done in 9.079s
+Done in 11.978s
 </pre></div>
 </div>
 <p>We can see that the number of features selected tend to increase as negative
 values of <code class="docutils literal notranslate"><span class="pre">tol</span></code> approach to zero. The time taken for feature selection also
 decreases as the values of <code class="docutils literal notranslate"><span class="pre">tol</span></code> come closer to zero.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 30.994 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 39.367 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-feature-selection-plot-select-from-model-diabetes-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/feature_selection/plot_select_from_model_diabetes.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" style="width: 150px;" />

@@ -780,11 +780,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_multi_task_lasso_support.html">Joint feature selection with multi-task Lasso</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_l1_l2_sparsity.html">L1 Penalty and Sparsity in Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_and_elasticnet.html">L1-based models for Sparse Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_coordinate_descent_path.html">Lasso and Elastic Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars_ic.html">Lasso model selection via information criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lars.html">Lasso path using LARS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
@@ -1166,7 +1165,7 @@ both of them receive dictionaries as input.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 1.021 s at 6.1 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 1.155 s at 5.4 MB/s
 Found 47928 unique terms
 </pre></div>
 </div>
@@ -1233,7 +1232,7 @@ encoded feature matrix. For such a purpose we define the following function:</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.562 s at 11.1 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.593 s at 10.5 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1255,7 +1254,7 @@ majority of them is inactive.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.557 s at 11.2 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.618 s at 10.1 MB/s
 Found 47668 unique tokens
 </pre></div>
 </div>
@@ -1278,7 +1277,7 @@ passing a dictionary with an implied frequency of 1 for each feature name.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.531 s at 11.8 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.590 s at 10.6 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1328,7 +1327,7 @@ is more flexible. In particular it accepts various regex patterns through the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.650 s at 9.6 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.723 s at 8.6 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1356,7 +1355,7 @@ preprocessing and tokenization of the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;done in </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s at </span><span class="si">{</span><span class="n">data_size_mb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB/s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.503 s at 12.4 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.544 s at 11.5 MB/s
 </pre></div>
 </div>
 <p>We can observe that this is the fastest text tokenization strategy so far,
@@ -1392,7 +1391,7 @@ normalizing and weighting from a
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.654 s at 9.6 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.730 s at 8.6 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1426,7 +1425,7 @@ their equivalent <a class="reference internal" href="../../modules/generated/skl
 <a class="reference internal" href="../../modules/generated/sklearn.feature_extraction.FeatureHasher.html#sklearn.feature_extraction.FeatureHasher" title="sklearn.feature_extraction.FeatureHasher"><code class="xref py py-func docutils literal notranslate"><span class="pre">FeatureHasher</span></code></a> on manually tokenized
 documents since the internal tokenization step of the former vectorizers
 compiles a regular expression once and then reuses it for all the documents.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.934 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.443 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-hashing-vs-dict-vectorizer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_hashing_vs_dict_vectorizer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />

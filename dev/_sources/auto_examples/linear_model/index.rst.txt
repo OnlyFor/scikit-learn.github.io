@@ -172,23 +172,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Lasso and elastic net (L1 and L2 penalisation) implemented using a coordinate descent.">
-
-.. only:: html
-
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_coordinate_descent_path_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_coordinate_descent_path.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Lasso and Elastic Net</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example reproduces the example of Fig. 2 of [ZHT2007]_. A LassoLarsIC estimator is fit on a diabetes dataset and the AIC and the BIC criteria are used to select the best model.">
 
 .. only:: html
@@ -240,18 +223,18 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Computes Lasso Path along the regularization parameter using the LARS algorithm on the diabetes dataset. Each color represents a different feature of the coefficient vector, and this is displayed as a function of the regularization parameter.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the &quot;paths&quot; of coefficients along the Lasso, Lasso-LARS, and Elastic Net regularization paths. In other words, it shows the relationship between the regularization parameter (alpha) and the coefficients.">
 
 .. only:: html
 
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_lars_thumb.png
+  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_lasso_lars_elasticnet_path_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_lars.py`
+  :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_lasso_lars_elasticnet_path.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Lasso path using LARS</div>
+      <div class="sphx-glr-thumbnail-title">Lasso, Lasso-LARS, and Elastic Net paths</div>
     </div>
 
 
@@ -716,11 +699,10 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    /auto_examples/linear_model/plot_multi_task_lasso_support
    /auto_examples/linear_model/plot_logistic_l1_l2_sparsity
    /auto_examples/linear_model/plot_lasso_and_elasticnet
-   /auto_examples/linear_model/plot_lasso_coordinate_descent_path
    /auto_examples/linear_model/plot_lasso_lars_ic
    /auto_examples/linear_model/plot_lasso_model_selection
    /auto_examples/linear_model/plot_lasso_dense_vs_sparse_data
-   /auto_examples/linear_model/plot_lasso_lars
+   /auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path
    /auto_examples/linear_model/plot_ols
    /auto_examples/linear_model/plot_iris_logistic
    /auto_examples/linear_model/plot_logistic
