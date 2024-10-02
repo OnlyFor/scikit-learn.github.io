@@ -1161,9 +1161,9 @@ metadata stripping.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2034 documents - 3.98MB (training set)
 1353 documents - 2.87MB (test set)
 4 categories
-vectorize training done in 0.341s at 11.674MB/s
+vectorize training done in 0.359s at 11.070MB/s
 n_samples: 2034, n_features: 7831
-vectorize testing done in 0.221s at 12.960MB/s
+vectorize testing done in 0.233s at 12.330MB/s
 n_samples: 1353, n_features: 7831
 </pre></div>
 </div>
@@ -1533,8 +1533,8 @@ Logistic Regression
 ________________________________________________________________________________
 Training:
 LogisticRegression(C=5, max_iter=1000)
-train time: 0.153s
-test time:  0.000579s
+train time: 0.167s
+test time:  0.000636s
 accuracy:   0.772
 dimensionality: 5316
 density: 1.0
@@ -1545,8 +1545,8 @@ Ridge Classifier
 ________________________________________________________________________________
 Training:
 RidgeClassifier(solver=&#39;sparse_cg&#39;)
-train time: 0.0308s
-test time:  0.000554s
+train time: 0.0313s
+test time:  0.000679s
 accuracy:   0.76
 dimensionality: 5316
 density: 1.0
@@ -1557,8 +1557,8 @@ kNN
 ________________________________________________________________________________
 Training:
 KNeighborsClassifier(n_neighbors=100)
-train time: 0.000682s
-test time:  0.0644s
+train time: 0.000943s
+test time:  0.0705s
 accuracy:   0.752
 
 ================================================================================
@@ -1566,8 +1566,8 @@ Random Forest
 ________________________________________________________________________________
 Training:
 RandomForestClassifier()
-train time: 1.56s
-test time:  0.0513s
+train time: 1.61s
+test time:  0.0531s
 accuracy:   0.704
 
 ================================================================================
@@ -1575,8 +1575,8 @@ Linear SVC
 ________________________________________________________________________________
 Training:
 LinearSVC(C=0.1, dual=False)
-train time: 0.0271s
-test time:  0.000567s
+train time: 0.0293s
+test time:  0.000625s
 accuracy:   0.752
 dimensionality: 5316
 density: 1.0
@@ -1587,8 +1587,8 @@ log-loss SGD
 ________________________________________________________________________________
 Training:
 SGDClassifier(early_stopping=True, loss=&#39;log_loss&#39;, n_iter_no_change=3)
-train time: 0.027s
-test time:  0.000558s
+train time: 0.0291s
+test time:  0.000589s
 accuracy:   0.758
 dimensionality: 5316
 density: 1.0
@@ -1599,8 +1599,8 @@ NearestCentroid
 ________________________________________________________________________________
 Training:
 NearestCentroid()
-train time: 0.00228s
-test time:  0.00143s
+train time: 0.00255s
+test time:  0.00129s
 accuracy:   0.748
 
 ================================================================================
@@ -1608,8 +1608,8 @@ Complement naive Bayes
 ________________________________________________________________________________
 Training:
 ComplementNB(alpha=0.1)
-train time: 0.00161s
-test time:  0.000463s
+train time: 0.00179s
+test time:  0.000513s
 accuracy:   0.779
 </pre></div>
 </div>
@@ -1672,7 +1672,7 @@ document in the training set, which is computationally expensive. Furthermore,
 the “curse of dimensionality” harms the ability of this model to yield
 competitive accuracy in the high dimensional feature space of text
 classification problems.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.211 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.359 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-classification-20newsgroups-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_classification_20newsgroups.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />
