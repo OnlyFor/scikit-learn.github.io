@@ -824,7 +824,7 @@ extraction and processing pipelines. This scenario might occur when:</p>
 <ol class="arabic simple">
 <li><p>your dataset consists of heterogeneous data types (e.g. raster images and
 text captions),</p></li>
-<li><p>your dataset is stored in a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> and different columns
+<li><p>your dataset is stored in a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> and different columns
 require different processing pipelines.</p></li>
 </ol>
 <p>This example demonstrates how to use
@@ -1014,7 +1014,7 @@ topics for <code class="docutils literal notranslate"><span class="pre">X_test</
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Pipeline] ....... (step 1 of 3) Processing subjectbody, total=   0.0s
-[Pipeline] ............. (step 2 of 3) Processing union, total=   0.5s
+[Pipeline] ............. (step 2 of 3) Processing union, total=   0.4s
 [Pipeline] ............... (step 3 of 3) Processing svc, total=   0.0s
 Classification report:
 
@@ -1028,7 +1028,7 @@ Classification report:
 weighted avg       0.86      0.86      0.86       790
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.694 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.461 seconds)</p>
 
 <p class="rubric">Related examples</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This is an example showing how scikit-learn can be used to classify documents by topics using a Bag of Words approach. This example uses a Tf-idf-weighted document-term sparse matrix to encode the features and demonstrates various classifiers that can efficiently handle sparse matrices."><img alt="" src="../../_images/sphx_glr_plot_document_classification_20newsgroups_thumb.png"/>
