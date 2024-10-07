@@ -94,8 +94,8 @@ runtime with a dense data format.
 
  .. code-block:: none
 
-    Sparse Lasso done in 0.100s
-    Dense Lasso done in 0.040s
+    Sparse Lasso done in 0.101s
+    Dense Lasso done in 0.039s
     Distance between coefficients : 1.01e-13
 
 
@@ -151,8 +151,8 @@ expect the implementation that uses the sparse data format to be faster.
  .. code-block:: none
 
     Matrix density : 0.626%
-    Sparse Lasso done in 0.183s
-    Dense Lasso done in  0.902s
+    Sparse Lasso done in 0.185s
+    Dense Lasso done in  0.901s
     Distance between coefficients : 8.65e-12
 
 
