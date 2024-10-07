@@ -1339,7 +1339,7 @@ document.write(`
 <h1>mean_squared_error<a class="headerlink" href="#mean-squared-error" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.mean_squared_error">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mean_squared_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multioutput</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform_average'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'deprecated'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f508af9e2/sklearn/metrics/_regression.py#L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mean_squared_error" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mean_squared_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multioutput</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform_average'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0422188a2/sklearn/metrics/_regression.py#L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mean_squared_error" title="Link to this definition">#</a></dt>
 <dd><p>Mean squared error regression loss.</p>
 <p>Read more in the <a class="reference internal" href="../model_evaluation.html#mean-squared-error"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
@@ -1359,13 +1359,6 @@ Array-like value defines weights used to average errors.</p>
 <dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
 </dd>
 </dl>
-</dd>
-<dt><strong>squared</strong><span class="classifier">bool, default=True</span></dt><dd><p>If True returns MSE value, if False returns RMSE value.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.4: </span><code class="docutils literal notranslate"><span class="pre">squared</span></code> is deprecated in 1.4 and will be removed in 1.6.
-Use <a class="reference internal" href="sklearn.metrics.root_mean_squared_error.html#sklearn.metrics.root_mean_squared_error" title="sklearn.metrics.root_mean_squared_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">root_mean_squared_error</span></code></a>
-instead to calculate the root mean squared error.</p>
-</div>
 </dd>
 </dl>
 </dd>
