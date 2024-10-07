@@ -86,9 +86,9 @@ random resampling of the dataset.
 
     Computing embedding
     Done.
-    ward :  0.06s
+    ward :  0.05s
     average :       0.05s
-    complete :      0.05s
+    complete :      0.07s
     single :        0.02s
 
 
