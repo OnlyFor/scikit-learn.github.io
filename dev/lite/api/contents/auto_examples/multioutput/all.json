@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-10-07T15:37:09.754590Z",
+      "created": "2024-10-07T16:53:51.982640Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-10-07T15:37:05.814575Z",
+      "last_modified": "2024-10-07T16:53:47.058619Z",
       "mimetype": null,
       "name": "plot_classifier_chain_yeast.ipynb",
       "path": "auto_examples/multioutput/plot_classifier_chain_yeast.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2024-10-07T15:37:09.754590Z",
+  "created": "2024-10-07T16:53:51.982640Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-10-07T15:37:09.754590Z",
+  "last_modified": "2024-10-07T16:53:51.982640Z",
   "mimetype": null,
   "name": "multioutput",
   "path": "auto_examples/multioutput",
