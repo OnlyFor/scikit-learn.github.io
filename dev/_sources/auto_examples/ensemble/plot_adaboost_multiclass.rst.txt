@@ -128,7 +128,7 @@ the weak learner itself is calculated based on its accuracy in classifying the
 training examples. The weight of the weak learner determines its influence on
 the final ensemble prediction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-87
+.. GENERATED FROM PYTHON SOURCE LINES 74-86
 
 .. code-block:: Python
 
@@ -141,7 +141,6 @@ the final ensemble prediction.
     adaboost_clf = AdaBoostClassifier(
         estimator=weak_learner,
         n_estimators=n_estimators,
-        algorithm="SAMME",
         random_state=42,
     ).fit(X_train, y_train)
 
@@ -152,7 +151,7 @@ the final ensemble prediction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-100
+.. GENERATED FROM PYTHON SOURCE LINES 87-99
 
 Analysis
 --------
@@ -167,7 +166,7 @@ point. The second baseline score is obtained from the
 :class:`~sklearn.dummy.DummyClassifier`, which predicts the most prevalent
 class in a dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-127
+.. GENERATED FROM PYTHON SOURCE LINES 99-126
 
 .. code-block:: Python
 
@@ -212,7 +211,7 @@ class in a dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-145
+.. GENERATED FROM PYTHON SOURCE LINES 127-144
 
 After training the :class:`~sklearn.tree.DecisionTreeClassifier` model, the
 achieved error surpasses the expected value that would have been obtained by
@@ -232,7 +231,7 @@ new weak learner into the chain.
 
 We plot the misclassification error for the different stages:
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-179
+.. GENERATED FROM PYTHON SOURCE LINES 144-178
 
 .. code-block:: Python
 
@@ -282,7 +281,7 @@ We plot the misclassification error for the different stages:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-193
+.. GENERATED FROM PYTHON SOURCE LINES 179-192
 
 The plot shows the missclassification error on the test set after each
 boosting iteration. We see that the error of the boosted trees converges to an
@@ -298,7 +297,7 @@ influenced by the learning rate (i.e. `learning_rate`), the number of weak
 learners used (`n_estimators`), and the expressivity of the weak learners
 (e.g. `max_leaf_nodes`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-203
+.. GENERATED FROM PYTHON SOURCE LINES 194-202
 
 Errors and weights of the Weak Learners
 ***************************************
@@ -309,7 +308,7 @@ the weak learners and their statistical performance.
 We use the fitted :class:`~sklearn.ensemble.AdaBoostClassifier`'s attributes
 `estimator_errors_` and `estimator_weights_` to investigate this link.
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-222
+.. GENERATED FROM PYTHON SOURCE LINES 202-221
 
 .. code-block:: Python
 
@@ -344,7 +343,7 @@ We use the fitted :class:`~sklearn.ensemble.AdaBoostClassifier`'s attributes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-254
+.. GENERATED FROM PYTHON SOURCE LINES 222-253
 
 On the left plot, we show the weighted error of each weak learner on the
 reweighted training set at each boosting iteration. On the right plot, we show
@@ -381,7 +380,7 @@ weights are built to counter-balance the worse performing weak learners.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.543 seconds)
+   **Total running time of the script:** (0 minutes 4.544 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_adaboost_multiclass.py:
