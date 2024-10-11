@@ -7,16 +7,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Train error vs Test error" />
+<meta property="og:title" content="Effect of model regularization on training and test error" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://scikit-learn/stable/auto_examples/model_selection/plot_train_error_vs_test_error.html" />
 <meta property="og:site_name" content="scikit-learn" />
-<meta property="og:description" content="Illustration of how the performance of an estimator on unseen data (test data) is not the same as the performance on training data. As the regularization increases the performance on train decrease..." />
+<meta property="og:description" content="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. Th..." />
 <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
 <meta property="og:image:alt" content="scikit-learn" />
-<meta name="description" content="Illustration of how the performance of an estimator on unseen data (test data) is not the same as the performance on training data. As the regularization increases the performance on train decrease..." />
+<meta name="description" content="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. Th..." />
 
-    <title>Train error vs Test error &#8212; scikit-learn 1.6.dev0 documentation</title>
+    <title>Effect of model regularization on training and test error &#8212; scikit-learn 1.6.dev0 documentation</title>
   
   
   
@@ -74,8 +74,8 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Underfitting vs. Overfitting" href="plot_underfitting_overfitting.html" />
-    <link rel="prev" title="Test with permutations the significance of a classification score" href="plot_permutation_tests_for_classification.html" />
+    <link rel="next" title="Multiclass Receiver Operating Characteristic (ROC)" href="plot_roc.html" />
+    <link rel="prev" title="Detection error tradeoff (DET) curve" href="plot_det.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1014,7 +1013,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Model Selection</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Train error...</li>
+    <li class="breadcrumb-item active" aria-current="page">Effect of...</li>
   </ul>
 </nav>
 </div>
@@ -1036,34 +1035,39 @@ document.write(`
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code. or to run this example in your browser via JupyterLite or Binder</p>
 </div>
-<section class="sphx-glr-example-title" id="train-error-vs-test-error">
-<span id="sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"></span><h1>Train error vs Test error<a class="headerlink" href="#train-error-vs-test-error" title="Link to this heading">#</a></h1>
-<p>Illustration of how the performance of an estimator on unseen data (test data)
-is not the same as the performance on training data. As the regularization
-increases the performance on train decreases while the performance on test
-is optimal within a range of values of the regularization parameter.
-The example with an Elastic-Net regression model and the performance is
-measured using the explained variance a.k.a. R^2.</p>
+<section class="sphx-glr-example-title" id="effect-of-model-regularization-on-training-and-test-error">
+<span id="sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"></span><h1>Effect of model regularization on training and test error<a class="headerlink" href="#effect-of-model-regularization-on-training-and-test-error" title="Link to this heading">#</a></h1>
+<p>In this example, we evaluate the impact of the regularization parameter in a
+linear model called <a class="reference internal" href="../../modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElasticNet</span></code></a>. To carry out this
+evaluation, we use a validation curve using
+<a class="reference internal" href="../../modules/generated/sklearn.model_selection.ValidationCurveDisplay.html#sklearn.model_selection.ValidationCurveDisplay" title="sklearn.model_selection.ValidationCurveDisplay"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationCurveDisplay</span></code></a>. This curve shows the
+training and test scores of the model for different values of the regularization
+parameter.</p>
+<p>Once we identify the optimal regularization parameter, we compare the true and
+estimated coefficients of the model to determine if the model is able to recover
+the coefficients from the noisy input data.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: The scikit-learn developers</span>
 <span class="c1"># SPDX-License-Identifier: BSD-3-Clause</span>
 </pre></div>
 </div>
 <section id="generate-sample-data">
 <h2>Generate sample data<a class="headerlink" href="#generate-sample-data" title="Link to this heading">#</a></h2>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="sklearn.datasets.make_regression" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_regression</span></a>
+<p>We generate a regression dataset that contains many features relative to the
+number of samples. However, only 10% of the features are informative. In this context,
+linear models exposing L1 penalization are commonly used to recover a sparse
+set of coefficients.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="sklearn.datasets.make_regression" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_regression</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a>
 
-<span class="n">n_samples_train</span><span class="p">,</span> <span class="n">n_samples_test</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">500</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">coef</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="sklearn.datasets.make_regression" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_regression</span></a><span class="p">(</span>
+<span class="n">n_samples_train</span><span class="p">,</span> <span class="n">n_samples_test</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">500</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">true_coef</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="sklearn.datasets.make_regression" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_regression</span></a><span class="p">(</span>
     <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples_train</span> <span class="o">+</span> <span class="n">n_samples_test</span><span class="p">,</span>
     <span class="n">n_features</span><span class="o">=</span><span class="n">n_features</span><span class="p">,</span>
     <span class="n">n_informative</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
     <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">noise</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">coef</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">n_samples_train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">n_samples_test</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
@@ -1071,61 +1075,120 @@ measured using the explained variance a.k.a. R^2.</p>
 </pre></div>
 </div>
 </section>
-<section id="compute-train-and-test-errors">
-<h2>Compute train and test errors<a class="headerlink" href="#compute-train-and-test-errors" title="Link to this heading">#</a></h2>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">alphas</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.logspace.html#numpy.logspace" title="numpy.logspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">logspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">enet</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linear_model</span><span class="o">.</span><span class="n">ElasticNet</span></a><span class="p">(</span><span class="n">l1_ratio</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">train_errors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="n">test_errors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
-    <span class="n">enet</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">enet</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="n">train_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">enet</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
-    <span class="n">test_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">enet</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+<section id="model-definition">
+<h2>Model definition<a class="headerlink" href="#model-definition" title="Link to this heading">#</a></h2>
+<p>Here, we do not use a model that only exposes an L1 penalty. Instead, we use
+an <a class="reference internal" href="../../modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElasticNet</span></code></a> model that exposes both L1 and L2
+penalties.</p>
+<p>We fix the <code class="docutils literal notranslate"><span class="pre">l1_ratio</span></code> parameter such that the solution found by the model is still
+sparse. Therefore, this type of model tries to find a sparse solution but at the same
+time also tries to shrink all coefficients towards zero.</p>
+<p>In addition, we force the coefficients of the model to be positive since we know that
+<code class="docutils literal notranslate"><span class="pre">make_regression</span></code> generates a response with a positive signal. So we use this
+pre-knowledge to get a better model.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ElasticNet</span></a>
 
-<span class="n">i_alpha_optim</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html#numpy.argmax" title="numpy.argmax" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">argmax</span></a><span class="p">(</span><span class="n">test_errors</span><span class="p">)</span>
-<span class="n">alpha_optim</span> <span class="o">=</span> <span class="n">alphas</span><span class="p">[</span><span class="n">i_alpha_optim</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal regularization parameter : </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">alpha_optim</span><span class="p">)</span>
-
-<span class="c1"># Estimate the coef_ on full data with optimal regularization parameter</span>
-<span class="n">enet</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha_optim</span><span class="p">)</span>
-<span class="n">coef_</span> <span class="o">=</span> <span class="n">enet</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">coef_</span>
-</pre></div>
-</div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Optimal regularization parameter : 0.00026529484644318975
+<span class="n">enet</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ElasticNet</span></a><span class="p">(</span><span class="n">l1_ratio</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10_000</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="plot-results-functions">
-<h2>Plot results functions<a class="headerlink" href="#plot-results-functions" title="Link to this heading">#</a></h2>
+<section id="evaluate-the-impact-of-the-regularization-parameter">
+<h2>Evaluate the impact of the regularization parameter<a class="headerlink" href="#evaluate-the-impact-of-the-regularization-parameter" title="Link to this heading">#</a></h2>
+<p>To evaluate the impact of the regularization parameter, we use a validation
+curve. This curve shows the training and test scores of the model for different
+values of the regularization parameter.</p>
+<p>The regularization <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is a parameter applied to the coefficients of the model:
+when it tends to zero, no regularization is applied and the model tries to fit the
+training data with the least amount of error. However, it leads to overfitting when
+features are noisy. When <code class="docutils literal notranslate"><span class="pre">alpha</span></code> increases, the model coefficients are constrained,
+and thus the model cannot fit the training data as closely, avoiding overfitting.
+However, if too much regularization is applied, the model underfits the data and
+is not able to properly capture the signal.</p>
+<p>The validation curve helps in finding a good trade-off between both extremes: the
+model is not regularized and thus flexible enough to fit the signal, but not too
+flexible to overfit. The <a class="reference internal" href="../../modules/generated/sklearn.model_selection.ValidationCurveDisplay.html#sklearn.model_selection.ValidationCurveDisplay" title="sklearn.model_selection.ValidationCurveDisplay"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationCurveDisplay</span></code></a>
+allows us to display the training and validation scores across a range of alpha
+values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">ValidationCurveDisplay</span>
+
+<span class="n">alphas</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.logspace.html#numpy.logspace" title="numpy.logspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">logspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.ValidationCurveDisplay.html#sklearn.model_selection.ValidationCurveDisplay.from_estimator" title="sklearn.model_selection.ValidationCurveDisplay.from_estimator" class="sphx-glr-backref-module-sklearn-model_selection-ValidationCurveDisplay sphx-glr-backref-type-py-method"><span class="n">ValidationCurveDisplay</span><span class="o">.</span><span class="n">from_estimator</span></a><span class="p">(</span>
+    <span class="n">enet</span><span class="p">,</span>
+    <span class="n">X_train</span><span class="p">,</span>
+    <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">param_name</span><span class="o">=</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+    <span class="n">param_range</span><span class="o">=</span><span class="n">alphas</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;r2&quot;</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">score_type</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Validation Curve for ElasticNet (R$^2$ Score)&quot;</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;alpha (regularization strength)&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;R$^2$ Score&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">test_scores_mean</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">test_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">idx_avg_max_test_score</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html#numpy.argmax" title="numpy.argmax" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">argmax</span></a><span class="p">(</span><span class="n">test_scores_mean</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span>
+    <span class="n">alphas</span><span class="p">[</span><span class="n">idx_avg_max_test_score</span><span class="p">],</span>
+    <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">test_scores_mean</span><span class="p">[</span><span class="n">idx_avg_max_test_score</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Optimum on test</span><span class="se">\n</span><span class="s2">$</span><span class="se">\\</span><span class="s2">alpha$ = </span><span class="si">{</span><span class="n">alphas</span><span class="p">[</span><span class="n">idx_avg_max_test_score</span><span class="p">]</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_train_error_vs_test_error_001.png" srcset="../../_images/sphx_glr_plot_train_error_vs_test_error_001.png" alt="Validation Curve for ElasticNet (R$^2$ Score)" class = "sphx-glr-single-img"/><p>To find the optimal regularization parameter, we can select the value of <code class="docutils literal notranslate"><span class="pre">alpha</span></code>
+that maximizes the validation score.</p>
+</section>
+<section id="coefficients-comparison">
+<h2>Coefficients comparison<a class="headerlink" href="#coefficients-comparison" title="Link to this heading">#</a></h2>
+<p>Now that we have identified the optimal regularization parameter, we can compare the
+true coefficients and the estimated coefficients.</p>
+<p>First, let’s set the regularization parameter to the optimal value and fit the
+model on the training data. In addition, we’ll show the test score for this model.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">enet</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alphas</span><span class="p">[</span><span class="n">idx_avg_max_test_score</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Test score: </span><span class="si">{</span><span class="n">enet</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Test score: 0.884
+</pre></div>
+</div>
+<p>Now, we plot the true coefficients and the estimated coefficients.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogx.html#matplotlib.pyplot.semilogx" title="matplotlib.pyplot.semilogx" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span></a><span class="p">(</span><span class="n">alphas</span><span class="p">,</span> <span class="n">train_errors</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Train&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogx.html#matplotlib.pyplot.semilogx" title="matplotlib.pyplot.semilogx" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span></a><span class="p">(</span><span class="n">alphas</span><span class="p">,</span> <span class="n">test_errors</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.vlines.html#matplotlib.pyplot.vlines" title="matplotlib.pyplot.vlines" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">vlines</span></a><span class="p">(</span>
-    <span class="n">alpha_optim</span><span class="p">,</span>
-    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="matplotlib.pyplot.ylim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
-    <a href="https://numpy.org/doc/stable/reference/generated/numpy.max.html#numpy.max" title="numpy.max" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">max</span></a><span class="p">(</span><span class="n">test_errors</span><span class="p">),</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Optimum on test&quot;</span><span class="p">,</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">coef</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="p">[</span><span class="n">true_coef</span><span class="p">,</span> <span class="n">enet</span><span class="o">.</span><span class="n">coef_</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;Model&quot;</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">coef</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> Coefficients&quot;</span><span class="p">,</span>
+        <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Feature Index&quot;</span><span class="p">,</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Coefficient Value&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
+    <span class="s2">&quot;Comparison of the coefficients of the true generative model and </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;the estimated elastic net coefficients&quot;</span>
 <span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="matplotlib.pyplot.ylim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s2">&quot;Regularization parameter&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">)</span>
 
-<span class="c1"># Show estimated coef_ vs true coef</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True coef&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef_</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Estimated coef&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="matplotlib.pyplot.subplots_adjust" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span></a><span class="p">(</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_train_error_vs_test_error_001.png" srcset="../../_images/sphx_glr_plot_train_error_vs_test_error_001.png" alt="plot train error vs test error" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.127 seconds)</p>
+<img src="../../_images/sphx_glr_plot_train_error_vs_test_error_002.png" srcset="../../_images/sphx_glr_plot_train_error_vs_test_error_002.png" alt="Comparison of the coefficients of the true generative model and  the estimated elastic net coefficients, True Coefficients, Model Coefficients" class = "sphx-glr-single-img"/><p>While the original coefficients are sparse, the estimated coefficients are not
+as sparse. The reason is that we fixed the <code class="docutils literal notranslate"><span class="pre">l1_ratio</span></code> parameter to 0.9. We could
+force the model to get a sparser solution by increasing the <code class="docutils literal notranslate"><span class="pre">l1_ratio</span></code> parameter.</p>
+<p>However, we observed that for the estimated coefficients that are close to zero in
+the true generative model, our model shrinks them towards zero. So we don’t recover
+the true coefficients, but we get a sensible outcome in line with the performance
+obtained on the test set.</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.265 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-model-selection-plot-train-error-vs-test-error-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_train_error_vs_test_error.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo22.svg" style="width: 150px;" />
@@ -1146,18 +1209,18 @@ measured using the explained variance a.k.a. R^2.</p>
 </div>
 </div>
 <p class="rubric">Related examples</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="A tutorial exercise which uses cross-validation with linear models."><img alt="" src="../../_images/sphx_glr_plot_cv_diabetes_thumb.png" />
-<p><a class="reference internal" href="../exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py"><span class="std std-ref">Cross-validation on diabetes Dataset Exercise</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Cross-validation on diabetes Dataset Exercise</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Using orthogonal matching pursuit for recovering a sparse signal from a noisy measurement encoded with a dictionary"><img alt="" src="../../_images/sphx_glr_plot_omp_thumb.png" />
-<p><a class="reference internal" href="../linear_model/plot_omp.html#sphx-glr-auto-examples-linear-model-plot-omp-py"><span class="std std-ref">Orthogonal Matching Pursuit</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Orthogonal Matching Pursuit</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="A model that overfits learns the training data too well, capturing both the underlying patterns and the noise in the data. However, when applied to unseen data, the learned associations may not hold. We normally detect this when we apply our trained predictions to the test data and see the statistical performance drop significantly compared to the training data."><img alt="" src="../../_images/sphx_glr_plot_ridge_coeffs_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="A model that overfits learns the training data too well, capturing both the underlying patterns and the noise in the data. However, when applied to unseen data, the learned associations may not hold. We normally detect this when we apply our trained predictions to the test data and see the statistical performance drop significantly compared to the training data."><img alt="" src="../../_images/sphx_glr_plot_ridge_coeffs_thumb.png" />
 <p><a class="reference internal" href="../linear_model/plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py"><span class="std std-ref">Ridge coefficients as a function of the L2 Regularization</span></a></p>
   <div class="sphx-glr-thumbnail-title">Ridge coefficients as a function of the L2 Regularization</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares 2 dimensionality reduction strategies:"><img alt="" src="../../_images/sphx_glr_plot_feature_agglomeration_vs_univariate_selection_thumb.png" />
-<p><a class="reference internal" href="../cluster/plot_feature_agglomeration_vs_univariate_selection.html#sphx-glr-auto-examples-cluster-plot-feature-agglomeration-vs-univariate-selection-py"><span class="std std-ref">Feature agglomeration vs. univariate selection</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Feature agglomeration vs. univariate selection</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Shows the effect of collinearity in the coefficients of an estimator."><img alt="" src="../../_images/sphx_glr_plot_ridge_path_thumb.png" />
+<p><a class="reference internal" href="../linear_model/plot_ridge_path.html#sphx-glr-auto-examples-linear-model-plot-ridge-path-py"><span class="std std-ref">Plot Ridge coefficients as a function of the regularization</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Plot Ridge coefficients as a function of the regularization</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="The present example compares three l1-based regression models on a synthetic signal obtained from sparse and correlated features that are further corrupted with additive gaussian noise:"><img alt="" src="../../_images/sphx_glr_plot_lasso_and_elasticnet_thumb.png" />
+<p><a class="reference internal" href="../linear_model/plot_lasso_and_elasticnet.html#sphx-glr-auto-examples-linear-model-plot-lasso-and-elasticnet-py"><span class="std std-ref">L1-based models for Sparse Signals</span></a></p>
+  <div class="sphx-glr-thumbnail-title">L1-based models for Sparse Signals</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Train l1-penalized logistic regression models on a binary classification problem derived from the Iris dataset."><img alt="" src="../../_images/sphx_glr_plot_logistic_path_thumb.png" />
+<p><a class="reference internal" href="../linear_model/plot_logistic_path.html#sphx-glr-auto-examples-linear-model-plot-logistic-path-py"><span class="std std-ref">Regularization path of L1- Logistic Regression</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Regularization path of L1- Logistic Regression</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>
@@ -1173,20 +1236,20 @@ measured using the explained variance a.k.a. R^2.</p>
     <div class="footer-article-item">
 <div class="prev-next-area">
     <a class="left-prev"
-       href="plot_permutation_tests_for_classification.html"
+       href="plot_det.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Test with permutations the significance of a classification score</p>
+        <p class="prev-next-title">Detection error tradeoff (DET) curve</p>
       </div>
     </a>
     <a class="right-next"
-       href="plot_underfitting_overfitting.html"
+       href="plot_roc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Underfitting vs. Overfitting</p>
+        <p class="prev-next-title">Multiclass Receiver Operating Characteristic (ROC)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1213,8 +1276,9 @@ measured using the explained variance a.k.a. R^2.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-sample-data">Generate sample data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-train-and-test-errors">Compute train and test errors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-results-functions">Plot results functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-definition">Model definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-the-impact-of-the-regularization-parameter">Evaluate the impact of the regularization parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients-comparison">Coefficients comparison</a></li>
 </ul>
   </nav></div>
 

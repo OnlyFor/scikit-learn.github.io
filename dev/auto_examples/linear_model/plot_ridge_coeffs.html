@@ -865,11 +865,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_precision_recall.html">Precision-Recall</a></li>
@@ -878,7 +878,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1208,7 +1207,7 @@ impact the left-hand side term of the loss function that we showed earlier.
 Some other linear models are formulated to be robust to outliers such as the
 <a class="reference internal" href="../../modules/generated/sklearn.linear_model.HuberRegressor.html#sklearn.linear_model.HuberRegressor" title="sklearn.linear_model.HuberRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">HuberRegressor</span></code></a>. You can learn more about it in
 the <a class="reference internal" href="plot_huber_vs_ridge.html#sphx-glr-auto-examples-linear-model-plot-huber-vs-ridge-py"><span class="std std-ref">HuberRegressor vs Ridge on dataset with strong outliers</span></a> example.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.724 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.785 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-ridge-coeffs-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_ridge_coeffs.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1232,15 +1231,15 @@ the <a class="reference internal" href="plot_huber_vs_ridge.html#sphx-glr-auto-e
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Shows the effect of collinearity in the coefficients of an estimator."><img alt="" src="../../_images/sphx_glr_plot_ridge_path_thumb.png" />
 <p><a class="reference internal" href="plot_ridge_path.html#sphx-glr-auto-examples-linear-model-plot-ridge-path-py"><span class="std std-ref">Plot Ridge coefficients as a function of the regularization</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plot Ridge coefficients as a function of the regularization</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+<p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In linear models, the target value is modeled as a linear combination of the features (see the linear_model User Guide section for a description of a set of linear models available in scikit-learn). Coefficients in multiple linear models represent the relationship between the given feature, X_i and the target, y, assuming that all the other features remain constant (conditional dependence). This is different from plotting X_i versus y and fitting a linear relationship: in that case all possible values of the other features are taken into account in the estimation (marginal dependence)."><img alt="" src="../../_images/sphx_glr_plot_linear_model_coefficient_interpretation_thumb.png" />
 <p><a class="reference internal" href="../inspection/plot_linear_model_coefficient_interpretation.html#sphx-glr-auto-examples-inspection-plot-linear-model-coefficient-interpretation-py"><span class="std std-ref">Common pitfalls in the interpretation of coefficients of linear models</span></a></p>
   <div class="sphx-glr-thumbnail-title">Common pitfalls in the interpretation of coefficients of linear models</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip=" Train l1-penalized logistic regression models on a binary classification problem derived from the Iris dataset."><img alt="" src="../../_images/sphx_glr_plot_logistic_path_thumb.png" />
 <p><a class="reference internal" href="plot_logistic_path.html#sphx-glr-auto-examples-linear-model-plot-logistic-path-py"><span class="std std-ref">Regularization path of L1- Logistic Regression</span></a></p>
   <div class="sphx-glr-thumbnail-title">Regularization path of L1- Logistic Regression</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The following example illustrates the effect of scaling the regularization parameter when using svm for svm_classification. For SVC classification, we are interested in a risk minimization for the equation:"><img alt="" src="../../_images/sphx_glr_plot_svm_scale_c_thumb.png" />
-<p><a class="reference internal" href="../svm/plot_svm_scale_c.html#sphx-glr-auto-examples-svm-plot-svm-scale-c-py"><span class="std std-ref">Scaling the regularization parameter for SVCs</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Scaling the regularization parameter for SVCs</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

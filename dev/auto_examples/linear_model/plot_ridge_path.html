@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1094,7 +1093,7 @@ in such a way that a balance is maintained between both.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_ridge_path_001.png" srcset="../../_images/sphx_glr_plot_ridge_path_001.png" alt="Ridge coefficients as a function of the regularization" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.378 seconds)</p>
+<img src="../../_images/sphx_glr_plot_ridge_path_001.png" srcset="../../_images/sphx_glr_plot_ridge_path_001.png" alt="Ridge coefficients as a function of the regularization" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.349 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-ridge-path-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_ridge_path.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1118,15 +1117,15 @@ in such a way that a balance is maintained between both.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="A model that overfits learns the training data too well, capturing both the underlying patterns and the noise in the data. However, when applied to unseen data, the learned associations may not hold. We normally detect this when we apply our trained predictions to the test data and see the statistical performance drop significantly compared to the training data."><img alt="" src="../../_images/sphx_glr_plot_ridge_coeffs_thumb.png" />
 <p><a class="reference internal" href="plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py"><span class="std std-ref">Ridge coefficients as a function of the L2 Regularization</span></a></p>
   <div class="sphx-glr-thumbnail-title">Ridge coefficients as a function of the L2 Regularization</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+<p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Fit Ridge and HuberRegressor on a dataset with outliers."><img alt="" src="../../_images/sphx_glr_plot_huber_vs_ridge_thumb.png" />
 <p><a class="reference internal" href="plot_huber_vs_ridge.html#sphx-glr-auto-examples-linear-model-plot-huber-vs-ridge-py"><span class="std std-ref">HuberRegressor vs Ridge on dataset with strong outliers</span></a></p>
   <div class="sphx-glr-thumbnail-title">HuberRegressor vs Ridge on dataset with strong outliers</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In linear models, the target value is modeled as a linear combination of the features (see the linear_model User Guide section for a description of a set of linear models available in scikit-learn). Coefficients in multiple linear models represent the relationship between the given feature, X_i and the target, y, assuming that all the other features remain constant (conditional dependence). This is different from plotting X_i versus y and fitting a linear relationship: in that case all possible values of the other features are taken into account in the estimation (marginal dependence)."><img alt="" src="../../_images/sphx_glr_plot_linear_model_coefficient_interpretation_thumb.png" />
 <p><a class="reference internal" href="../inspection/plot_linear_model_coefficient_interpretation.html#sphx-glr-auto-examples-inspection-plot-linear-model-coefficient-interpretation-py"><span class="std std-ref">Common pitfalls in the interpretation of coefficients of linear models</span></a></p>
   <div class="sphx-glr-thumbnail-title">Common pitfalls in the interpretation of coefficients of linear models</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Ridge regression is basically minimizing a penalised version of the least-squared function. The penalising shrinks the value of the regression coefficients. Despite the few data points in each dimension, the slope of the prediction is much more stable and the variance in the line itself is greatly reduced, in comparison to that of the standard linear regression"><img alt="" src="../../_images/sphx_glr_plot_ols_ridge_variance_thumb.png" />
-<p><a class="reference internal" href="plot_ols_ridge_variance.html#sphx-glr-auto-examples-linear-model-plot-ols-ridge-variance-py"><span class="std std-ref">Ordinary Least Squares and Ridge Regression Variance</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Ordinary Least Squares and Ridge Regression Variance</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

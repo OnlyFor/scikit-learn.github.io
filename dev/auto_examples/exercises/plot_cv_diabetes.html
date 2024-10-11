@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1140,7 +1139,7 @@ subsets of the data and moreover, the scores for these alphas differ
 quite substantially.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.526 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.648 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-exercises-plot-cv-diabetes-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/exercises/plot_cv_diabetes.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" style="width: 150px;" />
@@ -1161,12 +1160,12 @@ quite substantially.
 </div>
 </div>
 <p class="rubric">Related examples</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same as the performance on training data. As the regularization increases the performance on train decreases while the performance on test is optimal within a range of values of the regularization parameter. The example with an Elastic-Net regression model and the performance is measured using the explained variance a.k.a. R^2."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
-<p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Train error vs Test error</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Train error vs Test error</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example focuses on model selection for Lasso models that are linear models with an L1 penalty for regression problems."><img alt="" src="../../_images/sphx_glr_plot_lasso_model_selection_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example focuses on model selection for Lasso models that are linear models with an L1 penalty for regression problems."><img alt="" src="../../_images/sphx_glr_plot_lasso_model_selection_thumb.png" />
 <p><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html#sphx-glr-auto-examples-linear-model-plot-lasso-model-selection-py"><span class="std std-ref">Lasso model selection: AIC-BIC / cross-validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Lasso model selection: AIC-BIC / cross-validation</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+<p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="A Recursive Feature Elimination (RFE) example with automatic tuning of the number of features selected with cross-validation."><img alt="" src="../../_images/sphx_glr_plot_rfe_with_cross_validation_thumb.png" />
 <p><a class="reference internal" href="../feature_selection/plot_rfe_with_cross_validation.html#sphx-glr-auto-examples-feature-selection-plot-rfe-with-cross-validation-py"><span class="std std-ref">Recursive feature elimination with cross-validation</span></a></p>
   <div class="sphx-glr-thumbnail-title">Recursive feature elimination with cross-validation</div>

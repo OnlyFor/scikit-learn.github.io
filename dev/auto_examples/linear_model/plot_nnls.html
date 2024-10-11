@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1111,7 +1110,7 @@ The Non-Negative Least squares inherently yield sparse results.</p>
 <img src="../../_images/sphx_glr_plot_nnls_001.png" srcset="../../_images/sphx_glr_plot_nnls_001.png" alt="plot nnls" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Text(55.847222222222214, 0.5, &#39;NNLS regression coefficients&#39;)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.103 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.069 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-nnls-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_nnls.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1135,15 +1134,15 @@ The Non-Negative Least squares inherently yield sparse results.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Shown in the plot is how the logistic regression would, in this synthetic dataset, classify values as either 0 or 1, i.e. class one or two, using the logistic curve."><img alt="" src="../../_images/sphx_glr_plot_logistic_thumb.png" />
 <p><a class="reference internal" href="plot_logistic.html#sphx-glr-auto-examples-linear-model-plot-logistic-py"><span class="std std-ref">Logistic function</span></a></p>
   <div class="sphx-glr-thumbnail-title">Logistic function</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+<p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="The coefficients, residual sum of squares and the coefficient of determination are also calculated."><img alt="" src="../../_images/sphx_glr_plot_ols_thumb.png" />
 <p><a class="reference internal" href="plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py"><span class="std std-ref">Linear Regression Example</span></a></p>
   <div class="sphx-glr-thumbnail-title">Linear Regression Example</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Machine Learning models are great for measuring statistical associations. Unfortunately, unless we&#x27;re willing to make strong assumptions about the data, those models are unable to infer causal effects."><img alt="" src="../../_images/sphx_glr_plot_causal_interpretation_thumb.png" />
 <p><a class="reference internal" href="../inspection/plot_causal_interpretation.html#sphx-glr-auto-examples-inspection-plot-causal-interpretation-py"><span class="std std-ref">Failure of Machine Learning to infer causal effects</span></a></p>
   <div class="sphx-glr-thumbnail-title">Failure of Machine Learning to infer causal effects</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The present example compares three l1-based regression models on a synthetic signal obtained from sparse and correlated features that are further corrupted with additive gaussian noise:"><img alt="" src="../../_images/sphx_glr_plot_lasso_and_elasticnet_thumb.png" />
-<p><a class="reference internal" href="plot_lasso_and_elasticnet.html#sphx-glr-auto-examples-linear-model-plot-lasso-and-elasticnet-py"><span class="std std-ref">L1-based models for Sparse Signals</span></a></p>
-  <div class="sphx-glr-thumbnail-title">L1-based models for Sparse Signals</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 

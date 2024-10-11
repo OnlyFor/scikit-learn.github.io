@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_learning_curve.html">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../model_selection/plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1052,18 +1051,18 @@ larger perplexity values.</p>
 <a class="reference external" href="https://distill.pub/2016/misread-tsne/">https://distill.pub/2016/misread-tsne/</a> provides a good discussion of the
 effects of various parameters, as well as interactive plots to explore
 those effects.</p>
-<img src="../../_images/sphx_glr_plot_t_sne_perplexity_001.png" srcset="../../_images/sphx_glr_plot_t_sne_perplexity_001.png" alt="Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100, Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100, Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>circles, perplexity=5 in 0.15 sec
-circles, perplexity=30 in 0.26 sec
-circles, perplexity=50 in 0.25 sec
-circles, perplexity=100 in 0.28 sec
-S-curve, perplexity=5 in 0.14 sec
-S-curve, perplexity=30 in 0.19 sec
+<img src="../../_images/sphx_glr_plot_t_sne_perplexity_001.png" srcset="../../_images/sphx_glr_plot_t_sne_perplexity_001.png" alt="Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100, Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100, Perplexity=5, Perplexity=30, Perplexity=50, Perplexity=100" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>circles, perplexity=5 in 0.12 sec
+circles, perplexity=30 in 0.2 sec
+circles, perplexity=50 in 0.22 sec
+circles, perplexity=100 in 0.22 sec
+S-curve, perplexity=5 in 0.13 sec
+S-curve, perplexity=30 in 0.18 sec
 S-curve, perplexity=50 in 0.23 sec
-S-curve, perplexity=100 in 0.26 sec
+S-curve, perplexity=100 in 0.24 sec
 uniform grid, perplexity=5 in 0.16 sec
 uniform grid, perplexity=30 in 0.24 sec
 uniform grid, perplexity=50 in 0.27 sec
-uniform grid, perplexity=100 in 0.27 sec
+uniform grid, perplexity=100 in 0.28 sec
 </pre></div>
 </div>
 <div class="line-block">
@@ -1191,7 +1190,7 @@ uniform grid, perplexity=100 in 0.27 sec
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.289 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.108 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-manifold-plot-t-sne-perplexity-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/manifold/plot_t_sne_perplexity.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo19.svg" style="width: 150px;" />

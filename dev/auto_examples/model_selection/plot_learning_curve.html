@@ -74,7 +74,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Plotting Validation Curves" href="plot_validation_curve.html" />
+    <link rel="next" title="Post-hoc tuning the cut-off point of decision function" href="plot_tuned_decision_threshold.html" />
     <link rel="prev" title="Plotting Cross-Validated Predictions" href="plot_cv_predict.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -864,11 +864,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_grid_search_digits.html">Custom refit strategy of a grid search with cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_multi_metric_evaluation.html">Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_det.html">Detection error tradeoff (DET) curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_train_error_vs_test_error.html">Effect of model regularization on training and test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_roc.html">Multiclass Receiver Operating Characteristic (ROC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_nested_cross_validation_iris.html">Nested versus non-nested cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cv_predict.html">Plotting Cross-Validated Predictions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting Learning Curves and Checking Models’ Scalability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_validation_curve.html">Plotting Validation Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_tuned_decision_threshold.html">Post-hoc tuning the cut-off point of decision function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cost_sensitive_learning.html">Post-tuning the decision threshold for cost-sensitive learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_precision_recall.html">Precision-Recall</a></li>
@@ -877,7 +877,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_grid_search_stats.html">Statistical comparison of models using grid search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_successive_halving_iterations.html">Successive Halving Iterations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_permutation_tests_for_classification.html">Test with permutations the significance of a classification score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_train_error_vs_test_error.html">Train error vs Test error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_underfitting_overfitting.html">Underfitting vs. Overfitting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cv_indices.html">Visualizing cross-validation behavior in scikit-learn</a></li>
 </ul>
@@ -1207,7 +1206,7 @@ the cross-validation score.</p>
 <img src="../../_images/sphx_glr_plot_learning_curve_003.png" srcset="../../_images/sphx_glr_plot_learning_curve_003.png" alt="Performance of the GaussianNB classifier, Performance of the SVC classifier" class = "sphx-glr-single-img"/><p>In these plots, we can look for the inflection point for which the
 cross-validation score does not increase anymore and only the training time
 increases.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 24.390 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 27.573 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-model-selection-plot-learning-curve-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_learning_curve.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo22.svg" style="width: 150px;" />
@@ -1231,15 +1230,15 @@ increases.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="The following example illustrates the effect of scaling the regularization parameter when using svm for svm_classification. For SVC classification, we are interested in a risk minimization for the equation:"><img alt="" src="../../_images/sphx_glr_plot_svm_scale_c_thumb.png" />
 <p><a class="reference internal" href="../svm/plot_svm_scale_c.html#sphx-glr-auto-examples-svm-plot-svm-scale-c-py"><span class="std std-ref">Scaling the regularization parameter for SVCs</span></a></p>
   <div class="sphx-glr-thumbnail-title">Scaling the regularization parameter for SVCs</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different values of the kernel parameter gamma. For very low values of gamma, you can see that both the training score and the validation score are low. This is called underfitting. Medium values of gamma will result in high values for both scores, i.e. the classifier is performing fairly well. If gamma is too high, the classifier will overfit, which means that the training score is good but the validation score is poor."><img alt="" src="../../_images/sphx_glr_plot_validation_curve_thumb.png" />
-<p><a class="reference internal" href="plot_validation_curve.html#sphx-glr-auto-examples-model-selection-plot-validation-curve-py"><span class="std std-ref">Plotting Validation Curves</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Plotting Validation Curves</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="When performing classification one often wants to predict not only the class label, but also the associated probability. This probability gives some kind of confidence on the prediction. This example demonstrates how to visualize how well calibrated the predicted probabilities are using calibration curves, also known as reliability diagrams. Calibration of an uncalibrated classifier will also be demonstrated."><img alt="" src="../../_images/sphx_glr_plot_calibration_curve_thumb.png" />
 <p><a class="reference internal" href="../calibration/plot_calibration_curve.html#sphx-glr-auto-examples-calibration-plot-calibration-curve-py"><span class="std std-ref">Probability Calibration curves</span></a></p>
   <div class="sphx-glr-thumbnail-title">Probability Calibration curves</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="ROC Curve with Visualization API"><img alt="" src="../../_images/sphx_glr_plot_roc_curve_visualization_api_thumb.png" />
 <p><a class="reference internal" href="../miscellaneous/plot_roc_curve_visualization_api.html#sphx-glr-auto-examples-miscellaneous-plot-roc-curve-visualization-api-py"><span class="std std-ref">ROC Curve with Visualization API</span></a></p>
   <div class="sphx-glr-thumbnail-title">ROC Curve with Visualization API</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example presents how to estimate and visualize the variance of the Receiver Operating Characteristic (ROC) metric using cross-validation."><img alt="" src="../../_images/sphx_glr_plot_roc_crossval_thumb.png" />
+<p><a class="reference internal" href="plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py"><span class="std std-ref">Receiver Operating Characteristic (ROC) with cross validation</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Receiver Operating Characteristic (ROC) with cross validation</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>
@@ -1264,11 +1263,11 @@ increases.</p>
       </div>
     </a>
     <a class="right-next"
-       href="plot_validation_curve.html"
+       href="plot_tuned_decision_threshold.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plotting Validation Curves</p>
+        <p class="prev-next-title">Post-hoc tuning the cut-off point of decision function</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

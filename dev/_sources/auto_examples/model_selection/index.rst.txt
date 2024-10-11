@@ -155,6 +155,23 @@ Examples related to the :mod:`sklearn.model_selection` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter.">
+
+.. only:: html
+
+  .. image:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_train_error_vs_test_error_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example describes the use of the Receiver Operating Characteristic (ROC) metric to evaluate the quality of multiclass classifiers.">
 
 .. only:: html
@@ -218,23 +235,6 @@ Examples related to the :mod:`sklearn.model_selection` module.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Plotting Learning Curves and Checking Models' Scalability</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different values of the kernel parameter gamma. For very low values of gamma, you can see that both the training score and the validation score are low. This is called underfitting. Medium values of gamma will result in high values for both scores, i.e. the classifier is performing fairly well. If gamma is too high, the classifier will overfit, which means that the training score is good but the validation score is poor.">
-
-.. only:: html
-
-  .. image:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_validation_curve_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_model_selection_plot_validation_curve.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Plotting Validation Curves</div>
     </div>
 
 
@@ -376,23 +376,6 @@ Examples related to the :mod:`sklearn.model_selection` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same as the performance on training data. As the regularization increases the performance on train decreases while the performance on test is optimal within a range of values of the regularization parameter. The example with an Elastic-Net regression model and the performance is measured using the explained variance a.k.a. R^2.">
-
-.. only:: html
-
-  .. image:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_train_error_vs_test_error_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Train error vs Test error</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the problems of underfitting and overfitting and how we can use linear regression with polynomial features to approximate nonlinear functions. The plot shows the function that we want to approximate, which is a part of the cosine function. In addition, the samples from the real function and the approximations of different models are displayed. The models have polynomial features of different degrees. We can see that a linear function (polynomial with degree 1) is not sufficient to fit the training samples. This is called underfitting. A polynomial of degree 4 approximates the true function almost perfectly. However, for higher degrees the model will overfit the training data, i.e. it learns the noise of the training data. We evaluate quantitatively overfitting / underfitting by using cross-validation. We calculate the mean squared error (MSE) on the validation set, the higher, the less likely the model generalizes correctly from the training data.">
 
 .. only:: html
@@ -443,11 +426,11 @@ Examples related to the :mod:`sklearn.model_selection` module.
    /auto_examples/model_selection/plot_grid_search_digits
    /auto_examples/model_selection/plot_multi_metric_evaluation
    /auto_examples/model_selection/plot_det
+   /auto_examples/model_selection/plot_train_error_vs_test_error
    /auto_examples/model_selection/plot_roc
    /auto_examples/model_selection/plot_nested_cross_validation_iris
    /auto_examples/model_selection/plot_cv_predict
    /auto_examples/model_selection/plot_learning_curve
-   /auto_examples/model_selection/plot_validation_curve
    /auto_examples/model_selection/plot_tuned_decision_threshold
    /auto_examples/model_selection/plot_cost_sensitive_learning
    /auto_examples/model_selection/plot_precision_recall
@@ -456,7 +439,6 @@ Examples related to the :mod:`sklearn.model_selection` module.
    /auto_examples/model_selection/plot_grid_search_stats
    /auto_examples/model_selection/plot_successive_halving_iterations
    /auto_examples/model_selection/plot_permutation_tests_for_classification
-   /auto_examples/model_selection/plot_train_error_vs_test_error
    /auto_examples/model_selection/plot_underfitting_overfitting
    /auto_examples/model_selection/plot_cv_indices
 
