@@ -972,6 +972,10 @@ the inputs are within the correct domain for the function
 and <a class="reference internal" href="../modules/generated/sklearn.metrics.root_mean_squared_error.html#sklearn.metrics.root_mean_squared_error" title="sklearn.metrics.root_mean_squared_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">metrics.root_mean_squared_error</span></code></a> now explicitly check whether a scalar
 will be returned when <code class="docutils literal notranslate"><span class="pre">multioutput=uniform_average</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/29709">#29709</a> by <a class="reference external" href="https://github.com/virchan">Virgil Chan</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge text-bg-warning">API Change</span></span>  The default value of the <code class="docutils literal notranslate"><span class="pre">response_method</span></code> parameter of
+<a class="reference internal" href="../modules/generated/sklearn.metrics.make_scorer.html#sklearn.metrics.make_scorer" title="sklearn.metrics.make_scorer"><code class="xref py py-func docutils literal notranslate"><span class="pre">metrics.make_scorer</span></code></a> will change from <code class="docutils literal notranslate"><span class="pre">None</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;predict&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">None</span></code> will be
+removed in 1.8. In the mean time, <code class="docutils literal notranslate"><span class="pre">None</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">&quot;predict&quot;</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/30001">#30001</a> by <a class="reference external" href="https://github.com/jeremiedb">Jérémie du Boisberranger</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-model-selection">
