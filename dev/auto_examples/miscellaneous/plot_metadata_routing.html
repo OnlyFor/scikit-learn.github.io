@@ -624,7 +624,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_clustering_metrics.html">Agglomerative clustering with different metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_kmeans_plusplus.html">An example of K-Means++ initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_bisect_kmeans.html">Bisecting K-Means and Regular K-Means Performance Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_color_quantization.html">Color Quantization using K-Means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_birch_vs_minibatchkmeans.html">Compare BIRCH and MiniBatchKMeans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_comparison.html">Comparing different clustering algorithms on toy datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_linkage_comparison.html">Comparing different hierarchical linkage methods on toy datasets</a></li>
@@ -639,7 +638,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_feature_agglomeration_vs_univariate_selection.html">Feature agglomeration vs. univariate selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_ward_structured_vs_unstructured.html">Hierarchical clustering: structured vs unstructured ward</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_inductive_clustering.html">Inductive Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_iris.html">K-means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_dict_face_patches.html">Online learning of a dictionary of parts of faces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_dendrogram.html">Plot Hierarchical Clustering Dendrogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_coin_segmentation.html">Segmenting the picture of greek coins in regions</a></li>
@@ -3500,7 +3498,7 @@ explicitly defined in the method’s signature, as opposed to being
 <li><p>your estimator does not route any metadata to the underlying objects, i.e.
 it’s not a <em>router</em>.</p></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.040 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.043 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-miscellaneous-plot-metadata-routing-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_metadata_routing.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo20.svg" style="width: 150px;" />
@@ -3521,18 +3519,18 @@ it’s not a <em>router</em>.</p></li>
 </div>
 </div>
 <p class="rubric">Related examples</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Clustering can be expensive, especially when our dataset contains millions of datapoints. Many clustering algorithms are not inductive and so cannot be directly applied to new data samples without recomputing the clustering, which may be intractable. Instead, we can use clustering to then learn an inductive model with a classifier, which has several benefits:"><img alt="" src="../../_images/sphx_glr_plot_inductive_clustering_thumb.png" />
-<p><a class="reference internal" href="../cluster/plot_inductive_clustering.html#sphx-glr-auto-examples-cluster-plot-inductive-clustering-py"><span class="std std-ref">Inductive Clustering</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Inductive Clustering</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The __sklearn_is_fitted__ method is a convention used in scikit-learn for checking whether an estimator object has been fitted or not. This method is typically implemented in custom estimator classes that are built on top of scikit-learn&#x27;s base classes like BaseEstimator or its subclasses."><img alt="" src="../../_images/sphx_glr_sklearn_is_fitted_thumb.png" />
-<p><a class="reference internal" href="../developing_estimators/sklearn_is_fitted.html#sphx-glr-auto-examples-developing-estimators-sklearn-is-fitted-py"><span class="std std-ref">__sklearn_is_fitted__ as Developer API</span></a></p>
-  <div class="sphx-glr-thumbnail-title">__sklearn_is_fitted__ as Developer API</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This is an example showing how scikit-learn can be used for classification using an out-of-core approach: learning from data that doesn&#x27;t fit into main memory. We make use of an online classifier, i.e., one that supports the partial_fit method, that will be fed with batches of examples. To guarantee that the features space remains the same over time we leverage a HashingVectorizer that will project each example into the same feature space. This is especially useful in the case of text classification where new features (words) may appear in each batch."><img alt="" src="../../_images/sphx_glr_plot_out_of_core_classification_thumb.png" />
-<p><a class="reference internal" href="../applications/plot_out_of_core_classification.html#sphx-glr-auto-examples-applications-plot-out-of-core-classification-py"><span class="std std-ref">Out-of-core classification of text documents</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Out-of-core classification of text documents</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of Gaussian processes for regression and classification tasks on data that are not in fixed-length feature vector form. This is achieved through the use of kernel functions that operates directly on discrete structures such as variable-length sequences, trees, and graphs."><img alt="" src="../../_images/sphx_glr_plot_gpr_on_structured_data_thumb.png" />
-<p><a class="reference internal" href="../gaussian_process/plot_gpr_on_structured_data.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-on-structured-data-py"><span class="std std-ref">Gaussian processes on discrete data structures</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Gaussian processes on discrete data structures</div>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="The following example shows how to precompute the gram matrix while using weighted samples with an ElasticNet."><img alt="" src="../../_images/sphx_glr_plot_elastic_net_precomputed_gram_matrix_with_weighted_samples_thumb.png" />
+<p><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html#sphx-glr-auto-examples-linear-model-plot-elastic-net-precomputed-gram-matrix-with-weighted-samples-py"><span class="std std-ref">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="We are pleased to announce the release of scikit-learn 1.4! Many bug fixes and improvements were added, as well as some new key features. We detail below a few of the major features of this release. For an exhaustive list of all the changes, please refer to the release notes &lt;release_notes_1_4&gt;."><img alt="" src="../../_images/sphx_glr_plot_release_highlights_1_4_0_thumb.png" />
+<p><a class="reference internal" href="../release_highlights/plot_release_highlights_1_4_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-1-4-0-py"><span class="std std-ref">Release Highlights for scikit-learn 1.4</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Release Highlights for scikit-learn 1.4</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Plot decision function of a weighted dataset, where the size of points is proportional to its weight."><img alt="" src="../../_images/sphx_glr_plot_sgd_weighted_samples_thumb.png" />
+<p><a class="reference internal" href="../linear_model/plot_sgd_weighted_samples.html#sphx-glr-auto-examples-linear-model-plot-sgd-weighted-samples-py"><span class="std std-ref">SGD: Weighted samples</span></a></p>
+  <div class="sphx-glr-thumbnail-title">SGD: Weighted samples</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="We are pleased to announce the release of scikit-learn 1.3! Many bug fixes and improvements were added, as well as some new key features. We detail below a few of the major features of this release. For an exhaustive list of all the changes, please refer to the release notes &lt;release_notes_1_3&gt;."><img alt="" src="../../_images/sphx_glr_plot_release_highlights_1_3_0_thumb.png" />
+<p><a class="reference internal" href="../release_highlights/plot_release_highlights_1_3_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-1-3-0-py"><span class="std std-ref">Release Highlights for scikit-learn 1.3</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Release Highlights for scikit-learn 1.3</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

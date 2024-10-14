@@ -624,7 +624,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_clustering_metrics.html">Agglomerative clustering with different metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_kmeans_plusplus.html">An example of K-Means++ initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_bisect_kmeans.html">Bisecting K-Means and Regular K-Means Performance Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_color_quantization.html">Color Quantization using K-Means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_birch_vs_minibatchkmeans.html">Compare BIRCH and MiniBatchKMeans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_comparison.html">Comparing different clustering algorithms on toy datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_linkage_comparison.html">Comparing different hierarchical linkage methods on toy datasets</a></li>
@@ -639,7 +638,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_feature_agglomeration_vs_univariate_selection.html">Feature agglomeration vs. univariate selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_ward_structured_vs_unstructured.html">Hierarchical clustering: structured vs unstructured ward</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_inductive_clustering.html">Inductive Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_iris.html">K-means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_dict_face_patches.html">Online learning of a dictionary of parts of faces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_dendrogram.html">Plot Hierarchical Clustering Dendrogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_coin_segmentation.html">Segmenting the picture of greek coins in regions</a></li>
@@ -1117,12 +1115,12 @@ SPDX-License-Identifier: BSD-3-Clause</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Best SVR with params: {&#39;C&#39;: 1.0, &#39;gamma&#39;: np.float64(0.1)} and R2 score: 0.737
-SVR complexity and bandwidth selected and model fitted in 0.497 s
+SVR complexity and bandwidth selected and model fitted in 0.499 s
 Best KRR with params: {&#39;alpha&#39;: 0.1, &#39;gamma&#39;: np.float64(0.1)} and R2 score: 0.723
-KRR complexity and bandwidth selected and model fitted in 0.188 s
+KRR complexity and bandwidth selected and model fitted in 0.190 s
 Support vector ratio: 0.340
-SVR prediction for 100000 inputs in 0.113 s
-KRR prediction for 100000 inputs in 0.091 s
+SVR prediction for 100000 inputs in 0.115 s
+KRR prediction for 100000 inputs in 0.097 s
 </pre></div>
 </div>
 </section>
@@ -1249,7 +1247,7 @@ the prediction time depends on the parameters epsilon and C of the SVR.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_kernel_ridge_regression_003.png" srcset="../../_images/sphx_glr_plot_kernel_ridge_regression_003.png" alt="Learning curves" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.660 seconds)</p>
+<img src="../../_images/sphx_glr_plot_kernel_ridge_regression_003.png" srcset="../../_images/sphx_glr_plot_kernel_ridge_regression_003.png" alt="Learning curves" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.974 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-miscellaneous-plot-kernel-ridge-regression-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_kernel_ridge_regression.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo20.svg" style="width: 150px;" />
@@ -1279,9 +1277,9 @@ the prediction time depends on the parameters epsilon and C of the SVR.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the predicted probability of GPC for an RBF kernel with different choices of the hyperparameters. The first figure shows the predicted probability of GPC with arbitrarily chosen hyperparameters and with the hyperparameters corresponding to the maximum log-marginal-likelihood (LML)."><img alt="" src="../../_images/sphx_glr_plot_gpc_thumb.png" />
 <p><a class="reference internal" href="../gaussian_process/plot_gpc.html#sphx-glr-auto-examples-gaussian-process-plot-gpc-py"><span class="std std-ref">Probabilistic predictions with Gaussian process classification (GPC)</span></a></p>
   <div class="sphx-glr-thumbnail-title">Probabilistic predictions with Gaussian process classification (GPC)</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The dataset used in this example is a preprocessed excerpt of the &quot;Labeled Faces in the Wild&quot;, aka LFW_: http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz (233MB)"><img alt="" src="../../_images/sphx_glr_plot_face_recognition_thumb.png" />
-<p><a class="reference internal" href="../applications/plot_face_recognition.html#sphx-glr-auto-examples-applications-plot-face-recognition-py"><span class="std std-ref">Faces recognition example using eigenfaces and SVMs</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Faces recognition example using eigenfaces and SVMs</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Demonstrate how model complexity influences both prediction accuracy and computational performance."><img alt="" src="../../_images/sphx_glr_plot_model_complexity_influence_thumb.png" />
+<p><a class="reference internal" href="../applications/plot_model_complexity_influence.html#sphx-glr-auto-examples-applications-plot-model-complexity-influence-py"><span class="std std-ref">Model Complexity Influence</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Model Complexity Influence</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

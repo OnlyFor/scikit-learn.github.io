@@ -155,23 +155,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Performs a pixel-wise Vector Quantization (VQ) of an image of the summer palace (China), reducing the number of colors required to show the image from 96,615 unique colors to 64, while preserving the overall appearance quality.">
-
-.. only:: html
-
-  .. image:: /auto_examples/cluster/images/thumb/sphx_glr_plot_color_quantization_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_cluster_plot_color_quantization.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Color Quantization using K-Means</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example compares the timing of BIRCH (with and without the global clustering step) and MiniBatchKMeans on a synthetic dataset having 25,000 samples and 2 features generated using make_blobs.">
 
 .. only:: html
@@ -410,23 +393,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The plot shows:">
-
-.. only:: html
-
-  .. image:: /auto_examples/cluster/images/thumb/sphx_glr_plot_cluster_iris_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_cluster_plot_cluster_iris.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">K-means Clustering</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example uses a large dataset of faces to learn a set of 20 x 20 images patches that constitute faces.">
 
 .. only:: html
@@ -562,7 +528,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
    /auto_examples/cluster/plot_agglomerative_clustering_metrics
    /auto_examples/cluster/plot_kmeans_plusplus
    /auto_examples/cluster/plot_bisect_kmeans
-   /auto_examples/cluster/plot_color_quantization
    /auto_examples/cluster/plot_birch_vs_minibatchkmeans
    /auto_examples/cluster/plot_cluster_comparison
    /auto_examples/cluster/plot_linkage_comparison
@@ -577,7 +542,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
    /auto_examples/cluster/plot_feature_agglomeration_vs_univariate_selection
    /auto_examples/cluster/plot_ward_structured_vs_unstructured
    /auto_examples/cluster/plot_inductive_clustering
-   /auto_examples/cluster/plot_cluster_iris
    /auto_examples/cluster/plot_dict_face_patches
    /auto_examples/cluster/plot_agglomerative_dendrogram
    /auto_examples/cluster/plot_coin_segmentation

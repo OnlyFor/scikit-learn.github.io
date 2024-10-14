@@ -624,7 +624,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_clustering_metrics.html">Agglomerative clustering with different metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_kmeans_plusplus.html">An example of K-Means++ initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_bisect_kmeans.html">Bisecting K-Means and Regular K-Means Performance Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_color_quantization.html">Color Quantization using K-Means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_birch_vs_minibatchkmeans.html">Compare BIRCH and MiniBatchKMeans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_comparison.html">Comparing different clustering algorithms on toy datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_linkage_comparison.html">Comparing different hierarchical linkage methods on toy datasets</a></li>
@@ -639,7 +638,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_feature_agglomeration_vs_univariate_selection.html">Feature agglomeration vs. univariate selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_ward_structured_vs_unstructured.html">Hierarchical clustering: structured vs unstructured ward</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_inductive_clustering.html">Inductive Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_iris.html">K-means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_dict_face_patches.html">Online learning of a dictionary of parts of faces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_dendrogram.html">Plot Hierarchical Clustering Dendrogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_coin_segmentation.html">Segmenting the picture of greek coins in regions</a></li>
@@ -1163,7 +1161,7 @@ both of them receive dictionaries as input.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.995 s at 6.3 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 1.144 s at 5.5 MB/s
 Found 47928 unique terms
 </pre></div>
 </div>
@@ -1230,7 +1228,7 @@ encoded feature matrix. For such a purpose we define the following function:</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.553 s at 11.3 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.608 s at 10.3 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1252,7 +1250,7 @@ majority of them is inactive.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.552 s at 11.3 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.766 s at 8.2 MB/s
 Found 47668 unique tokens
 </pre></div>
 </div>
@@ -1275,7 +1273,7 @@ passing a dictionary with an implied frequency of 1 for each feature name.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.530 s at 11.8 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.548 s at 11.4 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1325,7 +1323,7 @@ is more flexible. In particular it accepts various regex patterns through the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.616 s at 10.1 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.717 s at 8.7 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1353,7 +1351,7 @@ preprocessing and tokenization of the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;done in </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s at </span><span class="si">{</span><span class="n">data_size_mb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB/s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.497 s at 12.6 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.514 s at 12.1 MB/s
 </pre></div>
 </div>
 <p>We can observe that this is the fastest text tokenization strategy so far,
@@ -1389,7 +1387,7 @@ normalizing and weighting from a
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.620 s at 10.1 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.749 s at 8.3 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1423,7 +1421,7 @@ their equivalent <a class="reference internal" href="../../modules/generated/skl
 <a class="reference internal" href="../../modules/generated/sklearn.feature_extraction.FeatureHasher.html#sklearn.feature_extraction.FeatureHasher" title="sklearn.feature_extraction.FeatureHasher"><code class="xref py py-func docutils literal notranslate"><span class="pre">FeatureHasher</span></code></a> on manually tokenized
 documents since the internal tokenization step of the former vectorizers
 compiles a regular expression once and then reuses it for all the documents.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.795 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.545 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-hashing-vs-dict-vectorizer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_hashing_vs_dict_vectorizer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />
@@ -1453,9 +1451,9 @@ compiles a regular expression once and then reuses it for all the documents.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the Spectral Co-clustering algorithm on the twenty newsgroups dataset. The &#x27;comp.os.ms-windows.misc&#x27; category is excluded because it contains many posts containing nothing but data."><img alt="" src="../../_images/sphx_glr_plot_bicluster_newsgroups_thumb.png" />
 <p><a class="reference internal" href="../bicluster/plot_bicluster_newsgroups.html#sphx-glr-auto-examples-bicluster-plot-bicluster-newsgroups-py"><span class="std std-ref">Biclustering documents with the Spectral Co-clustering algorithm</span></a></p>
   <div class="sphx-glr-thumbnail-title">Biclustering documents with the Spectral Co-clustering algorithm</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, semi-supervised classifiers are trained on the 20 newsgroups dataset (which will be automatically downloaded)."><img alt="" src="../../_images/sphx_glr_plot_semi_supervised_newsgroups_thumb.png" />
-<p><a class="reference internal" href="../semi_supervised/plot_semi_supervised_newsgroups.html#sphx-glr-auto-examples-semi-supervised-plot-semi-supervised-newsgroups-py"><span class="std std-ref">Semi-supervised Classification on a Text Dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Semi-supervised Classification on a Text Dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Datasets can often contain components that require different feature extraction and processing pipelines. This scenario might occur when:"><img alt="" src="../../_images/sphx_glr_plot_column_transformer_thumb.png" />
+<p><a class="reference internal" href="../compose/plot_column_transformer.html#sphx-glr-auto-examples-compose-plot-column-transformer-py"><span class="std std-ref">Column Transformer with Heterogeneous Data Sources</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Column Transformer with Heterogeneous Data Sources</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

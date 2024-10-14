@@ -624,7 +624,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_agglomerative_clustering_metrics.html">Agglomerative clustering with different metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_kmeans_plusplus.html">An example of K-Means++ initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_bisect_kmeans.html">Bisecting K-Means and Regular K-Means Performance Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_color_quantization.html">Color Quantization using K-Means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_birch_vs_minibatchkmeans.html">Compare BIRCH and MiniBatchKMeans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cluster_comparison.html">Comparing different clustering algorithms on toy datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_linkage_comparison.html">Comparing different hierarchical linkage methods on toy datasets</a></li>
@@ -639,7 +638,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_feature_agglomeration_vs_univariate_selection.html">Feature agglomeration vs. univariate selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ward_structured_vs_unstructured.html">Hierarchical clustering: structured vs unstructured ward</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_inductive_clustering.html">Inductive Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_cluster_iris.html">K-means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_dict_face_patches.html">Online learning of a dictionary of parts of faces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_agglomerative_dendrogram.html">Plot Hierarchical Clustering Dendrogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_coin_segmentation.html">Segmenting the picture of greek coins in regions</a></li>
@@ -1055,10 +1053,10 @@ complete linkage. In particular, having a very small number of neighbors in
 the graph, imposes a geometry that is close to that of single linkage,
 which is well known to have this percolation instability.</p>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" alt="n_cluster=30, connectivity=False, linkage=average (time 0.03s), linkage=complete (time 0.03s), linkage=ward (time 0.03s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" alt="n_cluster=3, connectivity=False, linkage=average (time 0.03s), linkage=complete (time 0.03s), linkage=ward (time 0.03s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" alt="n_cluster=30, connectivity=True, linkage=average (time 0.10s), linkage=complete (time 0.10s), linkage=ward (time 0.14s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" alt="n_cluster=3, connectivity=True, linkage=average (time 0.10s), linkage=complete (time 0.10s), linkage=ward (time 0.13s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" alt="n_cluster=30, connectivity=False, linkage=average (time 0.04s), linkage=complete (time 0.04s), linkage=ward (time 0.04s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" alt="n_cluster=3, connectivity=False, linkage=average (time 0.04s), linkage=complete (time 0.03s), linkage=ward (time 0.04s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" alt="n_cluster=30, connectivity=True, linkage=average (time 0.11s), linkage=complete (time 0.12s), linkage=ward (time 0.16s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" alt="n_cluster=3, connectivity=True, linkage=average (time 0.11s), linkage=complete (time 0.12s), linkage=ward (time 0.17s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: The scikit-learn developers</span>
 <span class="c1"># SPDX-License-Identifier: BSD-3-Clause</span>
@@ -1120,7 +1118,7 @@ which is well known to have this percolation instability.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.761 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.060 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-agglomerative-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_agglomerative_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" style="width: 150px;" />

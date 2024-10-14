@@ -624,7 +624,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_clustering_metrics.html">Agglomerative clustering with different metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_kmeans_plusplus.html">An example of K-Means++ initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_bisect_kmeans.html">Bisecting K-Means and Regular K-Means Performance Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_color_quantization.html">Color Quantization using K-Means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_birch_vs_minibatchkmeans.html">Compare BIRCH and MiniBatchKMeans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_comparison.html">Comparing different clustering algorithms on toy datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_linkage_comparison.html">Comparing different hierarchical linkage methods on toy datasets</a></li>
@@ -639,7 +638,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_feature_agglomeration_vs_univariate_selection.html">Feature agglomeration vs. univariate selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_ward_structured_vs_unstructured.html">Hierarchical clustering: structured vs unstructured ward</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_inductive_clustering.html">Inductive Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cluster/plot_cluster_iris.html">K-means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_dict_face_patches.html">Online learning of a dictionary of parts of faces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_agglomerative_dendrogram.html">Plot Hierarchical Clustering Dendrogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster/plot_coin_segmentation.html">Segmenting the picture of greek coins in regions</a></li>
@@ -1524,7 +1522,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                          NMF(max_iter=1000)],
                           &#x27;reduce_dim__n_components&#x27;: [2, 4, 8]},
                          {&#x27;classify__C&#x27;: [1, 10, 100, 1000],
-                          &#x27;reduce_dim&#x27;: [SelectKBest(score_func=&lt;function mutual_info_classif at 0x7fb230e8ed30&gt;)],
+                          &#x27;reduce_dim&#x27;: [SelectKBest(score_func=&lt;function mutual_info_classif at 0x7f6ceaa83d30&gt;)],
                           &#x27;reduce_dim__k&#x27;: [2, 4, 8]}])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-283" type="checkbox" ><label for="sk-estimator-id-283" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>GridSearchCV(estimator=Pipeline(steps=[(&#x27;scaling&#x27;, MinMaxScaler()),
                                        (&#x27;reduce_dim&#x27;, &#x27;passthrough&#x27;),
                                        (&#x27;classify&#x27;,
@@ -1536,7 +1534,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                          NMF(max_iter=1000)],
                           &#x27;reduce_dim__n_components&#x27;: [2, 4, 8]},
                          {&#x27;classify__C&#x27;: [1, 10, 100, 1000],
-                          &#x27;reduce_dim&#x27;: [SelectKBest(score_func=&lt;function mutual_info_classif at 0x7fb230e8ed30&gt;)],
+                          &#x27;reduce_dim&#x27;: [SelectKBest(score_func=&lt;function mutual_info_classif at 0x7f6ceaa83d30&gt;)],
                           &#x27;reduce_dim__k&#x27;: [2, 4, 8]}])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-284" type="checkbox" ><label for="sk-estimator-id-284" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;scaling&#x27;, MinMaxScaler()),
                 (&#x27;reduce_dim&#x27;, PCA(iterated_power=7, n_components=8)),
                 (&#x27;classify&#x27;, LinearSVC(C=1, dual=False, max_iter=10000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-285" type="checkbox" ><label for="sk-estimator-id-285" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MinMaxScaler</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.preprocessing.MinMaxScaler.html">?<span>Documentation for MinMaxScaler</span></a></div></label><div class="sk-toggleable__content fitted"><pre>MinMaxScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-286" type="checkbox" ><label for="sk-estimator-id-286" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>PCA</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.PCA.html">?<span>Documentation for PCA</span></a></div></label><div class="sk-toggleable__content fitted"><pre>PCA(iterated_power=7, n_components=8)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-287" type="checkbox" ><label for="sk-estimator-id-287" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearSVC</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.svm.LinearSVC.html">?<span>Documentation for LinearSVC</span></a></div></label><div class="sk-toggleable__content fitted"><pre>LinearSVC(C=1, dual=False, max_iter=10000)</pre></div> </div></div></div></div></div></div></div></div></div></div></div>
@@ -1603,7 +1601,7 @@ other configurations of <code class="docutils literal notranslate"><span class="
 estimator data, leading to save processing time. Therefore, the use of
 caching the pipeline using <code class="docutils literal notranslate"><span class="pre">memory</span></code> is highly beneficial when fitting
 a transformer is costly.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 41.273 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 44.444 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-compose-plot-compare-reduction-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/compose/plot_compare_reduction.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo5.svg" style="width: 150px;" />
