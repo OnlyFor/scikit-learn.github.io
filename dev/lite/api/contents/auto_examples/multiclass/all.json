@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-10-14T12:34:27.174112Z",
+      "created": "2024-10-14T12:40:35.283017Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-10-14T12:34:23.366096Z",
+      "last_modified": "2024-10-14T12:40:31.730999Z",
       "mimetype": null,
       "name": "plot_multiclass_overview.ipynb",
       "path": "auto_examples/multiclass/plot_multiclass_overview.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2024-10-14T12:34:27.174112Z",
+  "created": "2024-10-14T12:40:35.283017Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-10-14T12:34:27.174112Z",
+  "last_modified": "2024-10-14T12:40:35.283017Z",
   "mimetype": null,
   "name": "multiclass",
   "path": "auto_examples/multiclass",
