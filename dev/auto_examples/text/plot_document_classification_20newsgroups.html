@@ -662,7 +662,6 @@ document.write(`
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../datasets/index.html">Dataset examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../datasets/plot_random_multilabel_dataset.html">Plot randomly generated multilabel dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasets/plot_iris_dataset.html">The Iris Dataset</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tree/index.html">Decision Trees</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -683,7 +682,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_incremental_pca.html">Incremental PCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_kernel_pca.html">Kernel PCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_pca_vs_fa_model_selection.html">Model selection with Probabilistic PCA and Factor Analysis (FA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_pca_iris.html">PCA example with Iris Data-set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_pca_iris.html">Principal Component Analysis (PCA) on Iris Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../decomposition/plot_sparse_coding.html">Sparse coding with a precomputed dictionary</a></li>
 </ul>
 </details></li>
@@ -1157,9 +1156,9 @@ metadata stripping.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2034 documents - 3.98MB (training set)
 1353 documents - 2.87MB (test set)
 4 categories
-vectorize training done in 0.370s at 10.758MB/s
+vectorize training done in 0.392s at 10.140MB/s
 n_samples: 2034, n_features: 7831
-vectorize testing done in 0.232s at 12.385MB/s
+vectorize testing done in 0.244s at 11.742MB/s
 n_samples: 1353, n_features: 7831
 </pre></div>
 </div>
@@ -1529,8 +1528,8 @@ Logistic Regression
 ________________________________________________________________________________
 Training:
 LogisticRegression(C=5, max_iter=1000)
-train time: 0.17s
-test time:  0.000694s
+train time: 0.183s
+test time:  0.000664s
 accuracy:   0.772
 dimensionality: 5316
 density: 1.0
@@ -1541,8 +1540,8 @@ Ridge Classifier
 ________________________________________________________________________________
 Training:
 RidgeClassifier(solver=&#39;sparse_cg&#39;)
-train time: 0.0317s
-test time:  0.000657s
+train time: 0.0335s
+test time:  0.00068s
 accuracy:   0.76
 dimensionality: 5316
 density: 1.0
@@ -1553,8 +1552,8 @@ kNN
 ________________________________________________________________________________
 Training:
 KNeighborsClassifier(n_neighbors=100)
-train time: 0.000946s
-test time:  0.0727s
+train time: 0.000998s
+test time:  0.0737s
 accuracy:   0.752
 
 ================================================================================
@@ -1562,8 +1561,8 @@ Random Forest
 ________________________________________________________________________________
 Training:
 RandomForestClassifier()
-train time: 1.6s
-test time:  0.0539s
+train time: 1.64s
+test time:  0.0557s
 accuracy:   0.704
 
 ================================================================================
@@ -1571,8 +1570,8 @@ Linear SVC
 ________________________________________________________________________________
 Training:
 LinearSVC(C=0.1, dual=False)
-train time: 0.0297s
-test time:  0.000658s
+train time: 0.0305s
+test time:  0.000673s
 accuracy:   0.752
 dimensionality: 5316
 density: 1.0
@@ -1583,8 +1582,8 @@ log-loss SGD
 ________________________________________________________________________________
 Training:
 SGDClassifier(early_stopping=True, loss=&#39;log_loss&#39;, n_iter_no_change=3)
-train time: 0.029s
-test time:  0.000612s
+train time: 0.0307s
+test time:  0.000655s
 accuracy:   0.758
 dimensionality: 5316
 density: 1.0
@@ -1595,8 +1594,8 @@ NearestCentroid
 ________________________________________________________________________________
 Training:
 NearestCentroid()
-train time: 0.00262s
-test time:  0.00149s
+train time: 0.00274s
+test time:  0.0021s
 accuracy:   0.748
 
 ================================================================================
@@ -1604,8 +1603,8 @@ Complement naive Bayes
 ________________________________________________________________________________
 Training:
 ComplementNB(alpha=0.1)
-train time: 0.00174s
-test time:  0.000447s
+train time: 0.0023s
+test time:  0.00057s
 accuracy:   0.779
 </pre></div>
 </div>
@@ -1668,7 +1667,7 @@ document in the training set, which is computationally expensive. Furthermore,
 the “curse of dimensionality” harms the ability of this model to yield
 competitive accuracy in the high dimensional feature space of text
 classification problems.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.415 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.566 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-classification-20newsgroups-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_classification_20newsgroups.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />

@@ -173,7 +173,7 @@ Examples concerning the :mod:`sklearn.decomposition` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Principal Component Analysis applied to the Iris dataset.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows a well known decomposition technique known as Principal Component Analysis (PCA) on the Iris dataset.">
 
 .. only:: html
 
@@ -184,7 +184,7 @@ Examples concerning the :mod:`sklearn.decomposition` module.
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">PCA example with Iris Data-set</div>
+      <div class="sphx-glr-thumbnail-title">Principal Component Analysis (PCA) on Iris Dataset</div>
     </div>
 
 
