@@ -1095,9 +1095,16 @@ on a classifier, but not otherwise. Similarly, scorers for average precision
 that take a continuous prediction need to call <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> for classifiers,
 but <code class="docutils literal notranslate"><span class="pre">predict</span></code> for regressors. This distinction between classifiers and regressors
 is implemented using the <code class="docutils literal notranslate"><span class="pre">_estimator_type</span></code> attribute, which takes a string value.
-It should be <code class="docutils literal notranslate"><span class="pre">&quot;classifier&quot;</span></code> for classifiers and <code class="docutils literal notranslate"><span class="pre">&quot;regressor&quot;</span></code> for
-regressors and <code class="docutils literal notranslate"><span class="pre">&quot;clusterer&quot;</span></code> for clustering methods, to work as expected.
-Inheriting from <code class="docutils literal notranslate"><span class="pre">ClassifierMixin</span></code>, <code class="docutils literal notranslate"><span class="pre">RegressorMixin</span></code> or <code class="docutils literal notranslate"><span class="pre">ClusterMixin</span></code>
+This attribute should have the following values to work as expected:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;classifier&quot;</span></code> for classifiers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;regressor&quot;</span></code> for regressors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;clusterer&quot;</span></code> for clustering methods</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;outlier_detector&quot;</span></code> for outlier detectors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;DensityEstimator&quot;</span></code> for density estimators</p></li>
+</ul>
+<p>Inheriting from <a class="reference internal" href="../modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="sklearn.base.ClassifierMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClassifierMixin</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="sklearn.base.RegressorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegressorMixin</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.base.ClusterMixin.html#sklearn.base.ClusterMixin" title="sklearn.base.ClusterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClusterMixin</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.base.OutlierMixin.html#sklearn.base.OutlierMixin" title="sklearn.base.OutlierMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutlierMixin</span></code></a> or <a class="reference internal" href="../modules/generated/sklearn.base.DensityMixin.html#sklearn.base.DensityMixin" title="sklearn.base.DensityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DensityMixin</span></code></a>,
 will set the attribute automatically.  When a meta-estimator needs to distinguish
 among estimator types, instead of checking <code class="docutils literal notranslate"><span class="pre">_estimator_type</span></code> directly, helpers
 like <a class="reference internal" href="../modules/generated/sklearn.base.is_classifier.html#sklearn.base.is_classifier" title="sklearn.base.is_classifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">base.is_classifier</span></code></a> should be used.</p>
