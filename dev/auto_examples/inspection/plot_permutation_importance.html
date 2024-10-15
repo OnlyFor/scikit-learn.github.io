@@ -709,7 +709,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_monotonic_constraints.html">Monotonic Constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_adaboost_multiclass.html">Multi-class AdaBoosted Decision Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_ensemble_oob.html">OOB Errors for Random Forests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_forest_importances_faces.html">Pixel importances with a parallel forest of trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_probas.html">Plot class probabilities calculated by the VotingClassifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_regressor.html">Plot individual and voting regression predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_decision_regions.html">Plot the decision boundaries of a VotingClassifier</a></li>
@@ -1119,6 +1118,567 @@ numerical features using a mean strategy.</p></li>
     <span class="p">]</span>
 <span class="p">)</span>
 <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<style>#sk-container-id-35 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-35 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-35 pre {
+  padding: 0;
+}
+
+#sk-container-id-35 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-35 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-35 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-35 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-35 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-35 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-35 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-35 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-35 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-35 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-35 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-35 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-35 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-35 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-35 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-35 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-35 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-35 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-35 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-35 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-35 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-35 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-35 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-35 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-35 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-35 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-35 div.sk-label label.sk-toggleable__label,
+#sk-container-id-35 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-35 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-35 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-35 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-35 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-35 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-35 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-35 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-35 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-35 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-35 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-35 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-35 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-35" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;cat&#x27;,
+                                                  OrdinalEncoder(encoded_missing_value=-1,
+                                                                 handle_unknown=&#x27;use_encoded_value&#x27;,
+                                                                 unknown_value=-1),
+                                                  [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;,
+                                                   &#x27;random_cat&#x27;]),
+                                                 (&#x27;num&#x27;, SimpleImputer(),
+                                                  [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
+                                                   &#x27;fare&#x27;, &#x27;random_num&#x27;])],
+                                   verbose_feature_names_out=False)),
+                (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-146" type="checkbox" ><label for="sk-estimator-id-146" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;cat&#x27;,
+                                                  OrdinalEncoder(encoded_missing_value=-1,
+                                                                 handle_unknown=&#x27;use_encoded_value&#x27;,
+                                                                 unknown_value=-1),
+                                                  [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;,
+                                                   &#x27;random_cat&#x27;]),
+                                                 (&#x27;num&#x27;, SimpleImputer(),
+                                                  [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
+                                                   &#x27;fare&#x27;, &#x27;random_num&#x27;])],
+                                   verbose_feature_names_out=False)),
+                (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-147" type="checkbox" ><label for="sk-estimator-id-147" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>preprocess: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for preprocess: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;cat&#x27;,
+                                 OrdinalEncoder(encoded_missing_value=-1,
+                                                handle_unknown=&#x27;use_encoded_value&#x27;,
+                                                unknown_value=-1),
+                                 [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]),
+                                (&#x27;num&#x27;, SimpleImputer(),
+                                 [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;,
+                                  &#x27;random_num&#x27;])],
+                  verbose_feature_names_out=False)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-148" type="checkbox" ><label for="sk-estimator-id-148" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-149" type="checkbox" ><label for="sk-estimator-id-149" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OrdinalEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></div></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(encoded_missing_value=-1, handle_unknown=&#x27;use_encoded_value&#x27;,
+               unknown_value=-1)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-150" type="checkbox" ><label for="sk-estimator-id-150" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;, &#x27;random_num&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-151" type="checkbox" ><label for="sk-estimator-id-151" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer()</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-152" type="checkbox" ><label for="sk-estimator-id-152" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(random_state=42)</pre></div> </div></div></div></div></div></div>
+</div>
+<br />
+<br /></section>
+<section id="accuracy-of-the-model">
+<h2>Accuracy of the Model<a class="headerlink" href="#accuracy-of-the-model" title="Link to this heading">#</a></h2>
+<p>Prior to inspecting the feature importances, it is important to check that
+the model predictive performance is high enough. Indeed there would be little
+interest of inspecting the important features of a non-predictive model.</p>
+<p>Here one can observe that the train accuracy is very high (the forest model
+has enough capacity to completely memorize the training set) but it can still
+generalize well enough to the test set thanks to the built-in bagging of
+random forests.</p>
+<p>It might be possible to trade some accuracy on the training set for a
+slightly better accuracy on the test set by limiting the capacity of the
+trees (for instance by setting <code class="docutils literal notranslate"><span class="pre">min_samples_leaf=5</span></code> or
+<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=10</span></code>) so as to limit overfitting while not introducing too
+much underfitting.</p>
+<p>However let’s keep our high capacity random forest model for now so as to
+illustrate some pitfalls with feature importance on variables with many
+unique values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RF train accuracy: </span><span class="si">{</span><span class="n">rf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RF test accuracy: </span><span class="si">{</span><span class="n">rf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RF train accuracy: 1.000
+RF test accuracy: 0.814
+</pre></div>
+</div>
+</section>
+<section id="tree-s-feature-importance-from-mean-decrease-in-impurity-mdi">
+<h2>Tree’s Feature Importance from Mean Decrease in Impurity (MDI)<a class="headerlink" href="#tree-s-feature-importance-from-mean-decrease-in-impurity-mdi" title="Link to this heading">#</a></h2>
+<p>The impurity-based feature importance ranks the numerical features to be the
+most important features. As a result, the non-predictive <code class="docutils literal notranslate"><span class="pre">random_num</span></code>
+variable is ranked as one of the most important features!</p>
+<p>This problem stems from two limitations of impurity-based feature
+importances:</p>
+<ul class="simple">
+<li><p>impurity-based importances are biased towards high cardinality features;</p></li>
+<li><p>impurity-based importances are computed on training set statistics and
+therefore do not reflect the ability of feature to be useful to make
+predictions that generalize to the test set (when the model has enough
+capacity).</p></li>
+</ul>
+<p>The bias towards high cardinality features explains why the <code class="docutils literal notranslate"><span class="pre">random_num</span></code> has
+a really large importance in comparison with <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> while we would
+expect both random features to have a null importance.</p>
+<p>The fact that we use training set statistics explains why both the
+<code class="docutils literal notranslate"><span class="pre">random_num</span></code> and <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> features have a non-null importance.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">rf</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">mdi_importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.Series" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">Series</span></a><span class="p">(</span>
+    <span class="n">rf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">mdi_importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Random Forest Feature Importances (MDI)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_permutation_importance_001.png" srcset="../../_images/sphx_glr_plot_permutation_importance_001.png" alt="Random Forest Feature Importances (MDI)" class = "sphx-glr-single-img"/><p>As an alternative, the permutation importances of <code class="docutils literal notranslate"><span class="pre">rf</span></code> are computed on a
+held out test set. This shows that the low cardinality categorical feature,
+<code class="docutils literal notranslate"><span class="pre">sex</span></code> and <code class="docutils literal notranslate"><span class="pre">pclass</span></code> are the most important feature. Indeed, permuting the
+values of these features will lead to most decrease in accuracy score of the
+model on the test set.</p>
+<p>Also note that both random features have very low importances (close to 0) as
+expected.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a>
+
+<span class="n">result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a><span class="p">(</span>
+    <span class="n">rf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="n">sorted_importances_idx</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
+<span class="n">importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">importances</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Permutation Importances (test set)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Decrease in accuracy score&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_permutation_importance_002.png" srcset="../../_images/sphx_glr_plot_permutation_importance_002.png" alt="Permutation Importances (test set)" class = "sphx-glr-single-img"/><p>It is also possible to compute the permutation importances on the training
+set. This reveals that <code class="docutils literal notranslate"><span class="pre">random_num</span></code> and <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> get a significantly
+higher importance ranking than when computed on the test set. The difference
+between those two plots is a confirmation that the RF model has enough
+capacity to use that random numerical and categorical features to overfit.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a><span class="p">(</span>
+    <span class="n">rf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="n">sorted_importances_idx</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
+<span class="n">importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">importances</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Permutation Importances (train set)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Decrease in accuracy score&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_permutation_importance_003.png" srcset="../../_images/sphx_glr_plot_permutation_importance_003.png" alt="Permutation Importances (train set)" class = "sphx-glr-single-img"/><p>We can further retry the experiment by limiting the capacity of the trees
+to overfit by setting <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code> at 20 data points.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rf</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">classifier__min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
@@ -1548,557 +2108,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                   [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
                                                    &#x27;fare&#x27;, &#x27;random_num&#x27;])],
                                    verbose_feature_names_out=False)),
-                (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-147" type="checkbox" ><label for="sk-estimator-id-147" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
-                 ColumnTransformer(transformers=[(&#x27;cat&#x27;,
-                                                  OrdinalEncoder(encoded_missing_value=-1,
-                                                                 handle_unknown=&#x27;use_encoded_value&#x27;,
-                                                                 unknown_value=-1),
-                                                  [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;,
-                                                   &#x27;random_cat&#x27;]),
-                                                 (&#x27;num&#x27;, SimpleImputer(),
-                                                  [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
-                                                   &#x27;fare&#x27;, &#x27;random_num&#x27;])],
-                                   verbose_feature_names_out=False)),
-                (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-148" type="checkbox" ><label for="sk-estimator-id-148" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>preprocess: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for preprocess: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;cat&#x27;,
-                                 OrdinalEncoder(encoded_missing_value=-1,
-                                                handle_unknown=&#x27;use_encoded_value&#x27;,
-                                                unknown_value=-1),
-                                 [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]),
-                                (&#x27;num&#x27;, SimpleImputer(),
-                                 [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;,
-                                  &#x27;random_num&#x27;])],
-                  verbose_feature_names_out=False)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-149" type="checkbox" ><label for="sk-estimator-id-149" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-150" type="checkbox" ><label for="sk-estimator-id-150" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OrdinalEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></div></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(encoded_missing_value=-1, handle_unknown=&#x27;use_encoded_value&#x27;,
-               unknown_value=-1)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-151" type="checkbox" ><label for="sk-estimator-id-151" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;, &#x27;random_num&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-152" type="checkbox" ><label for="sk-estimator-id-152" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer()</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-153" type="checkbox" ><label for="sk-estimator-id-153" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(random_state=42)</pre></div> </div></div></div></div></div></div>
-</div>
-<br />
-<br /></section>
-<section id="accuracy-of-the-model">
-<h2>Accuracy of the Model<a class="headerlink" href="#accuracy-of-the-model" title="Link to this heading">#</a></h2>
-<p>Prior to inspecting the feature importances, it is important to check that
-the model predictive performance is high enough. Indeed there would be little
-interest of inspecting the important features of a non-predictive model.</p>
-<p>Here one can observe that the train accuracy is very high (the forest model
-has enough capacity to completely memorize the training set) but it can still
-generalize well enough to the test set thanks to the built-in bagging of
-random forests.</p>
-<p>It might be possible to trade some accuracy on the training set for a
-slightly better accuracy on the test set by limiting the capacity of the
-trees (for instance by setting <code class="docutils literal notranslate"><span class="pre">min_samples_leaf=5</span></code> or
-<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=10</span></code>) so as to limit overfitting while not introducing too
-much underfitting.</p>
-<p>However let’s keep our high capacity random forest model for now so as to
-illustrate some pitfalls with feature importance on variables with many
-unique values.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RF train accuracy: </span><span class="si">{</span><span class="n">rf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RF test accuracy: </span><span class="si">{</span><span class="n">rf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RF train accuracy: 1.000
-RF test accuracy: 0.814
-</pre></div>
-</div>
-</section>
-<section id="tree-s-feature-importance-from-mean-decrease-in-impurity-mdi">
-<h2>Tree’s Feature Importance from Mean Decrease in Impurity (MDI)<a class="headerlink" href="#tree-s-feature-importance-from-mean-decrease-in-impurity-mdi" title="Link to this heading">#</a></h2>
-<p>The impurity-based feature importance ranks the numerical features to be the
-most important features. As a result, the non-predictive <code class="docutils literal notranslate"><span class="pre">random_num</span></code>
-variable is ranked as one of the most important features!</p>
-<p>This problem stems from two limitations of impurity-based feature
-importances:</p>
-<ul class="simple">
-<li><p>impurity-based importances are biased towards high cardinality features;</p></li>
-<li><p>impurity-based importances are computed on training set statistics and
-therefore do not reflect the ability of feature to be useful to make
-predictions that generalize to the test set (when the model has enough
-capacity).</p></li>
-</ul>
-<p>The bias towards high cardinality features explains why the <code class="docutils literal notranslate"><span class="pre">random_num</span></code> has
-a really large importance in comparison with <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> while we would
-expect both random features to have a null importance.</p>
-<p>The fact that we use training set statistics explains why both the
-<code class="docutils literal notranslate"><span class="pre">random_num</span></code> and <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> features have a non-null importance.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">feature_names</span> <span class="o">=</span> <span class="n">rf</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-
-<span class="n">mdi_importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.Series" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">Series</span></a><span class="p">(</span>
-    <span class="n">rf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span>
-<span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">mdi_importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Random Forest Feature Importances (MDI)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-<img src="../../_images/sphx_glr_plot_permutation_importance_001.png" srcset="../../_images/sphx_glr_plot_permutation_importance_001.png" alt="Random Forest Feature Importances (MDI)" class = "sphx-glr-single-img"/><p>As an alternative, the permutation importances of <code class="docutils literal notranslate"><span class="pre">rf</span></code> are computed on a
-held out test set. This shows that the low cardinality categorical feature,
-<code class="docutils literal notranslate"><span class="pre">sex</span></code> and <code class="docutils literal notranslate"><span class="pre">pclass</span></code> are the most important feature. Indeed, permuting the
-values of these features will lead to most decrease in accuracy score of the
-model on the test set.</p>
-<p>Also note that both random features have very low importances (close to 0) as
-expected.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a>
-
-<span class="n">result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a><span class="p">(</span>
-    <span class="n">rf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span>
-<span class="p">)</span>
-
-<span class="n">sorted_importances_idx</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
-<span class="n">importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
-    <span class="n">result</span><span class="o">.</span><span class="n">importances</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
-    <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">],</span>
-<span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Permutation Importances (test set)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Decrease in accuracy score&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-<img src="../../_images/sphx_glr_plot_permutation_importance_002.png" srcset="../../_images/sphx_glr_plot_permutation_importance_002.png" alt="Permutation Importances (test set)" class = "sphx-glr-single-img"/><p>It is also possible to compute the permutation importances on the training
-set. This reveals that <code class="docutils literal notranslate"><span class="pre">random_num</span></code> and <code class="docutils literal notranslate"><span class="pre">random_cat</span></code> get a significantly
-higher importance ranking than when computed on the test set. The difference
-between those two plots is a confirmation that the RF model has enough
-capacity to use that random numerical and categorical features to overfit.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance" title="sklearn.inspection.permutation_importance" class="sphx-glr-backref-module-sklearn-inspection sphx-glr-backref-type-py-function"><span class="n">permutation_importance</span></a><span class="p">(</span>
-    <span class="n">rf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span>
-<span class="p">)</span>
-
-<span class="n">sorted_importances_idx</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
-<span class="n">importances</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
-    <span class="n">result</span><span class="o">.</span><span class="n">importances</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
-    <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">sorted_importances_idx</span><span class="p">],</span>
-<span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Permutation Importances (train set)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Decrease in accuracy score&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-<img src="../../_images/sphx_glr_plot_permutation_importance_003.png" srcset="../../_images/sphx_glr_plot_permutation_importance_003.png" alt="Permutation Importances (train set)" class = "sphx-glr-single-img"/><p>We can further retry the experiment by limiting the capacity of the trees
-to overfit by setting <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code> at 20 data points.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rf</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">classifier__min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="output_subarea output_html rendered_html output_result">
-<style>#sk-container-id-37 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-37 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-37 pre {
-  padding: 0;
-}
-
-#sk-container-id-37 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-37 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-37 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-37 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-37 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-37 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-37 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-37 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-37 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-37 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-37 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-37 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-37 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: start;
-  justify-content: space-between;
-  gap: 0.5em;
-}
-
-#sk-container-id-37 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-37 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-37 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-37 div.sk-toggleable__content {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-37 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-37 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-37 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-37 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  max-height: 200px;
-  max-width: 100%;
-  overflow: auto;
-}
-
-#sk-container-id-37 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-37 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-37 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-37 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-37 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-37 div.sk-label label.sk-toggleable__label,
-#sk-container-id-37 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-37 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-37 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-37 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-37 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-37 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-37 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-37 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-37 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-37 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-37 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-37 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-37 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-</style><div id="sk-container-id-37" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
+                (&#x27;classifier&#x27;,
+                 RandomForestClassifier(min_samples_leaf=20, random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-153" type="checkbox" ><label for="sk-estimator-id-153" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
                  ColumnTransformer(transformers=[(&#x27;cat&#x27;,
                                                   OrdinalEncoder(encoded_missing_value=-1,
                                                                  handle_unknown=&#x27;use_encoded_value&#x27;,
@@ -2110,19 +2121,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                    &#x27;fare&#x27;, &#x27;random_num&#x27;])],
                                    verbose_feature_names_out=False)),
                 (&#x27;classifier&#x27;,
-                 RandomForestClassifier(min_samples_leaf=20, random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-154" type="checkbox" ><label for="sk-estimator-id-154" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
-                 ColumnTransformer(transformers=[(&#x27;cat&#x27;,
-                                                  OrdinalEncoder(encoded_missing_value=-1,
-                                                                 handle_unknown=&#x27;use_encoded_value&#x27;,
-                                                                 unknown_value=-1),
-                                                  [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;,
-                                                   &#x27;random_cat&#x27;]),
-                                                 (&#x27;num&#x27;, SimpleImputer(),
-                                                  [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
-                                                   &#x27;fare&#x27;, &#x27;random_num&#x27;])],
-                                   verbose_feature_names_out=False)),
-                (&#x27;classifier&#x27;,
-                 RandomForestClassifier(min_samples_leaf=20, random_state=42))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-155" type="checkbox" ><label for="sk-estimator-id-155" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>preprocess: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for preprocess: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;cat&#x27;,
+                 RandomForestClassifier(min_samples_leaf=20, random_state=42))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-154" type="checkbox" ><label for="sk-estimator-id-154" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>preprocess: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for preprocess: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;cat&#x27;,
                                  OrdinalEncoder(encoded_missing_value=-1,
                                                 handle_unknown=&#x27;use_encoded_value&#x27;,
                                                 unknown_value=-1),
@@ -2130,8 +2129,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                 (&#x27;num&#x27;, SimpleImputer(),
                                  [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;,
                                   &#x27;random_num&#x27;])],
-                  verbose_feature_names_out=False)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-156" type="checkbox" ><label for="sk-estimator-id-156" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-157" type="checkbox" ><label for="sk-estimator-id-157" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OrdinalEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></div></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(encoded_missing_value=-1, handle_unknown=&#x27;use_encoded_value&#x27;,
-               unknown_value=-1)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-158" type="checkbox" ><label for="sk-estimator-id-158" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;, &#x27;random_num&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-159" type="checkbox" ><label for="sk-estimator-id-159" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer()</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-160" type="checkbox" ><label for="sk-estimator-id-160" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(min_samples_leaf=20, random_state=42)</pre></div> </div></div></div></div></div></div>
+                  verbose_feature_names_out=False)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-155" type="checkbox" ><label for="sk-estimator-id-155" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;, &#x27;random_cat&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-156" type="checkbox" ><label for="sk-estimator-id-156" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OrdinalEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></div></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(encoded_missing_value=-1, handle_unknown=&#x27;use_encoded_value&#x27;,
+               unknown_value=-1)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-157" type="checkbox" ><label for="sk-estimator-id-157" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted"><pre>[&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;, &#x27;fare&#x27;, &#x27;random_num&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-158" type="checkbox" ><label for="sk-estimator-id-158" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer()</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-159" type="checkbox" ><label for="sk-estimator-id-159" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(min_samples_leaf=20, random_state=42)</pre></div> </div></div></div></div></div></div>
 </div>
 <br />
 <br /><p>Observing the accuracy score on the training and testing set, we observe that
@@ -2180,7 +2179,7 @@ RF test accuracy: 0.832
 features have a lower importance compared to the overfitting random forest.
 However, the conclusions regarding the importance of the other features are
 still valid.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.852 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.718 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inspection-plot-permutation-importance-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/inspection/plot_permutation_importance.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" style="width: 150px;" />
@@ -2204,15 +2203,15 @@ still valid.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example shows the use of a forest of trees to evaluate the importance of features on an artificial classification task. The blue bars are the feature importances of the forest, along with their inter-trees variability represented by the error bars."><img alt="" src="../../_images/sphx_glr_plot_forest_importances_thumb.png" />
 <p><a class="reference internal" href="../ensemble/plot_forest_importances.html#sphx-glr-auto-examples-ensemble-plot-forest-importances-py"><span class="std std-ref">Feature importances with a forest of trees</span></a></p>
   <div class="sphx-glr-thumbnail-title">Feature importances with a forest of trees</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows the use of a forest of trees to evaluate the impurity based importance of the pixels in an image classification task on the faces dataset. The hotter the pixel, the more important it is."><img alt="" src="../../_images/sphx_glr_plot_forest_importances_faces_thumb.png" />
-<p><a class="reference internal" href="../ensemble/plot_forest_importances_faces.html#sphx-glr-auto-examples-ensemble-plot-forest-importances-faces-py"><span class="std std-ref">Pixel importances with a parallel forest of trees</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Pixel importances with a parallel forest of trees</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we compute the permutation_importance of the features to a trained RandomForestClassifier using the breast_cancer_dataset. The model can easily get about 97% accuracy on a test dataset. Because this dataset contains multicollinear features, the permutation importance shows that none of the features are important, in contradiction with the high test accuracy."><img alt="" src="../../_images/sphx_glr_plot_permutation_importance_multicollinear_thumb.png" />
 <p><a class="reference internal" href="plot_permutation_importance_multicollinear.html#sphx-glr-auto-examples-inspection-plot-permutation-importance-multicollinear-py"><span class="std std-ref">Permutation Importance with Multicollinear or Correlated Features</span></a></p>
   <div class="sphx-glr-thumbnail-title">Permutation Importance with Multicollinear or Correlated Features</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="We are pleased to announce the release of scikit-learn 0.22, which comes with many bug fixes and new features! We detail below a few of the major features of this release. For an exhaustive list of all the changes, please refer to the release notes &lt;release_notes_0_22&gt;."><img alt="" src="../../_images/sphx_glr_plot_release_highlights_0_22_0_thumb.png" />
 <p><a class="reference internal" href="../release_highlights/plot_release_highlights_0_22_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-22-0-py"><span class="std std-ref">Release Highlights for scikit-learn 0.22</span></a></p>
   <div class="sphx-glr-thumbnail-title">Release Highlights for scikit-learn 0.22</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates Gradient Boosting to produce a predictive model from an ensemble of weak predictive models. Gradient boosting can be used for regression and classification problems. Here, we will train a model to tackle a diabetes regression task. We will obtain the results from GradientBoostingRegressor with least squares loss and 500 regression trees of depth 4."><img alt="" src="../../_images/sphx_glr_plot_gradient_boosting_regression_thumb.png" />
+<p><a class="reference internal" href="../ensemble/plot_gradient_boosting_regression.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-regression-py"><span class="std std-ref">Gradient Boosting regression</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Gradient Boosting regression</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

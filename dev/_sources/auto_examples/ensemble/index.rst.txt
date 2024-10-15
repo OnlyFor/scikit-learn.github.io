@@ -308,23 +308,6 @@ Examples concerning the :mod:`sklearn.ensemble` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the use of a forest of trees to evaluate the impurity based importance of the pixels in an image classification task on the faces dataset. The hotter the pixel, the more important it is.">
-
-.. only:: html
-
-  .. image:: /auto_examples/ensemble/images/thumb/sphx_glr_plot_forest_importances_faces_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_ensemble_plot_forest_importances_faces.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Pixel importances with a parallel forest of trees</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Plot the class probabilities of the first sample in a toy dataset predicted by three different classifiers and averaged by the VotingClassifier.">
 
 .. only:: html
@@ -469,7 +452,6 @@ Examples concerning the :mod:`sklearn.ensemble` module.
    /auto_examples/ensemble/plot_monotonic_constraints
    /auto_examples/ensemble/plot_adaboost_multiclass
    /auto_examples/ensemble/plot_ensemble_oob
-   /auto_examples/ensemble/plot_forest_importances_faces
    /auto_examples/ensemble/plot_voting_probas
    /auto_examples/ensemble/plot_voting_regressor
    /auto_examples/ensemble/plot_voting_decision_regions

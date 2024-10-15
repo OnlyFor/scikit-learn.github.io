@@ -709,7 +709,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_monotonic_constraints.html">Monotonic Constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_adaboost_multiclass.html">Multi-class AdaBoosted Decision Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_ensemble_oob.html">OOB Errors for Random Forests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_forest_importances_faces.html">Pixel importances with a parallel forest of trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_probas.html">Plot class probabilities calculated by the VotingClassifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_regressor.html">Plot individual and voting regression predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ensemble/plot_voting_decision_regions.html">Plot the decision boundaries of a VotingClassifier</a></li>
@@ -1243,7 +1242,7 @@ array([[4.11693539, 4.19803308, 4.12190903],
 <span class="n">X_test_r</span><span class="p">,</span> <span class="n">Y_test_r</span> <span class="o">=</span> <span class="n">cca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.212 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.201 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cross-decomposition-plot-compare-cross-decomposition-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/cross_decomposition/plot_compare_cross_decomposition.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo7.svg" style="width: 150px;" />
@@ -1273,9 +1272,9 @@ array([[4.11693539, 4.19803308, 4.12190903],
 </div><div class="sphx-glr-thumbcontainer" tooltip="Investigating the Iris dataset, we see that sepal length, petal length and petal width are highly correlated. Sepal width is less redundant. Matrix decomposition techniques can uncover these latent patterns. Applying rotations to the resulting components does not inherently improve the predictive value of the derived latent space, but can help visualise their structure; here, for example, the varimax rotation, which is found by maximizing the squared variances of the weights, finds a structure where the second component only loads positively on sepal width."><img alt="" src="../../_images/sphx_glr_plot_varimax_fa_thumb.png" />
 <p><a class="reference internal" href="../decomposition/plot_varimax_fa.html#sphx-glr-auto-examples-decomposition-plot-varimax-fa-py"><span class="std std-ref">Factor Analysis (with rotation) to visualize patterns</span></a></p>
   <div class="sphx-glr-thumbnail-title">Factor Analysis (with rotation) to visualize patterns</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we compute the permutation_importance of the features to a trained RandomForestClassifier using the breast_cancer_dataset. The model can easily get about 97% accuracy on a test dataset. Because this dataset contains multicollinear features, the permutation importance shows that none of the features are important, in contradiction with the high test accuracy."><img alt="" src="../../_images/sphx_glr_plot_permutation_importance_multicollinear_thumb.png" />
-<p><a class="reference internal" href="../inspection/plot_permutation_importance_multicollinear.html#sphx-glr-auto-examples-inspection-plot-permutation-importance-multicollinear-py"><span class="std std-ref">Permutation Importance with Multicollinear or Correlated Features</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Permutation Importance with Multicollinear or Correlated Features</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, semi-supervised classifiers are trained on the 20 newsgroups dataset (which will be automatically downloaded)."><img alt="" src="../../_images/sphx_glr_plot_semi_supervised_newsgroups_thumb.png" />
+<p><a class="reference internal" href="../semi_supervised/plot_semi_supervised_newsgroups.html#sphx-glr-auto-examples-semi-supervised-plot-semi-supervised-newsgroups-py"><span class="std std-ref">Semi-supervised Classification on a Text Dataset</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Semi-supervised Classification on a Text Dataset</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

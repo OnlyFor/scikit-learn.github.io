@@ -423,6 +423,454 @@ raised.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
+    <style>#sk-container-id-47 {
+      /* Definition of color scheme common for light and dark mode */
+      --sklearn-color-text: #000;
+      --sklearn-color-text-muted: #666;
+      --sklearn-color-line: gray;
+      /* Definition of color scheme for unfitted estimators */
+      --sklearn-color-unfitted-level-0: #fff5e6;
+      --sklearn-color-unfitted-level-1: #f6e4d2;
+      --sklearn-color-unfitted-level-2: #ffe0b3;
+      --sklearn-color-unfitted-level-3: chocolate;
+      /* Definition of color scheme for fitted estimators */
+      --sklearn-color-fitted-level-0: #f0f8ff;
+      --sklearn-color-fitted-level-1: #d4ebff;
+      --sklearn-color-fitted-level-2: #b3dbfd;
+      --sklearn-color-fitted-level-3: cornflowerblue;
+
+      /* Specific color for light theme */
+      --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+      --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+      --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+      --sklearn-color-icon: #696969;
+
+      @media (prefers-color-scheme: dark) {
+        /* Redefinition of color scheme for dark theme */
+        --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+        --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+        --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+        --sklearn-color-icon: #878787;
+      }
+    }
+
+    #sk-container-id-47 {
+      color: var(--sklearn-color-text);
+    }
+
+    #sk-container-id-47 pre {
+      padding: 0;
+    }
+
+    #sk-container-id-47 input.sk-hidden--visually {
+      border: 0;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    #sk-container-id-47 div.sk-dashed-wrapped {
+      border: 1px dashed var(--sklearn-color-line);
+      margin: 0 0.4em 0.5em 0.4em;
+      box-sizing: border-box;
+      padding-bottom: 0.4em;
+      background-color: var(--sklearn-color-background);
+    }
+
+    #sk-container-id-47 div.sk-container {
+      /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+         but bootstrap.min.css set `[hidden] { display: none !important; }`
+         so we also need the `!important` here to be able to override the
+         default hidden behavior on the sphinx rendered scikit-learn.org.
+         See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+      display: inline-block !important;
+      position: relative;
+    }
+
+    #sk-container-id-47 div.sk-text-repr-fallback {
+      display: none;
+    }
+
+    div.sk-parallel-item,
+    div.sk-serial,
+    div.sk-item {
+      /* draw centered vertical line to link estimators */
+      background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+      background-size: 2px 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    /* Parallel-specific style estimator block */
+
+    #sk-container-id-47 div.sk-parallel-item::after {
+      content: "";
+      width: 100%;
+      border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+      flex-grow: 1;
+    }
+
+    #sk-container-id-47 div.sk-parallel {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      background-color: var(--sklearn-color-background);
+      position: relative;
+    }
+
+    #sk-container-id-47 div.sk-parallel-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #sk-container-id-47 div.sk-parallel-item:first-child::after {
+      align-self: flex-end;
+      width: 50%;
+    }
+
+    #sk-container-id-47 div.sk-parallel-item:last-child::after {
+      align-self: flex-start;
+      width: 50%;
+    }
+
+    #sk-container-id-47 div.sk-parallel-item:only-child::after {
+      width: 0;
+    }
+
+    /* Serial-specific style estimator block */
+
+    #sk-container-id-47 div.sk-serial {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--sklearn-color-background);
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+
+
+    /* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+    clickable and can be expanded/collapsed.
+    - Pipeline and ColumnTransformer use this feature and define the default style
+    - Estimators will overwrite some part of the style using the `sk-estimator` class
+    */
+
+    /* Pipeline and ColumnTransformer style (default) */
+
+    #sk-container-id-47 div.sk-toggleable {
+      /* Default theme specific background. It is overwritten whether we have a
+      specific estimator or a Pipeline/ColumnTransformer */
+      background-color: var(--sklearn-color-background);
+    }
+
+    /* Toggleable label */
+    #sk-container-id-47 label.sk-toggleable__label {
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0.5em;
+      box-sizing: border-box;
+      text-align: center;
+      align-items: start;
+      justify-content: space-between;
+      gap: 0.5em;
+    }
+
+    #sk-container-id-47 label.sk-toggleable__label .caption {
+      font-size: 0.6rem;
+      font-weight: lighter;
+      color: var(--sklearn-color-text-muted);
+    }
+
+    #sk-container-id-47 label.sk-toggleable__label-arrow:before {
+      /* Arrow on the left of the label */
+      content: "▸";
+      float: left;
+      margin-right: 0.25em;
+      color: var(--sklearn-color-icon);
+    }
+
+    #sk-container-id-47 label.sk-toggleable__label-arrow:hover:before {
+      color: var(--sklearn-color-text);
+    }
+
+    /* Toggleable content - dropdown */
+
+    #sk-container-id-47 div.sk-toggleable__content {
+      max-height: 0;
+      max-width: 0;
+      overflow: hidden;
+      text-align: left;
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-0);
+    }
+
+    #sk-container-id-47 div.sk-toggleable__content.fitted {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-0);
+    }
+
+    #sk-container-id-47 div.sk-toggleable__content pre {
+      margin: 0.2em;
+      border-radius: 0.25em;
+      color: var(--sklearn-color-text);
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-0);
+    }
+
+    #sk-container-id-47 div.sk-toggleable__content.fitted pre {
+      /* unfitted */
+      background-color: var(--sklearn-color-fitted-level-0);
+    }
+
+    #sk-container-id-47 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+      /* Expand drop-down */
+      max-height: 200px;
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    #sk-container-id-47 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+      content: "▾";
+    }
+
+    /* Pipeline/ColumnTransformer-specific style */
+
+    #sk-container-id-47 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+      color: var(--sklearn-color-text);
+      background-color: var(--sklearn-color-unfitted-level-2);
+    }
+
+    #sk-container-id-47 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+      background-color: var(--sklearn-color-fitted-level-2);
+    }
+
+    /* Estimator-specific style */
+
+    /* Colorize estimator box */
+    #sk-container-id-47 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-2);
+    }
+
+    #sk-container-id-47 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-2);
+    }
+
+    #sk-container-id-47 div.sk-label label.sk-toggleable__label,
+    #sk-container-id-47 div.sk-label label {
+      /* The background is the default theme color */
+      color: var(--sklearn-color-text-on-default-background);
+    }
+
+    /* On hover, darken the color of the background */
+    #sk-container-id-47 div.sk-label:hover label.sk-toggleable__label {
+      color: var(--sklearn-color-text);
+      background-color: var(--sklearn-color-unfitted-level-2);
+    }
+
+    /* Label box, darken color on hover, fitted */
+    #sk-container-id-47 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+      color: var(--sklearn-color-text);
+      background-color: var(--sklearn-color-fitted-level-2);
+    }
+
+    /* Estimator label */
+
+    #sk-container-id-47 div.sk-label label {
+      font-family: monospace;
+      font-weight: bold;
+      display: inline-block;
+      line-height: 1.2em;
+    }
+
+    #sk-container-id-47 div.sk-label-container {
+      text-align: center;
+    }
+
+    /* Estimator-specific */
+    #sk-container-id-47 div.sk-estimator {
+      font-family: monospace;
+      border: 1px dotted var(--sklearn-color-border-box);
+      border-radius: 0.25em;
+      box-sizing: border-box;
+      margin-bottom: 0.5em;
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-0);
+    }
+
+    #sk-container-id-47 div.sk-estimator.fitted {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-0);
+    }
+
+    /* on hover */
+    #sk-container-id-47 div.sk-estimator:hover {
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-2);
+    }
+
+    #sk-container-id-47 div.sk-estimator.fitted:hover {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-2);
+    }
+
+    /* Specification for estimator info (e.g. "i" and "?") */
+
+    /* Common style for "i" and "?" */
+
+    .sk-estimator-doc-link,
+    a:link.sk-estimator-doc-link,
+    a:visited.sk-estimator-doc-link {
+      float: right;
+      font-size: smaller;
+      line-height: 1em;
+      font-family: monospace;
+      background-color: var(--sklearn-color-background);
+      border-radius: 1em;
+      height: 1em;
+      width: 1em;
+      text-decoration: none !important;
+      margin-left: 0.5em;
+      text-align: center;
+      /* unfitted */
+      border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+      color: var(--sklearn-color-unfitted-level-1);
+    }
+
+    .sk-estimator-doc-link.fitted,
+    a:link.sk-estimator-doc-link.fitted,
+    a:visited.sk-estimator-doc-link.fitted {
+      /* fitted */
+      border: var(--sklearn-color-fitted-level-1) 1pt solid;
+      color: var(--sklearn-color-fitted-level-1);
+    }
+
+    /* On hover */
+    div.sk-estimator:hover .sk-estimator-doc-link:hover,
+    .sk-estimator-doc-link:hover,
+    div.sk-label-container:hover .sk-estimator-doc-link:hover,
+    .sk-estimator-doc-link:hover {
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-3);
+      color: var(--sklearn-color-background);
+      text-decoration: none;
+    }
+
+    div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+    .sk-estimator-doc-link.fitted:hover,
+    div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+    .sk-estimator-doc-link.fitted:hover {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-3);
+      color: var(--sklearn-color-background);
+      text-decoration: none;
+    }
+
+    /* Span, style for the box shown on hovering the info icon */
+    .sk-estimator-doc-link span {
+      display: none;
+      z-index: 9999;
+      position: relative;
+      font-weight: normal;
+      right: .2ex;
+      padding: .5ex;
+      margin: .5ex;
+      width: min-content;
+      min-width: 20ex;
+      max-width: 50ex;
+      color: var(--sklearn-color-text);
+      box-shadow: 2pt 2pt 4pt #999;
+      /* unfitted */
+      background: var(--sklearn-color-unfitted-level-0);
+      border: .5pt solid var(--sklearn-color-unfitted-level-3);
+    }
+
+    .sk-estimator-doc-link.fitted span {
+      /* fitted */
+      background: var(--sklearn-color-fitted-level-0);
+      border: var(--sklearn-color-fitted-level-3);
+    }
+
+    .sk-estimator-doc-link:hover span {
+      display: block;
+    }
+
+    /* "?"-specific style due to the `<a>` HTML tag */
+
+    #sk-container-id-47 a.estimator_doc_link {
+      float: right;
+      font-size: 1rem;
+      line-height: 1em;
+      font-family: monospace;
+      background-color: var(--sklearn-color-background);
+      border-radius: 1rem;
+      height: 1rem;
+      width: 1rem;
+      text-decoration: none;
+      /* unfitted */
+      color: var(--sklearn-color-unfitted-level-1);
+      border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+    }
+
+    #sk-container-id-47 a.estimator_doc_link.fitted {
+      /* fitted */
+      border: var(--sklearn-color-fitted-level-1) 1pt solid;
+      color: var(--sklearn-color-fitted-level-1);
+    }
+
+    /* On hover */
+    #sk-container-id-47 a.estimator_doc_link:hover {
+      /* unfitted */
+      background-color: var(--sklearn-color-unfitted-level-3);
+      color: var(--sklearn-color-background);
+      text-decoration: none;
+    }
+
+    #sk-container-id-47 a.estimator_doc_link.fitted:hover {
+      /* fitted */
+      background-color: var(--sklearn-color-fitted-level-3);
+    }
+    </style><div id="sk-container-id-47" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-207" type="checkbox" ><label for="sk-estimator-id-207" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-208" type="checkbox" ><label for="sk-estimator-id-208" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-209" type="checkbox" ><label for="sk-estimator-id-209" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 239-243
+
+Note that the above example is calling our utility function
+`check_metadata()` via the `ExampleClassifier`. It checks that
+``sample_weight`` is correctly passed to it. If it is not, like in the
+following example, it would print that ``sample_weight`` is ``None``:
+
+.. GENERATED FROM PYTHON SOURCE LINES 243-246
+
+.. code-block:: Python
+
+
+    meta_est.fit(X, y)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    sample_weight is None in ExampleClassifier.
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
     <style>#sk-container-id-48 {
       /* Definition of color scheme common for light and dark mode */
       --sklearn-color-text: #000;
@@ -838,24 +1286,23 @@ raised.
       /* fitted */
       background-color: var(--sklearn-color-fitted-level-3);
     }
-    </style><div id="sk-container-id-48" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-208" type="checkbox" ><label for="sk-estimator-id-208" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-209" type="checkbox" ><label for="sk-estimator-id-209" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-210" type="checkbox" ><label for="sk-estimator-id-210" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
+    </style><div id="sk-container-id-48" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-210" type="checkbox" ><label for="sk-estimator-id-210" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-211" type="checkbox" ><label for="sk-estimator-id-211" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-212" type="checkbox" ><label for="sk-estimator-id-212" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 239-243
+.. GENERATED FROM PYTHON SOURCE LINES 247-248
 
-Note that the above example is calling our utility function
-`check_metadata()` via the `ExampleClassifier`. It checks that
-``sample_weight`` is correctly passed to it. If it is not, like in the
-following example, it would print that ``sample_weight`` is ``None``:
+If we pass an unknown metadata, an error is raised:
 
-.. GENERATED FROM PYTHON SOURCE LINES 243-246
+.. GENERATED FROM PYTHON SOURCE LINES 248-253
 
 .. code-block:: Python
 
-
-    meta_est.fit(X, y)
+    try:
+        meta_est.fit(X, y, test=my_weights)
+    except TypeError as e:
+        print(e)
 
 
 
@@ -865,7 +1312,101 @@ following example, it would print that ``sample_weight`` is ``None``:
 
  .. code-block:: none
 
-    sample_weight is None in ExampleClassifier.
+    MetaClassifier.fit got unexpected argument(s) {'test'}, which are not routed to any object.
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 254-255
+
+And if we pass a metadata which is not explicitly requested:
+
+.. GENERATED FROM PYTHON SOURCE LINES 255-260
+
+.. code-block:: Python
+
+    try:
+        meta_est.fit(X, y, sample_weight=my_weights).predict(X, groups=my_groups)
+    except ValueError as e:
+        print(e)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Received sample_weight of length = 100 in ExampleClassifier.
+    [groups] are passed but are not explicitly set as requested or not requested for ExampleClassifier.predict, which is used within MetaClassifier.predict. Call `ExampleClassifier.set_predict_request({metadata}=True/False)` for each metadata you want to request/ignore.
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 261-262
+
+Also, if we explicitly set it as not requested, but it is provided:
+
+.. GENERATED FROM PYTHON SOURCE LINES 262-272
+
+.. code-block:: Python
+
+    meta_est = MetaClassifier(
+        estimator=ExampleClassifier()
+        .set_fit_request(sample_weight=True)
+        .set_predict_request(groups=False)
+    )
+    try:
+        meta_est.fit(X, y, sample_weight=my_weights).predict(X[:3, :], groups=my_groups)
+    except TypeError as e:
+        print(e)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Received sample_weight of length = 100 in ExampleClassifier.
+    MetaClassifier.predict got unexpected argument(s) {'groups'}, which are not routed to any object.
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 273-283
+
+Another concept to introduce is **aliased metadata**. This is when an
+estimator requests a metadata with a different variable name than the default
+variable name. For instance, in a setting where there are two estimators in a
+pipeline, one could request ``sample_weight1`` and the other
+``sample_weight2``. Note that this doesn't change what the estimator expects,
+it only tells the meta-estimator how to map the provided metadata to what is
+required. Here's an example, where we pass ``aliased_sample_weight`` to the
+meta-estimator, but the meta-estimator understands that
+``aliased_sample_weight`` is an alias for ``sample_weight``, and passes it as
+``sample_weight`` to the underlying estimator:
+
+.. GENERATED FROM PYTHON SOURCE LINES 283-288
+
+.. code-block:: Python
+
+    meta_est = MetaClassifier(
+        estimator=ExampleClassifier().set_fit_request(sample_weight="aliased_sample_weight")
+    )
+    meta_est.fit(X, y, aliased_sample_weight=my_weights)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Received sample_weight of length = 100 in ExampleClassifier.
 
 
 .. raw:: html
@@ -1286,21 +1827,22 @@ following example, it would print that ``sample_weight`` is ``None``:
       /* fitted */
       background-color: var(--sklearn-color-fitted-level-3);
     }
-    </style><div id="sk-container-id-49" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-211" type="checkbox" ><label for="sk-estimator-id-211" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-212" type="checkbox" ><label for="sk-estimator-id-212" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-213" type="checkbox" ><label for="sk-estimator-id-213" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
+    </style><div id="sk-container-id-49" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-213" type="checkbox" ><label for="sk-estimator-id-213" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-214" type="checkbox" ><label for="sk-estimator-id-214" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-215" type="checkbox" ><label for="sk-estimator-id-215" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-248
+.. GENERATED FROM PYTHON SOURCE LINES 289-291
 
-If we pass an unknown metadata, an error is raised:
+Passing ``sample_weight`` here will fail since it is requested with an
+alias and ``sample_weight`` with that name is not requested:
 
-.. GENERATED FROM PYTHON SOURCE LINES 248-253
+.. GENERATED FROM PYTHON SOURCE LINES 291-296
 
 .. code-block:: Python
 
     try:
-        meta_est.fit(X, y, test=my_weights)
+        meta_est.fit(X, y, sample_weight=my_weights)
     except TypeError as e:
         print(e)
 
@@ -1312,23 +1854,67 @@ If we pass an unknown metadata, an error is raised:
 
  .. code-block:: none
 
-    MetaClassifier.fit got unexpected argument(s) {'test'}, which are not routed to any object.
+    MetaClassifier.fit got unexpected argument(s) {'sample_weight'}, which are not routed to any object.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 254-255
+.. GENERATED FROM PYTHON SOURCE LINES 297-306
 
-And if we pass a metadata which is not explicitly requested:
+This leads us to the ``get_metadata_routing``. The way routing works in
+scikit-learn is that consumers request what they need, and routers pass that
+along. Additionally, a router exposes what it requires itself so that it can
+be used inside another router, e.g. a pipeline inside a grid search object.
+The output of the ``get_metadata_routing`` which is a dictionary
+representation of a :class:`~utils.metadata_routing.MetadataRouter`, includes
+the complete tree of requested metadata by all nested objects and their
+corresponding method routings, i.e. which method of a sub-estimator is used
+in which method of a meta-estimator:
 
-.. GENERATED FROM PYTHON SOURCE LINES 255-260
+.. GENERATED FROM PYTHON SOURCE LINES 306-309
 
 .. code-block:: Python
 
-    try:
-        meta_est.fit(X, y, sample_weight=my_weights).predict(X, groups=my_groups)
-    except ValueError as e:
-        print(e)
+
+    print_routing(meta_est)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    {'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
+                               {'callee': 'predict', 'caller': 'predict'},
+                               {'callee': 'score', 'caller': 'score'}],
+                   'router': {'fit': {'sample_weight': 'aliased_sample_weight'},
+                              'predict': {'groups': None},
+                              'score': {'sample_weight': None}}}}
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 310-318
+
+As you can see, the only metadata requested for method ``fit`` is
+``"sample_weight"`` with ``"aliased_sample_weight"`` as the alias. The
+``~utils.metadata_routing.MetadataRouter`` class enables us to easily create
+the routing object which would create the output we need for our
+``get_metadata_routing``.
+
+In order to understand how aliases work in meta-estimators, imagine our
+meta-estimator inside another one:
+
+.. GENERATED FROM PYTHON SOURCE LINES 318-323
+
+.. code-block:: Python
+
+
+    meta_meta_est = MetaClassifier(estimator=meta_est).fit(
+        X, y, aliased_sample_weight=my_weights
+    )
 
 
 
@@ -1339,28 +1925,129 @@ And if we pass a metadata which is not explicitly requested:
  .. code-block:: none
 
     Received sample_weight of length = 100 in ExampleClassifier.
-    [groups] are passed but are not explicitly set as requested or not requested for ExampleClassifier.predict, which is used within MetaClassifier.predict. Call `ExampleClassifier.set_predict_request({metadata}=True/False)` for each metadata you want to request/ignore.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-262
+.. GENERATED FROM PYTHON SOURCE LINES 324-338
 
-Also, if we explicitly set it as not requested, but it is provided:
+In the above example, this is how the ``fit`` method of `meta_meta_est`
+will call their sub-estimator's ``fit`` methods::
 
-.. GENERATED FROM PYTHON SOURCE LINES 262-272
+    # user feeds `my_weights` as `aliased_sample_weight` into `meta_meta_est`:
+    meta_meta_est.fit(X, y, aliased_sample_weight=my_weights):
+        ...
+
+        # the first sub-estimator (`meta_est`) expects `aliased_sample_weight`
+        self.estimator_.fit(X, y, aliased_sample_weight=aliased_sample_weight):
+            ...
+
+            # the second sub-estimator (`est`) expects `sample_weight`
+            self.estimator_.fit(X, y, sample_weight=aliased_sample_weight):
+                ...
+
+.. GENERATED FROM PYTHON SOURCE LINES 340-347
+
+Consuming and routing Meta-Estimator
+------------------------------------
+For a slightly more complex example, consider a meta-estimator that routes
+metadata to an underlying estimator as before, but it also uses some metadata
+in its own methods. This meta-estimator is a consumer and a router at the
+same time. Implementing one is very similar to what we had before, but with a
+few tweaks.
+
+.. GENERATED FROM PYTHON SOURCE LINES 347-402
 
 .. code-block:: Python
 
-    meta_est = MetaClassifier(
-        estimator=ExampleClassifier()
-        .set_fit_request(sample_weight=True)
-        .set_predict_request(groups=False)
-    )
-    try:
-        meta_est.fit(X, y, sample_weight=my_weights).predict(X[:3, :], groups=my_groups)
-    except TypeError as e:
-        print(e)
+
+
+    class RouterConsumerClassifier(MetaEstimatorMixin, ClassifierMixin, BaseEstimator):
+        def __init__(self, estimator):
+            self.estimator = estimator
+
+        def get_metadata_routing(self):
+            router = (
+                MetadataRouter(owner=self.__class__.__name__)
+                # defining metadata routing request values for usage in the meta-estimator
+                .add_self_request(self)
+                # defining metadata routing request values for usage in the sub-estimator
+                .add(
+                    estimator=self.estimator,
+                    method_mapping=MethodMapping()
+                    .add(caller="fit", callee="fit")
+                    .add(caller="predict", callee="predict")
+                    .add(caller="score", callee="score"),
+                )
+            )
+            return router
+
+        # Since `sample_weight` is used and consumed here, it should be defined as
+        # an explicit argument in the method's signature. All other metadata which
+        # are only routed, will be passed as `**fit_params`:
+        def fit(self, X, y, sample_weight, **fit_params):
+            if self.estimator is None:
+                raise ValueError("estimator cannot be None!")
+
+            check_metadata(self, sample_weight=sample_weight)
+
+            # We add `sample_weight` to the `fit_params` dictionary.
+            if sample_weight is not None:
+                fit_params["sample_weight"] = sample_weight
+
+            request_router = get_routing_for_object(self)
+            request_router.validate_metadata(params=fit_params, method="fit")
+            routed_params = request_router.route_params(params=fit_params, caller="fit")
+            self.estimator_ = clone(self.estimator).fit(X, y, **routed_params.estimator.fit)
+            self.classes_ = self.estimator_.classes_
+            return self
+
+        def predict(self, X, **predict_params):
+            check_is_fitted(self)
+            # As in `fit`, we get a copy of the object's MetadataRouter,
+            request_router = get_routing_for_object(self)
+            # we validate the given metadata,
+            request_router.validate_metadata(params=predict_params, method="predict")
+            # and then prepare the input to the underlying ``predict`` method.
+            routed_params = request_router.route_params(
+                params=predict_params, caller="predict"
+            )
+            return self.estimator_.predict(X, **routed_params.estimator.predict)
+
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 403-415
+
+The key parts where the above meta-estimator differs from our previous
+meta-estimator is accepting ``sample_weight`` explicitly in ``fit`` and
+including it in ``fit_params``. Since ``sample_weight`` is an explicit
+argument, we can be sure that ``set_fit_request(sample_weight=...)`` is
+present for this method. The meta-estimator is both a consumer, as well as a
+router of ``sample_weight``.
+
+In ``get_metadata_routing``, we add ``self`` to the routing using
+``add_self_request`` to indicate this estimator is consuming
+``sample_weight`` as well as being a router; which also adds a
+``$self_request`` key to the routing info as illustrated below. Now let's
+look at some examples:
+
+.. GENERATED FROM PYTHON SOURCE LINES 417-418
+
+- No metadata requested
+
+.. GENERATED FROM PYTHON SOURCE LINES 418-422
+
+.. code-block:: Python
+
+    meta_est = RouterConsumerClassifier(estimator=ExampleClassifier())
+    print_routing(meta_est)
+
 
 
 
@@ -1370,33 +2057,30 @@ Also, if we explicitly set it as not requested, but it is provided:
 
  .. code-block:: none
 
-    Received sample_weight of length = 100 in ExampleClassifier.
-    MetaClassifier.predict got unexpected argument(s) {'groups'}, which are not routed to any object.
+    {'$self_request': {'fit': {'sample_weight': None},
+                       'score': {'sample_weight': None}},
+     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
+                               {'callee': 'predict', 'caller': 'predict'},
+                               {'callee': 'score', 'caller': 'score'}],
+                   'router': {'fit': {'sample_weight': None},
+                              'predict': {'groups': None},
+                              'score': {'sample_weight': None}}}}
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 273-283
+.. GENERATED FROM PYTHON SOURCE LINES 423-424
 
-Another concept to introduce is **aliased metadata**. This is when an
-estimator requests a metadata with a different variable name than the default
-variable name. For instance, in a setting where there are two estimators in a
-pipeline, one could request ``sample_weight1`` and the other
-``sample_weight2``. Note that this doesn't change what the estimator expects,
-it only tells the meta-estimator how to map the provided metadata to what is
-required. Here's an example, where we pass ``aliased_sample_weight`` to the
-meta-estimator, but the meta-estimator understands that
-``aliased_sample_weight`` is an alias for ``sample_weight``, and passes it as
-``sample_weight`` to the underlying estimator:
+- ``sample_weight`` requested by sub-estimator
 
-.. GENERATED FROM PYTHON SOURCE LINES 283-288
+.. GENERATED FROM PYTHON SOURCE LINES 424-429
 
 .. code-block:: Python
 
-    meta_est = MetaClassifier(
-        estimator=ExampleClassifier().set_fit_request(sample_weight="aliased_sample_weight")
+    meta_est = RouterConsumerClassifier(
+        estimator=ExampleClassifier().set_fit_request(sample_weight=True)
     )
-    meta_est.fit(X, y, aliased_sample_weight=my_weights)
+    print_routing(meta_est)
 
 
 
@@ -1406,6 +2090,109 @@ meta-estimator, but the meta-estimator understands that
 
  .. code-block:: none
 
+    {'$self_request': {'fit': {'sample_weight': None},
+                       'score': {'sample_weight': None}},
+     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
+                               {'callee': 'predict', 'caller': 'predict'},
+                               {'callee': 'score', 'caller': 'score'}],
+                   'router': {'fit': {'sample_weight': True},
+                              'predict': {'groups': None},
+                              'score': {'sample_weight': None}}}}
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 430-431
+
+- ``sample_weight`` requested by meta-estimator
+
+.. GENERATED FROM PYTHON SOURCE LINES 431-436
+
+.. code-block:: Python
+
+    meta_est = RouterConsumerClassifier(estimator=ExampleClassifier()).set_fit_request(
+        sample_weight=True
+    )
+    print_routing(meta_est)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    {'$self_request': {'fit': {'sample_weight': True},
+                       'score': {'sample_weight': None}},
+     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
+                               {'callee': 'predict', 'caller': 'predict'},
+                               {'callee': 'score', 'caller': 'score'}],
+                   'router': {'fit': {'sample_weight': None},
+                              'predict': {'groups': None},
+                              'score': {'sample_weight': None}}}}
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 437-441
+
+Note the difference in the requested metadata representations above.
+
+- We can also alias the metadata to pass different values to the fit methods
+  of the meta- and the sub-estimator:
+
+.. GENERATED FROM PYTHON SOURCE LINES 441-447
+
+.. code-block:: Python
+
+
+    meta_est = RouterConsumerClassifier(
+        estimator=ExampleClassifier().set_fit_request(sample_weight="clf_sample_weight"),
+    ).set_fit_request(sample_weight="meta_clf_sample_weight")
+    print_routing(meta_est)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    {'$self_request': {'fit': {'sample_weight': 'meta_clf_sample_weight'},
+                       'score': {'sample_weight': None}},
+     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
+                               {'callee': 'predict', 'caller': 'predict'},
+                               {'callee': 'score', 'caller': 'score'}],
+                   'router': {'fit': {'sample_weight': 'clf_sample_weight'},
+                              'predict': {'groups': None},
+                              'score': {'sample_weight': None}}}}
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 448-451
+
+However, ``fit`` of the meta-estimator only needs the alias for the
+sub-estimator and addresses their own sample weight as `sample_weight`, since
+it doesn't validate and route its own required metadata:
+
+.. GENERATED FROM PYTHON SOURCE LINES 451-453
+
+.. code-block:: Python
+
+    meta_est.fit(X, y, sample_weight=my_weights, clf_sample_weight=my_other_weights)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Received sample_weight of length = 100 in RouterConsumerClassifier.
     Received sample_weight of length = 100 in ExampleClassifier.
 
 
@@ -1827,794 +2614,7 @@ meta-estimator, but the meta-estimator understands that
       /* fitted */
       background-color: var(--sklearn-color-fitted-level-3);
     }
-    </style><div id="sk-container-id-50" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MetaClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-214" type="checkbox" ><label for="sk-estimator-id-214" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>MetaClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>MetaClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-215" type="checkbox" ><label for="sk-estimator-id-215" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-216" type="checkbox" ><label for="sk-estimator-id-216" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
-    </div>
-    <br />
-    <br />
-
-.. GENERATED FROM PYTHON SOURCE LINES 289-291
-
-Passing ``sample_weight`` here will fail since it is requested with an
-alias and ``sample_weight`` with that name is not requested:
-
-.. GENERATED FROM PYTHON SOURCE LINES 291-296
-
-.. code-block:: Python
-
-    try:
-        meta_est.fit(X, y, sample_weight=my_weights)
-    except TypeError as e:
-        print(e)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    MetaClassifier.fit got unexpected argument(s) {'sample_weight'}, which are not routed to any object.
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 297-306
-
-This leads us to the ``get_metadata_routing``. The way routing works in
-scikit-learn is that consumers request what they need, and routers pass that
-along. Additionally, a router exposes what it requires itself so that it can
-be used inside another router, e.g. a pipeline inside a grid search object.
-The output of the ``get_metadata_routing`` which is a dictionary
-representation of a :class:`~utils.metadata_routing.MetadataRouter`, includes
-the complete tree of requested metadata by all nested objects and their
-corresponding method routings, i.e. which method of a sub-estimator is used
-in which method of a meta-estimator:
-
-.. GENERATED FROM PYTHON SOURCE LINES 306-309
-
-.. code-block:: Python
-
-
-    print_routing(meta_est)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    {'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
-                               {'callee': 'predict', 'caller': 'predict'},
-                               {'callee': 'score', 'caller': 'score'}],
-                   'router': {'fit': {'sample_weight': 'aliased_sample_weight'},
-                              'predict': {'groups': None},
-                              'score': {'sample_weight': None}}}}
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 310-318
-
-As you can see, the only metadata requested for method ``fit`` is
-``"sample_weight"`` with ``"aliased_sample_weight"`` as the alias. The
-``~utils.metadata_routing.MetadataRouter`` class enables us to easily create
-the routing object which would create the output we need for our
-``get_metadata_routing``.
-
-In order to understand how aliases work in meta-estimators, imagine our
-meta-estimator inside another one:
-
-.. GENERATED FROM PYTHON SOURCE LINES 318-323
-
-.. code-block:: Python
-
-
-    meta_meta_est = MetaClassifier(estimator=meta_est).fit(
-        X, y, aliased_sample_weight=my_weights
-    )
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Received sample_weight of length = 100 in ExampleClassifier.
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 324-338
-
-In the above example, this is how the ``fit`` method of `meta_meta_est`
-will call their sub-estimator's ``fit`` methods::
-
-    # user feeds `my_weights` as `aliased_sample_weight` into `meta_meta_est`:
-    meta_meta_est.fit(X, y, aliased_sample_weight=my_weights):
-        ...
-
-        # the first sub-estimator (`meta_est`) expects `aliased_sample_weight`
-        self.estimator_.fit(X, y, aliased_sample_weight=aliased_sample_weight):
-            ...
-
-            # the second sub-estimator (`est`) expects `sample_weight`
-            self.estimator_.fit(X, y, sample_weight=aliased_sample_weight):
-                ...
-
-.. GENERATED FROM PYTHON SOURCE LINES 340-347
-
-Consuming and routing Meta-Estimator
-------------------------------------
-For a slightly more complex example, consider a meta-estimator that routes
-metadata to an underlying estimator as before, but it also uses some metadata
-in its own methods. This meta-estimator is a consumer and a router at the
-same time. Implementing one is very similar to what we had before, but with a
-few tweaks.
-
-.. GENERATED FROM PYTHON SOURCE LINES 347-402
-
-.. code-block:: Python
-
-
-
-    class RouterConsumerClassifier(MetaEstimatorMixin, ClassifierMixin, BaseEstimator):
-        def __init__(self, estimator):
-            self.estimator = estimator
-
-        def get_metadata_routing(self):
-            router = (
-                MetadataRouter(owner=self.__class__.__name__)
-                # defining metadata routing request values for usage in the meta-estimator
-                .add_self_request(self)
-                # defining metadata routing request values for usage in the sub-estimator
-                .add(
-                    estimator=self.estimator,
-                    method_mapping=MethodMapping()
-                    .add(caller="fit", callee="fit")
-                    .add(caller="predict", callee="predict")
-                    .add(caller="score", callee="score"),
-                )
-            )
-            return router
-
-        # Since `sample_weight` is used and consumed here, it should be defined as
-        # an explicit argument in the method's signature. All other metadata which
-        # are only routed, will be passed as `**fit_params`:
-        def fit(self, X, y, sample_weight, **fit_params):
-            if self.estimator is None:
-                raise ValueError("estimator cannot be None!")
-
-            check_metadata(self, sample_weight=sample_weight)
-
-            # We add `sample_weight` to the `fit_params` dictionary.
-            if sample_weight is not None:
-                fit_params["sample_weight"] = sample_weight
-
-            request_router = get_routing_for_object(self)
-            request_router.validate_metadata(params=fit_params, method="fit")
-            routed_params = request_router.route_params(params=fit_params, caller="fit")
-            self.estimator_ = clone(self.estimator).fit(X, y, **routed_params.estimator.fit)
-            self.classes_ = self.estimator_.classes_
-            return self
-
-        def predict(self, X, **predict_params):
-            check_is_fitted(self)
-            # As in `fit`, we get a copy of the object's MetadataRouter,
-            request_router = get_routing_for_object(self)
-            # we validate the given metadata,
-            request_router.validate_metadata(params=predict_params, method="predict")
-            # and then prepare the input to the underlying ``predict`` method.
-            routed_params = request_router.route_params(
-                params=predict_params, caller="predict"
-            )
-            return self.estimator_.predict(X, **routed_params.estimator.predict)
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 403-415
-
-The key parts where the above meta-estimator differs from our previous
-meta-estimator is accepting ``sample_weight`` explicitly in ``fit`` and
-including it in ``fit_params``. Since ``sample_weight`` is an explicit
-argument, we can be sure that ``set_fit_request(sample_weight=...)`` is
-present for this method. The meta-estimator is both a consumer, as well as a
-router of ``sample_weight``.
-
-In ``get_metadata_routing``, we add ``self`` to the routing using
-``add_self_request`` to indicate this estimator is consuming
-``sample_weight`` as well as being a router; which also adds a
-``$self_request`` key to the routing info as illustrated below. Now let's
-look at some examples:
-
-.. GENERATED FROM PYTHON SOURCE LINES 417-418
-
-- No metadata requested
-
-.. GENERATED FROM PYTHON SOURCE LINES 418-422
-
-.. code-block:: Python
-
-    meta_est = RouterConsumerClassifier(estimator=ExampleClassifier())
-    print_routing(meta_est)
-
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    {'$self_request': {'fit': {'sample_weight': None},
-                       'score': {'sample_weight': None}},
-     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
-                               {'callee': 'predict', 'caller': 'predict'},
-                               {'callee': 'score', 'caller': 'score'}],
-                   'router': {'fit': {'sample_weight': None},
-                              'predict': {'groups': None},
-                              'score': {'sample_weight': None}}}}
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 423-424
-
-- ``sample_weight`` requested by sub-estimator
-
-.. GENERATED FROM PYTHON SOURCE LINES 424-429
-
-.. code-block:: Python
-
-    meta_est = RouterConsumerClassifier(
-        estimator=ExampleClassifier().set_fit_request(sample_weight=True)
-    )
-    print_routing(meta_est)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    {'$self_request': {'fit': {'sample_weight': None},
-                       'score': {'sample_weight': None}},
-     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
-                               {'callee': 'predict', 'caller': 'predict'},
-                               {'callee': 'score', 'caller': 'score'}],
-                   'router': {'fit': {'sample_weight': True},
-                              'predict': {'groups': None},
-                              'score': {'sample_weight': None}}}}
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 430-431
-
-- ``sample_weight`` requested by meta-estimator
-
-.. GENERATED FROM PYTHON SOURCE LINES 431-436
-
-.. code-block:: Python
-
-    meta_est = RouterConsumerClassifier(estimator=ExampleClassifier()).set_fit_request(
-        sample_weight=True
-    )
-    print_routing(meta_est)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    {'$self_request': {'fit': {'sample_weight': True},
-                       'score': {'sample_weight': None}},
-     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
-                               {'callee': 'predict', 'caller': 'predict'},
-                               {'callee': 'score', 'caller': 'score'}],
-                   'router': {'fit': {'sample_weight': None},
-                              'predict': {'groups': None},
-                              'score': {'sample_weight': None}}}}
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 437-441
-
-Note the difference in the requested metadata representations above.
-
-- We can also alias the metadata to pass different values to the fit methods
-  of the meta- and the sub-estimator:
-
-.. GENERATED FROM PYTHON SOURCE LINES 441-447
-
-.. code-block:: Python
-
-
-    meta_est = RouterConsumerClassifier(
-        estimator=ExampleClassifier().set_fit_request(sample_weight="clf_sample_weight"),
-    ).set_fit_request(sample_weight="meta_clf_sample_weight")
-    print_routing(meta_est)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    {'$self_request': {'fit': {'sample_weight': 'meta_clf_sample_weight'},
-                       'score': {'sample_weight': None}},
-     'estimator': {'mapping': [{'callee': 'fit', 'caller': 'fit'},
-                               {'callee': 'predict', 'caller': 'predict'},
-                               {'callee': 'score', 'caller': 'score'}],
-                   'router': {'fit': {'sample_weight': 'clf_sample_weight'},
-                              'predict': {'groups': None},
-                              'score': {'sample_weight': None}}}}
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 448-451
-
-However, ``fit`` of the meta-estimator only needs the alias for the
-sub-estimator and addresses their own sample weight as `sample_weight`, since
-it doesn't validate and route its own required metadata:
-
-.. GENERATED FROM PYTHON SOURCE LINES 451-453
-
-.. code-block:: Python
-
-    meta_est.fit(X, y, sample_weight=my_weights, clf_sample_weight=my_other_weights)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Received sample_weight of length = 100 in RouterConsumerClassifier.
-    Received sample_weight of length = 100 in ExampleClassifier.
-
-
-.. raw:: html
-
-    <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-container-id-51 {
-      /* Definition of color scheme common for light and dark mode */
-      --sklearn-color-text: #000;
-      --sklearn-color-text-muted: #666;
-      --sklearn-color-line: gray;
-      /* Definition of color scheme for unfitted estimators */
-      --sklearn-color-unfitted-level-0: #fff5e6;
-      --sklearn-color-unfitted-level-1: #f6e4d2;
-      --sklearn-color-unfitted-level-2: #ffe0b3;
-      --sklearn-color-unfitted-level-3: chocolate;
-      /* Definition of color scheme for fitted estimators */
-      --sklearn-color-fitted-level-0: #f0f8ff;
-      --sklearn-color-fitted-level-1: #d4ebff;
-      --sklearn-color-fitted-level-2: #b3dbfd;
-      --sklearn-color-fitted-level-3: cornflowerblue;
-
-      /* Specific color for light theme */
-      --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-      --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-      --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-      --sklearn-color-icon: #696969;
-
-      @media (prefers-color-scheme: dark) {
-        /* Redefinition of color scheme for dark theme */
-        --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-        --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-        --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-        --sklearn-color-icon: #878787;
-      }
-    }
-
-    #sk-container-id-51 {
-      color: var(--sklearn-color-text);
-    }
-
-    #sk-container-id-51 pre {
-      padding: 0;
-    }
-
-    #sk-container-id-51 input.sk-hidden--visually {
-      border: 0;
-      clip: rect(1px 1px 1px 1px);
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-
-    #sk-container-id-51 div.sk-dashed-wrapped {
-      border: 1px dashed var(--sklearn-color-line);
-      margin: 0 0.4em 0.5em 0.4em;
-      box-sizing: border-box;
-      padding-bottom: 0.4em;
-      background-color: var(--sklearn-color-background);
-    }
-
-    #sk-container-id-51 div.sk-container {
-      /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-         but bootstrap.min.css set `[hidden] { display: none !important; }`
-         so we also need the `!important` here to be able to override the
-         default hidden behavior on the sphinx rendered scikit-learn.org.
-         See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-      display: inline-block !important;
-      position: relative;
-    }
-
-    #sk-container-id-51 div.sk-text-repr-fallback {
-      display: none;
-    }
-
-    div.sk-parallel-item,
-    div.sk-serial,
-    div.sk-item {
-      /* draw centered vertical line to link estimators */
-      background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-      background-size: 2px 100%;
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-
-    /* Parallel-specific style estimator block */
-
-    #sk-container-id-51 div.sk-parallel-item::after {
-      content: "";
-      width: 100%;
-      border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-      flex-grow: 1;
-    }
-
-    #sk-container-id-51 div.sk-parallel {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      background-color: var(--sklearn-color-background);
-      position: relative;
-    }
-
-    #sk-container-id-51 div.sk-parallel-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #sk-container-id-51 div.sk-parallel-item:first-child::after {
-      align-self: flex-end;
-      width: 50%;
-    }
-
-    #sk-container-id-51 div.sk-parallel-item:last-child::after {
-      align-self: flex-start;
-      width: 50%;
-    }
-
-    #sk-container-id-51 div.sk-parallel-item:only-child::after {
-      width: 0;
-    }
-
-    /* Serial-specific style estimator block */
-
-    #sk-container-id-51 div.sk-serial {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: var(--sklearn-color-background);
-      padding-right: 1em;
-      padding-left: 1em;
-    }
-
-
-    /* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-    clickable and can be expanded/collapsed.
-    - Pipeline and ColumnTransformer use this feature and define the default style
-    - Estimators will overwrite some part of the style using the `sk-estimator` class
-    */
-
-    /* Pipeline and ColumnTransformer style (default) */
-
-    #sk-container-id-51 div.sk-toggleable {
-      /* Default theme specific background. It is overwritten whether we have a
-      specific estimator or a Pipeline/ColumnTransformer */
-      background-color: var(--sklearn-color-background);
-    }
-
-    /* Toggleable label */
-    #sk-container-id-51 label.sk-toggleable__label {
-      cursor: pointer;
-      display: flex;
-      width: 100%;
-      margin-bottom: 0;
-      padding: 0.5em;
-      box-sizing: border-box;
-      text-align: center;
-      align-items: start;
-      justify-content: space-between;
-      gap: 0.5em;
-    }
-
-    #sk-container-id-51 label.sk-toggleable__label .caption {
-      font-size: 0.6rem;
-      font-weight: lighter;
-      color: var(--sklearn-color-text-muted);
-    }
-
-    #sk-container-id-51 label.sk-toggleable__label-arrow:before {
-      /* Arrow on the left of the label */
-      content: "▸";
-      float: left;
-      margin-right: 0.25em;
-      color: var(--sklearn-color-icon);
-    }
-
-    #sk-container-id-51 label.sk-toggleable__label-arrow:hover:before {
-      color: var(--sklearn-color-text);
-    }
-
-    /* Toggleable content - dropdown */
-
-    #sk-container-id-51 div.sk-toggleable__content {
-      max-height: 0;
-      max-width: 0;
-      overflow: hidden;
-      text-align: left;
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-0);
-    }
-
-    #sk-container-id-51 div.sk-toggleable__content.fitted {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-0);
-    }
-
-    #sk-container-id-51 div.sk-toggleable__content pre {
-      margin: 0.2em;
-      border-radius: 0.25em;
-      color: var(--sklearn-color-text);
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-0);
-    }
-
-    #sk-container-id-51 div.sk-toggleable__content.fitted pre {
-      /* unfitted */
-      background-color: var(--sklearn-color-fitted-level-0);
-    }
-
-    #sk-container-id-51 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-      /* Expand drop-down */
-      max-height: 200px;
-      max-width: 100%;
-      overflow: auto;
-    }
-
-    #sk-container-id-51 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-      content: "▾";
-    }
-
-    /* Pipeline/ColumnTransformer-specific style */
-
-    #sk-container-id-51 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-      color: var(--sklearn-color-text);
-      background-color: var(--sklearn-color-unfitted-level-2);
-    }
-
-    #sk-container-id-51 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-      background-color: var(--sklearn-color-fitted-level-2);
-    }
-
-    /* Estimator-specific style */
-
-    /* Colorize estimator box */
-    #sk-container-id-51 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-2);
-    }
-
-    #sk-container-id-51 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-2);
-    }
-
-    #sk-container-id-51 div.sk-label label.sk-toggleable__label,
-    #sk-container-id-51 div.sk-label label {
-      /* The background is the default theme color */
-      color: var(--sklearn-color-text-on-default-background);
-    }
-
-    /* On hover, darken the color of the background */
-    #sk-container-id-51 div.sk-label:hover label.sk-toggleable__label {
-      color: var(--sklearn-color-text);
-      background-color: var(--sklearn-color-unfitted-level-2);
-    }
-
-    /* Label box, darken color on hover, fitted */
-    #sk-container-id-51 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-      color: var(--sklearn-color-text);
-      background-color: var(--sklearn-color-fitted-level-2);
-    }
-
-    /* Estimator label */
-
-    #sk-container-id-51 div.sk-label label {
-      font-family: monospace;
-      font-weight: bold;
-      display: inline-block;
-      line-height: 1.2em;
-    }
-
-    #sk-container-id-51 div.sk-label-container {
-      text-align: center;
-    }
-
-    /* Estimator-specific */
-    #sk-container-id-51 div.sk-estimator {
-      font-family: monospace;
-      border: 1px dotted var(--sklearn-color-border-box);
-      border-radius: 0.25em;
-      box-sizing: border-box;
-      margin-bottom: 0.5em;
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-0);
-    }
-
-    #sk-container-id-51 div.sk-estimator.fitted {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-0);
-    }
-
-    /* on hover */
-    #sk-container-id-51 div.sk-estimator:hover {
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-2);
-    }
-
-    #sk-container-id-51 div.sk-estimator.fitted:hover {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-2);
-    }
-
-    /* Specification for estimator info (e.g. "i" and "?") */
-
-    /* Common style for "i" and "?" */
-
-    .sk-estimator-doc-link,
-    a:link.sk-estimator-doc-link,
-    a:visited.sk-estimator-doc-link {
-      float: right;
-      font-size: smaller;
-      line-height: 1em;
-      font-family: monospace;
-      background-color: var(--sklearn-color-background);
-      border-radius: 1em;
-      height: 1em;
-      width: 1em;
-      text-decoration: none !important;
-      margin-left: 0.5em;
-      text-align: center;
-      /* unfitted */
-      border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-      color: var(--sklearn-color-unfitted-level-1);
-    }
-
-    .sk-estimator-doc-link.fitted,
-    a:link.sk-estimator-doc-link.fitted,
-    a:visited.sk-estimator-doc-link.fitted {
-      /* fitted */
-      border: var(--sklearn-color-fitted-level-1) 1pt solid;
-      color: var(--sklearn-color-fitted-level-1);
-    }
-
-    /* On hover */
-    div.sk-estimator:hover .sk-estimator-doc-link:hover,
-    .sk-estimator-doc-link:hover,
-    div.sk-label-container:hover .sk-estimator-doc-link:hover,
-    .sk-estimator-doc-link:hover {
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-3);
-      color: var(--sklearn-color-background);
-      text-decoration: none;
-    }
-
-    div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-    .sk-estimator-doc-link.fitted:hover,
-    div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-    .sk-estimator-doc-link.fitted:hover {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-3);
-      color: var(--sklearn-color-background);
-      text-decoration: none;
-    }
-
-    /* Span, style for the box shown on hovering the info icon */
-    .sk-estimator-doc-link span {
-      display: none;
-      z-index: 9999;
-      position: relative;
-      font-weight: normal;
-      right: .2ex;
-      padding: .5ex;
-      margin: .5ex;
-      width: min-content;
-      min-width: 20ex;
-      max-width: 50ex;
-      color: var(--sklearn-color-text);
-      box-shadow: 2pt 2pt 4pt #999;
-      /* unfitted */
-      background: var(--sklearn-color-unfitted-level-0);
-      border: .5pt solid var(--sklearn-color-unfitted-level-3);
-    }
-
-    .sk-estimator-doc-link.fitted span {
-      /* fitted */
-      background: var(--sklearn-color-fitted-level-0);
-      border: var(--sklearn-color-fitted-level-3);
-    }
-
-    .sk-estimator-doc-link:hover span {
-      display: block;
-    }
-
-    /* "?"-specific style due to the `<a>` HTML tag */
-
-    #sk-container-id-51 a.estimator_doc_link {
-      float: right;
-      font-size: 1rem;
-      line-height: 1em;
-      font-family: monospace;
-      background-color: var(--sklearn-color-background);
-      border-radius: 1rem;
-      height: 1rem;
-      width: 1rem;
-      text-decoration: none;
-      /* unfitted */
-      color: var(--sklearn-color-unfitted-level-1);
-      border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-    }
-
-    #sk-container-id-51 a.estimator_doc_link.fitted {
-      /* fitted */
-      border: var(--sklearn-color-fitted-level-1) 1pt solid;
-      color: var(--sklearn-color-fitted-level-1);
-    }
-
-    /* On hover */
-    #sk-container-id-51 a.estimator_doc_link:hover {
-      /* unfitted */
-      background-color: var(--sklearn-color-unfitted-level-3);
-      color: var(--sklearn-color-background);
-      text-decoration: none;
-    }
-
-    #sk-container-id-51 a.estimator_doc_link.fitted:hover {
-      /* fitted */
-      background-color: var(--sklearn-color-fitted-level-3);
-    }
-    </style><div id="sk-container-id-51" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RouterConsumerClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-217" type="checkbox" ><label for="sk-estimator-id-217" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RouterConsumerClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>RouterConsumerClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-218" type="checkbox" ><label for="sk-estimator-id-218" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-219" type="checkbox" ><label for="sk-estimator-id-219" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
+    </style><div id="sk-container-id-50" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RouterConsumerClassifier(estimator=ExampleClassifier())</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-216" type="checkbox" ><label for="sk-estimator-id-216" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RouterConsumerClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>RouterConsumerClassifier(estimator=ExampleClassifier())</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-217" type="checkbox" ><label for="sk-estimator-id-217" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>estimator: ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-218" type="checkbox" ><label for="sk-estimator-id-218" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>ExampleClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>ExampleClassifier()</pre></div> </div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
@@ -3061,7 +3061,7 @@ need to modify your code at all:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.045 seconds)
+   **Total running time of the script:** (0 minutes 0.050 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_metadata_routing.py:
