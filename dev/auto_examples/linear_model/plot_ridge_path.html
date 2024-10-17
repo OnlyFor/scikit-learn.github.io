@@ -776,13 +776,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_nnls.html">Non-negative least squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgdocsvm_vs_ocsvm.html">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_ols.html">Ordinary Least Squares Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ols_ridge_variance.html">Ordinary Least Squares and Ridge Regression Variance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Plot Ridge coefficients as a function of the regularization</a></li>
@@ -799,7 +799,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_penalties.html">SGD: Penalties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_weighted_samples.html">SGD: Weighted samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_loss_functions.html">SGD: convex loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_ols_3d.html">Sparsity Example: Fitting only features 1  and 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_theilsen.html">Theil-Sen Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_tweedie_regression_insurance_claims.html">Tweedie regression on insurance claims</a></li>
 </ul>
@@ -1086,7 +1085,7 @@ in such a way that a balance is maintained between both.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_ridge_path_001.png" srcset="../../_images/sphx_glr_plot_ridge_path_001.png" alt="Ridge coefficients as a function of the regularization" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.434 seconds)</p>
+<img src="../../_images/sphx_glr_plot_ridge_path_001.png" srcset="../../_images/sphx_glr_plot_ridge_path_001.png" alt="Ridge coefficients as a function of the regularization" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.351 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-ridge-path-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_ridge_path.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1113,12 +1112,12 @@ in such a way that a balance is maintained between both.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
 <p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
   <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Fit Ridge and HuberRegressor on a dataset with outliers."><img alt="" src="../../_images/sphx_glr_plot_huber_vs_ridge_thumb.png" />
-<p><a class="reference internal" href="plot_huber_vs_ridge.html#sphx-glr-auto-examples-linear-model-plot-huber-vs-ridge-py"><span class="std std-ref">HuberRegressor vs Ridge on dataset with strong outliers</span></a></p>
-  <div class="sphx-glr-thumbnail-title">HuberRegressor vs Ridge on dataset with strong outliers</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In linear models, the target value is modeled as a linear combination of the features (see the linear_model User Guide section for a description of a set of linear models available in scikit-learn). Coefficients in multiple linear models represent the relationship between the given feature, X_i and the target, y, assuming that all the other features remain constant (conditional dependence). This is different from plotting X_i versus y and fitting a linear relationship: in that case all possible values of the other features are taken into account in the estimation (marginal dependence)."><img alt="" src="../../_images/sphx_glr_plot_linear_model_coefficient_interpretation_thumb.png" />
 <p><a class="reference internal" href="../inspection/plot_linear_model_coefficient_interpretation.html#sphx-glr-auto-examples-inspection-plot-linear-model-coefficient-interpretation-py"><span class="std std-ref">Common pitfalls in the interpretation of coefficients of linear models</span></a></p>
   <div class="sphx-glr-thumbnail-title">Common pitfalls in the interpretation of coefficients of linear models</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Fit Ridge and HuberRegressor on a dataset with outliers."><img alt="" src="../../_images/sphx_glr_plot_huber_vs_ridge_thumb.png" />
+<p><a class="reference internal" href="plot_huber_vs_ridge.html#sphx-glr-auto-examples-linear-model-plot-huber-vs-ridge-py"><span class="std std-ref">HuberRegressor vs Ridge on dataset with strong outliers</span></a></p>
+  <div class="sphx-glr-thumbnail-title">HuberRegressor vs Ridge on dataset with strong outliers</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

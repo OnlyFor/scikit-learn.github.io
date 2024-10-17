@@ -240,23 +240,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The coefficients, residual sum of squares and the coefficient of determination are also calculated.">
-
-.. only:: html
-
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_linear_model_plot_ols.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Linear Regression Example</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Show below is a logistic-regression classifiers decision boundaries on the first two dimensions (sepal length and width) of the iris dataset. The datapoints are colored according to their labels.">
 
 .. only:: html
@@ -354,6 +337,23 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the ordinary least squares (OLS) model called LinearRegression in scikit-learn.">
+
+.. only:: html
+
+  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_linear_model_plot_ols.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ordinary Least Squares Example</div>
     </div>
 
 
@@ -631,23 +631,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Features 1 and 2 of the diabetes-dataset are fitted and plotted below. It illustrates that although feature 2 has a strong coefficient on the full model, it does not give us much regarding y when compared to just feature 1.">
-
-.. only:: html
-
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_3d_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_linear_model_plot_ols_3d.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Sparsity Example: Fitting only features 1  and 2</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Computes a Theil-Sen Regression on a synthetic dataset.">
 
 .. only:: html
@@ -703,13 +686,13 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    /auto_examples/linear_model/plot_lasso_model_selection
    /auto_examples/linear_model/plot_lasso_dense_vs_sparse_data
    /auto_examples/linear_model/plot_lasso_lasso_lars_elasticnet_path
-   /auto_examples/linear_model/plot_ols
    /auto_examples/linear_model/plot_iris_logistic
    /auto_examples/linear_model/plot_logistic
    /auto_examples/linear_model/plot_sparse_logistic_regression_mnist
    /auto_examples/linear_model/plot_sparse_logistic_regression_20newsgroups
    /auto_examples/linear_model/plot_nnls
    /auto_examples/linear_model/plot_sgdocsvm_vs_ocsvm
+   /auto_examples/linear_model/plot_ols
    /auto_examples/linear_model/plot_ols_ridge_variance
    /auto_examples/linear_model/plot_omp
    /auto_examples/linear_model/plot_ridge_path
@@ -726,7 +709,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    /auto_examples/linear_model/plot_sgd_penalties
    /auto_examples/linear_model/plot_sgd_weighted_samples
    /auto_examples/linear_model/plot_sgd_loss_functions
-   /auto_examples/linear_model/plot_ols_3d
    /auto_examples/linear_model/plot_theilsen
    /auto_examples/linear_model/plot_tweedie_regression_insurance_claims
 

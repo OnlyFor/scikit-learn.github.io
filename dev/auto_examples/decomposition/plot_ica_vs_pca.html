@@ -776,13 +776,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_nnls.html">Non-negative least squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgdocsvm_vs_ocsvm.html">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Ordinary Least Squares Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_ridge_variance.html">Ordinary Least Squares and Ridge Regression Variance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
@@ -799,7 +799,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_penalties.html">SGD: Penalties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_weighted_samples.html">SGD: Weighted samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_loss_functions.html">SGD: convex loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_3d.html">Sparsity Example: Fitting only features 1  and 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_theilsen.html">Theil-Sen Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_tweedie_regression_insurance_claims.html">Tweedie regression on insurance claims</a></li>
 </ul>
@@ -1135,7 +1134,7 @@ identify the directions of largest non-Gaussianity (lower right).</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_ica_vs_pca_001.png" srcset="../../_images/sphx_glr_plot_ica_vs_pca_001.png" alt="True Independent Sources, Observations, PCA recovered signals, ICA recovered signals" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.407 seconds)</p>
+<img src="../../_images/sphx_glr_plot_ica_vs_pca_001.png" srcset="../../_images/sphx_glr_plot_ica_vs_pca_001.png" alt="True Independent Sources, Observations, PCA recovered signals, ICA recovered signals" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.387 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-decomposition-plot-ica-vs-pca-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_ica_vs_pca.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo9.svg" style="width: 150px;" />
@@ -1159,12 +1158,12 @@ identify the directions of largest non-Gaussianity (lower right).</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="An example of estimating sources from noisy data."><img alt="" src="../../_images/sphx_glr_plot_ica_blind_source_separation_thumb.png" />
 <p><a class="reference internal" href="plot_ica_blind_source_separation.html#sphx-glr-auto-examples-decomposition-plot-ica-blind-source-separation-py"><span class="std std-ref">Blind source separation using FastICA</span></a></p>
   <div class="sphx-glr-thumbnail-title">Blind source separation using FastICA</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The Iris dataset represents 3 kind of Iris flowers (Setosa, Versicolour and Virginica) with 4 attributes: sepal length, sepal width, petal length and petal width."><img alt="" src="../../_images/sphx_glr_plot_pca_vs_lda_thumb.png" />
-<p><a class="reference internal" href="plot_pca_vs_lda.html#sphx-glr-auto-examples-decomposition-plot-pca-vs-lda-py"><span class="std std-ref">Comparison of LDA and PCA 2D projection of Iris dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Comparison of LDA and PCA 2D projection of Iris dataset</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Ridge regression is basically minimizing a penalised version of the least-squared function. The penalising shrinks the value of the regression coefficients. Despite the few data points in each dimension, the slope of the prediction is much more stable and the variance in the line itself is greatly reduced, in comparison to that of the standard linear regression"><img alt="" src="../../_images/sphx_glr_plot_ols_ridge_variance_thumb.png" />
 <p><a class="reference internal" href="../linear_model/plot_ols_ridge_variance.html#sphx-glr-auto-examples-linear-model-plot-ols-ridge-variance-py"><span class="std std-ref">Ordinary Least Squares and Ridge Regression Variance</span></a></p>
   <div class="sphx-glr-thumbnail-title">Ordinary Least Squares and Ridge Regression Variance</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="The Iris dataset represents 3 kind of Iris flowers (Setosa, Versicolour and Virginica) with 4 attributes: sepal length, sepal width, petal length and petal width."><img alt="" src="../../_images/sphx_glr_plot_pca_vs_lda_thumb.png" />
+<p><a class="reference internal" href="plot_pca_vs_lda.html#sphx-glr-auto-examples-decomposition-plot-pca-vs-lda-py"><span class="std std-ref">Comparison of LDA and PCA 2D projection of Iris dataset</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Comparison of LDA and PCA 2D projection of Iris dataset</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates and compares the bias-variance decomposition of the expected mean squared error of a single estimator against a bagging ensemble."><img alt="" src="../../_images/sphx_glr_plot_bias_variance_thumb.png" />
 <p><a class="reference internal" href="../ensemble/plot_bias_variance.html#sphx-glr-auto-examples-ensemble-plot-bias-variance-py"><span class="std std-ref">Single estimator versus bagging: bias-variance decomposition</span></a></p>
   <div class="sphx-glr-thumbnail-title">Single estimator versus bagging: bias-variance decomposition</div>

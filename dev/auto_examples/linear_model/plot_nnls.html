@@ -776,13 +776,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Non-negative least squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgdocsvm_vs_ocsvm.html">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_ols.html">Ordinary Least Squares Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ols_ridge_variance.html">Ordinary Least Squares and Ridge Regression Variance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
@@ -799,7 +799,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_penalties.html">SGD: Penalties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_weighted_samples.html">SGD: Weighted samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_loss_functions.html">SGD: convex loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_ols_3d.html">Sparsity Example: Fitting only features 1  and 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_theilsen.html">Theil-Sen Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_tweedie_regression_insurance_claims.html">Tweedie regression on insurance claims</a></li>
 </ul>
@@ -1103,7 +1102,7 @@ The Non-Negative Least squares inherently yield sparse results.</p>
 <img src="../../_images/sphx_glr_plot_nnls_001.png" srcset="../../_images/sphx_glr_plot_nnls_001.png" alt="plot nnls" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Text(55.847222222222214, 0.5, &#39;NNLS regression coefficients&#39;)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.076 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.069 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-nnls-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_nnls.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1124,18 +1123,18 @@ The Non-Negative Least squares inherently yield sparse results.</p>
 </div>
 </div>
 <p class="rubric">Related examples</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Shown in the plot is how the logistic regression would, in this synthetic dataset, classify values as either 0 or 1, i.e. class one or two, using the logistic curve."><img alt="" src="../../_images/sphx_glr_plot_logistic_thumb.png" />
-<p><a class="reference internal" href="plot_logistic.html#sphx-glr-auto-examples-linear-model-plot-logistic-py"><span class="std std-ref">Logistic function</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Logistic function</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example, we evaluate the impact of the regularization parameter in a linear model called ElasticNet. To carry out this evaluation, we use a validation curve using ValidationCurveDisplay. This curve shows the training and test scores of the model for different values of the regularization parameter."><img alt="" src="../../_images/sphx_glr_plot_train_error_vs_test_error_thumb.png" />
 <p><a class="reference internal" href="../model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py"><span class="std std-ref">Effect of model regularization on training and test error</span></a></p>
   <div class="sphx-glr-thumbnail-title">Effect of model regularization on training and test error</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The coefficients, residual sum of squares and the coefficient of determination are also calculated."><img alt="" src="../../_images/sphx_glr_plot_ols_thumb.png" />
-<p><a class="reference internal" href="plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py"><span class="std std-ref">Linear Regression Example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Linear Regression Example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Shown in the plot is how the logistic regression would, in this synthetic dataset, classify values as either 0 or 1, i.e. class one or two, using the logistic curve."><img alt="" src="../../_images/sphx_glr_plot_logistic_thumb.png" />
+<p><a class="reference internal" href="plot_logistic.html#sphx-glr-auto-examples-linear-model-plot-logistic-py"><span class="std std-ref">Logistic function</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Logistic function</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Machine Learning models are great for measuring statistical associations. Unfortunately, unless we&#x27;re willing to make strong assumptions about the data, those models are unable to infer causal effects."><img alt="" src="../../_images/sphx_glr_plot_causal_interpretation_thumb.png" />
 <p><a class="reference internal" href="../inspection/plot_causal_interpretation.html#sphx-glr-auto-examples-inspection-plot-causal-interpretation-py"><span class="std std-ref">Failure of Machine Learning to infer causal effects</span></a></p>
   <div class="sphx-glr-thumbnail-title">Failure of Machine Learning to infer causal effects</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="The present example compares three l1-based regression models on a synthetic signal obtained from sparse and correlated features that are further corrupted with additive gaussian noise:"><img alt="" src="../../_images/sphx_glr_plot_lasso_and_elasticnet_thumb.png" />
+<p><a class="reference internal" href="plot_lasso_and_elasticnet.html#sphx-glr-auto-examples-linear-model-plot-lasso-and-elasticnet-py"><span class="std std-ref">L1-based models for Sparse Signals</span></a></p>
+  <div class="sphx-glr-thumbnail-title">L1-based models for Sparse Signals</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 

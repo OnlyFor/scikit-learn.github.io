@@ -776,13 +776,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_nnls.html">Non-negative least squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgdocsvm_vs_ocsvm.html">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Ordinary Least Squares Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_ridge_variance.html">Ordinary Least Squares and Ridge Regression Variance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
@@ -799,7 +799,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_penalties.html">SGD: Penalties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_weighted_samples.html">SGD: Weighted samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_loss_functions.html">SGD: convex loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_3d.html">Sparsity Example: Fitting only features 1  and 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_theilsen.html">Theil-Sen Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_tweedie_regression_insurance_claims.html">Tweedie regression on insurance claims</a></li>
 </ul>
@@ -1201,7 +1200,7 @@ IDF normalization as provided by
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n_samples: </span><span class="si">{</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, n_features: </span><span class="si">{</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 0.398 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 0.415 s
 n_samples: 3387, n_features: 7929
 </pre></div>
 </div>
@@ -1268,7 +1267,7 @@ best inertia (objective function of k-means) is chosen.</p>
 <span class="n">fit_and_evaluate</span><span class="p">(</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">X_tfidf</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KMeans</span><span class="se">\n</span><span class="s2">on tf-idf vectors&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.19 ± 0.04 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.20 ± 0.06 s
 Homogeneity: 0.349 ± 0.010
 Completeness: 0.398 ± 0.009
 V-measure: 0.372 ± 0.009
@@ -1308,7 +1307,7 @@ the information retrieval and text mining literature.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Explained variance of the SVD step: </span><span class="si">{</span><span class="n">explained_variance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LSA done in 0.371 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LSA done in 0.407 s
 Explained variance of the SVD step: 18.4%
 </pre></div>
 </div>
@@ -1324,7 +1323,7 @@ both <a class="reference internal" href="../../modules/generated/sklearn.cluster
 <span class="n">fit_and_evaluate</span><span class="p">(</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">X_lsa</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KMeans</span><span class="se">\n</span><span class="s2">with LSA on tf-idf vectors&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.01 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.00 s
 Homogeneity: 0.400 ± 0.009
 Completeness: 0.431 ± 0.011
 V-measure: 0.415 ± 0.007
@@ -1411,7 +1410,7 @@ the hashed vector space.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vectorization done in </span><span class="si">{</span><a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 1.890 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization done in 1.922 s
 </pre></div>
 </div>
 <p>One can observe that the LSA step takes a relatively long time to fit,
@@ -1425,7 +1424,7 @@ hashed-lsa-reduced data:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fit_and_evaluate</span><span class="p">(</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">X_hashed_lsa</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KMeans</span><span class="se">\n</span><span class="s2">with LSA on hashed vectors&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.01 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.00 s
 Homogeneity: 0.387 ± 0.011
 Completeness: 0.429 ± 0.017
 V-measure: 0.407 ± 0.013
@@ -1440,7 +1439,7 @@ Silhouette Coefficient: 0.029 ± 0.001
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.01 s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>clustering done in 0.02 ± 0.00 s
 Homogeneity: 0.357 ± 0.043
 Completeness: 0.378 ± 0.046
 V-measure: 0.367 ± 0.043
@@ -1504,7 +1503,7 @@ is less stable than <a class="reference internal" href="../../modules/generated/
 dataset. It is more interesting to use when the number of samples is much
 bigger, but it can come at the expense of a small degradation in clustering
 quality compared to the traditional k-means algorithm.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.789 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.780 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />

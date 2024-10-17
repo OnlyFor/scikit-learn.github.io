@@ -2879,23 +2879,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The coefficients, residual sum of squares and the coefficient of determination are also calculated.">
-
-.. only:: html
-
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_linear_model_plot_ols.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Linear Regression Example</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Show below is a logistic-regression classifiers decision boundaries on the first two dimensions (sepal length and width) of the iris dataset. The datapoints are colored according to their labels.">
 
 .. only:: html
@@ -2993,6 +2976,23 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the ordinary least squares (OLS) model called LinearRegression in scikit-learn.">
+
+.. only:: html
+
+  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_linear_model_plot_ols.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ordinary Least Squares Example</div>
     </div>
 
 
@@ -3265,23 +3265,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">SGD: convex loss functions</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Features 1 and 2 of the diabetes-dataset are fitted and plotted below. It illustrates that although feature 2 has a strong coefficient on the full model, it does not give us much regarding y when compared to just feature 1.">
-
-.. only:: html
-
-  .. image:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_ols_3d_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_linear_model_plot_ols_3d.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Sparsity Example: Fitting only features 1  and 2</div>
     </div>
 
 

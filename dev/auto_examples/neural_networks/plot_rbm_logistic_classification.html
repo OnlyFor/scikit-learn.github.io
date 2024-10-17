@@ -776,13 +776,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Linear Regression Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_nnls.html">Non-negative least squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgdocsvm_vs_ocsvm.html">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols.html">Ordinary Least Squares Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_ridge_variance.html">Ordinary Least Squares and Ridge Regression Variance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
@@ -799,7 +799,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_penalties.html">SGD: Penalties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_weighted_samples.html">SGD: Weighted samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_loss_functions.html">SGD: convex loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ols_3d.html">Sparsity Example: Fitting only features 1  and 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_theilsen.html">Theil-Sen Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_tweedie_regression_insurance_claims.html">Tweedie regression on insurance claims</a></li>
 </ul>
@@ -1125,16 +1124,16 @@ reproduced here because of runtime constraints.</p>
 <span class="n">raw_pixel_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.57, time = 0.09s
-[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.68, time = 0.13s
-[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.88, time = 0.13s
-[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.13s
-[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.79, time = 0.13s
-[BernoulliRBM] Iteration 6, pseudo-likelihood = -20.96, time = 0.12s
-[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.88, time = 0.12s
-[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.50, time = 0.12s
-[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.34, time = 0.12s
-[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.21, time = 0.12s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.57, time = 0.11s
+[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.68, time = 0.14s
+[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.88, time = 0.14s
+[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.14s
+[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.79, time = 0.16s
+[BernoulliRBM] Iteration 6, pseudo-likelihood = -20.96, time = 0.14s
+[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.88, time = 0.16s
+[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.50, time = 0.16s
+[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.34, time = 0.15s
+[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.21, time = 0.16s
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
@@ -1656,7 +1655,7 @@ accuracy with respect to the logistic regression on raw pixels.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" srcset="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" alt="100 components extracted by RBM" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.728 seconds)</p>
+<img src="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" srcset="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" alt="100 components extracted by RBM" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.145 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-neural-networks-plot-rbm-logistic-classification-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/neural_networks/plot_rbm_logistic_classification.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo26.svg" style="width: 150px;" />
