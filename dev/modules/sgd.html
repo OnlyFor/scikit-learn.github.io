@@ -965,6 +965,10 @@ optimization loop.</p>
 </div>
 </details><p>As <a class="reference internal" href="generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">SGDClassifier</span></code></a> and <a class="reference internal" href="generated/sklearn.linear_model.SGDRegressor.html#sklearn.linear_model.SGDRegressor" title="sklearn.linear_model.SGDRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SGDRegressor</span></code></a>, <a class="reference internal" href="generated/sklearn.linear_model.SGDOneClassSVM.html#sklearn.linear_model.SGDOneClassSVM" title="sklearn.linear_model.SGDOneClassSVM"><code class="xref py py-class docutils literal notranslate"><span class="pre">SGDOneClassSVM</span></code></a>
 supports averaged SGD. Averaging can be enabled by setting <code class="docutils literal notranslate"><span class="pre">average=True</span></code>.</p>
+<p class="rubric">Examples</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../auto_examples/linear_model/plot_sgdocsvm_vs_ocsvm.html#sphx-glr-auto-examples-linear-model-plot-sgdocsvm-vs-ocsvm-py"><span class="std std-ref">One-Class SVM versus One-Class SVM using Stochastic Gradient Descent</span></a></p></li>
+</ul>
 </section>
 <section id="stochastic-gradient-descent-for-sparse-data">
 <h2><span class="section-number">1.5.4. </span>Stochastic Gradient Descent for sparse data<a class="headerlink" href="#stochastic-gradient-descent-for-sparse-data" title="Link to this heading">#</a></h2>
@@ -1011,6 +1015,8 @@ the training data.</p></li>
 when the criterion does not improve <code class="docutils literal notranslate"><span class="pre">n_iter_no_change</span></code> times in a row. The
 improvement is evaluated with absolute tolerance <code class="docutils literal notranslate"><span class="pre">tol</span></code>, and the algorithm
 stops in any case after a maximum number of iteration <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>.</p>
+<p>See <a class="reference internal" href="../auto_examples/linear_model/plot_sgd_early_stopping.html#sphx-glr-auto-examples-linear-model-plot-sgd-early-stopping-py"><span class="std std-ref">Early stopping of Stochastic Gradient Descent</span></a> for an
+example of the effects of early stopping.</p>
 </section>
 <section id="tips-on-practical-use">
 <h2><span class="section-number">1.5.7. </span>Tips on Practical Use<a class="headerlink" href="#tips-on-practical-use" title="Link to this heading">#</a></h2>
