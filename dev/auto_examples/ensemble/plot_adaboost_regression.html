@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1101,7 +1100,7 @@ single decision tree regressor and AdaBoost regressor, could fit the data.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_adaboost_regression_001.png" srcset="../../_images/sphx_glr_plot_adaboost_regression_001.png" alt="Boosted Decision Tree Regression" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.509 seconds)</p>
+<img src="../../_images/sphx_glr_plot_adaboost_regression_001.png" srcset="../../_images/sphx_glr_plot_adaboost_regression_001.png" alt="Boosted Decision Tree Regression" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.442 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-adaboost-regression-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_adaboost_regression.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo11.svg" style="width: 150px;" />
@@ -1131,9 +1130,9 @@ single decision tree regressor and AdaBoost regressor, could fit the data.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="A voting regressor is an ensemble meta-estimator that fits several base regressors, each on the whole dataset. Then it averages the individual predictions to form a final prediction. We will use three different regressors to predict the data: GradientBoostingRegressor, RandomForestRegressor, and LinearRegression). Then the above 3 regressors will be used for the VotingRegressor."><img alt="" src="../../_images/sphx_glr_plot_voting_regressor_thumb.png" />
 <p><a class="reference internal" href="plot_voting_regressor.html#sphx-glr-auto-examples-ensemble-plot-voting-regressor-py"><span class="std std-ref">Plot individual and voting regression predictions</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plot individual and voting regression predictions</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example fits an AdaBoosted decision stump on a non-linearly separable classification dataset composed of two &quot;Gaussian quantiles&quot; clusters (see sklearn.datasets.make_gaussian_quantiles) and plots the decision boundary and decision scores. The distributions of decision scores are shown separately for samples of class A and B. The predicted class label for each sample is determined by the sign of the decision score. Samples with decision scores greater than zero are classified as B, and are otherwise classified as A. The magnitude of a decision score determines the degree of likeness with the predicted class label. Additionally, a new dataset could be constructed containing a desired purity of class B, for example, by only selecting samples with a decision score above some value."><img alt="" src="../../_images/sphx_glr_plot_adaboost_twoclass_thumb.png" />
-<p><a class="reference internal" href="plot_adaboost_twoclass.html#sphx-glr-auto-examples-ensemble-plot-adaboost-twoclass-py"><span class="std std-ref">Two-class AdaBoost</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Two-class AdaBoost</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Stacking refers to a method to blend estimators. In this strategy, some estimators are individually fitted on some training data while a final estimator is trained using the stacked predictions of these base estimators."><img alt="" src="../../_images/sphx_glr_plot_stack_predictors_thumb.png" />
+<p><a class="reference internal" href="plot_stack_predictors.html#sphx-glr-auto-examples-ensemble-plot-stack-predictors-py"><span class="std std-ref">Combine predictors using stacking</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Combine predictors using stacking</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

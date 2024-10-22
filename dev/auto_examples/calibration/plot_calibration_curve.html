@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1504,7 +1503,7 @@ data to produce good results.</p>
 A. Niculescu-Mizil &amp; R. Caruana, ICML 2005</p>
 </aside>
 </aside>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.282 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.120 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-calibration-plot-calibration-curve-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/calibration/plot_calibration_curve.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" style="width: 150px;" />
@@ -1534,9 +1533,9 @@ A. Niculescu-Mizil &amp; R. Caruana, ICML 2005</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how sigmoid calibration changes predicted probabilities for a 3-class classification problem. Illustrated is the standard 2-simplex, where the three corners correspond to the three classes. Arrows point from the probability vectors predicted by an uncalibrated classifier to the probability vectors predicted by the same classifier after sigmoid calibration on a hold-out validation set. Colors indicate the true class of an instance (red: class 1, green: class 2, blue: class 3)."><img alt="" src="../../_images/sphx_glr_plot_calibration_multiclass_thumb.png" />
 <p><a class="reference internal" href="plot_calibration_multiclass.html#sphx-glr-auto-examples-calibration-plot-calibration-multiclass-py"><span class="std std-ref">Probability Calibration for 3-class classification</span></a></p>
   <div class="sphx-glr-thumbnail-title">Probability Calibration for 3-class classification</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Unlike SVC (based on LIBSVM), LinearSVC (based on LIBLINEAR) does not provide the support vectors. This example demonstrates how to obtain the support vectors in LinearSVC."><img alt="" src="../../_images/sphx_glr_plot_linearsvc_support_vectors_thumb.png" />
-<p><a class="reference internal" href="../svm/plot_linearsvc_support_vectors.html#sphx-glr-auto-examples-svm-plot-linearsvc-support-vectors-py"><span class="std std-ref">Plot the support vectors in LinearSVC</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Plot the support vectors in LinearSVC</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of the isotonic regression on generated data (non-linear monotonic trend with homoscedastic uniform noise)."><img alt="" src="../../_images/sphx_glr_plot_isotonic_regression_thumb.png" />
+<p><a class="reference internal" href="../miscellaneous/plot_isotonic_regression.html#sphx-glr-auto-examples-miscellaneous-plot-isotonic-regression-py"><span class="std std-ref">Isotonic Regression</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Isotonic Regression</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

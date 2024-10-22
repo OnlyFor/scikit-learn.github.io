@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1486,26 +1485,26 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   background-color: var(--sklearn-color-fitted-level-3);
 }
 </style><div id="sk-container-id-64" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>HalvingRandomSearchCV(estimator=RandomForestClassifier(n_estimators=20,
-                                                       random_state=RandomState(MT19937) at 0x7EFC6B063640),
+                                                       random_state=RandomState(MT19937) at 0x7F3FD512D840),
                       factor=2,
                       param_distributions={&#x27;bootstrap&#x27;: [True, False],
                                            &#x27;criterion&#x27;: [&#x27;gini&#x27;, &#x27;entropy&#x27;],
                                            &#x27;max_depth&#x27;: [3, None],
-                                           &#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7efc6a85a700&gt;,
-                                           &#x27;min_samples_split&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7efc49d04d30&gt;},
-                      random_state=RandomState(MT19937) at 0x7EFC6B063640)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-252" type="checkbox" ><label for="sk-estimator-id-252" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>HalvingRandomSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.HalvingRandomSearchCV.html">?<span>Documentation for HalvingRandomSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>HalvingRandomSearchCV(estimator=RandomForestClassifier(n_estimators=20,
-                                                       random_state=RandomState(MT19937) at 0x7EFC6B063640),
+                                           &#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f3ff82dac70&gt;,
+                                           &#x27;min_samples_split&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f3fd5dcc520&gt;},
+                      random_state=RandomState(MT19937) at 0x7F3FD512D840)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-252" type="checkbox" ><label for="sk-estimator-id-252" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>HalvingRandomSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.HalvingRandomSearchCV.html">?<span>Documentation for HalvingRandomSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>HalvingRandomSearchCV(estimator=RandomForestClassifier(n_estimators=20,
+                                                       random_state=RandomState(MT19937) at 0x7F3FD512D840),
                       factor=2,
                       param_distributions={&#x27;bootstrap&#x27;: [True, False],
                                            &#x27;criterion&#x27;: [&#x27;gini&#x27;, &#x27;entropy&#x27;],
                                            &#x27;max_depth&#x27;: [3, None],
-                                           &#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7efc6a85a700&gt;,
-                                           &#x27;min_samples_split&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7efc49d04d30&gt;},
-                      random_state=RandomState(MT19937) at 0x7EFC6B063640)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-253" type="checkbox" ><label for="sk-estimator-id-253" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: RandomForestClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(bootstrap=False, criterion=&#x27;entropy&#x27;, max_features=4,
+                                           &#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f3ff82dac70&gt;,
+                                           &#x27;min_samples_split&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f3fd5dcc520&gt;},
+                      random_state=RandomState(MT19937) at 0x7F3FD512D840)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-253" type="checkbox" ><label for="sk-estimator-id-253" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: RandomForestClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(bootstrap=False, criterion=&#x27;entropy&#x27;, max_features=4,
                        min_samples_split=5, n_estimators=20,
-                       random_state=RandomState(MT19937) at 0x7EFC6AF0CA40)</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-254" type="checkbox" ><label for="sk-estimator-id-254" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(bootstrap=False, criterion=&#x27;entropy&#x27;, max_features=4,
+                       random_state=RandomState(MT19937) at 0x7F3FD512DA40)</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-254" type="checkbox" ><label for="sk-estimator-id-254" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(bootstrap=False, criterion=&#x27;entropy&#x27;, max_features=4,
                        min_samples_split=5, n_estimators=20,
-                       random_state=RandomState(MT19937) at 0x7EFC6AF0CA40)</pre></div> </div></div></div></div></div></div></div></div></div>
+                       random_state=RandomState(MT19937) at 0x7F3FD512DA40)</pre></div> </div></div></div></div></div></div></div></div></div>
 </div>
 <br />
 <br /><p>We can now use the <code class="docutils literal notranslate"><span class="pre">cv_results_</span></code> attribute of the search estimator to inspect
@@ -1543,7 +1542,7 @@ twice as many samples.</p>
 <p>This process is repeated until the last iteration, where only 2 candidates
 are left. The best candidate is the candidate that has the best score at the
 last iteration.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.532 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.761 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-model-selection-plot-successive-halving-iterations-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_successive_halving_iterations.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo22.svg" style="width: 150px;" />

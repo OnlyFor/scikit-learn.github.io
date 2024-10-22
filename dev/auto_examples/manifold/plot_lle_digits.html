@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1217,21 +1216,21 @@ Computing NCA embedding...
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_lle_digits_002.png" srcset="../../_images/sphx_glr_plot_lle_digits_002.png" alt="Random projection embedding (time 0.001s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_002.png" srcset="../../_images/sphx_glr_plot_lle_digits_002.png" alt="Random projection embedding (time 0.002s)" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_lle_digits_003.png" srcset="../../_images/sphx_glr_plot_lle_digits_003.png" alt="Truncated SVD embedding (time 0.003s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_004.png" srcset="../../_images/sphx_glr_plot_lle_digits_004.png" alt="Linear Discriminant Analysis embedding (time 0.007s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_005.png" srcset="../../_images/sphx_glr_plot_lle_digits_005.png" alt="Isomap embedding (time 0.755s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_006.png" srcset="../../_images/sphx_glr_plot_lle_digits_006.png" alt="Standard LLE embedding (time 0.171s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_007.png" srcset="../../_images/sphx_glr_plot_lle_digits_007.png" alt="Modified LLE embedding (time 2.813s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_008.png" srcset="../../_images/sphx_glr_plot_lle_digits_008.png" alt="Hessian LLE embedding (time 1.944s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_009.png" srcset="../../_images/sphx_glr_plot_lle_digits_009.png" alt="LTSA LLE embedding (time 2.517s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_010.png" srcset="../../_images/sphx_glr_plot_lle_digits_010.png" alt="MDS embedding (time 2.609s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_011.png" srcset="../../_images/sphx_glr_plot_lle_digits_011.png" alt="Random Trees embedding (time 0.217s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_012.png" srcset="../../_images/sphx_glr_plot_lle_digits_012.png" alt="Spectral embedding (time 0.181s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_013.png" srcset="../../_images/sphx_glr_plot_lle_digits_013.png" alt="t-SNE embedding (time 2.802s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_lle_digits_014.png" srcset="../../_images/sphx_glr_plot_lle_digits_014.png" alt="NCA embedding (time 2.931s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_004.png" srcset="../../_images/sphx_glr_plot_lle_digits_004.png" alt="Linear Discriminant Analysis embedding (time 0.008s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_005.png" srcset="../../_images/sphx_glr_plot_lle_digits_005.png" alt="Isomap embedding (time 0.728s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_006.png" srcset="../../_images/sphx_glr_plot_lle_digits_006.png" alt="Standard LLE embedding (time 0.165s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_007.png" srcset="../../_images/sphx_glr_plot_lle_digits_007.png" alt="Modified LLE embedding (time 2.751s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_008.png" srcset="../../_images/sphx_glr_plot_lle_digits_008.png" alt="Hessian LLE embedding (time 1.945s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_009.png" srcset="../../_images/sphx_glr_plot_lle_digits_009.png" alt="LTSA LLE embedding (time 2.695s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_010.png" srcset="../../_images/sphx_glr_plot_lle_digits_010.png" alt="MDS embedding (time 3.087s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_011.png" srcset="../../_images/sphx_glr_plot_lle_digits_011.png" alt="Random Trees embedding (time 0.210s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_012.png" srcset="../../_images/sphx_glr_plot_lle_digits_012.png" alt="Spectral embedding (time 0.176s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_013.png" srcset="../../_images/sphx_glr_plot_lle_digits_013.png" alt="t-SNE embedding (time 2.787s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_lle_digits_014.png" srcset="../../_images/sphx_glr_plot_lle_digits_014.png" alt="NCA embedding (time 3.112s)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 21.877 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 23.394 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-manifold-plot-lle-digits-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/manifold/plot_lle_digits.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo19.svg" style="width: 150px;" />

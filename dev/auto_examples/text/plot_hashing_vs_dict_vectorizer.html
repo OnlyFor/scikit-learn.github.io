@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1154,7 +1153,7 @@ both of them receive dictionaries as input.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 1.034 s at 6.0 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 1.088 s at 5.7 MB/s
 Found 47928 unique terms
 </pre></div>
 </div>
@@ -1221,7 +1220,7 @@ encoded feature matrix. For such a purpose we define the following function:</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.603 s at 10.4 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.617 s at 10.1 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1243,7 +1242,7 @@ majority of them is inactive.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.620 s at 10.1 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.569 s at 11.0 MB/s
 Found 47668 unique tokens
 </pre></div>
 </div>
@@ -1266,7 +1265,7 @@ passing a dictionary with an implied frequency of 1 for each feature name.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique tokens&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.569 s at 11.0 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.597 s at 10.5 MB/s
 Found 43873 unique tokens
 </pre></div>
 </div>
@@ -1316,7 +1315,7 @@ is more flexible. In particular it accepts various regex patterns through the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.665 s at 9.4 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.719 s at 8.7 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1344,7 +1343,7 @@ preprocessing and tokenization of the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;done in </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s at </span><span class="si">{</span><span class="n">data_size_mb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MB/s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.512 s at 12.2 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.547 s at 11.4 MB/s
 </pre></div>
 </div>
 <p>We can observe that this is the fastest text tokenization strategy so far,
@@ -1380,7 +1379,7 @@ normalizing and weighting from a
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span><span class="si">}</span><span class="s2"> unique terms&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.656 s at 9.5 MB/s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>done in 0.730 s at 8.6 MB/s
 Found 47885 unique terms
 </pre></div>
 </div>
@@ -1414,7 +1413,7 @@ their equivalent <a class="reference internal" href="../../modules/generated/skl
 <a class="reference internal" href="../../modules/generated/sklearn.feature_extraction.FeatureHasher.html#sklearn.feature_extraction.FeatureHasher" title="sklearn.feature_extraction.FeatureHasher"><code class="xref py py-func docutils literal notranslate"><span class="pre">FeatureHasher</span></code></a> on manually tokenized
 documents since the internal tokenization step of the former vectorizers
 compiles a regular expression once and then reuses it for all the documents.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.114 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.372 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-hashing-vs-dict-vectorizer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_hashing_vs_dict_vectorizer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo31.svg" style="width: 150px;" />
@@ -1444,9 +1443,9 @@ compiles a regular expression once and then reuses it for all the documents.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the Spectral Co-clustering algorithm on the twenty newsgroups dataset. The &#x27;comp.os.ms-windows.misc&#x27; category is excluded because it contains many posts containing nothing but data."><img alt="" src="../../_images/sphx_glr_plot_bicluster_newsgroups_thumb.png" />
 <p><a class="reference internal" href="../bicluster/plot_bicluster_newsgroups.html#sphx-glr-auto-examples-bicluster-plot-bicluster-newsgroups-py"><span class="std std-ref">Biclustering documents with the Spectral Co-clustering algorithm</span></a></p>
   <div class="sphx-glr-thumbnail-title">Biclustering documents with the Spectral Co-clustering algorithm</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, semi-supervised classifiers are trained on the 20 newsgroups dataset (which will be automatically downloaded)."><img alt="" src="../../_images/sphx_glr_plot_semi_supervised_newsgroups_thumb.png" />
-<p><a class="reference internal" href="../semi_supervised/plot_semi_supervised_newsgroups.html#sphx-glr-auto-examples-semi-supervised-plot-semi-supervised-newsgroups-py"><span class="std std-ref">Semi-supervised Classification on a Text Dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Semi-supervised Classification on a Text Dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Datasets can often contain components that require different feature extraction and processing pipelines. This scenario might occur when:"><img alt="" src="../../_images/sphx_glr_plot_column_transformer_thumb.png" />
+<p><a class="reference internal" href="../compose/plot_column_transformer.html#sphx-glr-auto-examples-compose-plot-column-transformer-py"><span class="std std-ref">Column Transformer with Heterogeneous Data Sources</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Column Transformer with Heterogeneous Data Sources</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

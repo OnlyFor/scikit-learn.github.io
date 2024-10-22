@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1185,9 +1184,9 @@ both approaches here.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 0.214s
+Done in 0.207s
 Features selected by backward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 0.646s
+Done in 0.584s
 </pre></div>
 </div>
 <p>Interestingly, forward and backward selection have selected the same set of
@@ -1377,13 +1376,13 @@ to perform the feature selection.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tol: -0.01
 Features selected: [&#39;worst perimeter&#39;]
 ROC AUC score: 0.975
-Done in 11.749s
+Done in 11.506s
 
 tol: -0.001
 Features selected: [&#39;radius error&#39; &#39;fractal dimension error&#39; &#39;worst texture&#39;
  &#39;worst perimeter&#39; &#39;worst concave points&#39;]
 ROC AUC score: 0.997
-Done in 11.660s
+Done in 11.514s
 
 tol: -0.0001
 Features selected: [&#39;mean compactness&#39; &#39;mean concavity&#39; &#39;mean concave points&#39; &#39;radius error&#39;
@@ -1391,13 +1390,13 @@ Features selected: [&#39;mean compactness&#39; &#39;mean concavity&#39; &#39;mea
  &#39;fractal dimension error&#39; &#39;worst texture&#39; &#39;worst perimeter&#39; &#39;worst area&#39;
  &#39;worst concave points&#39; &#39;worst symmetry&#39;]
 ROC AUC score: 0.998
-Done in 9.695s
+Done in 9.630s
 </pre></div>
 </div>
 <p>We can see that the number of features selected tend to increase as negative
 values of <code class="docutils literal notranslate"><span class="pre">tol</span></code> approach to zero. The time taken for feature selection also
 decreases as the values of <code class="docutils literal notranslate"><span class="pre">tol</span></code> come closer to zero.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 34.062 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 33.539 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-feature-selection-plot-select-from-model-diabetes-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/feature_selection/plot_select_from_model_diabetes.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" style="width: 150px;" />

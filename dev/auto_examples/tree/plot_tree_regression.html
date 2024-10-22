@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -2002,7 +2001,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <img src="../../_images/sphx_glr_plot_tree_regression_002.png" srcset="../../_images/sphx_glr_plot_tree_regression_002.png" alt="Multi-output Decision Tree Regression" class = "sphx-glr-single-img"/><p>As you can see, the higher the value of <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, the more details of the data
 are caught by the model. However, the model also overfits to the data and is
 influenced by the noise.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.308 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.307 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-tree-plot-tree-regression-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/tree/plot_tree_regression.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo32.svg" style="width: 150px;" />
@@ -2029,12 +2028,12 @@ influenced by the noise.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="An example to compare multi-output regression with random forest and the multiclass meta-estimator."><img alt="" src="../../_images/sphx_glr_plot_random_forest_regression_multioutput_thumb.png" />
 <p><a class="reference internal" href="../ensemble/plot_random_forest_regression_multioutput.html#sphx-glr-auto-examples-ensemble-plot-random-forest-regression-multioutput-py"><span class="std std-ref">Comparing random forests and the multi-output meta estimator</span></a></p>
   <div class="sphx-glr-thumbnail-title">Comparing random forests and the multi-output meta estimator</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Plot the decision surface of a decision tree trained on pairs of features of the iris dataset."><img alt="" src="../../_images/sphx_glr_plot_iris_dtc_thumb.png" />
-<p><a class="reference internal" href="plot_iris_dtc.html#sphx-glr-auto-examples-tree-plot-iris-dtc-py"><span class="std std-ref">Plot the decision surface of decision trees trained on the iris dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Plot the decision surface of decision trees trained on the iris dataset</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Plot the decision surfaces of forests of randomized trees trained on pairs of features of the iris dataset."><img alt="" src="../../_images/sphx_glr_plot_forest_iris_thumb.png" />
 <p><a class="reference internal" href="../ensemble/plot_forest_iris.html#sphx-glr-auto-examples-ensemble-plot-forest-iris-py"><span class="std std-ref">Plot the decision surfaces of ensembles of trees on the iris dataset</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plot the decision surfaces of ensembles of trees on the iris dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Transform your features into a higher dimensional, sparse space. Then train a linear model on these features."><img alt="" src="../../_images/sphx_glr_plot_feature_transformation_thumb.png" />
+<p><a class="reference internal" href="../ensemble/plot_feature_transformation.html#sphx-glr-auto-examples-ensemble-plot-feature-transformation-py"><span class="std std-ref">Feature transformations with ensembles of trees</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Feature transformations with ensembles of trees</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>

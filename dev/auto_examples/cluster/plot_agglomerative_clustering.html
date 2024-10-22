@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_model/plot_quantile_regression.html">Quantile regression</a></li>
@@ -1046,10 +1045,10 @@ complete linkage. In particular, having a very small number of neighbors in
 the graph, imposes a geometry that is close to that of single linkage,
 which is well known to have this percolation instability.</p>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" alt="n_cluster=30, connectivity=False, linkage=average (time 0.04s), linkage=complete (time 0.03s), linkage=ward (time 0.04s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" alt="n_cluster=3, connectivity=False, linkage=average (time 0.03s), linkage=complete (time 0.04s), linkage=ward (time 0.03s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" alt="n_cluster=30, connectivity=True, linkage=average (time 0.11s), linkage=complete (time 0.10s), linkage=ward (time 0.14s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" alt="n_cluster=3, connectivity=True, linkage=average (time 0.10s), linkage=complete (time 0.12s), linkage=ward (time 0.16s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_001.png" alt="n_cluster=30, connectivity=False, linkage=average (time 0.03s), linkage=complete (time 0.03s), linkage=ward (time 0.04s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_002.png" alt="n_cluster=3, connectivity=False, linkage=average (time 0.03s), linkage=complete (time 0.03s), linkage=ward (time 0.03s), linkage=single (time 0.01s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_003.png" alt="n_cluster=30, connectivity=True, linkage=average (time 0.10s), linkage=complete (time 0.10s), linkage=ward (time 0.13s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" srcset="../../_images/sphx_glr_plot_agglomerative_clustering_004.png" alt="n_cluster=3, connectivity=True, linkage=average (time 0.10s), linkage=complete (time 0.13s), linkage=ward (time 0.13s), linkage=single (time 0.02s)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: The scikit-learn developers</span>
 <span class="c1"># SPDX-License-Identifier: BSD-3-Clause</span>
@@ -1111,7 +1110,7 @@ which is well known to have this percolation instability.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.950 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.860 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-agglomerative-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_agglomerative_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" style="width: 150px;" />

@@ -75,7 +75,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="MNIST classification using multinomial logistic + L1" href="plot_sparse_logistic_regression_mnist.html" />
-    <link rel="prev" title="Logistic Regression 3-class Classifier" href="plot_iris_logistic.html" />
+    <link rel="prev" title="Lasso, Lasso-LARS, and Elastic Net paths" href="plot_lasso_lasso_lars_elasticnet_path.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_20newsgroups.html">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_quantile_regression.html">Quantile regression</a></li>
@@ -1088,7 +1087,7 @@ i.e. class one or two, using the logistic curve.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.110 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.109 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-logistic-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_logistic.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1118,9 +1117,9 @@ i.e. class one or two, using the logistic curve.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Here a sine function is fit with a polynomial of order 3, for values close to zero."><img alt="" src="../../_images/sphx_glr_plot_robust_fit_thumb.png" />
 <p><a class="reference internal" href="plot_robust_fit.html#sphx-glr-auto-examples-linear-model-plot-robust-fit-py"><span class="std std-ref">Robust linear estimator fitting</span></a></p>
   <div class="sphx-glr-thumbnail-title">Robust linear estimator fitting</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Ridge regression is basically minimizing a penalised version of the least-squared function. The penalising shrinks the value of the regression coefficients. Despite the few data points in each dimension, the slope of the prediction is much more stable and the variance in the line itself is greatly reduced, in comparison to that of the standard linear regression"><img alt="" src="../../_images/sphx_glr_plot_ols_ridge_variance_thumb.png" />
-<p><a class="reference internal" href="plot_ols_ridge_variance.html#sphx-glr-auto-examples-linear-model-plot-ols-ridge-variance-py"><span class="std std-ref">Ordinary Least Squares and Ridge Regression Variance</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Ordinary Least Squares and Ridge Regression Variance</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares decision boundaries of multinomial and one-vs-rest logistic regression on a 2D dataset with three classes."><img alt="" src="../../_images/sphx_glr_plot_logistic_multinomial_thumb.png" />
+<p><a class="reference internal" href="plot_logistic_multinomial.html#sphx-glr-auto-examples-linear-model-plot-logistic-multinomial-py"><span class="std std-ref">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</div>
 </div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 
@@ -1135,12 +1134,12 @@ i.e. class one or two, using the logistic curve.</p>
     <div class="footer-article-item">
 <div class="prev-next-area">
     <a class="left-prev"
-       href="plot_iris_logistic.html"
+       href="plot_lasso_lasso_lars_elasticnet_path.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Logistic Regression 3-class Classifier</p>
+        <p class="prev-next-title">Lasso, Lasso-LARS, and Elastic Net paths</p>
       </div>
     </a>
     <a class="right-next"

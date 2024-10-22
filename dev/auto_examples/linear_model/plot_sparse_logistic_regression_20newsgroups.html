@@ -765,6 +765,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_ard.html">Comparing Linear Bayesian Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_comparison.html">Comparing various online solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_bayesian_ridge_curvefit.html">Curve Fitting with Bayesian Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_logistic_multinomial.html">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_early_stopping.html">Early stopping of Stochastic Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html">Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_huber_vs_ridge.html">HuberRegressor vs Ridge on dataset with strong outliers</a></li>
@@ -775,7 +776,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_model_selection.html">Lasso model selection: AIC-BIC / cross-validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_dense_vs_sparse_data.html">Lasso on dense and sparse data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_lasso_lasso_lars_elasticnet_path.html">Lasso, Lasso-LARS, and Elastic Net paths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_iris_logistic.html">Logistic Regression 3-class Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_logistic.html">Logistic function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sparse_logistic_regression_mnist.html">MNIST classification using multinomial logistic + L1</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Multiclass sparse logistic regression on 20newgroups</a></li>
@@ -786,7 +786,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="plot_omp.html">Orthogonal Matching Pursuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_ridge_path.html">Plot Ridge coefficients as a function of the regularization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sgd_iris.html">Plot multi-class SGD on the iris dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_logistic_multinomial.html">Plot multinomial and One-vs-Rest Logistic Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_poisson_regression_non_normal_loss.html">Poisson regression and non-normal loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_polynomial_interpolation.html">Polynomial and Spline interpolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_quantile_regression.html">Quantile regression</a></li>
@@ -1050,7 +1049,7 @@ Test accuracy for model ovr: 0.5960
  0.27054655 0.62717609 0.19522393 0.30897646 0.34586917 0.28207552
  0.34125758 0.29898468 0.34279478 0.59489497 0.38353048 0.35278655
  0.19829832 0.14603365]
-Run time (3 epochs) for model ovr:1.41
+Run time (3 epochs) for model ovr:1.37
 [model=Multinomial, solver=saga] Number of epochs: 1
 [model=Multinomial, solver=saga] Number of epochs: 2
 [model=Multinomial, solver=saga] Number of epochs: 5
@@ -1060,8 +1059,8 @@ Test accuracy for model multinomial: 0.6440
  0.06686804 0.21443888 0.11528972 0.2075215  0.10914094 0.11144673
  0.13988486 0.09684337 0.26286057 0.11682692 0.55800226 0.17370318
  0.11452112 0.14603365]
-Run time (5 epochs) for model multinomial:1.14
-Example run in 5.702 s
+Run time (5 epochs) for model multinomial:1.10
+Example run in 5.603 s
 </pre></div>
 </div>
 <div class="line-block">
@@ -1179,7 +1178,7 @@ Example run in 5.702 s
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.776 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.673 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-sparse-logistic-regression-20newsgroups-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_sparse_logistic_regression_20newsgroups.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" style="width: 150px;" />
@@ -1206,9 +1205,9 @@ Example run in 5.702 s
 </div><div class="sphx-glr-thumbcontainer" tooltip="Plot the classification probability for different classifiers. We use a 3 class dataset, and we classify it with a Support Vector classifier, L1 and L2 penalized logistic regression (multinomial multiclass), a One-Vs-Rest version with logistic regression, and Gaussian process classification."><img alt="" src="../../_images/sphx_glr_plot_classification_probability_thumb.png" />
 <p><a class="reference internal" href="../classification/plot_classification_probability.html#sphx-glr-auto-examples-classification-plot-classification-probability-py"><span class="std std-ref">Plot classification probability</span></a></p>
   <div class="sphx-glr-thumbnail-title">Plot classification probability</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Plot decision surface of multinomial and One-vs-Rest Logistic Regression. The hyperplanes corresponding to the three One-vs-Rest (OVR) classifiers are represented by the dashed lines."><img alt="" src="../../_images/sphx_glr_plot_logistic_multinomial_thumb.png" />
-<p><a class="reference internal" href="plot_logistic_multinomial.html#sphx-glr-auto-examples-linear-model-plot-logistic-multinomial-py"><span class="std std-ref">Plot multinomial and One-vs-Rest Logistic Regression</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Plot multinomial and One-vs-Rest Logistic Regression</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares decision boundaries of multinomial and one-vs-rest logistic regression on a 2D dataset with three classes."><img alt="" src="../../_images/sphx_glr_plot_logistic_multinomial_thumb.png" />
+<p><a class="reference internal" href="plot_logistic_multinomial.html#sphx-glr-auto-examples-linear-model-plot-logistic-multinomial-py"><span class="std std-ref">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Boundaries of Multinomial and One-vs-Rest Logistic Regression</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Comparison of the sparsity (percentage of zero coefficients) of solutions when L1, L2 and Elastic-Net penalty are used for different values of C. We can see that large values of C give more freedom to the model.  Conversely, smaller values of C constrain the model more. In the L1 penalty case, this leads to sparser solutions. As expected, the Elastic-Net penalty sparsity is between that of L1 and L2."><img alt="" src="../../_images/sphx_glr_plot_logistic_l1_l2_sparsity_thumb.png" />
 <p><a class="reference internal" href="plot_logistic_l1_l2_sparsity.html#sphx-glr-auto-examples-linear-model-plot-logistic-l1-l2-sparsity-py"><span class="std std-ref">L1 Penalty and Sparsity in Logistic Regression</span></a></p>
   <div class="sphx-glr-thumbnail-title">L1 Penalty and Sparsity in Logistic Regression</div>
