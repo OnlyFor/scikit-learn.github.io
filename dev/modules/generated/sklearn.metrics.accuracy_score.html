@@ -1336,7 +1336,7 @@ document.write(`
 <h1>accuracy_score<a class="headerlink" href="#accuracy-score" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.accuracy_score">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">accuracy_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8388a1d55/sklearn/metrics/_classification.py#L149"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.accuracy_score" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">accuracy_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_division</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'warn'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/99f0f69fd/sklearn/metrics/_classification.py#L149"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.accuracy_score" title="Link to this definition">#</a></dt>
 <dd><p>Accuracy classification score.</p>
 <p>In multilabel classification, this function computes subset accuracy:
 the set of labels predicted for a sample must <em>exactly</em> match the
@@ -1344,7 +1344,7 @@ corresponding set of labels in y_true.</p>
 <p>Read more in the <a class="reference internal" href="../model_evaluation.html#accuracy-score"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>y_true</strong><span class="classifier">1d array-like, or label indicator array / sparse matrix</span></dt><dd><p>Ground truth (correct) labels.</p>
 </dd>
 <dt><strong>y_pred</strong><span class="classifier">1d array-like, or label indicator array / sparse matrix</span></dt><dd><p>Predicted labels, as returned by a classifier.</p>
@@ -1353,6 +1353,11 @@ corresponding set of labels in y_true.</p>
 Otherwise, return the fraction of correctly classified samples.</p>
 </dd>
 <dt><strong>sample_weight</strong><span class="classifier">array-like of shape (n_samples,), default=None</span></dt><dd><p>Sample weights.</p>
+</dd>
+<dt><strong>zero_division</strong><span class="classifier">{“warn”, 0.0, 1.0, np.nan}, default=”warn”</span></dt><dd><p>Sets the value to return when there is a zero division,
+e.g. when <code class="docutils literal notranslate"><span class="pre">y_true</span></code> and <code class="docutils literal notranslate"><span class="pre">y_pred</span></code> are empty.
+If set to “warn”, returns 0.0 input, but a warning is also raised.</p>
+<p>versionadded:: 1.6</p>
 </dd>
 </dl>
 </dd>
